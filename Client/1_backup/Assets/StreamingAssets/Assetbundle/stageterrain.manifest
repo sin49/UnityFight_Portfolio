@@ -1,0 +1,46 @@
+ManifestFileVersion: 0
+CRC: 454044404
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: c124fefa75cced4f2efc036cf56c6a63
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 4f33550525f14b672a93ce403df84094
+  IncrementalBuildHash:
+    serializedVersion: 2
+    Hash: 035f7307d60d7196d5807257bd67b14d
+HashAppended: 0
+ClassTypes:
+- Class: 1
+  Script: {instanceID: 0}
+- Class: 4
+  Script: {instanceID: 0}
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 23
+  Script: {instanceID: 0}
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 33
+  Script: {instanceID: 0}
+- Class: 43
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+- Class: 64
+  Script: {instanceID: 0}
+- Class: 65
+  Script: {instanceID: 0}
+- Class: 154
+  Script: {instanceID: 0}
+- Class: 156
+  Script: {instanceID: 0}
+- Class: 205
+  Script: {instanceID: 0}
+- Class: 218
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/Prefab/Terrain/Main0.prefab
+Dependencies: []

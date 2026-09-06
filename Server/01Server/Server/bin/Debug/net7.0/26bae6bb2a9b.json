@@ -1,0 +1,33 @@
+{
+  "rerollCount": 0,
+  "shoplist": [
+    {
+      "Needitemid": "i01",
+      "price": 100,
+      "itemid": "i02",
+      "Amount": 99,
+      "data": null
+    },
+    {
+      "Needitemid": "i01",
+      "price": 100,
+      "itemid": "i02",
+      "Amount": 100,
+      "data": null
+    },
+    {
+      "Needitemid": "i01",
+      "price": 1000,
+      "itemid": "i03",
+      "Amount": 50,
+      "data": null
+    },
+    {
+      "Needitemid": "i01",
+      "price": 10000,
+      "itemid": "i04",
+      "Amount": 20,
+      "data": null
+    }
+  ]
+}

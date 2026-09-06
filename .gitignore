@@ -1,0 +1,19 @@
+# ===============
+# Unity (Client)
+# ===============
+/[Cc]lient/[Ll]ibrary/
+/[Cc]lient/[Tt]emp/
+/[Cc]lient/[Oo]bj/
+/[Cc]lient/[Bb]uild/
+/[Cc]lient/[Bb]uilds/
+/[Cc]lient/[Ll]ogs/
+/[Cc]lient/[Uu]ser[Ss]ettings/
+*.csproj
+*.sln
+
+# ===============
+# C# Server (Visual Studio)
+# ===============
+/[Ss]erver/bin/
+/[Ss]erver/obj/
+.vs/

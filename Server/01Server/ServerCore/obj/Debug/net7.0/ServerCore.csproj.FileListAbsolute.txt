@@ -1,0 +1,11 @@
+D:\project\01Server\ServerCore\bin\Debug\net7.0\ServerCore.deps.json
+D:\project\01Server\ServerCore\bin\Debug\net7.0\ServerCore.dll
+D:\project\01Server\ServerCore\bin\Debug\net7.0\ServerCore.pdb
+D:\project\01Server\ServerCore\obj\Debug\net7.0\ServerCore.GeneratedMSBuildEditorConfig.editorconfig
+D:\project\01Server\ServerCore\obj\Debug\net7.0\ServerCore.AssemblyInfoInputs.cache
+D:\project\01Server\ServerCore\obj\Debug\net7.0\ServerCore.AssemblyInfo.cs
+D:\project\01Server\ServerCore\obj\Debug\net7.0\ServerCore.csproj.CoreCompileInputs.cache
+D:\project\01Server\ServerCore\obj\Debug\net7.0\ServerCore.dll
+D:\project\01Server\ServerCore\obj\Debug\net7.0\refint\ServerCore.dll
+D:\project\01Server\ServerCore\obj\Debug\net7.0\ServerCore.pdb
+D:\project\01Server\ServerCore\obj\Debug\net7.0\ref\ServerCore.dll

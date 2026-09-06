@@ -1,0 +1,32 @@
+ManifestFileVersion: 0
+CRC: 2444788113
+AssetBundleManifest:
+  AssetBundleInfos:
+    Info_0:
+      Name: itemsprite
+      Dependencies: {}
+    Info_1:
+      Name: characterdb
+      Dependencies: {}
+    Info_2:
+      Name: itemdb
+      Dependencies: {}
+    Info_3:
+      Name: character
+      Dependencies:
+        Dependency_0: characteranimation
+    Info_4:
+      Name: characteranimation
+      Dependencies: {}
+    Info_5:
+      Name: charactersprite
+      Dependencies: {}
+    Info_6:
+      Name: stagedb
+      Dependencies: {}
+    Info_7:
+      Name: charactersfx
+      Dependencies: {}
+    Info_8:
+      Name: stageterrain
+      Dependencies: {}

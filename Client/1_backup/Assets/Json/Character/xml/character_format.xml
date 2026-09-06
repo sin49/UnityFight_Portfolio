@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<characterinfo>
+  <character>
+    <name>name</name>
+    <ID>number</ID>
+  </character>
+  <status>
+    <level>int</level>
+    <distancepoint>0</distancepoint>
+    <HP>int</HP>
+    <ATK>int</ATK>
+    <speed>1</speed>
+    <grownth>
+      <HP_grownth></HP_grownth>
+      <ATK_grownth></ATK_grownth>
+    </grownth>
+  </status>
+  <Skill>
+    <normal>
+      <targeting>Enemy</targeting>
+      <priority>Distance</priority>
+      <TargetNumber>
+        <int>0</int>
+      </TargetNumber>
+    </normal>
+    <Skill1>
+      <targeting>Enemy</targeting>
+      <priority>Distance</priority>
+      <TargetNumber>
+        <int>0</int>
+      </TargetNumber>
+    </Skill1>
+    <Attack_type></Attack_type>
+    <Skillcycle>
+      <int>0</int>
+      <int>1</int>
+      <int>0</int>
+    </Skillcycle>
+  </Skill>
+  <LimitBurst>
+    <targeting>team</targeting>
+    <priority>Distance</priority>
+    <TargetNumber>
+      <int>0</int>
+    </TargetNumber>
+  </LimitBurst>
+</characterinfo>

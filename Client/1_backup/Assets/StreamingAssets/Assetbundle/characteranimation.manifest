@@ -1,0 +1,32 @@
+ManifestFileVersion: 0
+CRC: 3999759221
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 7822e232c235e8d53a42cedbc45880b1
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 1627b0a3f22287c3eadb4ba07ada8abb
+  IncrementalBuildHash:
+    serializedVersion: 2
+    Hash: a5321a1d5e86d16c350b477df74cb1bb
+HashAppended: 0
+ClassTypes:
+- Class: 49
+  Script: {instanceID: 0}
+- Class: 74
+  Script: {instanceID: 0}
+- Class: 91
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/Animation/melee_basic.anim
+- Assets/Json/Version/characteranimation/BundleVersion.txt
+- Assets/Animator/p01.controller
+- Assets/Animator/p02.controller
+- Assets/Animation/stunned.anim
+- Assets/Animation/Player1/p01Skill1.anim
+- Assets/Animation/Player1/p01Special.anim
+- Assets/Animator/p03.controller
+- Assets/Animator/E00.controller
+Dependencies: []

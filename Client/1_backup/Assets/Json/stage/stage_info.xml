@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<stageinfo>
+  <enemy_info name="enemy_information">
+    <enemy name="">
+      <LV></LV>
+      <index>0</index>
+    </enemy>
+  </enemy_info>
+  <wave_info name="wave_information">
+    <wave name="1">
+        <enemy name="enemy1">
+          <index></index>
+          <number></number>
+        </enemy>
+      <enemy name="enemy2">
+        <index></index>
+        <number></number>
+      </enemy>
+    </wave>
+  </wave_info>
+</stageinfo>

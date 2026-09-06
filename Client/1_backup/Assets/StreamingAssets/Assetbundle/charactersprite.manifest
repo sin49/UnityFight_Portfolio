@@ -1,0 +1,29 @@
+ManifestFileVersion: 0
+CRC: 2500334851
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: f30c456b7f8e5320d427463c548e29e8
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: e44792b29106a1c4f099aa1fb2a2c715
+  IncrementalBuildHash:
+    serializedVersion: 2
+    Hash: 479ac6793f6cc0f4125de131adeb79b9
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 49
+  Script: {instanceID: 0}
+- Class: 213
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/Sprite/Character/P04.png
+- Assets/Sprite/Character/p01.png
+- Assets/Sprite/Character/P02.png
+- Assets/Json/Version/charactersprite/BundleVersion.txt
+- Assets/Sprite/Character/P03.png
+- Assets/Sprite/Character/E00.png
+Dependencies: []

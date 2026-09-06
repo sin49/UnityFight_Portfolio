@@ -1,0 +1,113 @@
+ManifestFileVersion: 0
+CRC: 3952882229
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 4871571bce63762522568456fdd4fb89
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 74151c56de5203ace41b1983ec1c3ca5
+  IncrementalBuildHash:
+    serializedVersion: 2
+    Hash: 5da95e4bf16a58bf2801d30bbf0acb22
+HashAppended: 0
+ClassTypes:
+- Class: 1
+  Script: {instanceID: 0}
+- Class: 4
+  Script: {instanceID: 0}
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 23
+  Script: {instanceID: 0}
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 33
+  Script: {instanceID: 0}
+- Class: 43
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+- Class: 49
+  Script: {instanceID: 0}
+- Class: 54
+  Script: {instanceID: 0}
+- Class: 65
+  Script: {instanceID: 0}
+- Class: 74
+  Script: {instanceID: 0}
+- Class: 82
+  Script: {instanceID: 0}
+- Class: 90
+  Script: {instanceID: 0}
+- Class: 91
+  Script: {instanceID: 0}
+- Class: 95
+  Script: {instanceID: 0}
+- Class: 114
+  Script: {fileID: 11500000, guid: 6514ba86f976d724ab63844a6015b2aa, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 03118221f4bfcd74ba0ad8075da02411, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: ea22c6daddd0b3f49a3525f596b86524, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 37b7c58dc2d739b4c90fe59f6875debf, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: af276926b0db1c248a93ab3c1134a6c2, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 75453f0413251fd42811d1b1eb4728c1, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: f228c6e846db8bd4ca8c289bdb7565b9, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: db580c960b9f3874ebafaaecd38c1d7a, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: fcb73b690c023734fb267911061a15c6, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 625e9c3b94e3dc64ea82f6e29062b3d6, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 5e658bfc1e524494b9e54a1c92d8c1e0, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: a38e39ada51aaba4db6d352ce218849e, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 058a2736f2afd564eae55007a87eed87, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: b450e0eeaa67f4e4f83448b61a571d3b, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 656e40b8c63df9f43989c95007039cdf, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: fd9c5a45b5f9b494b84f52f532c3db87, type: 3}
+- Class: 115
+  Script: {instanceID: 0}
+- Class: 136
+  Script: {instanceID: 0}
+- Class: 137
+  Script: {instanceID: 0}
+- Class: 198
+  Script: {instanceID: 0}
+- Class: 199
+  Script: {instanceID: 0}
+- Class: 241
+  Script: {instanceID: 0}
+- Class: 243
+  Script: {instanceID: 0}
+- Class: 245
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers:
+- AssemblyName: Assembly-CSharp
+  ClassName: .ActionClass
+- AssemblyName: Assembly-CSharp
+  ClassName: .CharacterInformation
+- AssemblyName: Assembly-CSharp
+  ClassName: .Character_action
+- AssemblyName: Assembly-CSharp
+  ClassName: UTJ.AngleLimits
+Assets:
+- Assets/Prefab/Player1/(Past)P01.prefab
+- Assets/Prefab/Player3/P03.prefab
+- Assets/Json/Version/character/BundleVersion.txt
+- Assets/Prefab/Player1/P01.prefab
+- Assets/Prefab/Player2/P02.prefab
+- Assets/Prefab/Test_enemy/E00.prefab
+- Assets/Prefab/Player4/P04.prefab
+Dependencies:
+- D:/project/1/Assets/StreamingAssets//Assetbundle/characteranimation

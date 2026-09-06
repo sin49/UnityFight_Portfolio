@@ -1,0 +1,25 @@
+ManifestFileVersion: 0
+CRC: 304845150
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: df305cebe84340403560be9777e75702
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 5ad585dd02dfb5016c0dad519eab8f49
+  IncrementalBuildHash:
+    serializedVersion: 2
+    Hash: b83613928562dcacd820c165136a9e2e
+HashAppended: 0
+ClassTypes:
+- Class: 49
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/Json/item/I04.json
+- Assets/Json/item/I05.json
+- Assets/Json/item/I03.json
+- Assets/Json/Version/itemsprite/itemdb/BundleVersion.txt
+- Assets/Json/item/I02.json
+- Assets/Json/item/I01.json
+Dependencies: []

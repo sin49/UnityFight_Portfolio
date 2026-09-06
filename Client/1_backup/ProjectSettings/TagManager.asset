@@ -1,0 +1,49 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags: []
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - CH01YUM_Body_Light
+  - CH01YUM_Face_Light
+  - CH02KNN_Body_Light
+  - CH02KNN_Face_Light
+  - CH03HME_Body_Light
+  - CH03HME_Face_Light
+  - 
+  - Teset
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - BG_1
+  - BG_Piza
+  - BG_Somen
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: UI
+    uniqueID: 579992341
+    locked: 0
+  - name: OverUI
+    uniqueID: 2613420919
+    locked: 0

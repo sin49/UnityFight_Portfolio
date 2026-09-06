@@ -1,0 +1,22 @@
+ManifestFileVersion: 0
+CRC: 4070749530
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 12c2237895297f31ad8a54f528129183
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 5ad585dd02dfb5016c0dad519eab8f49
+  IncrementalBuildHash:
+    serializedVersion: 2
+    Hash: a1196a76119bc3604a28c444cc309ff8
+HashAppended: 0
+ClassTypes:
+- Class: 49
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/Json/stage/Main0-0.json
+- Assets/Json/stage/Main0-1.json
+- Assets/Json/Version/stagedb/BundleVersion.txt
+Dependencies: []

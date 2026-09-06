@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: a53e2cb4beeb1b64e829610124013dfb
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - m_mixer: {fileID: -5869188783092718903, guid: 69066923ab050994aac162a804b66b82,
+      type: 2}
+  - interactClip: {fileID: 8300000, guid: 938272aad5e7a464ba69008fe3e191dc, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
