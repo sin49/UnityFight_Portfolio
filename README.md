@@ -20,11 +20,10 @@ C# 소켓 서버와 MariaDB를 연동하여 클라이언트-서버 간 데이터
 
 
 
-\---
 
 
 
-\## 📌 핵심 소스코드 바로가기 (Core Scripts)
+핵심 소스코드
 
 본 프로젝트에서 직접 아키텍처를 설계하고 구현을 주도한 클라이언트, 서버, 그리고 DB 핵심 코드입니다.
 
@@ -46,5 +45,5 @@ C# 소켓 서버와 MariaDB를 연동하여 클라이언트-서버 간 데이터
 
 | \*\*최적화 및 자료구조\*\* | \[`GameManager.cs`](./Client/1\_backup/Assets/_Project/Scripts/Manager/GameManager.cs) | LINQ 정렬 알고리즘, Stack 기반 UI 히스토리 등 자료구조를 활용한 런타임 최적화 |
 
-| \*\*데이터베이스 (DB)\*\* | \[`schema.sql`](./DB/schema.sql) | MariaDB 기반 유저 계정, 스테이지 클리어, 상점 재화 관리를 위한 RDBMS 테이블 구조 설계 |
+| \*\*데이터베이스 (DB)\*\* | \[`schema.sql`](./DB/schema.sql) | MariaDB 기반 유저 계정, 상점 아이템 관리를 위한 RDBMS 테이블 구조 설계 |
 
