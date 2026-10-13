@@ -1,0 +1,48 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: prefab
+  m_EditorClassIdentifier: Unity.Addressables.Editor::UnityEditor.AddressableAssets.Settings.AddressableAssetGroup
+  m_GroupName: prefab
+  m_GUID: ba0ab3d23bac4fc45b98fafc072ef756
+  m_SerializeEntries:
+  - m_GUID: 75603abcc7559fe4aacc8f86c8102629
+    m_Address: character/prefab/p02
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 9fec230e4b74cd9469e840fd61923213
+    m_Address: character/prefab/p03
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: bb1425c71e886e74cbc37d981c190441
+    m_Address: character/prefab/p04
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: bc7caeb011bf1224f85d28702f5fec1e
+    m_Address: character/prefab/p01
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f0a974211a313f344a36ecc8516f5c17
+    m_Address: character/prefab/e00
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 87a924a50acf59b4a99fe4a6ce0a597f, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: b3efb2e616964e749bce44d02f0e6bcc, type: 2}
+    - {fileID: 11400000, guid: abe2433d2ed34d34684e124e3817e710, type: 2}

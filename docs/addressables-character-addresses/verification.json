@@ -1,0 +1,104 @@
+{
+  "modified_product_files": [
+    "Client/1_backup/Assets/_Project/Scenes/DeveloperTest/AddresablesPortotypeTest.cs",
+    "Client/1_backup/Assets/_Project/Scripts/Manager/LoadManager.CharacterJsonAddressables.cs",
+    "Client/1_backup/Assets/_Project/Scripts/Manager/LoadManager.PortraitAddressables.cs",
+    "Client/1_backup/Assets/_Project/Scripts/Manager/LoadManager.cs",
+    "Client/1_backup/Assets/_Project/Scripts/Object/Character/basic/CharacterContentMapping.cs"
+  ],
+  "added_product_files": [],
+  "removed_product_files": [],
+  "baseline_files": 9100,
+  "existing_meta_preserved": 4764,
+  "mapping": [
+    {
+      "character_id": "p01",
+      "PrefabName": "P01",
+      "JsonName": "p01",
+      "PortraitName": "p01",
+      "AnimatorName": "P01",
+      "PrefabAddress": "character/prefab/p01",
+      "JsonAddress": "character/json/p01",
+      "PortraitAddress": "character/portrait/p01",
+      "AnimatorAddress": "character/animator/p01"
+    },
+    {
+      "character_id": "p02",
+      "PrefabName": "P02",
+      "JsonName": "P02",
+      "PortraitName": "P02",
+      "AnimatorName": "p02",
+      "PrefabAddress": "character/prefab/p02",
+      "JsonAddress": "character/json/p02",
+      "PortraitAddress": "character/portrait/p02",
+      "AnimatorAddress": "character/animator/p02"
+    },
+    {
+      "character_id": "p03",
+      "PrefabName": "P03",
+      "JsonName": "p03",
+      "PortraitName": "P03",
+      "AnimatorName": "p03",
+      "PrefabAddress": "character/prefab/p03",
+      "JsonAddress": "character/json/p03",
+      "PortraitAddress": "character/portrait/p03",
+      "AnimatorAddress": "character/animator/p03"
+    },
+    {
+      "character_id": "p04",
+      "PrefabName": "P04",
+      "JsonName": "P04",
+      "PortraitName": "P04",
+      "AnimatorName": null,
+      "PrefabAddress": "character/prefab/p04",
+      "JsonAddress": "character/json/p04",
+      "PortraitAddress": "character/portrait/p04",
+      "AnimatorAddress": null
+    },
+    {
+      "character_id": "e00",
+      "PrefabName": "E00",
+      "JsonName": "E00",
+      "PortraitName": "E00",
+      "AnimatorName": "E00",
+      "PrefabAddress": "character/prefab/e00",
+      "JsonAddress": "character/json/e00",
+      "PortraitAddress": "character/portrait/e00",
+      "AnimatorAddress": "character/animator/e00"
+    }
+  ],
+  "nonnull_unique_addresses": 19,
+  "duplicate_addresses": [],
+  "active_required_editor_addresses": 15,
+  "reserved_animator_addresses": 4,
+  "old_Name_direct_Addressables_couplings": [],
+  "static_checks": [
+    "full_9100_product_file_baseline_hash_comparison",
+    "exact_five_modified_files_no_added_removed_product_files",
+    "all_4764_existing_meta_files_and_GUIDs_byte_preserved",
+    "all_Legacy_Settings_Groups_Packages_serialized_Scenes_Prefabs_JSON_assets_byte_preserved",
+    "existing_content_entries_and_physical_names_unchanged",
+    "five_canonical_lowercase_mapping_IDs",
+    "nineteen_nonnull_namespace_addresses_unique",
+    "p04_animator_name_and_address_null",
+    "public_method_signatures_preserved",
+    "nine_LoadManager_lookup_substitutions_only",
+    "JSON_sync_cache_uses_JsonAddress",
+    "Portrait_sync_cache_and_preload_use_PortraitAddress",
+    "Prefab_JSON_Portrait_handles_keyed_by_passed_namespaced_address",
+    "all_other_loader_cache_release_and_failure_code_unchanged",
+    "no_active_physical_Name_as_Addressables_key",
+    "Animator_calls_still_AssetBundle_AnimatorName",
+    "prototype_test_only_address_expression_changed",
+    "git_no_index_diff_whitespace_check_clean",
+    "current_Settings_Group_inventory_one_old_P01_key_zero_duplicates"
+  ],
+  "registration_state": "Settings unchanged; existing P01 entry must be renamed in Editor to character/prefab/p01; remaining active assets must be registered. Animator addresses prepared only.",
+  "compile_build_package_restore_Unity_execution": "NOT RUN",
+  "existing_group_addresses": [
+    "P01"
+  ],
+  "existing_group_duplicate_addresses": [],
+  "read_only_review": "No actionable findings; reviewed exact original snapshots and active C# paths. No compile/build/restore/Unity execution.",
+  "p01_target_correction": "Follow-up physical AnimatorName corrected to P01; Address namespace unchanged."
+}

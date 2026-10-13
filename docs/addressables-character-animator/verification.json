@@ -1,0 +1,77 @@
+{
+  "modified_product_files": [
+    "Client/1_backup/Assets/_Project/Scripts/Manager/LoadManager.cs"
+  ],
+  "added_product_files": [
+    "Client/1_backup/Assets/_Project/Scripts/Manager/LoadManager.AnimatorAddressables.cs",
+    "Client/1_backup/Assets/_Project/Scripts/Manager/LoadManager.AnimatorAddressables.cs.meta"
+  ],
+  "removed_product_files": [],
+  "baseline_files": 9100,
+  "current_product_files": 9102,
+  "existing_meta_preserved": 4764,
+  "new_script_guid": "c1213f79ddb746869846f6f7dacf5401",
+  "editor_animator_registration": [
+    {
+      "character_id": "p01",
+      "address": "character/animator/p01",
+      "asset": "Client/1_backup/Assets/_Project/Art/Source/FIle1/SD_unitychan/Prefabs/P01.controller",
+      "guid": "e2af5dd28e7152349826c98264eb97c2"
+    },
+    {
+      "character_id": "p02",
+      "address": "character/animator/p02",
+      "asset": "Client/1_backup/Assets/_Project/Art/Animator/p02.controller",
+      "guid": "ce58bfbe462b75344ac226fe40c465d3"
+    },
+    {
+      "character_id": "p03",
+      "address": "character/animator/p03",
+      "asset": "Client/1_backup/Assets/_Project/Art/Animator/p03.controller",
+      "guid": "1804781fcd7aa084f931152950caec5d"
+    },
+    {
+      "character_id": "e00",
+      "address": "character/animator/e00",
+      "asset": "Client/1_backup/Assets/_Project/Art/Animator/E00.controller",
+      "guid": "50a4c8a97d1195341892f78e02061686"
+    }
+  ],
+  "p04_animator_name_and_address": null,
+  "remaining_active_characteranimation_calls": [],
+  "static_checks": [
+    "full_product_baseline_hash_comparison",
+    "only_LoadManager_modified_plus_new_Animator_partial_and_meta",
+    "two_exact_enqueue_substitutions_only",
+    "public_API_signatures_preserved",
+    "all_existing_meta_and_GUIDs_byte_preserved",
+    "all_Legacy_Settings_Groups_Packages_assets_and_unrelated_code_byte_preserved",
+    "Prefab_JSON_Portrait_loader_implementations_byte_preserved",
+    "battle_index_consumers_and_GameCharacter_null_behavior_unchanged",
+    "single_and_batch_map_AnimatorAddress_only",
+    "p04_null_before_Addressables_call_subscription_cache_or_error_log",
+    "null_and_failure_callbacks_preserve_batch_slots",
+    "sequential_batch_input_order_and_duplicates_no_filter_or_sort",
+    "inflight_handle_ownership_before_yield_and_cache_reuse",
+    "concurrent_failure_validity_and_owned_equal_release_guards",
+    "success_handle_retained_until_Application_quitting",
+    "no_fallback_or_blocking_WaitForCompletion",
+    "no_remaining_active_characteranimation_bundle_call",
+    "four_unique_existing_controller_assets_and_addresses",
+    "scoped_git_diff_whitespace_check_clean"
+  ],
+  "failure_contract_note": "Non-null address load failures log error and return null; failed batch slots retained. Unlike legacy missing entire bundle, callback now completes rather than being omitted. Intentional P04 null produces no operation/error log.",
+  "compile_build_package_restore_Unity_execution": "NOT RUN",
+  "read_only_review": "No actionable findings; exact baseline routes and relevant protected-file hashes reviewed. Animator Settings registration absent; user must register separately.",
+  "p01_target_correction": "Registration target corrected by P01 prefab m_Controller GUID; physical AnimatorName p01 -> P01; address unchanged. Original audit incorrectly followed lower-case Name and bundle label.",
+  "p01_correction_validation": {
+    "only_modified_product_file": "Client/1_backup/Assets/_Project/Scripts/Object/Character/basic/CharacterContentMapping.cs",
+    "mapping_change": "p01 AnimatorName: p01 -> P01",
+    "address_unchanged": "character/animator/p01",
+    "prefab_controller_guid": "e2af5dd28e7152349826c98264eb97c2",
+    "existing_meta_preserved": 4780,
+    "other_characters_and_public_API_batch_null_cache_legacy_settings_byte_preserved": true,
+    "diff_whitespace_check": "clean",
+    "compile_build_restore_Unity_execution": "NOT RUN"
+  }
+}

@@ -1,0 +1,12 @@
+{"_uid":"singlemode","username":"Single","_accountlv":1,"_Max_Exp":100,"_Exp":0,"LastestConnect":"2024-03-21 09:00:13","MaxStageClearData":"","StarChracter":"","Itemlist":[],"Characterlist":[{"id":"p01","LV":1,"Grade":1,"charactersprite":{"instanceID":0},"EXP":0,"skillLV":[1],"SpecialLV":1,"characterlock":false},{"id":"p02","LV":1,"Grade":1,"charactersprite":{"instanceID":0},"EXP":0,"skillLV":[1],"SpecialLV":1,"characterlock":false},{"id":"p03","LV":1,"Grade":1,"charactersprite":{"instanceID":0},"EXP":0,"skillLV":[1],"SpecialLV":1,"characterlock":false},{"id":"p04","LV":1,"Grade":2,"charactersprite":{"instanceID":0},"EXP":0,"skillLV":[1],"SpecialLV":1,"characterlock":true}],"TutorialClear1":false,"TutorialClear2":false,"Stagelist":[
+  {
+    "ID":"Main0-0",
+    "name":"테스트용 스테이지1",
+    "stagemission":[
+    {"mission": 0, "Clear": false},
+    {"mission": 0, "Clear": false},
+    {"mission": 0, "Clear": false}
+],
+    "stagelock":false
+  }
+],"_MaxStamina":999,"_Stamina":999,"_StaminaTimer":0.0}

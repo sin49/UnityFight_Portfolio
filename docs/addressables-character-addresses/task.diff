@@ -1,0 +1,120 @@
+diff --git a/Client/1_backup/Assets/_Project/Scenes/DeveloperTest/AddresablesPortotypeTest.cs b/Client/1_backup/Assets/_Project/Scenes/DeveloperTest/AddresablesPortotypeTest.cs
+index 2d33b238..30d44bd7 100644
+--- a/Client/1_backup/Assets/_Project/Scenes/DeveloperTest/AddresablesPortotypeTest.cs
++++ b/Client/1_backup/Assets/_Project/Scenes/DeveloperTest/AddresablesPortotypeTest.cs
+@@ -14,5 +14,5 @@ public class AddresablesPortotypeTest : MonoBehaviour
+         CharacterContentMapping.Content content =
+             CharacterContentMapping.Get(characterid);
+-         handle = Addressables.InstantiateAsync(content.PrefabName);
++         handle = Addressables.InstantiateAsync(content.PrefabAddress);
+         yield return handle;
+ 
+diff --git a/Client/1_backup/Assets/_Project/Scripts/Manager/LoadManager.CharacterJsonAddressables.cs b/Client/1_backup/Assets/_Project/Scripts/Manager/LoadManager.CharacterJsonAddressables.cs
+index 1ba6d99b..5c9426b3 100644
+--- a/Client/1_backup/Assets/_Project/Scripts/Manager/LoadManager.CharacterJsonAddressables.cs
++++ b/Client/1_backup/Assets/_Project/Scripts/Manager/LoadManager.CharacterJsonAddressables.cs
+@@ -16,5 +16,5 @@ public partial class LoadManager
+     public string ReturnChrDataName(CharacterData data)
+     {
+-        string address = CharacterContentMapping.Get(data.id).JsonName;
++        string address = CharacterContentMapping.Get(data.id).JsonAddress;
+         AsyncOperationHandle<TextAsset> handle;
+         if (!CharacterJsonHandles.TryGetValue(address, out handle) || !handle.IsValid() ||
+diff --git a/Client/1_backup/Assets/_Project/Scripts/Manager/LoadManager.PortraitAddressables.cs b/Client/1_backup/Assets/_Project/Scripts/Manager/LoadManager.PortraitAddressables.cs
+index c799016b..59f4164f 100644
+--- a/Client/1_backup/Assets/_Project/Scripts/Manager/LoadManager.PortraitAddressables.cs
++++ b/Client/1_backup/Assets/_Project/Scripts/Manager/LoadManager.PortraitAddressables.cs
+@@ -78,5 +78,5 @@ public partial class LoadManager
+         var addresses = new List<string>();
+         foreach (var content in CharacterContentMapping.AllContents)
+-            addresses.Add(content.PortraitName);
++            addresses.Add(content.PortraitAddress);
+         MaxLoadingprogress += addresses.Count + 1;
+         // Populate the same synchronous UI dictionary before loadPlayerSprites.
+diff --git a/Client/1_backup/Assets/_Project/Scripts/Manager/LoadManager.cs b/Client/1_backup/Assets/_Project/Scripts/Manager/LoadManager.cs
+index 86adb259..8d1a246b 100644
+--- a/Client/1_backup/Assets/_Project/Scripts/Manager/LoadManager.cs
++++ b/Client/1_backup/Assets/_Project/Scripts/Manager/LoadManager.cs
+@@ -23,5 +23,5 @@ public partial class LoadManager : MonoBehaviour
+         CharacterContentMapping.Content content;
+         if (!CharacterContentMapping.TryGet(s, out content)) return null;
+-        s = content.PortraitName;
++        s = content.PortraitAddress;
+ 
+         Sprite spr;
+@@ -136,15 +136,15 @@ public partial class LoadManager : MonoBehaviour
+     public void PushCharacterloadrequest(string s, Action<GameObject> action)
+     {
+-        LoadingQueue.Enqueue(LoadCharacterPrefabAddressableAsync(CharacterContentMapping.Get(s).PrefabName, action));
++        LoadingQueue.Enqueue(LoadCharacterPrefabAddressableAsync(CharacterContentMapping.Get(s).PrefabAddress, action));
+         MaxLoadingprogress += 2;
+     }
+     public void PushCharacterloadrequest(string bundlename,string s, Action<GameObject> action)
+     {
+-        LoadingQueue.Enqueue(LoadCharacterPrefabAddressableAsync(CharacterContentMapping.Get(s).PrefabName, action));
++        LoadingQueue.Enqueue(LoadCharacterPrefabAddressableAsync(CharacterContentMapping.Get(s).PrefabAddress, action));
+         MaxLoadingprogress += 2;
+     }
+     public void PushCharactersloadrequest(List<String> s, Action<List<GameObject>> action)
+     {
+-        LoadingQueue.Enqueue(LoadCharacterPrefabsAddressableAsync(CharacterContentMapping.Resolve(s, c => c.PrefabName), action));
++        LoadingQueue.Enqueue(LoadCharacterPrefabsAddressableAsync(CharacterContentMapping.Resolve(s, c => c.PrefabAddress), action));
+         MaxLoadingprogress += s.Count+1;
+     }
+@@ -152,5 +152,5 @@ public partial class LoadManager : MonoBehaviour
+     {
+       
+-        LoadingQueue.Enqueue(LoadCharacterPortraitAddressableAsync(CharacterContentMapping.Get(s).PortraitName, action));
++        LoadingQueue.Enqueue(LoadCharacterPortraitAddressableAsync(CharacterContentMapping.Get(s).PortraitAddress, action));
+         MaxLoadingprogress += 2;
+     }
+@@ -158,10 +158,10 @@ public partial class LoadManager : MonoBehaviour
+     {
+ 
+-        LoadingQueue.Enqueue(LoadCharacterPortraitAddressableAsync(CharacterContentMapping.Get(s).PortraitName, action));
++        LoadingQueue.Enqueue(LoadCharacterPortraitAddressableAsync(CharacterContentMapping.Get(s).PortraitAddress, action));
+         MaxLoadingprogress += 2;
+     }
+     public void PushCharactersSpriteloadrequest(List<String> s, Action<List<Sprite>> action)
+     {
+-        LoadingQueue.Enqueue(LoadCharacterPortraitsAddressableAsync(CharacterContentMapping.Resolve(s, c => c.PortraitName), action));
++        LoadingQueue.Enqueue(LoadCharacterPortraitsAddressableAsync(CharacterContentMapping.Resolve(s, c => c.PortraitAddress), action));
+         MaxLoadingprogress += s.Count + 1;
+     }
+@@ -200,10 +200,10 @@ public partial class LoadManager : MonoBehaviour
+     public void PushCharacterdbLoadRequest(string ID, Action<CharacterInformation> action)
+     {
+-        LoadingQueue.Enqueue(LoadCharacterJsonAddressableAsync(CharacterContentMapping.Get(ID).JsonName, action));
++        LoadingQueue.Enqueue(LoadCharacterJsonAddressableAsync(CharacterContentMapping.Get(ID).JsonAddress, action));
+         MaxLoadingprogress += 2;
+     }
+     public void PushCharacterdbsLoadRequest(List<String> ID, Action<List<CharacterInformation>> action)
+     {
+-        LoadingQueue.Enqueue(LoadCharacterJsonsAddressableAsync(CharacterContentMapping.Resolve(ID, c => c.JsonName), action));
++        LoadingQueue.Enqueue(LoadCharacterJsonsAddressableAsync(CharacterContentMapping.Resolve(ID, c => c.JsonAddress), action));
+         MaxLoadingprogress += ID.Count+1;
+     }
+diff --git a/Client/1_backup/Assets/_Project/Scripts/Object/Character/basic/CharacterContentMapping.cs b/Client/1_backup/Assets/_Project/Scripts/Object/Character/basic/CharacterContentMapping.cs
+index 41d23f68..8041151e 100644
+--- a/Client/1_backup/Assets/_Project/Scripts/Object/Character/basic/CharacterContentMapping.cs
++++ b/Client/1_backup/Assets/_Project/Scripts/Object/Character/basic/CharacterContentMapping.cs
+@@ -13,4 +13,9 @@ public static class CharacterContentMapping
+         public readonly string PortraitName;
+         public readonly string AnimatorName;
++        // Addressables keys are logical namespaces, independent of physical names.
++        public readonly string PrefabAddress;
++        public readonly string JsonAddress;
++        public readonly string PortraitAddress;
++        public readonly string AnimatorAddress;
+         // Preserve the existing fragment item lookup during the ID migration.
+         public readonly string LegacyFragmentItemId;
+@@ -23,4 +28,9 @@ public static class CharacterContentMapping
+             PortraitName = portrait;
+             AnimatorName = animator;
++            PrefabAddress = "character/prefab/" + CharacterId;
++            JsonAddress = "character/json/" + CharacterId;
++            PortraitAddress = "character/portrait/" + CharacterId;
++            // Missing animator content stays unsupported; never invent an address.
++            AnimatorAddress = animator == null ? null : "character/animator/" + CharacterId;
+             LegacyFragmentItemId = fragmentItem;
+         }

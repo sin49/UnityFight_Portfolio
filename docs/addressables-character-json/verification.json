@@ -1,0 +1,29 @@
+{
+  "modified_product_files": [
+    "Client/1_backup/Assets/_Project/Scripts/Manager/LoadManager.cs",
+    "Client/1_backup/Assets/_Project/Scripts/Object/Character/basic/CharacterContentMapping.cs",
+    "Client/1_backup/Assets/_Project/Scripts/PlannedLegacy/ContentLoading/LoadManager.AssetBundle.cs"
+  ],
+  "added_product_files": [
+    "Client/1_backup/Assets/_Project/Scripts/Manager/LoadManager.CharacterJsonAddressables.cs",
+    "Client/1_backup/Assets/_Project/Scripts/Manager/LoadManager.CharacterJsonAddressables.cs.meta"
+  ],
+  "removed_product_files": [],
+  "baseline_files": 9096,
+  "existing_meta_preserved": 4762,
+  "static_checks": [
+    "public_LoadManager_API_signatures_preserved",
+    "active_characterdb_queue_routes_removed",
+    "private_legacy_sync_implementation_body_preserved_no_callers",
+    "prefab_Addressables_implementation_byte_preserved",
+    "TextAsset_session_cache_and_fresh_master_deserialization",
+    "ordered_batch_null_slots_and_existing_progress_weights",
+    "all_registered_master_preparation_before_MainMenu_gate",
+    "cold_sync_lookup_explicit_exception_no_blocking_no_fallback",
+    "no_existing_meta_rename_move_or_binary_settings_changes",
+    "all_unrelated_code_and_user_test_preserved",
+    "git_diff_check_clean"
+  ],
+  "user_decision": "preload_all_registered_character_JSON_before_MainMenu; cold_sync_lookup_throws",
+  "compile_build_restore_Unity_run": "NOT RUN"
+}

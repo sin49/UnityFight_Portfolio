@@ -1,0 +1,24 @@
+{
+  "modified": [
+    "Client/1_backup/Assets/_Project/Scripts/Manager/LoadManager.cs"
+  ],
+  "added": [
+    "Client/1_backup/Assets/_Project/Scripts/Manager/LoadManager.Addressables.cs",
+    "Client/1_backup/Assets/_Project/Scripts/Manager/LoadManager.Addressables.cs.meta"
+  ],
+  "removed": [],
+  "baseline_files": 9094,
+  "existing_meta_preserved": 4761,
+  "checks": [
+    "only_two_single_character_queue_routes_changed",
+    "public_API_signatures_preserved",
+    "batch_and_all_other_requests_byte_preserved",
+    "legacy_backend_byte_preserved",
+    "settings_packages_scenes_prefabs_JSON_Server_test_script_byte_preserved",
+    "new_GUID_unique",
+    "git_diff_check_clean",
+    "session_owned_cache_before_yield",
+    "failed_operation_null_callback_no_fallback"
+  ],
+  "Unity_compile_build_restore": "NOT RUN"
+}

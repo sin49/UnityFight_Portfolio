@@ -1,0 +1,135 @@
+diff --git a/Client/1_backup/Assets/_Project/Scripts/Manager/LoadManager.cs b/Client/1_backup/Assets/_Project/Scripts/Manager/LoadManager.cs
+index 8d1a246b..87283eb4 100644
+--- a/Client/1_backup/Assets/_Project/Scripts/Manager/LoadManager.cs
++++ b/Client/1_backup/Assets/_Project/Scripts/Manager/LoadManager.cs
+@@ -189,10 +189,10 @@ public partial class LoadManager : MonoBehaviour
+     {
+        
+-        LoadingQueue.Enqueue(LoadAnimatorAsync("characteranimation", CharacterContentMapping.Get(s).AnimatorName, action));
++        LoadingQueue.Enqueue(LoadCharacterAnimatorAddressableAsync(CharacterContentMapping.Get(s).AnimatorAddress, action));
+         MaxLoadingprogress += 2;
+     }
+     public void PushCharacteranimatorsloadrequest(List<String> s, Action<List<RuntimeAnimatorController>> action)
+     {
+-        LoadingQueue.Enqueue(LoadAnimatorsAsync("characteranimation", CharacterContentMapping.Resolve(s, c => c.AnimatorName), action));
++        LoadingQueue.Enqueue(LoadCharacterAnimatorsAddressableAsync(CharacterContentMapping.Resolve(s, c => c.AnimatorAddress), action));
+         MaxLoadingprogress += s.Count + 1;
+     }
+diff --git a/Client/1_backup/Assets/_Project/Scripts/Manager/LoadManager.AnimatorAddressables.cs b/Client/1_backup/Assets/_Project/Scripts/Manager/LoadManager.AnimatorAddressables.cs
+new file mode 100644
+index 00000000..51696db4
+--- /dev/null
++++ b/Client/1_backup/Assets/_Project/Scripts/Manager/LoadManager.AnimatorAddressables.cs
+@@ -0,0 +1,95 @@
++using System;
++using System.Collections;
++using System.Collections.Generic;
++using UnityEngine;
++using UnityEngine.AddressableAssets;
++using UnityEngine.ResourceManagement.AsyncOperations;
++
++public partial class LoadManager
++{
++    // Controllers and their clips can be used by characters across scenes.
++    // Keep one owned handle per address until shutdown, like the other loaders.
++    private static readonly Dictionary<string, AsyncOperationHandle<RuntimeAnimatorController>>
++        CharacterAnimatorHandles = new Dictionary<string, AsyncOperationHandle<RuntimeAnimatorController>>(StringComparer.Ordinal);
++    private static bool characterAnimatorQuitSubscribed;
++
++    private IEnumerator LoadCharacterAnimatorAddressableAsync(string animatorAddress,
++        Action<RuntimeAnimatorController> action, float progressWeight = 2f)
++    {
++        // P04 deliberately has no controller. Preserve its callback/null slot
++        // without creating a key, operation, fallback or failure log.
++        if (animatorAddress == null)
++        {
++            processingcount += progressWeight;
++            Loadingprogress = processingcount;
++            action.Invoke(null);
++            yield break;
++        }
++
++        if (!characterAnimatorQuitSubscribed)
++        {
++            Application.quitting += ReleaseCharacterAnimatorSessionHandles;
++            characterAnimatorQuitSubscribed = true;
++        }
++
++        AsyncOperationHandle<RuntimeAnimatorController> handle;
++        if (!CharacterAnimatorHandles.TryGetValue(animatorAddress, out handle) || !handle.IsValid())
++        {
++            handle = Addressables.LoadAssetAsync<RuntimeAnimatorController>(animatorAddress);
++            // Cache before yielding so interrupted/concurrent requests share ownership.
++            CharacterAnimatorHandles[animatorAddress] = handle;
++        }
++
++        float startProgress = processingcount;
++        while (handle.IsValid() && !handle.IsDone)
++        {
++            Loadingprogress = startProgress + handle.PercentComplete * progressWeight;
++            yield return null;
++        }
++        processingcount += progressWeight;
++        Loadingprogress = processingcount;
++
++        if (!handle.IsValid() || handle.Status != AsyncOperationStatus.Succeeded || handle.Result == null)
++        {
++            string reason = handle.IsValid() && handle.OperationException != null
++                ? handle.OperationException.Message : "Invalid operation or missing animator result";
++            AsyncOperationHandle<RuntimeAnimatorController> owned;
++            if (CharacterAnimatorHandles.TryGetValue(animatorAddress, out owned) && owned.Equals(handle))
++            {
++                CharacterAnimatorHandles.Remove(animatorAddress);
++                if (handle.IsValid()) Addressables.Release(handle);
++            }
++            Debug.LogError("Character animator Addressables load failed: " + animatorAddress + ". " + reason);
++            // Battle consumers combine prefab/master/controller by index.
++            action.Invoke(null);
++            yield break;
++        }
++
++        // Return the controller asset; callbacks do not transfer handle ownership.
++        action.Invoke(handle.Result);
++    }
++
++    private IEnumerator LoadCharacterAnimatorsAddressableAsync(List<string> animatorAddresses,
++        Action<List<RuntimeAnimatorController>> action)
++    {
++        processingcount++;
++        Loadingprogress = processingcount;
++        var controllers = new List<RuntimeAnimatorController>(animatorAddresses.Count);
++        foreach (string address in animatorAddresses)
++        {
++            // Reuse the single loader. One result per input preserves order,
++            // duplicates, intentional unsupported slots and failed-load nulls.
++            yield return LoadCharacterAnimatorAddressableAsync(address, controller => controllers.Add(controller), 1f);
++        }
++        action.Invoke(controllers);
++    }
++
++    private static void ReleaseCharacterAnimatorSessionHandles()
++    {
++        Application.quitting -= ReleaseCharacterAnimatorSessionHandles;
++        characterAnimatorQuitSubscribed = false;
++        foreach (var handle in CharacterAnimatorHandles.Values)
++            if (handle.IsValid()) Addressables.Release(handle);
++        CharacterAnimatorHandles.Clear();
++    }
++}
+diff --git a/Client/1_backup/Assets/_Project/Scripts/Manager/LoadManager.AnimatorAddressables.cs.meta b/Client/1_backup/Assets/_Project/Scripts/Manager/LoadManager.AnimatorAddressables.cs.meta
+new file mode 100644
+index 00000000..575587e5
+--- /dev/null
++++ b/Client/1_backup/Assets/_Project/Scripts/Manager/LoadManager.AnimatorAddressables.cs.meta
+@@ -0,0 +1,11 @@
++fileFormatVersion: 2
++guid: c1213f79ddb746869846f6f7dacf5401
++MonoImporter:
++  externalObjects: {}
++  serializedVersion: 2
++  defaultReferences: []
++  executionOrder: 0
++  icon: {instanceID: 0}
++  userData:
++  assetBundleName:
++  assetBundleVariant:

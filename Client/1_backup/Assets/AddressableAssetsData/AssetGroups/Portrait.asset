@@ -1,0 +1,48 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Portrait
+  m_EditorClassIdentifier: Unity.Addressables.Editor::UnityEditor.AddressableAssets.Settings.AddressableAssetGroup
+  m_GroupName: Portrait
+  m_GUID: bf7b0e68e329efe44bee774a4cdbaffb
+  m_SerializeEntries:
+  - m_GUID: 29ee4630a92fa8c4da3d08abbc2dd7ae
+    m_Address: character/portrait/p02
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 3584f7861ecb6a242a55b9938be5a70b
+    m_Address: character/portrait/p04
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 3f96fcc252661e94dbf39978b5967692
+    m_Address: character/portrait/p03
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 5b2e2619dc1bf5e4f95f01bdefb79446
+    m_Address: character/portrait/e00
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: fcf6b7eab814db6489393aecfb7151f9
+    m_Address: character/portrait/p01
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 87a924a50acf59b4a99fe4a6ce0a597f, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 3b9d9ac52ee540e4394de1427e3e6528, type: 2}
+    - {fileID: 11400000, guid: e667f5f2e72a4734486f78464418c94d, type: 2}

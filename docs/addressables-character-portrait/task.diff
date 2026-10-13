@@ -1,0 +1,137 @@
+diff --git a/Client/1_backup/Assets/_Project/Scripts/Manager/LoadManager.cs b/Client/1_backup/Assets/_Project/Scripts/Manager/LoadManager.cs
+index 0869f7a1..86adb259 100644
+--- a/Client/1_backup/Assets/_Project/Scripts/Manager/LoadManager.cs
++++ b/Client/1_backup/Assets/_Project/Scripts/Manager/LoadManager.cs
+@@ -19 +19 @@ public partial class LoadManager : MonoBehaviour
+-    Dictionary<string, Sprite> CharacterSpriteDictionary;
++    Dictionary<string, Sprite> CharacterSpriteDictionary = new Dictionary<string, Sprite>(StringComparer.OrdinalIgnoreCase);
+@@ -154 +154 @@ public partial class LoadManager : MonoBehaviour
+-        LoadingQueue.Enqueue(LoadSpriteAsync("charactersprite", CharacterContentMapping.Get(s).PortraitName, action));
++        LoadingQueue.Enqueue(LoadCharacterPortraitAddressableAsync(CharacterContentMapping.Get(s).PortraitName, action));
+@@ -160 +160 @@ public partial class LoadManager : MonoBehaviour
+-        LoadingQueue.Enqueue(LoadSpriteAsync(bundlename, CharacterContentMapping.Get(s).PortraitName, action));
++        LoadingQueue.Enqueue(LoadCharacterPortraitAddressableAsync(CharacterContentMapping.Get(s).PortraitName, action));
+@@ -165 +165 @@ public partial class LoadManager : MonoBehaviour
+-        LoadingQueue.Enqueue(LoadSpritesAsync("charactersprite", CharacterContentMapping.Resolve(s, c => c.PortraitName), action));
++        LoadingQueue.Enqueue(LoadCharacterPortraitsAddressableAsync(CharacterContentMapping.Resolve(s, c => c.PortraitName), action));
+@@ -332 +332 @@ public partial class LoadManager : MonoBehaviour
+-        yield return StartCoroutine (LoadAllCharacterSpritesAsync());
++        yield return StartCoroutine (LoadAllCharacterPortraitsAddressableAsync());
+diff --git a/Client/1_backup/Assets/_Project/Scripts/Manager/LoadManager.PortraitAddressables.cs b/Client/1_backup/Assets/_Project/Scripts/Manager/LoadManager.PortraitAddressables.cs
+new file mode 100644
+index 00000000..c799016b
+--- /dev/null
++++ b/Client/1_backup/Assets/_Project/Scripts/Manager/LoadManager.PortraitAddressables.cs
+@@ -0,0 +1,95 @@
++using System;
++using System.Collections;
++using System.Collections.Generic;
++using UnityEngine;
++using UnityEngine.AddressableAssets;
++using UnityEngine.ResourceManagement.AsyncOperations;
++
++public partial class LoadManager
++{
++    // UI keeps Sprite references across screens without reporting their lifetime.
++    // Follow the existing prefab/JSON policy: one owned handle per session/address.
++    private static readonly Dictionary<string, AsyncOperationHandle<Sprite>>
++        CharacterPortraitHandles = new Dictionary<string, AsyncOperationHandle<Sprite>>(StringComparer.Ordinal);
++    private static bool characterPortraitQuitSubscribed;
++
++    private IEnumerator LoadCharacterPortraitAddressableAsync(string portraitAddress, Action<Sprite> action, float progressWeight = 2f)
++    {
++        if (!characterPortraitQuitSubscribed)
++        {
++            Application.quitting += ReleaseCharacterPortraitSessionHandles;
++            characterPortraitQuitSubscribed = true;
++        }
++
++        AsyncOperationHandle<Sprite> handle;
++        if (!CharacterPortraitHandles.TryGetValue(portraitAddress, out handle) || !handle.IsValid())
++        {
++            handle = Addressables.LoadAssetAsync<Sprite>(portraitAddress);
++            // Own in-flight operations before yielding, including interrupted loads.
++            CharacterPortraitHandles[portraitAddress] = handle;
++        }
++
++        float startProgress = processingcount;
++        while (handle.IsValid() && !handle.IsDone)
++        {
++            Loadingprogress = startProgress + handle.PercentComplete * progressWeight;
++            yield return null;
++        }
++        processingcount += progressWeight;
++        Loadingprogress = processingcount;
++
++        if (!handle.IsValid() || handle.Status != AsyncOperationStatus.Succeeded || handle.Result == null)
++        {
++            string reason = handle.IsValid() && handle.OperationException != null
++                ? handle.OperationException.Message : "Invalid operation or missing portrait result";
++            AsyncOperationHandle<Sprite> owned;
++            if (CharacterPortraitHandles.TryGetValue(portraitAddress, out owned) && owned.Equals(handle))
++            {
++                CharacterPortraitHandles.Remove(portraitAddress);
++                if (handle.IsValid()) Addressables.Release(handle);
++            }
++            Debug.LogError("Character portrait Addressables load failed: " + portraitAddress + ". " + reason);
++            // Preserve LoadSpriteAsync: no success callback for a missing Sprite.
++            yield break;
++        }
++
++        // Imported Single Sprites already have the full image, centered pivot and
++        // 100 PPU used by the old Sprite.Create path. UI receives the Sprite asset.
++        CharacterSpriteDictionary[portraitAddress] = handle.Result;
++        action.Invoke(handle.Result);
++    }
++
++    private IEnumerator LoadCharacterPortraitsAddressableAsync(List<string> portraitAddresses, Action<List<Sprite>> action)
++    {
++        processingcount++;
++        Loadingprogress = processingcount;
++        var portraits = new List<Sprite>(portraitAddresses.Count);
++        foreach (string address in portraitAddresses)
++        {
++            // Successful entries keep input order/duplicates. Like LoadSpritesAsync,
++            // missing portraits are omitted; this differs from the prefab batch API.
++            yield return LoadCharacterPortraitAddressableAsync(address, sprite => portraits.Add(sprite), 1f);
++        }
++        action.Invoke(portraits);
++    }
++
++    private IEnumerator LoadAllCharacterPortraitsAddressableAsync()
++    {
++        var addresses = new List<string>();
++        foreach (var content in CharacterContentMapping.AllContents)
++            addresses.Add(content.PortraitName);
++        MaxLoadingprogress += addresses.Count + 1;
++        // Populate the same synchronous UI dictionary before loadPlayerSprites.
++        // A recreated manager also restores it from the session-owned handles.
++        yield return LoadCharacterPortraitsAddressableAsync(addresses, portraits => { });
++    }
++
++    private static void ReleaseCharacterPortraitSessionHandles()
++    {
++        Application.quitting -= ReleaseCharacterPortraitSessionHandles;
++        characterPortraitQuitSubscribed = false;
++        foreach (var handle in CharacterPortraitHandles.Values)
++            if (handle.IsValid()) Addressables.Release(handle);
++        CharacterPortraitHandles.Clear();
++    }
++}
+diff --git a/Client/1_backup/Assets/_Project/Scripts/Manager/LoadManager.PortraitAddressables.cs.meta b/Client/1_backup/Assets/_Project/Scripts/Manager/LoadManager.PortraitAddressables.cs.meta
+new file mode 100644
+index 00000000..d4a9071f
+--- /dev/null
++++ b/Client/1_backup/Assets/_Project/Scripts/Manager/LoadManager.PortraitAddressables.cs.meta
+@@ -0,0 +1,11 @@
++fileFormatVersion: 2
++guid: 021a7feaca02498781fa74948b9488fd
++MonoImporter:
++  externalObjects: {}
++  serializedVersion: 2
++  defaultReferences: []
++  executionOrder: 0
++  icon: {instanceID: 0}
++  userData:
++  assetBundleName:
++  assetBundleVariant:

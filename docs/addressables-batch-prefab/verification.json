@@ -1,0 +1,23 @@
+{
+  "modified_product_files": [
+    "Client/1_backup/Assets/_Project/Scripts/Manager/LoadManager.Addressables.cs",
+    "Client/1_backup/Assets/_Project/Scripts/Manager/LoadManager.cs"
+  ],
+  "added_product_files": [],
+  "removed_product_files": [],
+  "baseline_files": 9096,
+  "existing_meta_preserved": 4762,
+  "static_checks": [
+    "only_two_scoped_sources_changed",
+    "public_API_and_single_request_routes_unchanged",
+    "batch_mapping_resolves_before_queue",
+    "single_core_cache_failure_lifetime_logic_unchanged",
+    "sequential_per_slot_results_including_null_and_duplicates",
+    "single_progress_default_2_batch_1_per_slot_plus_setup_1",
+    "release_method_bytes_unchanged",
+    "legacy_batch_and_backend_bytes_unchanged",
+    "all_other_assets_settings_packages_server_sources_and_user_test_preserved",
+    "git_diff_check_clean"
+  ],
+  "compile_build_restore_Unity_run": "NOT RUN"
+}

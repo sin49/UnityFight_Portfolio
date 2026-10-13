@@ -1,0 +1,49 @@
+[
+  {
+    "assembly": "Assembly-CSharp",
+    "exit_code": 1,
+    "source_count": 328,
+    "errors": [
+      "error CS0006: Metadata file 'Library/PackageCache/com.unity.collections@65f499a3cc26/Unity.Collections.LowLevel.ILSupport/Unity.Collections.LowLevel.ILSupport.dll' could not be found",
+      "error CS0006: Metadata file 'Library/PackageCache/com.unity.collections@65f499a3cc26/Unity.Collections.Tests/System.IO.Hashing/System.IO.Hashing.dll' could not be found",
+      "error CS0006: Metadata file 'Library/PackageCache/com.unity.collections@65f499a3cc26/Unity.Collections.Tests/System.Runtime.CompilerServices.Unsafe/System.Runtime.CompilerServices.Unsafe.dll' could not be found",
+      "error CS0006: Metadata file 'Library/PackageCache/com.unity.ext.nunit@d8c07649098d/net40/unity-custom/nunit.framework.dll' could not be found",
+      "error CS0006: Metadata file 'Library/PackageCache/com.unity.nuget.mono-cecil@ecb9724e46ff/Mono.Cecil.dll' could not be found",
+      "error CS0006: Metadata file 'Library/PackageCache/com.unity.nuget.newtonsoft-json@4dfd81071c64/Runtime/Newtonsoft.Json.dll' could not be found",
+      "error CS0006: Metadata file 'Library/PackageCache/com.unity.sharp-zip-lib@f6e4ef34e4d8/Runtime/Unity.SharpZipLib.dll' could not be found",
+      "error CS0006: Metadata file 'Library/PackageCache/com.unity.testtools.codecoverage@19a841221620/lib/ReportGenerator/ReportGeneratorMerged.dll' could not be found",
+      "error CS0006: Metadata file 'Library/PackageCache/com.unity.visualscripting@8bed5ad90189/Runtime/VisualScripting.Flow/Dependencies/NCalc/Unity.VisualScripting.Antlr3.Runtime.dll' could not be found"
+    ],
+    "warning_count": 0,
+    "log": "C:\\Users\\ngo53\\AppData\\Local\\Temp\\unityfighter-phase0a\\before\\Assembly-CSharp.log"
+  },
+  {
+    "assembly": "Assembly-CSharp-Editor",
+    "exit_code": 1,
+    "source_count": 33,
+    "errors": [
+      "error CS0006: Metadata file 'Library/PackageCache/com.unity.collab-proxy@0b1559bcd34e/Lib/Editor/TextMateSharp/Onigwrap/OnigwrapPlastic.dll' could not be found",
+      "error CS0006: Metadata file 'Library/PackageCache/com.unity.collab-proxy@0b1559bcd34e/Lib/Editor/TextMateSharp/TextMateSharpPlastic.Grammars.dll' could not be found",
+      "error CS0006: Metadata file 'Library/PackageCache/com.unity.collab-proxy@0b1559bcd34e/Lib/Editor/TextMateSharp/TextMateSharpPlastic.dll' could not be found",
+      "error CS0006: Metadata file 'Library/PackageCache/com.unity.collab-proxy@0b1559bcd34e/Lib/Editor/Unity.Plastic.Antlr3.Runtime.dll' could not be found",
+      "error CS0006: Metadata file 'Library/PackageCache/com.unity.collab-proxy@0b1559bcd34e/Lib/Editor/Unity.Plastic.Newtonsoft.Json.dll' could not be found",
+      "error CS0006: Metadata file 'Library/PackageCache/com.unity.collab-proxy@0b1559bcd34e/Lib/Editor/log4netPlastic.dll' could not be found",
+      "error CS0006: Metadata file 'Library/PackageCache/com.unity.collab-proxy@0b1559bcd34e/Lib/Editor/unityplastic.dll' could not be found",
+      "error CS0006: Metadata file 'Library/PackageCache/com.unity.collections@65f499a3cc26/Unity.Collections.LowLevel.ILSupport/Unity.Collections.LowLevel.ILSupport.dll' could not be found",
+      "error CS0006: Metadata file 'Library/PackageCache/com.unity.collections@65f499a3cc26/Unity.Collections.Tests/System.IO.Hashing/System.IO.Hashing.dll' could not be found",
+      "error CS0006: Metadata file 'Library/PackageCache/com.unity.collections@65f499a3cc26/Unity.Collections.Tests/System.Runtime.CompilerServices.Unsafe/System.Runtime.CompilerServices.Unsafe.dll' could not be found",
+      "error CS0006: Metadata file 'Library/PackageCache/com.unity.ext.nunit@d8c07649098d/net40/unity-custom/nunit.framework.dll' could not be found",
+      "error CS0006: Metadata file 'Library/PackageCache/com.unity.nuget.mono-cecil@ecb9724e46ff/Mono.Cecil.dll' could not be found",
+      "error CS0006: Metadata file 'Library/PackageCache/com.unity.nuget.newtonsoft-json@4dfd81071c64/Runtime/Newtonsoft.Json.dll' could not be found",
+      "error CS0006: Metadata file 'Library/PackageCache/com.unity.sharp-zip-lib@f6e4ef34e4d8/Runtime/Unity.SharpZipLib.dll' could not be found",
+      "error CS0006: Metadata file 'Library/PackageCache/com.unity.testtools.codecoverage@19a841221620/lib/ReportGenerator/ReportGeneratorMerged.dll' could not be found",
+      "error CS0006: Metadata file 'Library/PackageCache/com.unity.visualscripting@8bed5ad90189/Editor/VisualScripting.Core/Dependencies/DotNetZip/Unity.VisualScripting.IonicZip.dll' could not be found",
+      "error CS0006: Metadata file 'Library/PackageCache/com.unity.visualscripting@8bed5ad90189/Editor/VisualScripting.Core/Dependencies/YamlDotNet/Unity.VisualScripting.YamlDotNet.dll' could not be found",
+      "error CS0006: Metadata file 'Library/PackageCache/com.unity.visualscripting@8bed5ad90189/Editor/VisualScripting.Core/EditorAssetResources/Unity.VisualScripting.TextureAssets.dll' could not be found",
+      "error CS0006: Metadata file 'Library/PackageCache/com.unity.visualscripting@8bed5ad90189/Runtime/VisualScripting.Flow/Dependencies/NCalc/Unity.VisualScripting.Antlr3.Runtime.dll' could not be found",
+      "error CS0006: Metadata file 'C:/Users/ngo53/AppData/Local/Temp/unityfighter-phase0a/before/Assembly-CSharp.dll' could not be found"
+    ],
+    "warning_count": 0,
+    "log": "C:\\Users\\ngo53\\AppData\\Local\\Temp\\unityfighter-phase0a\\before\\Assembly-CSharp-Editor.log"
+  }
+]

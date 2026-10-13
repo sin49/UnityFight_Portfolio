@@ -1,0 +1,53 @@
+{
+  "scope": "2026-10-08 task-start byte snapshot, not HEAD-wide previous Phase0 changes",
+  "modified": [
+    "Client/1_backup/Assets/_Project/Data/Json/AccountTemplet.json",
+    "Client/1_backup/Assets/_Project/Data/Json/Character/E00.json",
+    "Client/1_backup/Assets/_Project/Data/Json/Character/P04.json",
+    "Client/1_backup/Assets/_Project/Data/Json/stage/Main0-0.json",
+    "Client/1_backup/Assets/_Project/Data/Json/stage/Main0-1.json",
+    "Client/1_backup/Assets/_Project/Data/Json/stage/Main0-3.json",
+    "Client/1_backup/Assets/_Project/Prefabs/Player4/P04.prefab",
+    "Client/1_backup/Assets/_Project/Prefabs/Test_enemy/E00.prefab",
+    "Client/1_backup/Assets/_Project/Scenes/DeveloperTest.unity",
+    "Client/1_backup/Assets/_Project/Scripts/Editor/AccountTempletEditor.cs",
+    "Client/1_backup/Assets/_Project/Scripts/Editor/PlayerCharacterEditor.cs",
+    "Client/1_backup/Assets/_Project/Scripts/Editor/StageCreaterEditor.cs",
+    "Client/1_backup/Assets/_Project/Scripts/Manager/FIleIOManager.cs",
+    "Client/1_backup/Assets/_Project/Scripts/Manager/LoadManager.cs",
+    "Client/1_backup/Assets/_Project/Scripts/Manager/UserDataManager.cs",
+    "Client/1_backup/Assets/_Project/Scripts/Object/Character/basic/GameCharacter.cs",
+    "Client/1_backup/Assets/_Project/Scripts/Object/UserAccountData.cs",
+    "Client/1_backup/Assets/_Project/Scripts/Object/UserAccountDataNetworkMember.cs",
+    "Client/1_backup/Assets/_Project/Scripts/Object/dataclass.cs",
+    "Client/1_backup/Assets/_Project/Scripts/PlannedLegacy/ContentLoading/LoadManager.AssetBundle.cs",
+    "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Character/CharacterUpgradeUI.cs",
+    "Server/01Server/DBprototype/DataTemplet/AccountTemplet.json"
+  ],
+  "added": [
+    "Client/1_backup/Assets/_Project/Scripts/Object/Character/basic/CharacterContentMapping.cs",
+    "Client/1_backup/Assets/_Project/Scripts/Object/Character/basic/CharacterContentMapping.cs.meta"
+  ],
+  "removed": [],
+  "checks": {
+    "five_exact_mappings_and_bundle_labels": true,
+    "p04_animator_explicit_null_no_fallback": true,
+    "json_only_character_id_value_changes": true,
+    "yaml_only_six_expected_character_id_values": true,
+    "all_existing_meta_bytes_preserved": true,
+    "all_existing_asset_paths_and_other_binaries_preserved": true,
+    "packages_project_settings_server_source_db_unchanged": true,
+    "ten_character_queue_routes_and_synchronous_name_lookup_mapped": true,
+    "loadmanager_public_method_signatures_preserved": true
+  },
+  "baseline_files": 9063,
+  "existing_meta_files": 4743,
+  "compile_build_restore": "NOT RUN",
+  "git_diff_added_lines": 212,
+  "git_diff_removed_lines": 49,
+  "git_diff_check": {
+    "checked_modified_files": 22,
+    "checked_new_source_files": 1,
+    "whitespace_failures": []
+  }
+}

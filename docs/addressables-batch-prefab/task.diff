@@ -1,0 +1,61 @@
+diff --git "a/C:\\Users\\ngo53\\AppData\\Local\\Temp\\batch-addressables-20261008\\LoadManager.Addressables.cs" "b/D:\\GIthub\\UnityFight_Portfolio\\Client\\1_backup\\Assets\\_Project\\Scripts\\Manager\\LoadManager.Addressables.cs"
+index 26df4138..12e0f8c0 100644
+--- "a/C:\\Users\\ngo53\\AppData\\Local\\Temp\\batch-addressables-20261008\\LoadManager.Addressables.cs"
++++ "b/D:\\GIthub\\UnityFight_Portfolio\\Client\\1_backup\\Assets\\_Project\\Scripts\\Manager\\LoadManager.Addressables.cs"
+@@ -14,7 +14,7 @@ public partial class LoadManager
+         CharacterPrefabHandles = new Dictionary<string, AsyncOperationHandle<GameObject>>(StringComparer.Ordinal);
+     private static bool characterPrefabQuitSubscribed;
+ 
+-    private IEnumerator LoadCharacterPrefabAddressableAsync(string prefabAddress, Action<GameObject> action)
++    private IEnumerator LoadCharacterPrefabAddressableAsync(string prefabAddress, Action<GameObject> action, float progressWeight = 2f)
+     {
+         if (!characterPrefabQuitSubscribed)
+         {
+@@ -35,10 +35,10 @@ public partial class LoadManager
+         // whose first observer releases it. Never inspect an invalidated handle.
+         while (handle.IsValid() && !handle.IsDone)
+         {
+-            Loadingprogress = startProgress + handle.PercentComplete * 2f;
++            Loadingprogress = startProgress + handle.PercentComplete * progressWeight;
+             yield return null;
+         }
+-        processingcount += 2;
++        processingcount += progressWeight;
+         Loadingprogress = processingcount;
+ 
+         if (!handle.IsValid() || handle.Status != AsyncOperationStatus.Succeeded || handle.Result == null)
+@@ -61,6 +61,21 @@ public partial class LoadManager
+         action.Invoke(handle.Result);
+     }
+ 
++    private IEnumerator LoadCharacterPrefabsAddressableAsync(List<string> prefabAddresses, Action<List<GameObject>> action)
++    {
++        // Preserve the existing batch budget: one setup unit plus one per slot.
++        processingcount++;
++        Loadingprogress = processingcount;
++        var prefabs = new List<GameObject>(prefabAddresses.Count);
++        foreach (string address in prefabAddresses)
++        {
++            // Reuse single-load ownership, cache and failure handling. Sequential
++            // completion preserves duplicate entries and null failure slots.
++            yield return LoadCharacterPrefabAddressableAsync(address, prefab => prefabs.Add(prefab), 1f);
++        }
++        action.Invoke(prefabs);
++    }
++
+     private static void ReleaseCharacterPrefabSessionHandles()
+     {
+         Application.quitting -= ReleaseCharacterPrefabSessionHandles;
+diff --git "a/C:\\Users\\ngo53\\AppData\\Local\\Temp\\batch-addressables-20261008\\LoadManager.cs" "b/D:\\GIthub\\UnityFight_Portfolio\\Client\\1_backup\\Assets\\_Project\\Scripts\\Manager\\LoadManager.cs"
+index 556bc060..7e48be99 100644
+--- "a/C:\\Users\\ngo53\\AppData\\Local\\Temp\\batch-addressables-20261008\\LoadManager.cs"
++++ "b/D:\\GIthub\\UnityFight_Portfolio\\Client\\1_backup\\Assets\\_Project\\Scripts\\Manager\\LoadManager.cs"
+@@ -145,7 +145,7 @@ public partial class LoadManager : MonoBehaviour
+     }
+     public void PushCharactersloadrequest(List<String> s, Action<List<GameObject>> action)
+     {
+-        LoadingQueue.Enqueue(LoadPrefabsAsync("character", CharacterContentMapping.Resolve(s, c => c.PrefabName), action));
++        LoadingQueue.Enqueue(LoadCharacterPrefabsAddressableAsync(CharacterContentMapping.Resolve(s, c => c.PrefabName), action));
+         MaxLoadingprogress += s.Count+1;
+     }
+     public void PushCharacterSpriteloadrequest(string s, Action<Sprite> action)

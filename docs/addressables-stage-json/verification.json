@@ -1,0 +1,72 @@
+{
+  "status": "complete_code_and_static_validation; Editor_registration_and_runtime_validation_pending",
+  "resume_repaired_files": [
+    "Client/1_backup/Assets/_Project/Scripts/Manager/LoadManager.StageJsonAddressables.cs",
+    "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Stage/StageContentMapping.cs"
+  ],
+  "resume_modified_existing_product_files": [],
+  "original_migration_modified_files": [
+    "Client/1_backup/Assets/_Project/Scripts/Manager/LoadManager.cs"
+  ],
+  "original_migration_added_files": [
+    "Client/1_backup/Assets/_Project/Scripts/Manager/LoadManager.StageJsonAddressables.cs",
+    "Client/1_backup/Assets/_Project/Scripts/Manager/LoadManager.StageJsonAddressables.cs.meta",
+    "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Stage/StageContentMapping.cs",
+    "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Stage/StageContentMapping.cs.meta"
+  ],
+  "baseline_files": 9102,
+  "resume_baseline_files": 9104,
+  "current_files": 9106,
+  "original_meta_preserved": 4765,
+  "editor_stage_JSON_registration": [
+    {
+      "stage_id": "Main0-0",
+      "json_name": "Main0-0",
+      "address": "stage/json/Main0-0",
+      "asset": "Client/1_backup/Assets/_Project/Data/Json/stage/Main0-0.json",
+      "guid": "ea1a0317665caaf478f9d4485ca2a812"
+    },
+    {
+      "stage_id": "Main0-1",
+      "json_name": "Main0-1",
+      "address": "stage/json/Main0-1",
+      "asset": "Client/1_backup/Assets/_Project/Data/Json/stage/Main0-1.json",
+      "guid": "4bc3a15f72cbdba4f84dc7d1964affad"
+    }
+  ],
+  "remaining_active_stagedb_calls": [],
+  "sync_local_Editor_stage_reader": [
+    {
+      "file": "Client/1_backup/Assets/_Project/Scripts/Editor/StageCreaterEditor.cs",
+      "line": 55
+    },
+    {
+      "file": "Client/1_backup/Assets/_Project/Scripts/Manager/UserDataManager.cs",
+      "line": 104
+    }
+  ],
+  "static_checks": [
+    "restored_missing_two_source_files_from_existing_task_diff",
+    "resume_9104_existing_product_files_byte_preserved_only_two_sources_added",
+    "migration_original_baseline_only_two_LoadManager_substitutions_and_four_new_files",
+    "single_and_all_catalog_Addressables_routes_connected",
+    "public_API_and_account_update_callback_preserved",
+    "only_two_mapping_entries_match_all_stagedb_labelled_JSON_assets",
+    "Main0_3_not_active_or_registered_and_its_file_preserved",
+    "typed_TextAsset_session_cache_matches_Character_JSON_ownership",
+    "fresh_parse_per_success_callback_via_existing_NormalizeData",
+    "failed_handle_owned_equals_release_guards_and_success_callback_omitted",
+    "all_catalog_update_only_after_success_no_null_UI_result",
+    "Application_quitting_release_no_callback_release",
+    "no_runtime_sync_stage_JSON_API_preload_or_WaitForCompletion",
+    "no_active_stagedb_bundle_literal",
+    "Terrain_battle_UI_Character_Loaders_Settings_Packages_Legacy_byte_preserved",
+    "all_4765_original_meta_and_all_resume_meta_byte_preserved",
+    "one_each_helper_and_type_declaration_no_obvious_delimiter_or_import_problem",
+    "two_unique_Stage_addresses_and_existing_script_GUIDs_unique",
+    "scoped_git_diff_whitespace_check_clean"
+  ],
+  "compile_build_restore_Unity_execution": "NOT RUN",
+  "read_only_review": "No actionable findings; helper/type symbols, routes, ownership, fresh parse and consumers reviewed. Runtime registration remains pending.",
+  "auto_review_note": "Optional git apply --numstat command rejected as patch-reapply risk; not executed. Validation used file reads and previously completed git diff --no-index --check; no patch was reapplied."
+}

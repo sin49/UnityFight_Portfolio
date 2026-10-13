@@ -1,0 +1,198 @@
+diff --git "a/C:\\Users\\ngo53\\AppData\\Local\\Temp\\json-addressables-20261008\\Manager\\LoadManager.cs" "b/D:\\GIthub\\UnityFight_Portfolio\\Client\\1_backup\\Assets\\_Project\\Scripts\\Manager\\LoadManager.cs"
+index 7e48be99..0869f7a1 100644
+--- "a/C:\\Users\\ngo53\\AppData\\Local\\Temp\\json-addressables-20261008\\Manager\\LoadManager.cs"
++++ "b/D:\\GIthub\\UnityFight_Portfolio\\Client\\1_backup\\Assets\\_Project\\Scripts\\Manager\\LoadManager.cs"
+@@ -199,12 +199,12 @@ public partial class LoadManager : MonoBehaviour
+ 
+     public void PushCharacterdbLoadRequest(string ID, Action<CharacterInformation> action)
+     {
+-        LoadingQueue.Enqueue(LoadTextAssetAsync("characterdb", CharacterContentMapping.Get(ID).JsonName, action));
++        LoadingQueue.Enqueue(LoadCharacterJsonAddressableAsync(CharacterContentMapping.Get(ID).JsonName, action));
+         MaxLoadingprogress += 2;
+     }
+     public void PushCharacterdbsLoadRequest(List<String> ID, Action<List<CharacterInformation>> action)
+     {
+-        LoadingQueue.Enqueue(LoadTextAssetsAsync("characterdb", CharacterContentMapping.Resolve(ID, c => c.JsonName), action));
++        LoadingQueue.Enqueue(LoadCharacterJsonsAddressableAsync(CharacterContentMapping.Resolve(ID, c => c.JsonName), action));
+         MaxLoadingprogress += ID.Count+1;
+     }
+     public void PushStagedbLoadRequest(string ID, Action<StageInformation> action)
+@@ -320,6 +320,12 @@ public partial class LoadManager : MonoBehaviour
+             GameManager.instance.Account.StarChracter = "p01";
+         }
+         PushCharacterloadrequest(GameManager.instance.Account.StarChracter, (o) => { GameManager.instance.Account.StarCharacterModel = o; });
++        // Names are read synchronously by list icons/tooltips before explicit master requests.
++        bool characterJsonReady = false;
++        var characterIds = new List<string>();
++        foreach (var content in CharacterContentMapping.AllContents)
++            characterIds.Add(content.CharacterId);
++        PushCharacterdbsLoadRequest(characterIds, list => characterJsonReady = list.TrueForAll(info => info != null));
+        
+         yield return StartCoroutine(LoadAllitemAsync());
+         Debug.Log("아이템 호출");
+@@ -328,6 +334,12 @@ public partial class LoadManager : MonoBehaviour
+         GameManager.instance.Account.loadPlayerSprites();
+ 
+         GameManager.instance.Account.PushItemDicLoadRequest();
++        yield return StartCoroutine(processQueueAsync());
++        if (!characterJsonReady)
++        {
++            Debug.LogError("Character JSON preparation failed. MainMenu entry cancelled.");
++            yield break;
++        }
+         yield return StartCoroutine(loadingsceneAsync("MainMenu"));
+         yield return new WaitUntil(() =>{ if (menu.Menu.instance!=null) return true; else return false; }) ;
+ 
+diff --git "a/C:\\Users\\ngo53\\AppData\\Local\\Temp\\json-addressables-20261008\\Object\\Character\\basic\\CharacterContentMapping.cs" "b/D:\\GIthub\\UnityFight_Portfolio\\Client\\1_backup\\Assets\\_Project\\Scripts\\Object\\Character\\basic\\CharacterContentMapping.cs"
+index d420a433..41d23f68 100644
+--- "a/C:\\Users\\ngo53\\AppData\\Local\\Temp\\json-addressables-20261008\\Object\\Character\\basic\\CharacterContentMapping.cs"
++++ "b/D:\\GIthub\\UnityFight_Portfolio\\Client\\1_backup\\Assets\\_Project\\Scripts\\Object\\Character\\basic\\CharacterContentMapping.cs"
+@@ -37,6 +37,8 @@ public static class CharacterContentMapping
+             { "e00", new Content("e00", "E00", "E00", "E00", "E00", "IE00") }
+         };
+ 
++    internal static IEnumerable<Content> AllContents { get { return Entries.Values; } }
++
+     public static bool TryGet(string characterId, out Content content)
+     {
+         content = null;
+diff --git "a/C:\\Users\\ngo53\\AppData\\Local\\Temp\\json-addressables-20261008\\PlannedLegacy\\ContentLoading\\LoadManager.AssetBundle.cs" "b/D:\\GIthub\\UnityFight_Portfolio\\Client\\1_backup\\Assets\\_Project\\Scripts\\PlannedLegacy\\ContentLoading\\LoadManager.AssetBundle.cs"
+index e27cee1e..502e1181 100644
+--- "a/C:\\Users\\ngo53\\AppData\\Local\\Temp\\json-addressables-20261008\\PlannedLegacy\\ContentLoading\\LoadManager.AssetBundle.cs"
++++ "b/D:\\GIthub\\UnityFight_Portfolio\\Client\\1_backup\\Assets\\_Project\\Scripts\\PlannedLegacy\\ContentLoading\\LoadManager.AssetBundle.cs"
+@@ -13,7 +13,7 @@ public partial class LoadManager
+ {
+     string bundleDirectory;
+ 
+-    public string ReturnChrDataName(CharacterData data)
++    private string ReturnChrDataNameAssetBundleLegacy(CharacterData data)
+     {
+       
+             string assetName = CharacterContentMapping.Get(data.id).JsonName;
+diff --git "a/D:\\GIthub\\UnityFight_Portfolio\\Client\\1_backup\\Assets\\_Project\\Scripts\\Manager\\LoadManager.CharacterJsonAddressables.cs" "b/D:\\GIthub\\UnityFight_Portfolio\\Client\\1_backup\\Assets\\_Project\\Scripts\\Manager\\LoadManager.CharacterJsonAddressables.cs"
+new file mode 100644
+index 00000000..1ba6d99b
+--- /dev/null
++++ "b/D:\\GIthub\\UnityFight_Portfolio\\Client\\1_backup\\Assets\\_Project\\Scripts\\Manager\\LoadManager.CharacterJsonAddressables.cs"
+@@ -0,0 +1,104 @@
++using System;
++using System.Collections;
++using System.Collections.Generic;
++using UnityEngine;
++using UnityEngine.AddressableAssets;
++using UnityEngine.ResourceManagement.AsyncOperations;
++
++public partial class LoadManager
++{
++    // Follow the existing prefab session-ownership pattern, with a typed JSON cache.
++    // Cache source assets, not mutable CharacterInformation skill/progress objects.
++    private static readonly Dictionary<string, AsyncOperationHandle<TextAsset>>
++        CharacterJsonHandles = new Dictionary<string, AsyncOperationHandle<TextAsset>>(StringComparer.Ordinal);
++    private static bool characterJsonQuitSubscribed;
++
++    public string ReturnChrDataName(CharacterData data)
++    {
++        string address = CharacterContentMapping.Get(data.id).JsonName;
++        AsyncOperationHandle<TextAsset> handle;
++        if (!CharacterJsonHandles.TryGetValue(address, out handle) || !handle.IsValid() ||
++            !handle.IsDone || handle.Status != AsyncOperationStatus.Succeeded || handle.Result == null)
++            throw new InvalidOperationException("Character JSON is not prepared for ID " + data.id +
++                " (address " + address + "). Load it asynchronously before requesting its name.");
++        return convertTextasset<CharacterInformation>(handle.Result).name;
++    }
++
++    private IEnumerator LoadCharacterJsonAddressableAsync(string jsonAddress,
++        Action<CharacterInformation> action, float progressWeight = 2f)
++    {
++        if (!characterJsonQuitSubscribed)
++        {
++            Application.quitting += ReleaseCharacterJsonSessionHandles;
++            characterJsonQuitSubscribed = true;
++        }
++
++        AsyncOperationHandle<TextAsset> handle;
++        if (!CharacterJsonHandles.TryGetValue(jsonAddress, out handle) || !handle.IsValid())
++        {
++            handle = Addressables.LoadAssetAsync<TextAsset>(jsonAddress);
++            CharacterJsonHandles[jsonAddress] = handle;
++        }
++        float startProgress = processingcount;
++        while (handle.IsValid() && !handle.IsDone)
++        {
++            Loadingprogress = startProgress + handle.PercentComplete * progressWeight;
++            yield return null;
++        }
++        processingcount += progressWeight;
++        Loadingprogress = processingcount;
++
++        CharacterInformation information = null;
++        string error = "Invalid operation or missing Character JSON result";
++        if (handle.IsValid() && handle.Status == AsyncOperationStatus.Succeeded && handle.Result != null)
++        {
++            try
++            {
++                // Fresh object for every callback, including cache hits and duplicate slots.
++                information = convertTextasset<CharacterInformation>(handle.Result);
++            }
++            catch (Exception exception)
++            {
++                error = exception.Message;
++            }
++        }
++        else if (handle.IsValid() && handle.OperationException != null)
++        {
++            error = handle.OperationException.Message;
++        }
++
++        if (information == null)
++        {
++            AsyncOperationHandle<TextAsset> owned;
++            if (CharacterJsonHandles.TryGetValue(jsonAddress, out owned) && owned.Equals(handle))
++            {
++                CharacterJsonHandles.Remove(jsonAddress);
++                if (handle.IsValid()) Addressables.Release(handle);
++            }
++            Debug.LogError("Character JSON Addressables load failed: " + jsonAddress + ". " + error);
++            action.Invoke(null);
++            yield break;
++        }
++        action.Invoke(information);
++    }
++
++    private IEnumerator LoadCharacterJsonsAddressableAsync(List<string> jsonAddresses,
++        Action<List<CharacterInformation>> action)
++    {
++        processingcount++;
++        Loadingprogress = processingcount;
++        var information = new List<CharacterInformation>(jsonAddresses.Count);
++        foreach (string address in jsonAddresses)
++            yield return LoadCharacterJsonAddressableAsync(address, data => information.Add(data), 1f);
++        action.Invoke(information);
++    }
++
++    private static void ReleaseCharacterJsonSessionHandles()
++    {
++        Application.quitting -= ReleaseCharacterJsonSessionHandles;
++        characterJsonQuitSubscribed = false;
++        foreach (var handle in CharacterJsonHandles.Values)
++            if (handle.IsValid()) Addressables.Release(handle);
++        CharacterJsonHandles.Clear();
++    }
++}
+diff --git "a/D:\\GIthub\\UnityFight_Portfolio\\Client\\1_backup\\Assets\\_Project\\Scripts\\Manager\\LoadManager.CharacterJsonAddressables.cs.meta" "b/D:\\GIthub\\UnityFight_Portfolio\\Client\\1_backup\\Assets\\_Project\\Scripts\\Manager\\LoadManager.CharacterJsonAddressables.cs.meta"
+new file mode 100644
+index 00000000..58a0d110
+--- /dev/null
++++ "b/D:\\GIthub\\UnityFight_Portfolio\\Client\\1_backup\\Assets\\_Project\\Scripts\\Manager\\LoadManager.CharacterJsonAddressables.cs.meta"
+@@ -0,0 +1,11 @@
++fileFormatVersion: 2
++guid: 0024f9c75a414b548edccc0465a60ad2
++MonoImporter:
++  externalObjects: {}
++  serializedVersion: 2
++  defaultReferences: []
++  executionOrder: 0
++  icon: {instanceID: 0}
++  userData:
++  assetBundleName:
++  assetBundleVariant:

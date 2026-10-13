@@ -1,0 +1,734 @@
+diff --git "a/C:\\Users\\ngo53\\AppData\\Local\\Temp\\character-mapping-20261008\\before\\Client\\1_backup\\Assets\\_Project\\Data\\Json\\AccountTemplet.json" "b/D:\\GIthub\\UnityFight_Portfolio\\Client\\1_backup\\Assets\\_Project\\Data\\Json\\AccountTemplet.json"
+index e3a57954..75b37d51 100644
+--- "a/C:\\Users\\ngo53\\AppData\\Local\\Temp\\character-mapping-20261008\\before\\Client\\1_backup\\Assets\\_Project\\Data\\Json\\AccountTemplet.json"
++++ "b/D:\\GIthub\\UnityFight_Portfolio\\Client\\1_backup\\Assets\\_Project\\Data\\Json\\AccountTemplet.json"
+@@ -1,4 +1,4 @@
+-{"_uid":"singlemode","username":"Single","_accountlv":1,"_Max_Exp":100,"_Exp":0,"LastestConnect":"2024-03-21 09:00:13","MaxStageClearData":"","StarChracter":"","Itemlist":[],"Characterlist":[{"id":"p01","LV":1,"Grade":1,"charactersprite":{"instanceID":0},"EXP":0,"skillLV":[1],"SpecialLV":1,"characterlock":false},{"id":"p02","LV":1,"Grade":1,"charactersprite":{"instanceID":0},"EXP":0,"skillLV":[1],"SpecialLV":1,"characterlock":false},{"id":"p03","LV":1,"Grade":1,"charactersprite":{"instanceID":0},"EXP":0,"skillLV":[1],"SpecialLV":1,"characterlock":false},{"id":"P04","LV":1,"Grade":2,"charactersprite":{"instanceID":0},"EXP":0,"skillLV":[1],"SpecialLV":1,"characterlock":true}],"TutorialClear1":false,"TutorialClear2":false,"Stagelist":[
++{"_uid":"singlemode","username":"Single","_accountlv":1,"_Max_Exp":100,"_Exp":0,"LastestConnect":"2024-03-21 09:00:13","MaxStageClearData":"","StarChracter":"","Itemlist":[],"Characterlist":[{"id":"p01","LV":1,"Grade":1,"charactersprite":{"instanceID":0},"EXP":0,"skillLV":[1],"SpecialLV":1,"characterlock":false},{"id":"p02","LV":1,"Grade":1,"charactersprite":{"instanceID":0},"EXP":0,"skillLV":[1],"SpecialLV":1,"characterlock":false},{"id":"p03","LV":1,"Grade":1,"charactersprite":{"instanceID":0},"EXP":0,"skillLV":[1],"SpecialLV":1,"characterlock":false},{"id":"p04","LV":1,"Grade":2,"charactersprite":{"instanceID":0},"EXP":0,"skillLV":[1],"SpecialLV":1,"characterlock":true}],"TutorialClear1":false,"TutorialClear2":false,"Stagelist":[
+   {
+     "ID":"Main0-0",
+     "name":"테스트용 스테이지1",
+diff --git "a/C:\\Users\\ngo53\\AppData\\Local\\Temp\\character-mapping-20261008\\before\\Client\\1_backup\\Assets\\_Project\\Data\\Json\\Character\\E00.json" "b/D:\\GIthub\\UnityFight_Portfolio\\Client\\1_backup\\Assets\\_Project\\Data\\Json\\Character\\E00.json"
+index eed20e4c..ebcfc723 100644
+--- "a/C:\\Users\\ngo53\\AppData\\Local\\Temp\\character-mapping-20261008\\before\\Client\\1_backup\\Assets\\_Project\\Data\\Json\\Character\\E00.json"
++++ "b/D:\\GIthub\\UnityFight_Portfolio\\Client\\1_backup\\Assets\\_Project\\Data\\Json\\Character\\E00.json"
+@@ -1 +1 @@
+-{"id":"E00","name":"akaza","Desc":"테스트 용 적\n매우 단순한 공격을 한다.","BaseHP":25,"BaseATK":1,"HP_Grownth":5.0,"ATK_Grownth":1.0,"distancenumber":4,"BaseGrade":0,"position":0,"normalattack":{"skillname":"test","skilldescription":"test description 공격력의 100% 만큼 블라블라","AtkPercent":100.0,"ATKUpgPer":0.0,"ActionType":0,"ActionDesc":[{"ActionDesc":0,"figure":100.0,"figureByMaxLV":0.0,"EffectPower":0.0,"EffectPowerByMaxLV":0.0,"bufftype":0,"debufftype":0,"priority":0,"PrioritySort":0,"attacktype":0,"attacksize":0.0,"TargetMemberNumber":1,"target_team":1}],"skillLV":0,"action_name":"normal","target_team":1,"action":"MeleeAttack_normal","priority":0,"PrioritySort":0,"TargetMemberNumber":1,"init_time":0.20000000298023225},"skills":[],"LB":{"skillname":"test","skilldescription":"test description 공격력의 % 만큼 블라블라","AtkPercent":100.0,"ATKUpgPer":0.0,"ActionType":0,"ActionDesc":[],"skillLV":0,"action_name":"","target_team":1,"action":"attack_basic","priority":0,"PrioritySort":0,"TargetMemberNumber":1,"init_time":0.20000000298023225},"actionset":["normal"]}
+\ No newline at end of file
++{"id":"e00","name":"akaza","Desc":"테스트 용 적\n매우 단순한 공격을 한다.","BaseHP":25,"BaseATK":1,"HP_Grownth":5.0,"ATK_Grownth":1.0,"distancenumber":4,"BaseGrade":0,"position":0,"normalattack":{"skillname":"test","skilldescription":"test description 공격력의 100% 만큼 블라블라","AtkPercent":100.0,"ATKUpgPer":0.0,"ActionType":0,"ActionDesc":[{"ActionDesc":0,"figure":100.0,"figureByMaxLV":0.0,"EffectPower":0.0,"EffectPowerByMaxLV":0.0,"bufftype":0,"debufftype":0,"priority":0,"PrioritySort":0,"attacktype":0,"attacksize":0.0,"TargetMemberNumber":1,"target_team":1}],"skillLV":0,"action_name":"normal","target_team":1,"action":"MeleeAttack_normal","priority":0,"PrioritySort":0,"TargetMemberNumber":1,"init_time":0.20000000298023225},"skills":[],"LB":{"skillname":"test","skilldescription":"test description 공격력의 % 만큼 블라블라","AtkPercent":100.0,"ATKUpgPer":0.0,"ActionType":0,"ActionDesc":[],"skillLV":0,"action_name":"","target_team":1,"action":"attack_basic","priority":0,"PrioritySort":0,"TargetMemberNumber":1,"init_time":0.20000000298023225},"actionset":["normal"]}
+\ No newline at end of file
+diff --git "a/C:\\Users\\ngo53\\AppData\\Local\\Temp\\character-mapping-20261008\\before\\Client\\1_backup\\Assets\\_Project\\Data\\Json\\Character\\P04.json" "b/D:\\GIthub\\UnityFight_Portfolio\\Client\\1_backup\\Assets\\_Project\\Data\\Json\\Character\\P04.json"
+index 33381777..1787d20c 100644
+--- "a/C:\\Users\\ngo53\\AppData\\Local\\Temp\\character-mapping-20261008\\before\\Client\\1_backup\\Assets\\_Project\\Data\\Json\\Character\\P04.json"
++++ "b/D:\\GIthub\\UnityFight_Portfolio\\Client\\1_backup\\Assets\\_Project\\Data\\Json\\Character\\P04.json"
+@@ -1 +1 @@
+-{"id":"P04","name":"근거리탱커 태스트","Desc":"적의 공격을 집중시켜 아군을 보호하는 캐릭터\n특수기로 다수의 적의 피해를 증가시켜 공격의 보조를 돕는다.","BaseHP":95,"BaseATK":8,"HP_Grownth":5.0,"ATK_Grownth":2.0,"distancenumber":4,"BaseGrade":2,"position":0,"normalattack":{"skillname":"test","skilldescription":"test description 공격력의 % 만큼 블라블라","AtkPercent":100.0,"ATKUpgPer":0.0,"ActionType":0,"ActionDesc":[{"ActionDesc":0,"figure":100.0,"figureByMaxLV":0.0,"EffectPower":0.0,"EffectPowerByMaxLV":0.0,"bufftype":0,"debufftype":0,"priority":0,"PrioritySort":0,"attacktype":0,"attacksize":0.0,"TargetMemberNumber":1,"target_team":1}],"skillLV":0,"action_name":"normal","target_team":1,"action":"attack_basic","priority":0,"PrioritySort":0,"TargetMemberNumber":1,"init_time":0.20000000298023225},"skills":[{"skillname":"탱커 스킬1","skilldescription":"duration0 초 동안 자신이 받는 피해가 figure0%만큼 감소한다.\nduration1 초 동안 적의 공격을 자신에게 집중시킨다.\n","AtkPercent":0.0,"ATKUpgPer":0.0,"ActionType":1,"ActionDesc":[{"ActionDesc":2,"figure":35.0,"figureByMaxLV":50.0,"EffectPower":5.0,"EffectPowerByMaxLV":8.0,"bufftype":3,"debufftype":0,"priority":2,"PrioritySort":0,"attacktype":0,"attacksize":0.0,"TargetMemberNumber":1,"target_team":0},{"ActionDesc":3,"figure":0.0,"figureByMaxLV":0.0,"EffectPower":12.0,"EffectPowerByMaxLV":0.0,"bufftype":0,"debufftype":6,"priority":2,"PrioritySort":0,"attacktype":0,"attacksize":0.0,"TargetMemberNumber":1,"target_team":0}],"skillLV":0,"action_name":"Skill1","target_team":0,"action":"attack_basic","priority":0,"PrioritySort":0,"TargetMemberNumber":0,"init_time":0.0}],"LB":{"skillname":"탱커 특수기","skilldescription":"대상과 주변 적들에게 자신의 공격력의 figure0%만큼 피해를 주고\n duraition0 초 동안 figure1%만큼의 피해를 더 받는다.","AtkPercent":100.0,"ATKUpgPer":0.0,"ActionType":0,"ActionDesc":[{"ActionDesc":0,"figure":200.0,"figureByMaxLV":400.0,"EffectPower":0.0,"EffectPowerByMaxLV":0.0,"bufftype":0,"debufftype":0,"priority":0,"PrioritySort":0,"attacktype":1,"attacksize":6.0,"TargetMemberNumber":1,"target_team":1},{"ActionDesc":3,"figure":40.0,"figureByMaxLV":70.0,"EffectPower":12.0,"EffectPowerByMaxLV":18.0,"bufftype":0,"debufftype":2,"priority":0,"PrioritySort":0,"attacktype":1,"attacksize":6.0,"TargetMemberNumber":1,"target_team":1}],"skillLV":0,"action_name":"LB","target_team":1,"action":"attack_basic","priority":0,"PrioritySort":0,"TargetMemberNumber":1,"init_time":0.20000000298023225},"actionset":["skill1","normal","normal","normal"]}
+\ No newline at end of file
++{"id":"p04","name":"근거리탱커 태스트","Desc":"적의 공격을 집중시켜 아군을 보호하는 캐릭터\n특수기로 다수의 적의 피해를 증가시켜 공격의 보조를 돕는다.","BaseHP":95,"BaseATK":8,"HP_Grownth":5.0,"ATK_Grownth":2.0,"distancenumber":4,"BaseGrade":2,"position":0,"normalattack":{"skillname":"test","skilldescription":"test description 공격력의 % 만큼 블라블라","AtkPercent":100.0,"ATKUpgPer":0.0,"ActionType":0,"ActionDesc":[{"ActionDesc":0,"figure":100.0,"figureByMaxLV":0.0,"EffectPower":0.0,"EffectPowerByMaxLV":0.0,"bufftype":0,"debufftype":0,"priority":0,"PrioritySort":0,"attacktype":0,"attacksize":0.0,"TargetMemberNumber":1,"target_team":1}],"skillLV":0,"action_name":"normal","target_team":1,"action":"attack_basic","priority":0,"PrioritySort":0,"TargetMemberNumber":1,"init_time":0.20000000298023225},"skills":[{"skillname":"탱커 스킬1","skilldescription":"duration0 초 동안 자신이 받는 피해가 figure0%만큼 감소한다.\nduration1 초 동안 적의 공격을 자신에게 집중시킨다.\n","AtkPercent":0.0,"ATKUpgPer":0.0,"ActionType":1,"ActionDesc":[{"ActionDesc":2,"figure":35.0,"figureByMaxLV":50.0,"EffectPower":5.0,"EffectPowerByMaxLV":8.0,"bufftype":3,"debufftype":0,"priority":2,"PrioritySort":0,"attacktype":0,"attacksize":0.0,"TargetMemberNumber":1,"target_team":0},{"ActionDesc":3,"figure":0.0,"figureByMaxLV":0.0,"EffectPower":12.0,"EffectPowerByMaxLV":0.0,"bufftype":0,"debufftype":6,"priority":2,"PrioritySort":0,"attacktype":0,"attacksize":0.0,"TargetMemberNumber":1,"target_team":0}],"skillLV":0,"action_name":"Skill1","target_team":0,"action":"attack_basic","priority":0,"PrioritySort":0,"TargetMemberNumber":0,"init_time":0.0}],"LB":{"skillname":"탱커 특수기","skilldescription":"대상과 주변 적들에게 자신의 공격력의 figure0%만큼 피해를 주고\n duraition0 초 동안 figure1%만큼의 피해를 더 받는다.","AtkPercent":100.0,"ATKUpgPer":0.0,"ActionType":0,"ActionDesc":[{"ActionDesc":0,"figure":200.0,"figureByMaxLV":400.0,"EffectPower":0.0,"EffectPowerByMaxLV":0.0,"bufftype":0,"debufftype":0,"priority":0,"PrioritySort":0,"attacktype":1,"attacksize":6.0,"TargetMemberNumber":1,"target_team":1},{"ActionDesc":3,"figure":40.0,"figureByMaxLV":70.0,"EffectPower":12.0,"EffectPowerByMaxLV":18.0,"bufftype":0,"debufftype":2,"priority":0,"PrioritySort":0,"attacktype":1,"attacksize":6.0,"TargetMemberNumber":1,"target_team":1}],"skillLV":0,"action_name":"LB","target_team":1,"action":"attack_basic","priority":0,"PrioritySort":0,"TargetMemberNumber":1,"init_time":0.20000000298023225},"actionset":["skill1","normal","normal","normal"]}
+\ No newline at end of file
+diff --git "a/C:\\Users\\ngo53\\AppData\\Local\\Temp\\character-mapping-20261008\\before\\Client\\1_backup\\Assets\\_Project\\Data\\Json\\stage\\Main0-0.json" "b/D:\\GIthub\\UnityFight_Portfolio\\Client\\1_backup\\Assets\\_Project\\Data\\Json\\stage\\Main0-0.json"
+index 13d71e00..5ed93640 100644
+--- "a/C:\\Users\\ngo53\\AppData\\Local\\Temp\\character-mapping-20261008\\before\\Client\\1_backup\\Assets\\_Project\\Data\\Json\\stage\\Main0-0.json"
++++ "b/D:\\GIthub\\UnityFight_Portfolio\\Client\\1_backup\\Assets\\_Project\\Data\\Json\\stage\\Main0-0.json"
+@@ -1 +1 @@
+-{"ID":"Main0-0","name":"테스트용 스테이지1","waveNumber":3,"SpawnCharacterList":[{"id":"E00","LV":1,"Grade":0,"charactersprite":{"instanceID":0}}],"spawn":[{"index":0,"number":1,"round":1},{"index":0,"number":2,"round":2},{"index":0,"number":3,"round":3}],"StaminaNeed":5,"rewardlist":[{"item":{"itemid":"I01","Amount":2},"per":1.0}],"missionarray":[{"Clear":false,"mission":0},{"Clear":false,"mission":1},{"Clear":false,"mission":2}],"TerrainDataName":"Main0"}
+\ No newline at end of file
++{"ID":"Main0-0","name":"테스트용 스테이지1","waveNumber":3,"SpawnCharacterList":[{"id":"e00","LV":1,"Grade":0,"charactersprite":{"instanceID":0}}],"spawn":[{"index":0,"number":1,"round":1},{"index":0,"number":2,"round":2},{"index":0,"number":3,"round":3}],"StaminaNeed":5,"rewardlist":[{"item":{"itemid":"I01","Amount":2},"per":1.0}],"missionarray":[{"Clear":false,"mission":0},{"Clear":false,"mission":1},{"Clear":false,"mission":2}],"TerrainDataName":"Main0"}
+\ No newline at end of file
+diff --git "a/C:\\Users\\ngo53\\AppData\\Local\\Temp\\character-mapping-20261008\\before\\Client\\1_backup\\Assets\\_Project\\Data\\Json\\stage\\Main0-1.json" "b/D:\\GIthub\\UnityFight_Portfolio\\Client\\1_backup\\Assets\\_Project\\Data\\Json\\stage\\Main0-1.json"
+index 5c11491d..c049b54c 100644
+--- "a/C:\\Users\\ngo53\\AppData\\Local\\Temp\\character-mapping-20261008\\before\\Client\\1_backup\\Assets\\_Project\\Data\\Json\\stage\\Main0-1.json"
++++ "b/D:\\GIthub\\UnityFight_Portfolio\\Client\\1_backup\\Assets\\_Project\\Data\\Json\\stage\\Main0-1.json"
+@@ -1 +1 @@
+-{"ID":"Main0-1","name":"테스트용 스테이지2","waveNumber":2,"SpawnCharacterList":[{"id":"E00","LV":10,"Grade":0,"charactersprite":{"instanceID":0}}],"spawn":[{"index":0,"number":4,"round":1},{"index":0,"number":8,"round":2}],"StaminaNeed":5,"rewardlist":[{"item":{"itemid":"I01","Amount":500},"per":1.0}],"missionarray":[{"Clear":false,"mission":0},{"Clear":false,"mission":1},{"Clear":false,"mission":2}]}
+\ No newline at end of file
++{"ID":"Main0-1","name":"테스트용 스테이지2","waveNumber":2,"SpawnCharacterList":[{"id":"e00","LV":10,"Grade":0,"charactersprite":{"instanceID":0}}],"spawn":[{"index":0,"number":4,"round":1},{"index":0,"number":8,"round":2}],"StaminaNeed":5,"rewardlist":[{"item":{"itemid":"I01","Amount":500},"per":1.0}],"missionarray":[{"Clear":false,"mission":0},{"Clear":false,"mission":1},{"Clear":false,"mission":2}]}
+\ No newline at end of file
+diff --git "a/C:\\Users\\ngo53\\AppData\\Local\\Temp\\character-mapping-20261008\\before\\Client\\1_backup\\Assets\\_Project\\Data\\Json\\stage\\Main0-3.json" "b/D:\\GIthub\\UnityFight_Portfolio\\Client\\1_backup\\Assets\\_Project\\Data\\Json\\stage\\Main0-3.json"
+index ebfa7db0..c2a34dbf 100644
+--- "a/C:\\Users\\ngo53\\AppData\\Local\\Temp\\character-mapping-20261008\\before\\Client\\1_backup\\Assets\\_Project\\Data\\Json\\stage\\Main0-3.json"
++++ "b/D:\\GIthub\\UnityFight_Portfolio\\Client\\1_backup\\Assets\\_Project\\Data\\Json\\stage\\Main0-3.json"
+@@ -1 +1 @@
+-{"ID":"Main0-3","name":"테스트용 스테이지3","waveNumber":3,"SpawnCharacterList":[{"id":"E00","LV":1,"Grade":0,"charactersprite":{"instanceID":0}}],"spawn":[{"index":0,"number":1,"round":1},{"index":0,"number":2,"round":2},{"index":0,"number":3,"round":3}],"StaminaNeed":5,"rewardlist":[{"item":{"itemid":"I01","Amount":2},"per":1.0}],"missionarray":[{"Clear":false,"mission":0},{"Clear":false,"mission":1},{"Clear":false,"mission":2}],"TerrainDataName":"Main0"}
+\ No newline at end of file
++{"ID":"Main0-3","name":"테스트용 스테이지3","waveNumber":3,"SpawnCharacterList":[{"id":"e00","LV":1,"Grade":0,"charactersprite":{"instanceID":0}}],"spawn":[{"index":0,"number":1,"round":1},{"index":0,"number":2,"round":2},{"index":0,"number":3,"round":3}],"StaminaNeed":5,"rewardlist":[{"item":{"itemid":"I01","Amount":2},"per":1.0}],"missionarray":[{"Clear":false,"mission":0},{"Clear":false,"mission":1},{"Clear":false,"mission":2}],"TerrainDataName":"Main0"}
+\ No newline at end of file
+diff --git "a/C:\\Users\\ngo53\\AppData\\Local\\Temp\\character-mapping-20261008\\before\\Client\\1_backup\\Assets\\_Project\\Prefabs\\Player4\\P04.prefab" "b/D:\\GIthub\\UnityFight_Portfolio\\Client\\1_backup\\Assets\\_Project\\Prefabs\\Player4\\P04.prefab"
+index e8c42b9e..bb6bd8e5 100644
+--- "a/C:\\Users\\ngo53\\AppData\\Local\\Temp\\character-mapping-20261008\\before\\Client\\1_backup\\Assets\\_Project\\Prefabs\\Player4\\P04.prefab"
++++ "b/D:\\GIthub\\UnityFight_Portfolio\\Client\\1_backup\\Assets\\_Project\\Prefabs\\Player4\\P04.prefab"
+@@ -375,13 +375,13 @@ MonoBehaviour:
+   material: {fileID: 0}
+   _Color: {r: 0, g: 0, b: 0, a: 0}
+   Transparent_Material: {fileID: 0}
+-  ID: P04
++  ID: p04
+   chr_name: "\uADFC\uAC70\uB9AC\uD0F1\uCEE4 \uD0DC\uC2A4\uD2B8"
+   chr_sprite: {fileID: 0}
+   LV: 0
+   grade: 2
+   _information:
+-    id: P04
++    id: p04
+     name: "\uADFC\uAC70\uB9AC\uD0F1\uCEE4 \uD0DC\uC2A4\uD2B8"
+     Desc: "\uC801\uC758 \uACF5\uACA9\uC744 \uC9D1\uC911\uC2DC\uCF1C \uC544\uAD70\uC744
+       \uBCF4\uD638\uD558\uB294 \uCE90\uB9AD\uD130\n\uD2B9\uC218\uAE30\uB85C \uB2E4\uC218\uC758
+diff --git "a/C:\\Users\\ngo53\\AppData\\Local\\Temp\\character-mapping-20261008\\before\\Client\\1_backup\\Assets\\_Project\\Prefabs\\Test_enemy\\E00.prefab" "b/D:\\GIthub\\UnityFight_Portfolio\\Client\\1_backup\\Assets\\_Project\\Prefabs\\Test_enemy\\E00.prefab"
+index c353895d..eb464200 100644
+--- "a/C:\\Users\\ngo53\\AppData\\Local\\Temp\\character-mapping-20261008\\before\\Client\\1_backup\\Assets\\_Project\\Prefabs\\Test_enemy\\E00.prefab"
++++ "b/D:\\GIthub\\UnityFight_Portfolio\\Client\\1_backup\\Assets\\_Project\\Prefabs\\Test_enemy\\E00.prefab"
+@@ -6092,13 +6092,13 @@ MonoBehaviour:
+   _Color: {r: 0.018987656, g: 0, b: 1, a: 0}
+   Transparent_Material: {fileID: 2100000, guid: e1954627156626f47b658414aa1dadba,
+     type: 2}
+-  ID: E00
++  ID: e00
+   chr_name: akaza
+   chr_sprite: {fileID: 0}
+   LV: 0
+   grade: 0
+   _information:
+-    id: E00
++    id: e00
+     name: akaza
+     Desc: "\uD14C\uC2A4\uD2B8 \uC6A9 \uC801\n\uB9E4\uC6B0 \uB2E8\uC21C\uD55C \uACF5\uACA9\uC744
+       \uD55C\uB2E4."
+diff --git "a/C:\\Users\\ngo53\\AppData\\Local\\Temp\\character-mapping-20261008\\before\\Client\\1_backup\\Assets\\_Project\\Scenes\\DeveloperTest.unity" "b/D:\\GIthub\\UnityFight_Portfolio\\Client\\1_backup\\Assets\\_Project\\Scenes\\DeveloperTest.unity"
+index 01202e69..04d593fa 100644
+--- "a/C:\\Users\\ngo53\\AppData\\Local\\Temp\\character-mapping-20261008\\before\\Client\\1_backup\\Assets\\_Project\\Scenes\\DeveloperTest.unity"
++++ "b/D:\\GIthub\\UnityFight_Portfolio\\Client\\1_backup\\Assets\\_Project\\Scenes\\DeveloperTest.unity"
+@@ -1715,7 +1715,7 @@ MonoBehaviour:
+       skillLV: 01000000
+       SpecialLV: 1
+       characterlock: 0
+-    - id: P04
++    - id: p04
+       LV: 1
+       Grade: 2
+       charactersprite: {fileID: 0}
+@@ -3957,7 +3957,7 @@ MonoBehaviour:
+     name: "\uD14C\uC2A4\uD2B8\uC6A9 \uC2A4\uD14C\uC774\uC9C03"
+     waveNumber: 3
+     SpawnCharacterList:
+-    - id: E00
++    - id: e00
+       LV: 1
+       Grade: 0
+       charactersprite: {fileID: 0}
+diff --git "a/C:\\Users\\ngo53\\AppData\\Local\\Temp\\character-mapping-20261008\\before\\Client\\1_backup\\Assets\\_Project\\Scripts\\Editor\\AccountTempletEditor.cs" "b/D:\\GIthub\\UnityFight_Portfolio\\Client\\1_backup\\Assets\\_Project\\Scripts\\Editor\\AccountTempletEditor.cs"
+index abb6fe93..a8eda2f1 100644
+--- "a/C:\\Users\\ngo53\\AppData\\Local\\Temp\\character-mapping-20261008\\before\\Client\\1_backup\\Assets\\_Project\\Scripts\\Editor\\AccountTempletEditor.cs"
++++ "b/D:\\GIthub\\UnityFight_Portfolio\\Client\\1_backup\\Assets\\_Project\\Scripts\\Editor\\AccountTempletEditor.cs"
+@@ -48,7 +48,7 @@ public class AccountTempletEditor : Editor
+             //var a = JsonConvert.DeserializeObject<UserAccountDataEditorMember>(editor.AccountText.text);
+             //if (a != null)
+             //{
+-                editor.account = JsonConvert.DeserializeObject<UserAccountDataNetworkMember>(editor.AccountText.text);
++                editor.account = CharacterContentMapping.NormalizeData(JsonConvert.DeserializeObject<UserAccountDataNetworkMember>(editor.AccountText.text));
+     
+                 account = serializedObject.FindProperty("account");
+                 serializedObject.FindProperty("FileName").stringValue = editor.AccountText.name;
+@@ -126,7 +126,7 @@ public class AccountTempletEditor : Editor
+                     Debug.Log("�߸��� ������ �Դϴ�.");
+                 else
+                 {
+-                    CharacterInformation info = JsonUtility.FromJson<CharacterInformation>(editor.CharacterInfo.text);
++                    CharacterInformation info = CharacterContentMapping.NormalizeData(JsonUtility.FromJson<CharacterInformation>(editor.CharacterInfo.text));
+                     PlayerData d = new PlayerData
+                     {
+                         Grade = info.BaseGrade,
+diff --git "a/C:\\Users\\ngo53\\AppData\\Local\\Temp\\character-mapping-20261008\\before\\Client\\1_backup\\Assets\\_Project\\Scripts\\Editor\\PlayerCharacterEditor.cs" "b/D:\\GIthub\\UnityFight_Portfolio\\Client\\1_backup\\Assets\\_Project\\Scripts\\Editor\\PlayerCharacterEditor.cs"
+index bac4683e..1f67477c 100644
+--- "a/C:\\Users\\ngo53\\AppData\\Local\\Temp\\character-mapping-20261008\\before\\Client\\1_backup\\Assets\\_Project\\Scripts\\Editor\\PlayerCharacterEditor.cs"
++++ "b/D:\\GIthub\\UnityFight_Portfolio\\Client\\1_backup\\Assets\\_Project\\Scripts\\Editor\\PlayerCharacterEditor.cs"
+@@ -59,6 +59,7 @@ public class PlayerCharacterEditor: Editor
+         isanimation = serializedObject.FindProperty("is_animation");
+         this_ani_controller= serializedObject.FindProperty("this_ani_controller");
+ 
++        ID.stringValue = CharacterContentMapping.Canonicalize(ID.stringValue);
+         c.information = SetPlayerActInterface(ID.stringValue);
+         info = serializedObject.FindProperty("_information");
+         normal = info.FindPropertyRelative("normalattack");
+@@ -128,6 +129,7 @@ public class PlayerCharacterEditor: Editor
+         EditorGUILayout.PropertyField(serializedObject.FindProperty("ID"), new GUIContent("���̵�"));
+         if (EditorGUI.EndChangeCheck())
+         {
++           ID.stringValue = CharacterContentMapping.Canonicalize(ID.stringValue);
+            SetPlayerActInterface(ID.stringValue);
+         }
+         if (GUILayout.Button("�ʱ�ȭ"))
+@@ -455,7 +457,7 @@ public class PlayerCharacterEditor: Editor
+                 position=(Position)info.FindPropertyRelative("position").intValue
+                 ,
+                 
+-                id = ID.stringValue,
++                id = CharacterContentMapping.Canonicalize(ID.stringValue),
+                 name=chrname.stringValue,
+                 Desc=info.FindPropertyRelative("Desc").stringValue
+                 ,
+@@ -478,7 +480,7 @@ public class PlayerCharacterEditor: Editor
+                 ,SpecialLV=1,
+                 skillLV=new int[skill.arraySize]
+                 ,
+-                id = ID.stringValue,
++                id = CharacterContentMapping.Canonicalize(ID.stringValue),
+           
+                 characterlock = Characterlock
+             };
+diff --git "a/C:\\Users\\ngo53\\AppData\\Local\\Temp\\character-mapping-20261008\\before\\Client\\1_backup\\Assets\\_Project\\Scripts\\Editor\\StageCreaterEditor.cs" "b/D:\\GIthub\\UnityFight_Portfolio\\Client\\1_backup\\Assets\\_Project\\Scripts\\Editor\\StageCreaterEditor.cs"
+index acb35d01..7a391b62 100644
+--- "a/C:\\Users\\ngo53\\AppData\\Local\\Temp\\character-mapping-20261008\\before\\Client\\1_backup\\Assets\\_Project\\Scripts\\Editor\\StageCreaterEditor.cs"
++++ "b/D:\\GIthub\\UnityFight_Portfolio\\Client\\1_backup\\Assets\\_Project\\Scripts\\Editor\\StageCreaterEditor.cs"
+@@ -66,7 +66,7 @@ using DataExecute;
+         EditorGUILayout.PropertyField(DataJson, new GUIContent("Json"));
+         if (GUILayout.Button("������ �ҷ�����2"))
+         {
+-            var a = JsonUtility.FromJson<StageInformation>(stage.DataJson.text);
++            var a = CharacterContentMapping.NormalizeData(JsonUtility.FromJson<StageInformation>(stage.DataJson.text));
+             if (a != null)
+             {
+                 stage.data = a;
+@@ -115,6 +115,7 @@ using DataExecute;
+ 
+               
+                 EditorGUILayout.PropertyField(data.FindPropertyRelative("id"), new GUIContent("ID"));
++                data.FindPropertyRelative("id").stringValue = CharacterContentMapping.Canonicalize(data.FindPropertyRelative("id").stringValue);
+                 CharacterInformation obj = null;
+                 if ((obj = manager.readCharacterinformation(data.FindPropertyRelative("id").stringValue)) == null)
+                 {
+diff --git "a/C:\\Users\\ngo53\\AppData\\Local\\Temp\\character-mapping-20261008\\before\\Client\\1_backup\\Assets\\_Project\\Scripts\\Manager\\FIleIOManager.cs" "b/D:\\GIthub\\UnityFight_Portfolio\\Client\\1_backup\\Assets\\_Project\\Scripts\\Manager\\FIleIOManager.cs"
+index 4c5dd642..7429c5fe 100644
+--- "a/C:\\Users\\ngo53\\AppData\\Local\\Temp\\character-mapping-20261008\\before\\Client\\1_backup\\Assets\\_Project\\Scripts\\Manager\\FIleIOManager.cs"
++++ "b/D:\\GIthub\\UnityFight_Portfolio\\Client\\1_backup\\Assets\\_Project\\Scripts\\Manager\\FIleIOManager.cs"
+@@ -13,11 +13,11 @@ public static class FIleIOManager
+ {
+    static string ObjectTojson(object obj)
+     {
+-        return JsonUtility.ToJson(obj);
++        return JsonUtility.ToJson(CharacterContentMapping.NormalizeData(obj));
+     }
+     static T JsonToObject<T>(string jsondata)
+     {
+-        return JsonUtility.FromJson<T>(jsondata);
++        return CharacterContentMapping.NormalizeData(JsonUtility.FromJson<T>(jsondata));
+     }
+     static void createFile(string FilePath, string jsondata)
+     {
+diff --git "a/C:\\Users\\ngo53\\AppData\\Local\\Temp\\character-mapping-20261008\\before\\Client\\1_backup\\Assets\\_Project\\Scripts\\Manager\\LoadManager.cs" "b/D:\\GIthub\\UnityFight_Portfolio\\Client\\1_backup\\Assets\\_Project\\Scripts\\Manager\\LoadManager.cs"
+index 6ec2664f..4ca9d6af 100644
+--- "a/C:\\Users\\ngo53\\AppData\\Local\\Temp\\character-mapping-20261008\\before\\Client\\1_backup\\Assets\\_Project\\Scripts\\Manager\\LoadManager.cs"
++++ "b/D:\\GIthub\\UnityFight_Portfolio\\Client\\1_backup\\Assets\\_Project\\Scripts\\Manager\\LoadManager.cs"
+@@ -20,7 +20,9 @@ public partial class LoadManager : MonoBehaviour
+     public Sprite getcharactersprite(string s)
+     {
+         Debug.Log(s);
+-        s = s.Substring(0, 1).ToUpper() + s.Substring(1);
++        CharacterContentMapping.Content content;
++        if (!CharacterContentMapping.TryGet(s, out content)) return null;
++        s = content.PortraitName;
+ 
+         Sprite spr;
+         if (CharacterSpriteDictionary.TryGetValue(s, out spr))
+@@ -133,34 +135,34 @@ public partial class LoadManager : MonoBehaviour
+     }
+     public void PushCharacterloadrequest(string s, Action<GameObject> action)
+     {
+-        LoadingQueue.Enqueue(LoadPrefabAsync("character", s, action));
++        LoadingQueue.Enqueue(LoadPrefabAsync("character", CharacterContentMapping.Get(s).PrefabName, action));
+         MaxLoadingprogress += 2;
+     }
+     public void PushCharacterloadrequest(string bundlename,string s, Action<GameObject> action)
+     {
+-        LoadingQueue.Enqueue(LoadPrefabAsync(bundlename, s, action));
++        LoadingQueue.Enqueue(LoadPrefabAsync(bundlename, CharacterContentMapping.Get(s).PrefabName, action));
+         MaxLoadingprogress += 2;
+     }
+     public void PushCharactersloadrequest(List<String> s, Action<List<GameObject>> action)
+     {
+-        LoadingQueue.Enqueue(LoadPrefabsAsync("character", s, action));
++        LoadingQueue.Enqueue(LoadPrefabsAsync("character", CharacterContentMapping.Resolve(s, c => c.PrefabName), action));
+         MaxLoadingprogress += s.Count+1;
+     }
+     public void PushCharacterSpriteloadrequest(string s, Action<Sprite> action)
+     {
+       
+-        LoadingQueue.Enqueue(LoadSpriteAsync("charactersprite", s, action));
++        LoadingQueue.Enqueue(LoadSpriteAsync("charactersprite", CharacterContentMapping.Get(s).PortraitName, action));
+         MaxLoadingprogress += 2;
+     }
+     public void PushCharacterSpriteloadrequest(string bundlename,string s, Action<Sprite> action)
+     {
+ 
+-        LoadingQueue.Enqueue(LoadSpriteAsync(bundlename, s, action));
++        LoadingQueue.Enqueue(LoadSpriteAsync(bundlename, CharacterContentMapping.Get(s).PortraitName, action));
+         MaxLoadingprogress += 2;
+     }
+     public void PushCharactersSpriteloadrequest(List<String> s, Action<List<Sprite>> action)
+     {
+-        LoadingQueue.Enqueue(LoadSpritesAsync("charactersprite", s, action));
++        LoadingQueue.Enqueue(LoadSpritesAsync("charactersprite", CharacterContentMapping.Resolve(s, c => c.PortraitName), action));
+         MaxLoadingprogress += s.Count + 1;
+     }
+    public void PushItemspriteLoadRequest(string s,Action<Sprite> action)
+@@ -186,23 +188,23 @@ public partial class LoadManager : MonoBehaviour
+     public void PushCharacteranimatorloadrequest(string s, Action<RuntimeAnimatorController> action)
+     {
+        
+-        LoadingQueue.Enqueue(LoadAnimatorAsync("characteranimation", s, action));
++        LoadingQueue.Enqueue(LoadAnimatorAsync("characteranimation", CharacterContentMapping.Get(s).AnimatorName, action));
+         MaxLoadingprogress += 2;
+     }
+     public void PushCharacteranimatorsloadrequest(List<String> s, Action<List<RuntimeAnimatorController>> action)
+     {
+-        LoadingQueue.Enqueue(LoadAnimatorsAsync("characteranimation", s, action));
++        LoadingQueue.Enqueue(LoadAnimatorsAsync("characteranimation", CharacterContentMapping.Resolve(s, c => c.AnimatorName), action));
+         MaxLoadingprogress += s.Count + 1;
+     }
+ 
+     public void PushCharacterdbLoadRequest(string ID, Action<CharacterInformation> action)
+     {
+-        LoadingQueue.Enqueue(LoadTextAssetAsync("characterdb", ID, action));
++        LoadingQueue.Enqueue(LoadTextAssetAsync("characterdb", CharacterContentMapping.Get(ID).JsonName, action));
+         MaxLoadingprogress += 2;
+     }
+     public void PushCharacterdbsLoadRequest(List<String> ID, Action<List<CharacterInformation>> action)
+     {
+-        LoadingQueue.Enqueue(LoadTextAssetsAsync("characterdb", ID, action));
++        LoadingQueue.Enqueue(LoadTextAssetsAsync("characterdb", CharacterContentMapping.Resolve(ID, c => c.JsonName), action));
+         MaxLoadingprogress += ID.Count+1;
+     }
+     public void PushStagedbLoadRequest(string ID, Action<StageInformation> action)
+@@ -280,7 +282,7 @@ public partial class LoadManager : MonoBehaviour
+ 
+     T convertTextasset<T>(TextAsset Text)
+     {
+-       return JsonUtility.FromJson<T>(Text.text);
++       return CharacterContentMapping.NormalizeData(JsonUtility.FromJson<T>(Text.text));
+     }
+   
+     [HideInInspector]
+@@ -315,7 +317,7 @@ public partial class LoadManager : MonoBehaviour
+     {
+         if (GameManager.instance.Account.StarChracter == "")
+         {
+-            GameManager.instance.Account.StarChracter = "P01";
++            GameManager.instance.Account.StarChracter = "p01";
+         }
+         PushCharacterloadrequest(GameManager.instance.Account.StarChracter, (o) => { GameManager.instance.Account.StarCharacterModel = o; });
+        
+diff --git "a/C:\\Users\\ngo53\\AppData\\Local\\Temp\\character-mapping-20261008\\before\\Client\\1_backup\\Assets\\_Project\\Scripts\\Manager\\UserDataManager.cs" "b/D:\\GIthub\\UnityFight_Portfolio\\Client\\1_backup\\Assets\\_Project\\Scripts\\Manager\\UserDataManager.cs"
+index 39d43ce9..de59def5 100644
+--- "a/C:\\Users\\ngo53\\AppData\\Local\\Temp\\character-mapping-20261008\\before\\Client\\1_backup\\Assets\\_Project\\Scripts\\Manager\\UserDataManager.cs"
++++ "b/D:\\GIthub\\UnityFight_Portfolio\\Client\\1_backup\\Assets\\_Project\\Scripts\\Manager\\UserDataManager.cs"
+@@ -29,11 +29,11 @@ namespace DataExecute
+         string ObjectTojson(object obj)
+         {
+     
+-            return JsonUtility.ToJson(obj);
++            return JsonUtility.ToJson(CharacterContentMapping.NormalizeData(obj));
+         }
+         T JsonToObject<T>(string jsondata)
+         {
+-            return JsonUtility.FromJson<T>(jsondata);
++            return CharacterContentMapping.NormalizeData(JsonUtility.FromJson<T>(jsondata));
+         }
+         void createFile(string FilePath,string jsondata)
+         {
+@@ -270,8 +270,9 @@ namespace DataExecute
+          #region ChracterinformationCreatejson
+         public void createChracterInformation(CharacterInformation c)
+         {
++            string assetName = CharacterContentMapping.Get(c.id).JsonName;
+             string s = ObjectTojson(c);
+-            string filepath = DB_Directory+ $"\\Character\\{c.id}.json";
++            string filepath = DB_Directory+ $"\\Character\\{assetName}.json";
+             if(!Directory.Exists(DB_Directory + "\\Character")){
+                 Directory.CreateDirectory(DB_Directory + "\\Character");
+                     }
+@@ -279,9 +280,10 @@ namespace DataExecute
+         }
+         public CharacterInformation readCharacterinformation(string DataName)
+         {
+-            string FilePath = DB_Directory + $"\\Character\\{DataName}.json";
+             try
+             {
++                string assetName = CharacterContentMapping.Get(DataName).JsonName;
++                string FilePath = DB_Directory + $"\\Character\\{assetName}.json";
+                 return JsonToObject<CharacterInformation>(ReadFile(FilePath));
+             }
+             catch
+diff --git "a/C:\\Users\\ngo53\\AppData\\Local\\Temp\\character-mapping-20261008\\before\\Client\\1_backup\\Assets\\_Project\\Scripts\\Object\\Character\\basic\\GameCharacter.cs" "b/D:\\GIthub\\UnityFight_Portfolio\\Client\\1_backup\\Assets\\_Project\\Scripts\\Object\\Character\\basic\\GameCharacter.cs"
+index a82430ed..6cdae26b 100644
+--- "a/C:\\Users\\ngo53\\AppData\\Local\\Temp\\character-mapping-20261008\\before\\Client\\1_backup\\Assets\\_Project\\Scripts\\Object\\Character\\basic\\GameCharacter.cs"
++++ "b/D:\\GIthub\\UnityFight_Portfolio\\Client\\1_backup\\Assets\\_Project\\Scripts\\Object\\Character\\basic\\GameCharacter.cs"
+@@ -103,9 +103,11 @@ public class GameCharacter : _GameOBj, Character {
+     #region ������ �ҷ�����
+     public void set_Character(CharacterInformation c, CharacterData d)
+     {
++        CharacterContentMapping.NormalizeData(c);
++        CharacterContentMapping.NormalizeData(d);
+         chr_name = c.name;
+         LV = d.LV;
+-        ID = d.id;
++        ID = CharacterContentMapping.Canonicalize(d.id);
+      
+         chr_sprite = d.charactersprite;
+         _information = c;
+@@ -138,6 +140,8 @@ public class GameCharacter : _GameOBj, Character {
+     protected override void Initialized()
+     {
+         
++        ID = CharacterContentMapping.Canonicalize(ID);
++        CharacterContentMapping.NormalizeData(_information);
+         base.Initialized();
+        
+         MAX_hp = information.BaseHP + Mathf.RoundToInt(LV * information.HP_Grownth* grade);
+@@ -146,7 +150,7 @@ public class GameCharacter : _GameOBj, Character {
+         current_hp = MAX_hp;
+         current_atk = ATK;
+         var a = this.GetComponent<CapsuleCollider>();
+-        if (ID == "E00")
++        if (ID == "e00")
+         {
+             if (transform.childCount > 0)
+             {
+diff --git "a/C:\\Users\\ngo53\\AppData\\Local\\Temp\\character-mapping-20261008\\before\\Client\\1_backup\\Assets\\_Project\\Scripts\\Object\\UserAccountData.cs" "b/D:\\GIthub\\UnityFight_Portfolio\\Client\\1_backup\\Assets\\_Project\\Scripts\\Object\\UserAccountData.cs"
+index 739dd3f5..24d15fa8 100644
+--- "a/C:\\Users\\ngo53\\AppData\\Local\\Temp\\character-mapping-20261008\\before\\Client\\1_backup\\Assets\\_Project\\Scripts\\Object\\UserAccountData.cs"
++++ "b/D:\\GIthub\\UnityFight_Portfolio\\Client\\1_backup\\Assets\\_Project\\Scripts\\Object\\UserAccountData.cs"
+@@ -179,12 +179,13 @@ public class UserAccountData
+     Dictionary<string, PlayerData> Characterlist=new Dictionary<string, PlayerData>();
+     public void DeleteCharacter(string uid)
+     {
+-        Characterlist.Remove(uid);
++        Characterlist.Remove(CharacterContentMapping.Canonicalize(uid));
+       
+     }
+ 
+     public void AddCharacter(PlayerData d)
+     {
++        d.id = CharacterContentMapping.Canonicalize(d.id);
+         Characterlist.Add(d.id,d);
+     }
+    
+@@ -208,6 +209,7 @@ public class UserAccountData
+    
+     public void set_Character(PlayerData d)
+     {
++        d.id = CharacterContentMapping.Canonicalize(d.id);
+      
+ 
+         if (Characterlist.ContainsKey(d.id))
+@@ -338,8 +340,31 @@ public class UserAccountData
+     }
+ 
+     #region network
++    internal void NormalizeCharacterIds()
++    {
++        // Preflight before changing keys or progress objects; never merge aliases.
++        var normalized = new Dictionary<string, PlayerData>();
++        foreach (var pair in Characterlist)
++        {
++            string id = pair.Value != null && !string.IsNullOrEmpty(pair.Value.id)
++                ? pair.Value.id : pair.Key;
++            id = CharacterContentMapping.Canonicalize(id);
++            if (normalized.ContainsKey(id))
++                throw new InvalidOperationException("Duplicate logical character ID: " + id);
++            normalized.Add(id, pair.Value);
++        }
++        StarChracter = CharacterContentMapping.Canonicalize(StarChracter);
++        foreach (var pair in normalized)
++            CharacterContentMapping.NormalizeData(pair.Value);
++        // Retain the dictionary object exposed by get_CharacterList().
++        Characterlist.Clear();
++        foreach (var pair in normalized)
++            Characterlist.Add(pair.Key, pair.Value);
++    }
++
+     public UserAccountDataNetworkMember ReturnNetworkMember()
+     {
++        NormalizeCharacterIds();
+         var a= new UserAccountDataNetworkMember()
+         {
+             _uid = this._uid,
+@@ -350,7 +375,7 @@ public class UserAccountData
+             _MaxStamina = this._MaxStamina,
+             LastestConnect = this.LastestConnect,
+             MaxStageClearData = this.MaxStageClearData,
+-            StarChracter = this.StarChracter,
++            StarChracter = CharacterContentMapping.Canonicalize(this.StarChracter),
+           Stagelist=new List<StageData>(),
+           Characterlist=new List<PlayerData>(),
+           Itemlist=new List<item>(),
+@@ -362,7 +387,7 @@ public class UserAccountData
+         };
+         foreach(KeyValuePair<string, PlayerData> kvp in Characterlist)
+         {
+-            a.Characterlist.Add(kvp.Value);
++            a.Characterlist.Add(CharacterContentMapping.NormalizeData(kvp.Value));
+         }
+         foreach (KeyValuePair<string, StageData> kvp in Stagelist)
+         {
+@@ -377,6 +402,7 @@ public class UserAccountData
+     }
+     public void GetNetworkMember(UserAccountDataNetworkMember member)
+     {
++        CharacterContentMapping.NormalizeData(member);
+         _uid = member._uid;
+         username = member.username;
+         _accountlv = member._accountlv;
+diff --git "a/C:\\Users\\ngo53\\AppData\\Local\\Temp\\character-mapping-20261008\\before\\Client\\1_backup\\Assets\\_Project\\Scripts\\Object\\UserAccountDataNetworkMember.cs" "b/D:\\GIthub\\UnityFight_Portfolio\\Client\\1_backup\\Assets\\_Project\\Scripts\\Object\\UserAccountDataNetworkMember.cs"
+index 8e42844b..899e1043 100644
+--- "a/C:\\Users\\ngo53\\AppData\\Local\\Temp\\character-mapping-20261008\\before\\Client\\1_backup\\Assets\\_Project\\Scripts\\Object\\UserAccountDataNetworkMember.cs"
++++ "b/D:\\GIthub\\UnityFight_Portfolio\\Client\\1_backup\\Assets\\_Project\\Scripts\\Object\\UserAccountDataNetworkMember.cs"
+@@ -89,7 +89,7 @@ public class UserAccountDataNetworkMember
+         count += sizeof(ushort);
+ 
+         this.StarChracter
+-            = Encoding.Unicode.GetString(segment.Array, segment.Offset + count, Starchr);
++            = CharacterContentMapping.Canonicalize(Encoding.Unicode.GetString(segment.Array, segment.Offset + count, Starchr));
+         count += Starchr;
+ 
+ 
+@@ -153,6 +153,7 @@ public class UserAccountDataNetworkMember
+ 
+     public Tuple<ArraySegment<byte>, ushort> Write(ArraySegment<byte> segment, ushort count)
+     {
++        CharacterContentMapping.NormalizeData(this);
+ 
+ 
+ 
+diff --git "a/C:\\Users\\ngo53\\AppData\\Local\\Temp\\character-mapping-20261008\\before\\Client\\1_backup\\Assets\\_Project\\Scripts\\Object\\dataclass.cs" "b/D:\\GIthub\\UnityFight_Portfolio\\Client\\1_backup\\Assets\\_Project\\Scripts\\Object\\dataclass.cs"
+index 9dbfc29d..5ae9ca46 100644
+--- "a/C:\\Users\\ngo53\\AppData\\Local\\Temp\\character-mapping-20261008\\before\\Client\\1_backup\\Assets\\_Project\\Scripts\\Object\\dataclass.cs"
++++ "b/D:\\GIthub\\UnityFight_Portfolio\\Client\\1_backup\\Assets\\_Project\\Scripts\\Object\\dataclass.cs"
+@@ -47,7 +47,7 @@ public class CharacterData
+   
+     public virtual void setData(CharacterInformation info)
+     {
+-        id = info.id;
++        id = CharacterContentMapping.Canonicalize(info.id);
+         Name = info.name;
+         LV = 1;
+     }
+@@ -55,6 +55,7 @@ public class CharacterData
+     {
+ 
+ 
++        this.id = CharacterContentMapping.Canonicalize(this.id);
+         ushort UIDLen = (ushort)Encoding.Unicode.GetByteCount(this.id);
+         Array.Copy(BitConverter.GetBytes(UIDLen), 0, segment.Array, segment.Offset + count, sizeof(ushort));
+         count += sizeof(ushort);
+@@ -85,7 +86,7 @@ public class CharacterData
+         ushort IDLen = BitConverter.ToUInt16(segment.Array, segment.Offset + count);
+         count += sizeof(ushort);
+ 
+-        this.id = Encoding.Unicode.GetString(segment.Array, segment.Offset + count, IDLen);
++        this.id = CharacterContentMapping.Canonicalize(Encoding.Unicode.GetString(segment.Array, segment.Offset + count, IDLen));
+         count += IDLen;
+ 
+ 
+diff --git "a/C:\\Users\\ngo53\\AppData\\Local\\Temp\\character-mapping-20261008\\before\\Client\\1_backup\\Assets\\_Project\\Scripts\\PlannedLegacy\\ContentLoading\\LoadManager.AssetBundle.cs" "b/D:\\GIthub\\UnityFight_Portfolio\\Client\\1_backup\\Assets\\_Project\\Scripts\\PlannedLegacy\\ContentLoading\\LoadManager.AssetBundle.cs"
+index a5f58879..e27cee1e 100644
+--- "a/C:\\Users\\ngo53\\AppData\\Local\\Temp\\character-mapping-20261008\\before\\Client\\1_backup\\Assets\\_Project\\Scripts\\PlannedLegacy\\ContentLoading\\LoadManager.AssetBundle.cs"
++++ "b/D:\\GIthub\\UnityFight_Portfolio\\Client\\1_backup\\Assets\\_Project\\Scripts\\PlannedLegacy\\ContentLoading\\LoadManager.AssetBundle.cs"
+@@ -16,8 +16,9 @@ public partial class LoadManager
+     public string ReturnChrDataName(CharacterData data)
+     {
+       
++            string assetName = CharacterContentMapping.Get(data.id).JsonName;
+             AssetBundle bundle = AssetBundle.LoadFromFile(bundleDirectory + "/characterdb");
+-            var a = bundle.LoadAsset(data.id);
++            var a = bundle.LoadAsset(assetName);
+             CharacterInformation b = convertTextasset<CharacterInformation>(a as TextAsset);
+         bundle.Unload(false);
+             return b.name;
+@@ -329,7 +330,7 @@ bundleDirectory + $"\\{bundlename}");
+     }
+     IEnumerator LoadAllCharacterSpritesAsync()
+     {
+-        CharacterSpriteDictionary = new Dictionary<string, Sprite>();
++        CharacterSpriteDictionary = new Dictionary<string, Sprite>(StringComparer.OrdinalIgnoreCase);
+         AssetBundleCreateRequest assetBundleCreate = AssetBundle.LoadFromFileAsync(
+   bundleDirectory + "\\charactersprite");
+         while (!assetBundleCreate.isDone)
+@@ -367,7 +368,7 @@ bundleDirectory + $"\\{bundlename}");
+ 
+            
+             string id=
+-            data.name.Substring(0, 1).ToUpper() + data.name.Substring(1);
++            data.name;
+             CharacterSpriteDictionary.Add(id, s);
+ 
+             Loadingprogress++;
+@@ -376,6 +377,13 @@ bundleDirectory + $"\\{bundlename}");
+     }
+     IEnumerator LoadAnimatorAsync(string bundlename,string assetname, Action<RuntimeAnimatorController> act)
+     {
++        if (assetname == null)
++        {
++            processingcount += 2;
++            Loadingprogress = processingcount;
++            act.Invoke(null);
++            yield break;
++        }
+ 
+         AssetBundleCreateRequest assetBundleCreate = AssetBundle.LoadFromFileAsync(
+   bundleDirectory + $"\\{bundlename}");
+@@ -440,6 +448,13 @@ bundleDirectory + $"\\{bundlename}");
+         List<RuntimeAnimatorController> obj = new List<RuntimeAnimatorController>();
+         foreach (string assetname in assetnames)
+         {
++            if (assetname == null)
++            {
++                obj.Add(null);
++                processingcount++;
++                Loadingprogress = processingcount;
++                continue;
++            }
+             var request = bundle.LoadAssetAsync(assetname);
+    
+             while (!request.isDone)
+diff --git "a/C:\\Users\\ngo53\\AppData\\Local\\Temp\\character-mapping-20261008\\before\\Client\\1_backup\\Assets\\_Project\\Scripts\\UI\\Menu\\Character\\CharacterUpgradeUI.cs" "b/D:\\GIthub\\UnityFight_Portfolio\\Client\\1_backup\\Assets\\_Project\\Scripts\\UI\\Menu\\Character\\CharacterUpgradeUI.cs"
+index 889bb21a..c661b490 100644
+--- "a/C:\\Users\\ngo53\\AppData\\Local\\Temp\\character-mapping-20261008\\before\\Client\\1_backup\\Assets\\_Project\\Scripts\\UI\\Menu\\Character\\CharacterUpgradeUI.cs"
++++ "b/D:\\GIthub\\UnityFight_Portfolio\\Client\\1_backup\\Assets\\_Project\\Scripts\\UI\\Menu\\Character\\CharacterUpgradeUI.cs"
+@@ -121,7 +121,7 @@ namespace menu
+                 for (int i = 0; i < 5 - d.Grade; i++)
+                     s += "��";
+                 unlockGradetext.text = s;
+-                item piece = GameManager.instance.Account.get_item("I" + info.id);
++                item piece = GameManager.instance.Account.get_item(CharacterContentMapping.Get(info.id).LegacyFragmentItemId);
+                 //if (piece != null)
+                 //{
+                 //    if (piece.data.itemSprite != null)
+diff --git "a/C:\\Users\\ngo53\\AppData\\Local\\Temp\\character-mapping-20261008\\before\\Server\\01Server\\DBprototype\\DataTemplet\\AccountTemplet.json" "b/D:\\GIthub\\UnityFight_Portfolio\\Server\\01Server\\DBprototype\\DataTemplet\\AccountTemplet.json"
+index 3af9dcf4..975cfc99 100644
+--- "a/C:\\Users\\ngo53\\AppData\\Local\\Temp\\character-mapping-20261008\\before\\Server\\01Server\\DBprototype\\DataTemplet\\AccountTemplet.json"
++++ "b/D:\\GIthub\\UnityFight_Portfolio\\Server\\01Server\\DBprototype\\DataTemplet\\AccountTemplet.json"
+@@ -1 +1 @@
+-{"_uid":"randomstring 10-12","username":"","_accountlv":1,"_Max_Exp":100,"_Exp":0,"LastestConnect":"2024-03-21 09:00:13","MaxStageClearData":"","StarChracter":"","Itemlist":[],"Characterlist":[{"id":"p01","LV":1,"Grade":1,"charactersprite":{"instanceID":0},"EXP":0,"skillLV":[1],"SpecialLV":1,"characterlock":false},{"id":"p02","LV":1,"Grade":1,"charactersprite":{"instanceID":0},"EXP":0,"skillLV":[1],"SpecialLV":1,"characterlock":false},{"id":"p03","LV":1,"Grade":1,"charactersprite":{"instanceID":0},"EXP":0,"skillLV":[1],"SpecialLV":1,"characterlock":false},{"id":"P04","LV":1,"Grade":2,"charactersprite":{"instanceID":0},"EXP":0,"skillLV":[1],"SpecialLV":1,"characterlock":true}],"TutorialClear1":false,"TutorialClear2":false,"Stagelist":[],"_MaxStamina":30,"_Stamina":30,"_StaminaTimer":0.0}
+\ No newline at end of file
++{"_uid":"randomstring 10-12","username":"","_accountlv":1,"_Max_Exp":100,"_Exp":0,"LastestConnect":"2024-03-21 09:00:13","MaxStageClearData":"","StarChracter":"","Itemlist":[],"Characterlist":[{"id":"p01","LV":1,"Grade":1,"charactersprite":{"instanceID":0},"EXP":0,"skillLV":[1],"SpecialLV":1,"characterlock":false},{"id":"p02","LV":1,"Grade":1,"charactersprite":{"instanceID":0},"EXP":0,"skillLV":[1],"SpecialLV":1,"characterlock":false},{"id":"p03","LV":1,"Grade":1,"charactersprite":{"instanceID":0},"EXP":0,"skillLV":[1],"SpecialLV":1,"characterlock":false},{"id":"p04","LV":1,"Grade":2,"charactersprite":{"instanceID":0},"EXP":0,"skillLV":[1],"SpecialLV":1,"characterlock":true}],"TutorialClear1":false,"TutorialClear2":false,"Stagelist":[],"_MaxStamina":30,"_Stamina":30,"_StaminaTimer":0.0}
+\ No newline at end of file
+diff --git "a/D:\\GIthub\\UnityFight_Portfolio\\Client\\1_backup\\Assets\\_Project\\Scripts\\Object\\Character\\basic\\CharacterContentMapping.cs" "b/D:\\GIthub\\UnityFight_Portfolio\\Client\\1_backup\\Assets\\_Project\\Scripts\\Object\\Character\\basic\\CharacterContentMapping.cs"
+new file mode 100644
+index 00000000..d420a433
+--- /dev/null
++++ "b/D:\\GIthub\\UnityFight_Portfolio\\Client\\1_backup\\Assets\\_Project\\Scripts\\Object\\Character\\basic\\CharacterContentMapping.cs"
+@@ -0,0 +1,98 @@
++using System;
++using System.Collections.Generic;
++
++// Character IDs are logical identities. These names describe the existing content,
++// including its original casing; they are not derived from an ID naming convention.
++public static class CharacterContentMapping
++{
++    public sealed class Content
++    {
++        public readonly string CharacterId;
++        public readonly string JsonName;
++        public readonly string PrefabName;
++        public readonly string PortraitName;
++        public readonly string AnimatorName;
++        // Preserve the existing fragment item lookup during the ID migration.
++        public readonly string LegacyFragmentItemId;
++
++        internal Content(string id, string json, string prefab, string portrait, string animator, string fragmentItem)
++        {
++            CharacterId = id;
++            JsonName = json;
++            PrefabName = prefab;
++            PortraitName = portrait;
++            AnimatorName = animator;
++            LegacyFragmentItemId = fragmentItem;
++        }
++    }
++
++    private static readonly Dictionary<string, Content> Entries =
++        new Dictionary<string, Content>(StringComparer.OrdinalIgnoreCase)
++        {
++            { "p01", new Content("p01", "p01", "P01", "p01", "p01", "Ip01") },
++            { "p02", new Content("p02", "P02", "P02", "P02", "p02", "Ip02") },
++            { "p03", new Content("p03", "p03", "P03", "P03", "p03", "Ip03") },
++            // No P04 animator exists. Null is intentional, not a fallback.
++            { "p04", new Content("p04", "P04", "P04", "P04", null, "IP04") },
++            { "e00", new Content("e00", "E00", "E00", "E00", "E00", "IE00") }
++        };
++
++    public static bool TryGet(string characterId, out Content content)
++    {
++        content = null;
++        return characterId != null && Entries.TryGetValue(characterId, out content);
++    }
++
++    public static Content Get(string characterId)
++    {
++        Content content;
++        if (!TryGet(characterId, out content))
++            throw new ArgumentException("No character content mapping for ID: " + characterId, "characterId");
++        return content;
++    }
++
++    // Only registered aliases are converted. Empty/sentinel/unknown historical IDs
++    // are preserved so this migration does not silently invent character identities.
++    public static string Canonicalize(string characterId)
++    {
++        Content content;
++        return TryGet(characterId, out content) ? content.CharacterId : characterId;
++    }
++
++    public static List<string> Resolve(List<string> ids, Func<Content, string> select)
++    {
++        var names = new List<string>(ids.Count);
++        foreach (string id in ids)
++            names.Add(select(Get(id)));
++        return names;
++    }
++
++    public static T NormalizeData<T>(T data)
++    {
++        var master = (object)data as CharacterInformation;
++        if (master != null) master.id = Canonicalize(master.id);
++        var character = (object)data as CharacterData;
++        if (character != null) character.id = Canonicalize(character.id);
++        var localAccount = (object)data as UserAccountData;
++        if (localAccount != null) localAccount.NormalizeCharacterIds();
++        var stage = (object)data as StageInformation;
++        if (stage != null && stage.SpawnCharacterList != null)
++            foreach (var spawn in stage.SpawnCharacterList)
++                if (spawn != null) spawn.id = Canonicalize(spawn.id);
++        var account = (object)data as UserAccountDataNetworkMember;
++        if (account != null)
++        {
++            // Preflight before mutating the DTO: aliases must not silently merge progress.
++            var ids = new HashSet<string>(StringComparer.Ordinal);
++            if (account.Characterlist != null)
++                foreach (var owned in account.Characterlist)
++                    if (owned != null && !ids.Add(Canonicalize(owned.id)))
++                        throw new InvalidOperationException("Duplicate logical character ID: " + Canonicalize(owned.id));
++            account.StarChracter = Canonicalize(account.StarChracter);
++            if (account.Characterlist != null)
++                foreach (var owned in account.Characterlist)
++                    if (owned != null) owned.id = Canonicalize(owned.id);
++        }
++        return data;
++    }
++}
+diff --git "a/D:\\GIthub\\UnityFight_Portfolio\\Client\\1_backup\\Assets\\_Project\\Scripts\\Object\\Character\\basic\\CharacterContentMapping.cs.meta" "b/D:\\GIthub\\UnityFight_Portfolio\\Client\\1_backup\\Assets\\_Project\\Scripts\\Object\\Character\\basic\\CharacterContentMapping.cs.meta"
+new file mode 100644
+index 00000000..8ef381d8
+--- /dev/null
++++ "b/D:\\GIthub\\UnityFight_Portfolio\\Client\\1_backup\\Assets\\_Project\\Scripts\\Object\\Character\\basic\\CharacterContentMapping.cs.meta"
+@@ -0,0 +1,11 @@
++fileFormatVersion: 2
++guid: acc06d7f9a574703bd4dc0ef0d5081ba
++MonoImporter:
++  externalObjects: {}
++  serializedVersion: 2
++  defaultReferences: []
++  executionOrder: 0
++  icon: {instanceID: 0}
++  userData: 
++  assetBundleName: 
++  assetBundleVariant: 

@@ -1,0 +1,17 @@
+{
+  "original_files": 8736,
+  "moved_files": 8593,
+  "existing_meta_files_preserved": 4709,
+  "scene_prefab_files_unchanged": 950,
+  "changed_original_assets": [
+    "_Project/Scripts/Manager/LoadManager.cs",
+    "_Project/Scripts/Manager/UserDataManager.cs",
+    "_Project/Scripts/UI/TextScriptReader.cs"
+  ],
+  "loadmanager_exact_reconstruction": true,
+  "new_guid_duplicates": {},
+  "resources_keys_preserved": true,
+  "editor_membership_preserved": true,
+  "build_scene_paths_resolve": true,
+  "package_files_unchanged": true
+}

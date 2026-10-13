@@ -1,0 +1,114 @@
+diff --git "a/C:\\Users\\ngo53\\AppData\\Local\\Temp\\single-addressables-20261008\\LoadManager.before.cs" "b/D:\\GIthub\\UnityFight_Portfolio\\Client\\1_backup\\Assets\\_Project\\Scripts\\Manager\\LoadManager.cs"
+index 4ca9d6af..556bc060 100644
+--- "a/C:\\Users\\ngo53\\AppData\\Local\\Temp\\single-addressables-20261008\\LoadManager.before.cs"
++++ "b/D:\\GIthub\\UnityFight_Portfolio\\Client\\1_backup\\Assets\\_Project\\Scripts\\Manager\\LoadManager.cs"
+@@ -135,12 +135,12 @@ public partial class LoadManager : MonoBehaviour
+     }
+     public void PushCharacterloadrequest(string s, Action<GameObject> action)
+     {
+-        LoadingQueue.Enqueue(LoadPrefabAsync("character", CharacterContentMapping.Get(s).PrefabName, action));
++        LoadingQueue.Enqueue(LoadCharacterPrefabAddressableAsync(CharacterContentMapping.Get(s).PrefabName, action));
+         MaxLoadingprogress += 2;
+     }
+     public void PushCharacterloadrequest(string bundlename,string s, Action<GameObject> action)
+     {
+-        LoadingQueue.Enqueue(LoadPrefabAsync(bundlename, CharacterContentMapping.Get(s).PrefabName, action));
++        LoadingQueue.Enqueue(LoadCharacterPrefabAddressableAsync(CharacterContentMapping.Get(s).PrefabName, action));
+         MaxLoadingprogress += 2;
+     }
+     public void PushCharactersloadrequest(List<String> s, Action<List<GameObject>> action)
+diff --git "a/D:\\GIthub\\UnityFight_Portfolio\\Client\\1_backup\\Assets\\_Project\\Scripts\\Manager\\LoadManager.Addressables.cs" "b/D:\\GIthub\\UnityFight_Portfolio\\Client\\1_backup\\Assets\\_Project\\Scripts\\Manager\\LoadManager.Addressables.cs"
+new file mode 100644
+index 00000000..26df4138
+--- /dev/null
++++ "b/D:\\GIthub\\UnityFight_Portfolio\\Client\\1_backup\\Assets\\_Project\\Scripts\\Manager\\LoadManager.Addressables.cs"
+@@ -0,0 +1,72 @@
++using System;
++using System.Collections;
++using System.Collections.Generic;
++using UnityEngine;
++using UnityEngine.AddressableAssets;
++using UnityEngine.ResourceManagement.AsyncOperations;
++
++public partial class LoadManager
++{
++    // The prefab-only callback cannot report when its later clones stop using
++    // dependencies. One session-owned reference per address is deliberately kept
++    // across menus/scenes and LoadManager destruction, until application shutdown.
++    private static readonly Dictionary<string, AsyncOperationHandle<GameObject>>
++        CharacterPrefabHandles = new Dictionary<string, AsyncOperationHandle<GameObject>>(StringComparer.Ordinal);
++    private static bool characterPrefabQuitSubscribed;
++
++    private IEnumerator LoadCharacterPrefabAddressableAsync(string prefabAddress, Action<GameObject> action)
++    {
++        if (!characterPrefabQuitSubscribed)
++        {
++            Application.quitting += ReleaseCharacterPrefabSessionHandles;
++            characterPrefabQuitSubscribed = true;
++        }
++
++        AsyncOperationHandle<GameObject> handle;
++        if (!CharacterPrefabHandles.TryGetValue(prefabAddress, out handle) || !handle.IsValid())
++        {
++            handle = Addressables.LoadAssetAsync<GameObject>(prefabAddress);
++            // Store before yielding so interrupted requests still have an owner.
++            CharacterPrefabHandles[prefabAddress] = handle;
++        }
++
++        float startProgress = processingcount;
++        // Poll explicitly: concurrent queue runners can share a failed operation
++        // whose first observer releases it. Never inspect an invalidated handle.
++        while (handle.IsValid() && !handle.IsDone)
++        {
++            Loadingprogress = startProgress + handle.PercentComplete * 2f;
++            yield return null;
++        }
++        processingcount += 2;
++        Loadingprogress = processingcount;
++
++        if (!handle.IsValid() || handle.Status != AsyncOperationStatus.Succeeded || handle.Result == null)
++        {
++            string reason = handle.IsValid() && handle.OperationException != null
++                ? handle.OperationException.Message : "Invalid operation or missing prefab result";
++            AsyncOperationHandle<GameObject> owned;
++            if (CharacterPrefabHandles.TryGetValue(prefabAddress, out owned) && owned.Equals(handle))
++            {
++                CharacterPrefabHandles.Remove(prefabAddress);
++                if (handle.IsValid()) Addressables.Release(handle);
++            }
++            Debug.LogError("Character prefab Addressables load failed: " + prefabAddress + ". " + reason);
++            action.Invoke(null);
++            yield break;
++        }
++
++        // Return the prefab asset, never an instance. The cache retains the handle
++        // even if a consumer callback throws or its queue runner is destroyed.
++        action.Invoke(handle.Result);
++    }
++
++    private static void ReleaseCharacterPrefabSessionHandles()
++    {
++        Application.quitting -= ReleaseCharacterPrefabSessionHandles;
++        characterPrefabQuitSubscribed = false;
++        foreach (var handle in CharacterPrefabHandles.Values)
++            if (handle.IsValid()) Addressables.Release(handle);
++        CharacterPrefabHandles.Clear();
++    }
++}
+diff --git "a/D:\\GIthub\\UnityFight_Portfolio\\Client\\1_backup\\Assets\\_Project\\Scripts\\Manager\\LoadManager.Addressables.cs.meta" "b/D:\\GIthub\\UnityFight_Portfolio\\Client\\1_backup\\Assets\\_Project\\Scripts\\Manager\\LoadManager.Addressables.cs.meta"
+new file mode 100644
+index 00000000..b9c6be4c
+--- /dev/null
++++ "b/D:\\GIthub\\UnityFight_Portfolio\\Client\\1_backup\\Assets\\_Project\\Scripts\\Manager\\LoadManager.Addressables.cs.meta"
+@@ -0,0 +1,11 @@
++fileFormatVersion: 2
++guid: ff7eaed8cf724f24be3bc932a9c314fd
++MonoImporter:
++  externalObjects: {}
++  serializedVersion: 2
++  defaultReferences: []
++  executionOrder: 0
++  icon: {instanceID: 0}
++  userData:
++  assetBundleName:
++  assetBundleVariant:

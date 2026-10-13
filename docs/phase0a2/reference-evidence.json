@@ -1,0 +1,4358 @@
+[
+  {
+    "file": "Client/1_backup/Assets/_Project/Scripts/Legacy/Unused/Character/CharacterInformationXMLreader.cs",
+    "classes": [],
+    "guid": "5a419aebd472c9949acf303daecb08d2",
+    "code_refs": {},
+    "serialized_refs": [],
+    "all_commented": true,
+    "before": "Client/1_backup/Assets/_Project/Data/Json/Character/xml/CharacterInformationXMLreader.cs",
+    "classification": "Legacy-Unused",
+    "note": "Reference presence is not proof of current runtime reachability; Editor attributes and Unity callbacks are manual-review evidence."
+  },
+  {
+    "file": "Client/1_backup/Assets/_Project/Effects/Particle/ParticleAutoDisable.cs",
+    "classes": [
+      "ParticleAutoDisable"
+    ],
+    "guid": "fd9c5a45b5f9b494b84f52f532c3db87",
+    "code_refs": {},
+    "serialized_refs": [
+      "Client/1_backup/Assets/_Project/Effects/Particle/DieEffect1.prefab",
+      "Client/1_backup/Assets/_Project/Effects/Particle/HitEffect01.prefab"
+    ],
+    "all_commented": false,
+    "before": "Client/1_backup/Assets/_Project/Effects/Particle/ParticleAutoDisable.cs",
+    "classification": "Active-Core / Retained maintenance area",
+    "note": "Reference presence is not proof of current runtime reachability; Editor attributes and Unity callbacks are manual-review evidence."
+  },
+  {
+    "file": "Client/1_backup/Assets/_Project/Scripts/PlannedLegacy/ContentLoading/LoadManager.AssetBundle.cs",
+    "classes": [
+      "LoadManager"
+    ],
+    "guid": "7cc26ef2bec34a1187403fbfab3e45a7",
+    "code_refs": {
+      "Client/1_backup/Assets/_Project/Scripts/Manager/GameManager.cs": [
+        "LoadManager"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/Manager/LoadManager.cs": [
+        "LoadManager"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/Manager/Stage.cs": [
+        "LoadManager"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/Object/dataclass.cs": [
+        "LoadManager"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/Object/UserAccountData.cs": [
+        "LoadManager"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/UI/ErrorMessage.cs": [
+        "LoadManager"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/UI/spawncharactericonUI.cs": [
+        "LoadManager"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/UI/Loading/LoadingProgressBar.cs": [
+        "LoadManager"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/UI/Title/nameinputfield.cs": [
+        "LoadManager"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/UI/Title/TitleScreen.cs": [
+        "LoadManager"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/UI/Tutorial/Tutorial.cs": [
+        "LoadManager"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Character/CharacterListIconUI.cs": [
+        "LoadManager"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Character/CharacterUI.cs": [
+        "LoadManager"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Character/CharacterUpgradeUI.cs": [
+        "LoadManager"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Character/LVUpgradePanel.cs": [
+        "LoadManager"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Character/PieceItemIconUI.cs": [
+        "LoadManager"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Character/SkillUpgradeUI.cs": [
+        "LoadManager"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Item/ItemIconUI.cs": [
+        "LoadManager"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Item/itemListIconUI.cs": [
+        "LoadManager"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Item/LeftItemUI.cs": [
+        "LoadManager"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Shop/ShopItemIconUI.cs": [
+        "LoadManager"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Shop/ShopItemPurchaseUI.cs": [
+        "LoadManager"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Stage/CharactersSelectUI.cs": [
+        "LoadManager"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Stage/MainStageSelectedUI.cs": [
+        "LoadManager"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Stage/stageinfoUI.cs": [
+        "LoadManager"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Stage/StageSelectButton.cs": [
+        "LoadManager"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Stage/StageUI.cs": [
+        "LoadManager"
+      ]
+    },
+    "serialized_refs": [],
+    "all_commented": false,
+    "before": "Client/1_backup/Assets/_Project/Scripts/AssetBundle/LoadManager.AssetBundle.cs",
+    "classification": "Planned-Legacy (Active-Core today)",
+    "note": "Reference presence is not proof of current runtime reachability; Editor attributes and Unity callbacks are manual-review evidence."
+  },
+  {
+    "file": "Client/1_backup/Assets/_Project/Scripts/Camera/cameraMove.cs",
+    "classes": [
+      "cameraMove"
+    ],
+    "guid": "e363ac748cef03249b20fe0e4fb2e542",
+    "code_refs": {},
+    "serialized_refs": [
+      "Client/1_backup/Assets/_Project/Scenes/DeveloperTest.unity",
+      "Client/1_backup/Assets/_Project/Scenes/Stage.unity",
+      "Client/1_backup/Assets/_Project/Scenes/StageTest.unity"
+    ],
+    "all_commented": false,
+    "before": "Client/1_backup/Assets/_Project/Scripts/Camera/cameraMove.cs",
+    "classification": "Active-Core / Retained maintenance area",
+    "note": "Reference presence is not proof of current runtime reachability; Editor attributes and Unity callbacks are manual-review evidence."
+  },
+  {
+    "file": "Client/1_backup/Assets/_Project/Scripts/Development/CameramoveTest.cs",
+    "classes": [
+      "CameramoveTest"
+    ],
+    "guid": "6d6bed2bd5d45d743a65edba54805581",
+    "code_refs": {},
+    "serialized_refs": [
+      "Client/1_backup/Assets/_Project/Scenes/DeveloperTest.unity"
+    ],
+    "all_commented": false,
+    "before": "Client/1_backup/Assets/_Project/Scripts/Development/CameramoveTest.cs",
+    "classification": "Active-Core / Retained maintenance area",
+    "note": "Reference presence is not proof of current runtime reachability; Editor attributes and Unity callbacks are manual-review evidence."
+  },
+  {
+    "file": "Client/1_backup/Assets/_Project/Scripts/Development/ShowCurrentAnimation.cs",
+    "classes": [
+      "ShowCurrentAnimation"
+    ],
+    "guid": "0055d83ad9caea849be0fe7ded5ddd8f",
+    "code_refs": {},
+    "serialized_refs": [
+      "Client/1_backup/Assets/_Project/Scenes/DeveloperTest.unity"
+    ],
+    "all_commented": false,
+    "before": "Client/1_backup/Assets/_Project/Scripts/Development/ShowCurrentAnimation.cs",
+    "classification": "Active-Core / Retained maintenance area",
+    "note": "Reference presence is not proof of current runtime reachability; Editor attributes and Unity callbacks are manual-review evidence."
+  },
+  {
+    "file": "Client/1_backup/Assets/_Project/Scripts/Development/Test_Stage.cs",
+    "classes": [
+      "Test_Stage"
+    ],
+    "guid": "0b8783564c3885046b7387302653c59f",
+    "code_refs": {},
+    "serialized_refs": [
+      "Client/1_backup/Assets/_Project/Scenes/DeveloperTest.unity"
+    ],
+    "all_commented": false,
+    "before": "Client/1_backup/Assets/_Project/Scripts/Development/Test_Stage.cs",
+    "classification": "Active-Core / Retained maintenance area",
+    "note": "Reference presence is not proof of current runtime reachability; Editor attributes and Unity callbacks are manual-review evidence."
+  },
+  {
+    "file": "Client/1_backup/Assets/_Project/Scripts/DeveolopEditor/accountEditorScript.cs",
+    "classes": [
+      "accountEditorScript"
+    ],
+    "guid": "582bdc2d8df45f04f925ec56a4892876",
+    "code_refs": {
+      "Client/1_backup/Assets/_Project/Scripts/Editor/AccountTempletEditor.cs": [
+        "accountEditorScript"
+      ]
+    },
+    "serialized_refs": [
+      "Client/1_backup/Assets/_Project/Scenes/DeveloperTest.unity"
+    ],
+    "all_commented": false,
+    "before": "Client/1_backup/Assets/_Project/Scripts/DeveolopEditor/accountEditorScript.cs",
+    "classification": "Active-Core / Retained maintenance area",
+    "note": "Reference presence is not proof of current runtime reachability; Editor attributes and Unity callbacks are manual-review evidence."
+  },
+  {
+    "file": "Client/1_backup/Assets/_Project/Scripts/DeveolopEditor/CharacterActionCreater.cs",
+    "classes": [
+      "CharacterActionCreater"
+    ],
+    "guid": "174114b37723f134399622fb23862c10",
+    "code_refs": {},
+    "serialized_refs": [
+      "Client/1_backup/Assets/_Project/Scenes/DeveloperTest.unity"
+    ],
+    "all_commented": false,
+    "before": "Client/1_backup/Assets/_Project/Scripts/DeveolopEditor/CharacterActionCreater.cs",
+    "classification": "Active-Core / Retained maintenance area",
+    "note": "Reference presence is not proof of current runtime reachability; Editor attributes and Unity callbacks are manual-review evidence."
+  },
+  {
+    "file": "Client/1_backup/Assets/_Project/Scripts/DeveolopEditor/GetActionType.cs",
+    "classes": [
+      "GetActionType"
+    ],
+    "guid": "6c94ec6bddd063940847b9e08ac53a61",
+    "code_refs": {
+      "Client/1_backup/Assets/_Project/Scripts/Editor/PlayerCharacterEditor.cs": [
+        "GetActionType"
+      ]
+    },
+    "serialized_refs": [],
+    "all_commented": false,
+    "before": "Client/1_backup/Assets/_Project/Scripts/DeveolopEditor/GetActionType.cs",
+    "classification": "Active-Core / Retained maintenance area",
+    "note": "Reference presence is not proof of current runtime reachability; Editor attributes and Unity callbacks are manual-review evidence."
+  },
+  {
+    "file": "Client/1_backup/Assets/_Project/Scripts/DeveolopEditor/ItemCreater.cs",
+    "classes": [
+      "ItemCreater"
+    ],
+    "guid": "e535f40cf9fbfe24a824b70c055db37b",
+    "code_refs": {
+      "Client/1_backup/Assets/_Project/Scripts/Editor/ItemCreaterEditor.cs": [
+        "ItemCreater"
+      ]
+    },
+    "serialized_refs": [
+      "Client/1_backup/Assets/_Project/Scenes/DeveloperTest.unity"
+    ],
+    "all_commented": false,
+    "before": "Client/1_backup/Assets/_Project/Scripts/DeveolopEditor/ItemCreater.cs",
+    "classification": "Active-Core / Retained maintenance area",
+    "note": "Reference presence is not proof of current runtime reachability; Editor attributes and Unity callbacks are manual-review evidence."
+  },
+  {
+    "file": "Client/1_backup/Assets/_Project/Scripts/DeveolopEditor/ShopCatalogCreater.cs",
+    "classes": [
+      "ShopCatalogCreater"
+    ],
+    "guid": "cd285eb29541c2c4f8366f546dfec753",
+    "code_refs": {
+      "Client/1_backup/Assets/_Project/Scripts/Editor/ShopCatalogEditor.cs": [
+        "ShopCatalogCreater"
+      ]
+    },
+    "serialized_refs": [
+      "Client/1_backup/Assets/_Project/Scenes/DeveloperTest.unity"
+    ],
+    "all_commented": false,
+    "before": "Client/1_backup/Assets/_Project/Scripts/DeveolopEditor/ShopCatalogCreater.cs",
+    "classification": "Active-Core / Retained maintenance area",
+    "note": "Reference presence is not proof of current runtime reachability; Editor attributes and Unity callbacks are manual-review evidence."
+  },
+  {
+    "file": "Client/1_backup/Assets/_Project/Scripts/DeveolopEditor/StageCreater.cs",
+    "classes": [
+      "StageCreater"
+    ],
+    "guid": "739f1709335abef4da29653aa4897c15",
+    "code_refs": {
+      "Client/1_backup/Assets/_Project/Scripts/Editor/StageCreaterEditor.cs": [
+        "StageCreater"
+      ]
+    },
+    "serialized_refs": [
+      "Client/1_backup/Assets/_Project/Scenes/DeveloperTest.unity"
+    ],
+    "all_commented": false,
+    "before": "Client/1_backup/Assets/_Project/Scripts/DeveolopEditor/StageCreater.cs",
+    "classification": "Active-Core / Retained maintenance area",
+    "note": "Reference presence is not proof of current runtime reachability; Editor attributes and Unity callbacks are manual-review evidence."
+  },
+  {
+    "file": "Client/1_backup/Assets/_Project/Scripts/Editor/AccountTempletEditor.cs",
+    "classes": [
+      "AccountTempletEditor"
+    ],
+    "guid": "7cc06b6d4a50d5f4ab5b657204a2a148",
+    "code_refs": {},
+    "serialized_refs": [],
+    "all_commented": false,
+    "before": "Client/1_backup/Assets/_Project/Scripts/Editor/AccountTempletEditor.cs",
+    "classification": "Active-Core / Retained maintenance area",
+    "note": "Reference presence is not proof of current runtime reachability; Editor attributes and Unity callbacks are manual-review evidence."
+  },
+  {
+    "file": "Client/1_backup/Assets/_Project/Scripts/Editor/ItemCreaterEditor.cs",
+    "classes": [
+      "ItemCreaterEditor"
+    ],
+    "guid": "2298f271222b1324cbf1556c358c5e52",
+    "code_refs": {},
+    "serialized_refs": [],
+    "all_commented": false,
+    "before": "Client/1_backup/Assets/_Project/Scripts/Editor/ItemCreaterEditor.cs",
+    "classification": "Active-Core / Retained maintenance area",
+    "note": "Reference presence is not proof of current runtime reachability; Editor attributes and Unity callbacks are manual-review evidence."
+  },
+  {
+    "file": "Client/1_backup/Assets/_Project/Scripts/Editor/PlayerCharacterEditor.cs",
+    "classes": [
+      "PlayerCharacterEditor"
+    ],
+    "guid": "e22fa5c8f4182614a913721a781e8968",
+    "code_refs": {},
+    "serialized_refs": [],
+    "all_commented": false,
+    "before": "Client/1_backup/Assets/_Project/Scripts/Editor/PlayerCharacterEditor.cs",
+    "classification": "Active-Core / Retained maintenance area",
+    "note": "Reference presence is not proof of current runtime reachability; Editor attributes and Unity callbacks are manual-review evidence."
+  },
+  {
+    "file": "Client/1_backup/Assets/_Project/Scripts/Editor/ShopCatalogEditor.cs",
+    "classes": [
+      "ShopCatalogEditor"
+    ],
+    "guid": "72fcc7d795b04a643ba073ea09dc3bdb",
+    "code_refs": {},
+    "serialized_refs": [],
+    "all_commented": false,
+    "before": "Client/1_backup/Assets/_Project/Scripts/Editor/ShopCatalogEditor.cs",
+    "classification": "Active-Core / Retained maintenance area",
+    "note": "Reference presence is not proof of current runtime reachability; Editor attributes and Unity callbacks are manual-review evidence."
+  },
+  {
+    "file": "Client/1_backup/Assets/_Project/Scripts/Editor/StageCreaterEditor.cs",
+    "classes": [
+      "StageCreaterEditor"
+    ],
+    "guid": "e75d7e541c9846b40919a50e2198f124",
+    "code_refs": {},
+    "serialized_refs": [],
+    "all_commented": false,
+    "before": "Client/1_backup/Assets/_Project/Scripts/Editor/StageCreaterEditor.cs",
+    "classification": "Active-Core / Retained maintenance area",
+    "note": "Reference presence is not proof of current runtime reachability; Editor attributes and Unity callbacks are manual-review evidence."
+  },
+  {
+    "file": "Client/1_backup/Assets/_Project/Scripts/interface/Buff.cs",
+    "classes": [
+      "StatusEffect",
+      "Buff",
+      "ATKBoost",
+      "DamageCut"
+    ],
+    "guid": "f1caeb21cc9a08541a15219433a42b56",
+    "code_refs": {
+      "Client/1_backup/Assets/_Project/Scripts/Editor/PlayerCharacterEditor.cs": [
+        "Buff"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/interface/Debuff.cs": [
+        "StatusEffect"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/Object/Character/basic/attack_basic.cs": [
+        "ATKBoost",
+        "Buff",
+        "DamageCut"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/Object/Character/basic/Enums.cs": [
+        "ATKBoost",
+        "Buff",
+        "DamageCut"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/Object/Character/basic/GameCharacter.cs": [
+        "StatusEffect"
+      ]
+    },
+    "serialized_refs": [],
+    "all_commented": false,
+    "before": "Client/1_backup/Assets/_Project/Scripts/interface/Buff.cs",
+    "classification": "Active-Core / Retained maintenance area",
+    "note": "Reference presence is not proof of current runtime reachability; Editor attributes and Unity callbacks are manual-review evidence."
+  },
+  {
+    "file": "Client/1_backup/Assets/_Project/Scripts/interface/Character.cs",
+    "classes": [
+      "Character"
+    ],
+    "guid": "01f8aa7130ed4624d829083af2b5d500",
+    "code_refs": {
+      "Client/1_backup/Assets/_Project/Scripts/Manager/UserDataManager.cs": [
+        "Character"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/Priority/Character_Priority.cs": [
+        "Character"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/Legacy/Unused/AssetBundle/AssetBundleManager.cs": [
+        "Character"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/Object/Character/basic/GameCharacter.cs": [
+        "Character"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/Priority/Priority_Member/Priority_Member.cs": [
+        "Character"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Main/MainMenuUI.cs": [
+        "Character"
+      ]
+    },
+    "serialized_refs": [],
+    "all_commented": false,
+    "before": "Client/1_backup/Assets/_Project/Scripts/interface/Character.cs",
+    "classification": "Active-Core / Retained maintenance area",
+    "note": "Reference presence is not proof of current runtime reachability; Editor attributes and Unity callbacks are manual-review evidence."
+  },
+  {
+    "file": "Client/1_backup/Assets/_Project/Scripts/interface/Character_observer.cs",
+    "classes": [
+      "Character_observer"
+    ],
+    "guid": "966d2717d9d3d71498356fd1e2849ec2",
+    "code_refs": {
+      "Client/1_backup/Assets/_Project/Scripts/interface/Character.cs": [
+        "Character_observer"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/Manager/Stage.cs": [
+        "Character_observer"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/Legacy/Unused/Character/Character_Children_obj_effect.cs": [
+        "Character_observer"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/Object/Character/basic/GameCharacter.cs": [
+        "Character_observer"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/UI/Game/character_status_ui.cs": [
+        "Character_observer"
+      ]
+    },
+    "serialized_refs": [],
+    "all_commented": false,
+    "before": "Client/1_backup/Assets/_Project/Scripts/interface/Character_observer.cs",
+    "classification": "Active-Core / Retained maintenance area",
+    "note": "Reference presence is not proof of current runtime reachability; Editor attributes and Unity callbacks are manual-review evidence."
+  },
+  {
+    "file": "Client/1_backup/Assets/_Project/Scripts/interface/Debuff.cs",
+    "classes": [
+      "Debuff",
+      "focused",
+      "Stun",
+      "DamageSuppement",
+      "ATKHit"
+    ],
+    "guid": "f70ee8cdea1b50e4faa88ad5ad61872f",
+    "code_refs": {
+      "Client/1_backup/Assets/_Project/Scripts/Editor/PlayerCharacterEditor.cs": [
+        "Debuff"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/Priority/Character_Priority.cs": [
+        "focused"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/Object/Character/basic/attack_basic.cs": [
+        "ATKHit",
+        "DamageSuppement",
+        "Debuff"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/Object/Character/basic/Enums.cs": [
+        "ATKHit",
+        "DamageSuppement",
+        "Debuff",
+        "Stun",
+        "focused"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/Object/Character/basic/GameCharacter.cs": [
+        "focused"
+      ]
+    },
+    "serialized_refs": [],
+    "all_commented": false,
+    "before": "Client/1_backup/Assets/_Project/Scripts/interface/Debuff.cs",
+    "classification": "Active-Core / Retained maintenance area",
+    "note": "Reference presence is not proof of current runtime reachability; Editor attributes and Unity callbacks are manual-review evidence."
+  },
+  {
+    "file": "Client/1_backup/Assets/_Project/Scripts/interface/GameObj.cs",
+    "classes": [
+      "GameObj"
+    ],
+    "guid": "9639758bf900eb840a46069f9e525067",
+    "code_refs": {
+      "Client/1_backup/Assets/_Project/Scripts/Object/Character/_GameOBj.cs": [
+        "GameObj"
+      ]
+    },
+    "serialized_refs": [],
+    "all_commented": false,
+    "before": "Client/1_backup/Assets/_Project/Scripts/interface/GameObj.cs",
+    "classification": "Active-Core / Retained maintenance area",
+    "note": "Reference presence is not proof of current runtime reachability; Editor attributes and Unity callbacks are manual-review evidence."
+  },
+  {
+    "file": "Client/1_backup/Assets/_Project/Scripts/interface/iAct.cs",
+    "classes": [
+      "iAct"
+    ],
+    "guid": "04db58363dd86a94a809c4ef676cdcf7",
+    "code_refs": {
+      "Client/1_backup/Assets/_Project/Scripts/DeveolopEditor/GetActionType.cs": [
+        "iAct"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/Object/Character/basic/attack_basic.cs": [
+        "iAct"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/Object/Character/basic/Character_action.cs": [
+        "iAct"
+      ]
+    },
+    "serialized_refs": [],
+    "all_commented": false,
+    "before": "Client/1_backup/Assets/_Project/Scripts/interface/iAct.cs",
+    "classification": "Active-Core / Retained maintenance area",
+    "note": "Reference presence is not proof of current runtime reachability; Editor attributes and Unity callbacks are manual-review evidence."
+  },
+  {
+    "file": "Client/1_backup/Assets/_Project/Scripts/interface/ItemBroadcaster.cs",
+    "classes": [
+      "ItemBroadcaster"
+    ],
+    "guid": "b9d49192988008d4ca8182d06015748b",
+    "code_refs": {
+      "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Shop/ShopUI.cs": [
+        "ItemBroadcaster"
+      ]
+    },
+    "serialized_refs": [],
+    "all_commented": false,
+    "before": "Client/1_backup/Assets/_Project/Scripts/interface/ItemBroadcaster.cs",
+    "classification": "Active-Core / Retained maintenance area",
+    "note": "Reference presence is not proof of current runtime reachability; Editor attributes and Unity callbacks are manual-review evidence."
+  },
+  {
+    "file": "Client/1_backup/Assets/_Project/Scripts/interface/ItemObserver.cs",
+    "classes": [
+      "ItemObserver"
+    ],
+    "guid": "5fac2a3af9a70ff4581b1f8f30a82423",
+    "code_refs": {
+      "Client/1_backup/Assets/_Project/Scripts/interface/ItemBroadcaster.cs": [
+        "ItemObserver"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Shop/ShopItemIconUI.cs": [
+        "ItemObserver"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Shop/ShopUI.cs": [
+        "ItemObserver"
+      ]
+    },
+    "serialized_refs": [],
+    "all_commented": false,
+    "before": "Client/1_backup/Assets/_Project/Scripts/interface/ItemObserver.cs",
+    "classification": "Active-Core / Retained maintenance area",
+    "note": "Reference presence is not proof of current runtime reachability; Editor attributes and Unity callbacks are manual-review evidence."
+  },
+  {
+    "file": "Client/1_backup/Assets/_Project/Scripts/interface/StageBroadCaster.cs",
+    "classes": [
+      "StageBroadCaster"
+    ],
+    "guid": "0c22476c02acdb8499a1b16753699d20",
+    "code_refs": {
+      "Client/1_backup/Assets/_Project/Scripts/Manager/Stage.cs": [
+        "StageBroadCaster"
+      ]
+    },
+    "serialized_refs": [],
+    "all_commented": false,
+    "before": "Client/1_backup/Assets/_Project/Scripts/interface/StageBroadCaster.cs",
+    "classification": "Active-Core / Retained maintenance area",
+    "note": "Reference presence is not proof of current runtime reachability; Editor attributes and Unity callbacks are manual-review evidence."
+  },
+  {
+    "file": "Client/1_backup/Assets/_Project/Scripts/interface/StageObserver.cs",
+    "classes": [
+      "StageObserver"
+    ],
+    "guid": "e548f7515e9f6db42a0ada6f38a0a5d7",
+    "code_refs": {
+      "Client/1_backup/Assets/_Project/Scripts/interface/StageBroadCaster.cs": [
+        "StageObserver"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/Manager/Stage.cs": [
+        "StageObserver"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/UI/Game/LeftRoundText.cs": [
+        "StageObserver"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/Legacy/Unused/UI/StageRoundPanel.cs": [
+        "StageObserver"
+      ]
+    },
+    "serialized_refs": [],
+    "all_commented": false,
+    "before": "Client/1_backup/Assets/_Project/Scripts/interface/StageObserver.cs",
+    "classification": "Active-Core / Retained maintenance area",
+    "note": "Reference presence is not proof of current runtime reachability; Editor attributes and Unity callbacks are manual-review evidence."
+  },
+  {
+    "file": "Client/1_backup/Assets/_Project/Scripts/Legacy/Unused/Audio/AudioManager.cs",
+    "classes": [
+      "AudioManager"
+    ],
+    "guid": "7a3c4a95c9dd2404a8c95bfa28be1299",
+    "code_refs": {},
+    "serialized_refs": [],
+    "all_commented": false,
+    "before": "Client/1_backup/Assets/_Project/Scripts/Manager/AudioManager.cs",
+    "classification": "Legacy-Unused",
+    "note": "Reference presence is not proof of current runtime reachability; Editor attributes and Unity callbacks are manual-review evidence."
+  },
+  {
+    "file": "Client/1_backup/Assets/_Project/Scripts/Manager/FIleIOManager.cs",
+    "classes": [
+      "FIleIOManager"
+    ],
+    "guid": "16f455ef4c664414fb6eb8cbebd4527c",
+    "code_refs": {
+      "Client/1_backup/Assets/_Project/Scripts/Manager/GameManager.cs": [
+        "FIleIOManager"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/UI/Title/DataInitUI.cs": [
+        "FIleIOManager"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/UI/Title/TitleScreen.cs": [
+        "FIleIOManager"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/UI/Title/UIDInputUI.cs": [
+        "FIleIOManager"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/UI/Tutorial/Tutorial.cs": [
+        "FIleIOManager"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Character/CharacterListSortUI.cs": [
+        "FIleIOManager"
+      ]
+    },
+    "serialized_refs": [],
+    "all_commented": false,
+    "before": "Client/1_backup/Assets/_Project/Scripts/Manager/FIleIOManager.cs",
+    "classification": "Active-Core / Planned-Legacy Candidate (partial responsibility)",
+    "note": "Reference presence is not proof of current runtime reachability; Editor attributes and Unity callbacks are manual-review evidence."
+  },
+  {
+    "file": "Client/1_backup/Assets/_Project/Scripts/Manager/GameManager.cs",
+    "classes": [
+      "GameManager"
+    ],
+    "guid": "5ca1a751a6b3b464aa4016efe0d1d260",
+    "code_refs": {
+      "Client/1_backup/Assets/_Project/Scripts/Manager/LoadManager.cs": [
+        "GameManager"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/Manager/Stage.cs": [
+        "GameManager"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/NetWorkManager/NetworkManager.cs": [
+        "GameManager"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/NetWorkManager/PacketHandler.cs": [
+        "GameManager"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/Object/UserAccountData.cs": [
+        "GameManager"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/Legacy/Unused/UI/DebugButton.cs": [
+        "GameManager"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/UI/ErrorMessage.cs": [
+        "GameManager"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/UI/LVUpUI.cs": [
+        "GameManager"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/UI/MenuUIHeader.cs": [
+        "GameManager"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/UI/spawncharactericonUI.cs": [
+        "GameManager"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/UI/WarningMessage.cs": [
+        "GameManager"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/Legacy/Referenced/AssetBundle/DownLoadManager.cs": [
+        "GameManager"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/NetWorkManager/Core/Connector.cs": [
+        "GameManager"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/NetWorkManager/Core/ServerSession.cs": [
+        "GameManager"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/UI/Setting/SettingUI.cs": [
+        "GameManager"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/UI/Title/DataInitUI.cs": [
+        "GameManager"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/UI/Title/nameinputfield.cs": [
+        "GameManager"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/UI/Title/TitleScreen.cs": [
+        "GameManager"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/UI/Title/UIDInputUI.cs": [
+        "GameManager"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/UI/Tutorial/Tutorial.cs": [
+        "GameManager"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Character/CharacterGradeUpgradeUI.cs": [
+        "GameManager"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Character/CharacterListCreater.cs": [
+        "GameManager"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Character/CharacterListSortUI.cs": [
+        "GameManager"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Character/CharacterSkillicon.cs": [
+        "GameManager"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Character/CharacterUI.cs": [
+        "GameManager"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Character/CharacterUpgradeUI.cs": [
+        "GameManager"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Character/ExpItemPanel.cs": [
+        "GameManager"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Character/LVUpgradePanel.cs": [
+        "GameManager"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Character/PieceItemIconUI.cs": [
+        "GameManager"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Character/SkillUpgradeUI.cs": [
+        "GameManager"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Item/ItemIconUI.cs": [
+        "GameManager"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Item/itemUI.cs": [
+        "GameManager"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Item/LeftItemUI.cs": [
+        "GameManager"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Main/MainMenuUI.cs": [
+        "GameManager"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Shop/ShopItemIconUI.cs": [
+        "GameManager"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Shop/ShopItemPurchaseUI.cs": [
+        "GameManager"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Shop/ShopUI.cs": [
+        "GameManager"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Stage/CharactersSelectUI.cs": [
+        "GameManager"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Stage/MainStageSelectedUI.cs": [
+        "GameManager"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Stage/StageSelectedUI.cs": [
+        "GameManager"
+      ]
+    },
+    "serialized_refs": [
+      "Client/1_backup/Assets/_Project/Scenes/Title.unity",
+      "Client/1_backup/Assets/_Project/Scenes/Legacy/Recovery/0.unity"
+    ],
+    "all_commented": false,
+    "before": "Client/1_backup/Assets/_Project/Scripts/Manager/GameManager.cs",
+    "classification": "Active-Core / Planned-Legacy Candidate (partial responsibility)",
+    "note": "Reference presence is not proof of current runtime reachability; Editor attributes and Unity callbacks are manual-review evidence."
+  },
+  {
+    "file": "Client/1_backup/Assets/_Project/Scripts/Manager/LoadManager.cs",
+    "classes": [
+      "LoadManager"
+    ],
+    "guid": "0cc02df3d714f4245887667dae9e04c8",
+    "code_refs": {
+      "Client/1_backup/Assets/_Project/Scripts/PlannedLegacy/ContentLoading/LoadManager.AssetBundle.cs": [
+        "LoadManager"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/Manager/GameManager.cs": [
+        "LoadManager"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/Manager/Stage.cs": [
+        "LoadManager"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/Object/dataclass.cs": [
+        "LoadManager"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/Object/UserAccountData.cs": [
+        "LoadManager"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/UI/ErrorMessage.cs": [
+        "LoadManager"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/UI/spawncharactericonUI.cs": [
+        "LoadManager"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/UI/Loading/LoadingProgressBar.cs": [
+        "LoadManager"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/UI/Title/nameinputfield.cs": [
+        "LoadManager"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/UI/Title/TitleScreen.cs": [
+        "LoadManager"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/UI/Tutorial/Tutorial.cs": [
+        "LoadManager"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Character/CharacterListIconUI.cs": [
+        "LoadManager"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Character/CharacterUI.cs": [
+        "LoadManager"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Character/CharacterUpgradeUI.cs": [
+        "LoadManager"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Character/LVUpgradePanel.cs": [
+        "LoadManager"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Character/PieceItemIconUI.cs": [
+        "LoadManager"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Character/SkillUpgradeUI.cs": [
+        "LoadManager"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Item/ItemIconUI.cs": [
+        "LoadManager"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Item/itemListIconUI.cs": [
+        "LoadManager"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Item/LeftItemUI.cs": [
+        "LoadManager"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Shop/ShopItemIconUI.cs": [
+        "LoadManager"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Shop/ShopItemPurchaseUI.cs": [
+        "LoadManager"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Stage/CharactersSelectUI.cs": [
+        "LoadManager"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Stage/MainStageSelectedUI.cs": [
+        "LoadManager"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Stage/stageinfoUI.cs": [
+        "LoadManager"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Stage/StageSelectButton.cs": [
+        "LoadManager"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Stage/StageUI.cs": [
+        "LoadManager"
+      ]
+    },
+    "serialized_refs": [
+      "Client/1_backup/Assets/_Project/Scenes/Title.unity",
+      "Client/1_backup/Assets/_Project/Scenes/Legacy/Recovery/0.unity"
+    ],
+    "all_commented": false,
+    "before": "Client/1_backup/Assets/_Project/Scripts/Manager/LoadManager.cs",
+    "classification": "Active-Core / Planned-Legacy Candidate (partial responsibility)",
+    "note": "Reference presence is not proof of current runtime reachability; Editor attributes and Unity callbacks are manual-review evidence."
+  },
+  {
+    "file": "Client/1_backup/Assets/_Project/Scripts/Manager/Stage.cs",
+    "classes": [
+      "Stage"
+    ],
+    "guid": "cef94aea2febe8342b462cc1934c7b7e",
+    "code_refs": {
+      "Client/1_backup/Assets/_Project/Scripts/Camera/cameraMove.cs": [
+        "Stage"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/Manager/LoadManager.cs": [
+        "Stage"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/Manager/UserDataManager.cs": [
+        "Stage"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/Priority/Character_Priority.cs": [
+        "Stage"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/Object/Character/basic/GameCharacter.cs": [
+        "Stage"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/UI/Game/LeftRoundText.cs": [
+        "Stage"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/UI/Game/LeftTimeText.cs": [
+        "Stage"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/Legacy/Unused/UI/StageRoundPanel.cs": [
+        "Stage"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/UI/Tutorial/Tutorial.cs": [
+        "Stage"
+      ]
+    },
+    "serialized_refs": [
+      "Client/1_backup/Assets/_Project/Scenes/Stage.unity",
+      "Client/1_backup/Assets/_Project/Scenes/StageTest.unity"
+    ],
+    "all_commented": false,
+    "before": "Client/1_backup/Assets/_Project/Scripts/Manager/Stage.cs",
+    "classification": "Active-Core / Retained maintenance area",
+    "note": "Reference presence is not proof of current runtime reachability; Editor attributes and Unity callbacks are manual-review evidence."
+  },
+  {
+    "file": "Client/1_backup/Assets/_Project/Scripts/Legacy/Unused/Misc/StageTest.cs",
+    "classes": [],
+    "guid": "6905903669f72ea41827e5a0055e0072",
+    "code_refs": {},
+    "serialized_refs": [],
+    "all_commented": true,
+    "before": "Client/1_backup/Assets/_Project/Scripts/Manager/StageTest.cs",
+    "classification": "Legacy-Unused",
+    "note": "Reference presence is not proof of current runtime reachability; Editor attributes and Unity callbacks are manual-review evidence."
+  },
+  {
+    "file": "Client/1_backup/Assets/_Project/Scripts/Manager/UserDataManager.cs",
+    "classes": [
+      "UserDataManager"
+    ],
+    "guid": "805287ec2d2710c42b84906f5e612677",
+    "code_refs": {
+      "Client/1_backup/Assets/_Project/Scripts/Editor/AccountTempletEditor.cs": [
+        "UserDataManager"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/Editor/ItemCreaterEditor.cs": [
+        "UserDataManager"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/Editor/PlayerCharacterEditor.cs": [
+        "UserDataManager"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/Editor/ShopCatalogEditor.cs": [
+        "UserDataManager"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/Editor/StageCreaterEditor.cs": [
+        "UserDataManager"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/Manager/GameManager.cs": [
+        "UserDataManager"
+      ]
+    },
+    "serialized_refs": [],
+    "all_commented": false,
+    "before": "Client/1_backup/Assets/_Project/Scripts/Manager/UserDataManager.cs",
+    "classification": "Active-Core / Planned-Legacy Candidate (partial responsibility)",
+    "note": "Reference presence is not proof of current runtime reachability; Editor attributes and Unity callbacks are manual-review evidence."
+  },
+  {
+    "file": "Client/1_backup/Assets/_Project/Scripts/NetWorkManager/NetworkManager.cs",
+    "classes": [
+      "NetworkManager",
+      "UnityNetWorkHandler"
+    ],
+    "guid": "d1e08a6bfc95c914eb704ebe67427d1e",
+    "code_refs": {
+      "Client/1_backup/Assets/_Project/Scripts/Manager/GameManager.cs": [
+        "NetworkManager",
+        "UnityNetWorkHandler"
+      ]
+    },
+    "serialized_refs": [
+      "Client/1_backup/Assets/_Project/Scenes/Title.unity",
+      "Client/1_backup/Assets/_Project/Scenes/Legacy/Recovery/0.unity"
+    ],
+    "all_commented": false,
+    "before": "Client/1_backup/Assets/_Project/Scripts/NetWorkManager/NetworkManager.cs",
+    "classification": "Active-Core / Planned-Legacy Candidate (partial responsibility)",
+    "note": "Reference presence is not proof of current runtime reachability; Editor attributes and Unity callbacks are manual-review evidence."
+  },
+  {
+    "file": "Client/1_backup/Assets/_Project/Scripts/NetWorkManager/PacketHandler.cs",
+    "classes": [
+      "PacketHandler"
+    ],
+    "guid": "a8d22170f863be840ba78572adf86218",
+    "code_refs": {
+      "Client/1_backup/Assets/_Project/Scripts/NetWorkManager/Packet/ClientPacketManager.cs": [
+        "PacketHandler"
+      ]
+    },
+    "serialized_refs": [],
+    "all_commented": false,
+    "before": "Client/1_backup/Assets/_Project/Scripts/NetWorkManager/PacketHandler.cs",
+    "classification": "Active-Core / Planned-Legacy Candidate (partial responsibility)",
+    "note": "Reference presence is not proof of current runtime reachability; Editor attributes and Unity callbacks are manual-review evidence."
+  },
+  {
+    "file": "Client/1_backup/Assets/_Project/Scripts/Object/dataclass.cs",
+    "classes": [
+      "ConnectionCache",
+      "GamePlayCache",
+      "CharacterData",
+      "PlayerData",
+      "ItemData",
+      "item",
+      "StageData",
+      "StageMission",
+      "StageMissionEnum"
+    ],
+    "guid": "e2382616017c45a4eba2423869116bf4",
+    "code_refs": {
+      "Client/1_backup/Assets/ThirdParty/Modern UI Pack/Scripts/Charts/PieChart.cs": [
+        "item"
+      ],
+      "Client/1_backup/Assets/ThirdParty/Modern UI Pack/Scripts/Charts/PieChartEditor.cs": [
+        "item"
+      ],
+      "Client/1_backup/Assets/ThirdParty/Modern UI Pack/Scripts/Context Menu/ContextMenuContent.cs": [
+        "item"
+      ],
+      "Client/1_backup/Assets/ThirdParty/Modern UI Pack/Scripts/Context Menu/ContextMenuContentEditor.cs": [
+        "item"
+      ],
+      "Client/1_backup/Assets/ThirdParty/Modern UI Pack/Scripts/Context Menu/ContextMenuSubMenu.cs": [
+        "item"
+      ],
+      "Client/1_backup/Assets/ThirdParty/Modern UI Pack/Scripts/Dropdown/CustomDropdown.cs": [
+        "item"
+      ],
+      "Client/1_backup/Assets/ThirdParty/Modern UI Pack/Scripts/Dropdown/CustomDropdownEditor.cs": [
+        "item"
+      ],
+      "Client/1_backup/Assets/ThirdParty/Modern UI Pack/Scripts/Dropdown/DropdownMultiSelect.cs": [
+        "item"
+      ],
+      "Client/1_backup/Assets/ThirdParty/Modern UI Pack/Scripts/Horizontal Selector/HorizontalSelector.cs": [
+        "item"
+      ],
+      "Client/1_backup/Assets/ThirdParty/Modern UI Pack/Scripts/Horizontal Selector/HorizontalSelectorEditor.cs": [
+        "item"
+      ],
+      "Client/1_backup/Assets/ThirdParty/Modern UI Pack/Scripts/ListView/ListViewEditor.cs": [
+        "item"
+      ],
+      "Client/1_backup/Assets/ThirdParty/Modern UI Pack/Scripts/Window/WindowManagerEditor.cs": [
+        "item"
+      ],
+      "Client/1_backup/Assets/ThirdParty/UnityChan.SpringBone/Script/SpringBone/SpringBone.cs": [
+        "item"
+      ],
+      "Client/1_backup/Assets/ThirdParty/UnityChan.SpringBone/Script/SpringBone/SpringManager.cs": [
+        "item"
+      ],
+      "Client/1_backup/Assets/ThirdParty/UnityChan.SpringBone/Script/Utility/CSVBuilder.cs": [
+        "item"
+      ],
+      "Client/1_backup/Assets/ThirdParty/UnityChan.SpringBone/Script/Utility/GameObjectUtil.cs": [
+        "item"
+      ],
+      "Client/1_backup/Assets/ThirdParty/UnityChan.SpringBone/Script/Utility/TextRecordParsing.cs": [
+        "item"
+      ],
+      "Client/1_backup/Assets/ThirdParty/UnityChan.SpringBone/Script/SpringBone/Setup/DynamicsSetup.cs": [
+        "item"
+      ],
+      "Client/1_backup/Assets/ThirdParty/UnityChan.SpringBone/Script/SpringBone/Setup/SpringBoneExporting.cs": [
+        "item"
+      ],
+      "Client/1_backup/Assets/ThirdParty/UnityChan.SpringBone/Script/SpringBone/Setup/SpringBoneImporting.cs": [
+        "item"
+      ],
+      "Client/1_backup/Assets/ThirdParty/UnityChan.SpringBone/Script/SpringBone/Setup/SpringBoneSetup.cs": [
+        "item"
+      ],
+      "Client/1_backup/Assets/ThirdParty/UnityChan.SpringBone/Script/SpringBone/Setup/SpringColliderExporting.cs": [
+        "item"
+      ],
+      "Client/1_backup/Assets/ThirdParty/UnityChan.SpringBone/Script/SpringBone/Setup/SpringColliderImporting.cs": [
+        "item"
+      ],
+      "Client/1_backup/Assets/ThirdParty/UnityChan.SpringBone/Script/SpringBone/Setup/SpringSetupComponentDefiners.cs": [
+        "item"
+      ],
+      "Client/1_backup/Assets/ThirdParty/UnityChan.SpringBone/Script/SpringBone/Editor/SpringBone/AutoSpringBoneSetup.cs": [
+        "item"
+      ],
+      "Client/1_backup/Assets/ThirdParty/UnityChan.SpringBone/Script/SpringBone/Editor/SpringBone/SpringColliderEditorActions.cs": [
+        "item"
+      ],
+      "Client/1_backup/Assets/ThirdParty/UnityChan.SpringBone/Script/SpringBone/Editor/SpringBone/GUI/GUIElements.cs": [
+        "item"
+      ],
+      "Client/1_backup/Assets/ThirdParty/UnityChan.SpringBone/Script/SpringBone/Editor/SpringBone/GUI/Inspectors/SpringBoneInspector.cs": [
+        "item"
+      ],
+      "Client/1_backup/Assets/ThirdParty/UnityChan.SpringBone/Script/SpringBone/Editor/SpringBone/GUI/Inspectors/SpringColliderBoneSelector.cs": [
+        "item"
+      ],
+      "Client/1_backup/Assets/ThirdParty/UnityChan.SpringBone/Script/SpringBone/Editor/SpringBone/GUI/Inspectors/SpringManagerInspector.cs": [
+        "item"
+      ],
+      "Client/1_backup/Assets/ThirdParty/UnityChan.SpringBone/Script/SpringBone/Editor/SpringBone/GUI/Windows/MirrorSpringBoneWindow.cs": [
+        "item"
+      ],
+      "Client/1_backup/Assets/ThirdParty/UnityChan.SpringBone/Script/Utility/Editor/SetObjectParentWindow.cs": [
+        "item"
+      ],
+      "Client/1_backup/Assets/ThirdParty/UnityChan.SpringBone/Script/Utility/ObjectBuilding/StringQueueObjectBuilder.cs": [
+        "item"
+      ],
+      "Client/1_backup/Assets/ThirdParty/UnityChan.SpringBone/Script/Utility/ObjectBuilding/TypedStringToValueMap.cs": [
+        "item"
+      ],
+      "Client/1_backup/Assets/ThirdParty/UnityChan.SpringBone/Script/Utility/ObjectBuilding/UnityComponentStringListBuilder.cs": [
+        "item"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/PlannedLegacy/ContentLoading/LoadManager.AssetBundle.cs": [
+        "CharacterData",
+        "ItemData",
+        "item"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/DeveolopEditor/accountEditorScript.cs": [
+        "ItemData",
+        "StageData"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/DeveolopEditor/ItemCreater.cs": [
+        "ItemData"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/Editor/AccountTempletEditor.cs": [
+        "ItemData",
+        "PlayerData",
+        "StageData",
+        "item"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/Editor/ItemCreaterEditor.cs": [
+        "ItemData",
+        "item"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/Editor/PlayerCharacterEditor.cs": [
+        "PlayerData"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/Editor/StageCreaterEditor.cs": [
+        "CharacterData",
+        "ItemData",
+        "StageMission",
+        "item"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/interface/ItemBroadcaster.cs": [
+        "item"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/interface/ItemObserver.cs": [
+        "item"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/Manager/FIleIOManager.cs": [
+        "ConnectionCache",
+        "GamePlayCache"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/Manager/GameManager.cs": [
+        "GamePlayCache",
+        "PlayerData",
+        "item"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/Manager/LoadManager.cs": [
+        "CharacterData",
+        "ItemData",
+        "PlayerData",
+        "StageData",
+        "item"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/Manager/Stage.cs": [
+        "PlayerData",
+        "StageMission",
+        "StageMissionEnum",
+        "item"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/Manager/UserDataManager.cs": [
+        "ConnectionCache",
+        "ItemData",
+        "PlayerData",
+        "StageData",
+        "item"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/Object/shopitems.cs": [
+        "ItemData",
+        "item"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/Object/UserAccountData.cs": [
+        "ItemData",
+        "PlayerData",
+        "StageData",
+        "item"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/Object/UserAccountDataNetworkMember.cs": [
+        "PlayerData",
+        "StageData",
+        "item"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/Legacy/Unused/UI/DebugButton.cs": [
+        "item"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/UI/spawncharactericonUI.cs": [
+        "CharacterData"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/Object/Character/basic/CharacterInformation.cs": [
+        "PlayerData"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/Object/Character/basic/GameCharacter.cs": [
+        "CharacterData"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/UI/Game/GameClearCharacterIcon.cs": [
+        "PlayerData"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/UI/Game/GameClearUI.cs": [
+        "PlayerData",
+        "item"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/UI/Title/TitleScreen.cs": [
+        "ConnectionCache"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/UI/Tutorial/Tutorial.cs": [
+        "GamePlayCache"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Character/CharacterGradeUpgradeUI.cs": [
+        "PlayerData",
+        "item"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Character/CharacterListCreater.cs": [
+        "GamePlayCache"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Character/CharacterListIconUI.cs": [
+        "PlayerData"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Character/CharacterListSortUI.cs": [
+        "GamePlayCache"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Character/CharacterUI.cs": [
+        "GamePlayCache",
+        "PlayerData",
+        "item"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Character/CharacterUpgradeUI.cs": [
+        "PlayerData",
+        "item"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Character/ExpItemPanel.cs": [
+        "item"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Character/LVUpgradePanel.cs": [
+        "PlayerData",
+        "item"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Character/PieceItemIconUI.cs": [
+        "item"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Item/ItemDescriptionUI.cs": [
+        "item"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Item/ItemIconUI.cs": [
+        "item"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Item/itemListIconUI.cs": [
+        "item"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Item/itemUI.cs": [
+        "item"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Item/LeftItemUI.cs": [
+        "item"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Shop/ShopItemIconUI.cs": [
+        "item"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Shop/ShopItemPurchaseUI.cs": [
+        "item"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Shop/ShopUI.cs": [
+        "item"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Stage/CharacterIconUI.cs": [
+        "PlayerData"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Stage/CharacterSelectIconUI.cs": [
+        "PlayerData"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Stage/CharactersSelectUI.cs": [
+        "GamePlayCache",
+        "PlayerData",
+        "StageData"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Stage/MainStageSelectedUI.cs": [
+        "StageData",
+        "StageMission"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Stage/SelectedCharacterIconUI.cs": [
+        "PlayerData"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Stage/StageBannerUI.cs": [
+        "StageData"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Stage/StageInformation.cs": [
+        "CharacterData",
+        "StageMission",
+        "item"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Stage/stageinfoUI.cs": [
+        "CharacterData",
+        "StageData",
+        "item"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Stage/StageSelectButton.cs": [
+        "StageData"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Stage/StageSelectedUI.cs": [
+        "StageData",
+        "StageMission",
+        "item"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Stage/StageUI.cs": [
+        "StageData"
+      ]
+    },
+    "serialized_refs": [],
+    "all_commented": false,
+    "before": "Client/1_backup/Assets/_Project/Scripts/Object/dataclass.cs",
+    "classification": "Active-Core / Retained maintenance area",
+    "note": "Reference presence is not proof of current runtime reachability; Editor attributes and Unity callbacks are manual-review evidence."
+  },
+  {
+    "file": "Client/1_backup/Assets/_Project/Scripts/Object/shopitems.cs",
+    "classes": [
+      "ShopItem",
+      "ShopItemList",
+      "ShopItemDictionary"
+    ],
+    "guid": "d72004df34ac2c4489d17c7d22290168",
+    "code_refs": {
+      "Client/1_backup/Assets/_Project/Scripts/DeveolopEditor/ShopCatalogCreater.cs": [
+        "ShopItemDictionary"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/Editor/ShopCatalogEditor.cs": [
+        "ShopItemDictionary",
+        "ShopItemList"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/Manager/GameManager.cs": [
+        "ShopItem",
+        "ShopItemDictionary"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/Manager/UserDataManager.cs": [
+        "ShopItemDictionary"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/NetWorkManager/NetworkManager.cs": [
+        "ShopItem"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/NetWorkManager/Packet/01Packet.cs": [
+        "ShopItem"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Shop/ShopItemIconUI.cs": [
+        "ShopItem"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Shop/ShopItemPurchaseUI.cs": [
+        "ShopItem"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Shop/ShopUI.cs": [
+        "ShopItem"
+      ]
+    },
+    "serialized_refs": [],
+    "all_commented": false,
+    "before": "Client/1_backup/Assets/_Project/Scripts/Object/shopitems.cs",
+    "classification": "Active-Core / Retained maintenance area",
+    "note": "Reference presence is not proof of current runtime reachability; Editor attributes and Unity callbacks are manual-review evidence."
+  },
+  {
+    "file": "Client/1_backup/Assets/_Project/Scripts/Object/UserAccountData.cs",
+    "classes": [
+      "UserAccountData",
+      "global"
+    ],
+    "guid": "4e436fdc37b59214e92b6752108aff9d",
+    "code_refs": {
+      "Client/1_backup/Assets/_Project/Scripts/Manager/FIleIOManager.cs": [
+        "UserAccountData"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/Manager/GameManager.cs": [
+        "UserAccountData",
+        "global"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/Manager/LoadManager.cs": [
+        "UserAccountData"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/Manager/UserDataManager.cs": [
+        "UserAccountData"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/NetWorkManager/NetworkManager.cs": [
+        "UserAccountData"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/NetWorkManager/PacketHandler.cs": [
+        "UserAccountData"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/UI/Title/UIDInputUI.cs": [
+        "UserAccountData"
+      ]
+    },
+    "serialized_refs": [],
+    "all_commented": false,
+    "before": "Client/1_backup/Assets/_Project/Scripts/Object/UserAccountData.cs",
+    "classification": "Active-Core / Retained maintenance area",
+    "note": "Reference presence is not proof of current runtime reachability; Editor attributes and Unity callbacks are manual-review evidence."
+  },
+  {
+    "file": "Client/1_backup/Assets/_Project/Scripts/Object/UserAccountDataNetworkMember.cs",
+    "classes": [
+      "UserAccountDataNetworkMember"
+    ],
+    "guid": "2f077e9872c787144bdb71170b5e4b5c",
+    "code_refs": {
+      "Client/1_backup/Assets/_Project/Scripts/DeveolopEditor/accountEditorScript.cs": [
+        "UserAccountDataNetworkMember"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/Editor/AccountTempletEditor.cs": [
+        "UserAccountDataNetworkMember"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/Manager/GameManager.cs": [
+        "UserAccountDataNetworkMember"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/Manager/LoadManager.cs": [
+        "UserAccountDataNetworkMember"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/Manager/UserDataManager.cs": [
+        "UserAccountDataNetworkMember"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/Object/UserAccountData.cs": [
+        "UserAccountDataNetworkMember"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/NetWorkManager/Packet/01Packet.cs": [
+        "UserAccountDataNetworkMember"
+      ]
+    },
+    "serialized_refs": [],
+    "all_commented": false,
+    "before": "Client/1_backup/Assets/_Project/Scripts/Object/UserAccountDataNetworkMember.cs",
+    "classification": "Active-Core / Retained maintenance area",
+    "note": "Reference presence is not proof of current runtime reachability; Editor attributes and Unity callbacks are manual-review evidence."
+  },
+  {
+    "file": "Client/1_backup/Assets/_Project/Scripts/Priority/Character_Priority.cs",
+    "classes": [
+      "Character_Priority"
+    ],
+    "guid": "0d3986c0ae3c71b4bb3a98ba77a4afde",
+    "code_refs": {
+      "Client/1_backup/Assets/_Project/Scripts/Camera/cameraMove.cs": [
+        "Character_Priority"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/Legacy/Unused/Character/Distance_priority.cs": [
+        "Character_Priority"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/Object/Character/basic/Character_action.cs": [
+        "Character_Priority"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/Object/Character/basic/GameCharacter.cs": [
+        "Character_Priority"
+      ]
+    },
+    "serialized_refs": [],
+    "all_commented": false,
+    "before": "Client/1_backup/Assets/_Project/Scripts/Priority/Character_Priority.cs",
+    "classification": "Active-Core / Retained maintenance area",
+    "note": "Reference presence is not proof of current runtime reachability; Editor attributes and Unity callbacks are manual-review evidence."
+  },
+  {
+    "file": "Client/1_backup/Assets/_Project/Scripts/Legacy/Unused/Character/Distance_priority.cs",
+    "classes": [
+      "Distance_priority"
+    ],
+    "guid": "3e96070918ce704408f58088fe9387e8",
+    "code_refs": {},
+    "serialized_refs": [],
+    "all_commented": false,
+    "before": "Client/1_backup/Assets/_Project/Scripts/Priority/Distance_priority.cs",
+    "classification": "Legacy-Unused",
+    "note": "Reference presence is not proof of current runtime reachability; Editor attributes and Unity callbacks are manual-review evidence."
+  },
+  {
+    "file": "Client/1_backup/Assets/_Project/Scripts/shader/CharacterShader.cs",
+    "classes": [
+      "CharacterShader"
+    ],
+    "guid": "a14f32db2bca1cf4597964d2f1896c30",
+    "code_refs": {
+      "Client/1_backup/Assets/_Project/Scripts/Object/Character/basic/GameCharacter.cs": [
+        "CharacterShader"
+      ]
+    },
+    "serialized_refs": [],
+    "all_commented": false,
+    "before": "Client/1_backup/Assets/_Project/Scripts/shader/CharacterShader.cs",
+    "classification": "Active-Core / Retained maintenance area",
+    "note": "Reference presence is not proof of current runtime reachability; Editor attributes and Unity callbacks are manual-review evidence."
+  },
+  {
+    "file": "Client/1_backup/Assets/_Project/Scripts/Legacy/Unused/Character/Character_Children_obj_effect.cs",
+    "classes": [
+      "Character_Children_obj_effect"
+    ],
+    "guid": "3c54f9d69ad8e4944993862ce044c86c",
+    "code_refs": {},
+    "serialized_refs": [],
+    "all_commented": false,
+    "before": "Client/1_backup/Assets/_Project/Scripts/shader/Character_Children_obj_effect.cs",
+    "classification": "Legacy-Unused",
+    "note": "Reference presence is not proof of current runtime reachability; Editor attributes and Unity callbacks are manual-review evidence."
+  },
+  {
+    "file": "Client/1_backup/Assets/_Project/Scripts/shader/ColorShaderManager.cs",
+    "classes": [
+      "ColorShaderManager"
+    ],
+    "guid": "74a0c4baa8d24394ab017b7a868a0bef",
+    "code_refs": {
+      "Client/1_backup/Assets/_Project/Scripts/shader/CharacterShader.cs": [
+        "ColorShaderManager"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/Legacy/Unused/Character/Character_Children_obj_effect.cs": [
+        "ColorShaderManager"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/Object/Character/_GameOBj.cs": [
+        "ColorShaderManager"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/Object/Character/basic/GameCharacter.cs": [
+        "ColorShaderManager"
+      ]
+    },
+    "serialized_refs": [],
+    "all_commented": false,
+    "before": "Client/1_backup/Assets/_Project/Scripts/shader/ColorShaderManager.cs",
+    "classification": "Active-Core / Retained maintenance area",
+    "note": "Reference presence is not proof of current runtime reachability; Editor attributes and Unity callbacks are manual-review evidence."
+  },
+  {
+    "file": "Client/1_backup/Assets/_Project/Scripts/Legacy/Unused/Misc/SpawnInformation.cs",
+    "classes": [
+      "SpawnInformation"
+    ],
+    "guid": "7c5809ba13fe4cb4fbf05aaeb29e8b0e",
+    "code_refs": {},
+    "serialized_refs": [],
+    "all_commented": false,
+    "before": "Client/1_backup/Assets/_Project/Scripts/Stage/SpawnInformation.cs",
+    "classification": "Legacy-Unused",
+    "note": "Reference presence is not proof of current runtime reachability; Editor attributes and Unity callbacks are manual-review evidence."
+  },
+  {
+    "file": "Client/1_backup/Assets/_Project/Scripts/Stage/spawn_point.cs",
+    "classes": [
+      "spawn_point"
+    ],
+    "guid": "1b22b6c92a2c1734da038a3252a68d75",
+    "code_refs": {
+      "Client/1_backup/Assets/_Project/Scripts/Manager/Stage.cs": [
+        "spawn_point"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/Presentation/Battle/Spawn_point_Player.cs": [
+        "spawn_point"
+      ]
+    },
+    "serialized_refs": [
+      "Client/1_backup/Assets/_Project/Scenes/DeveloperTest.unity",
+      "Client/1_backup/Assets/_Project/Scenes/Stage.unity",
+      "Client/1_backup/Assets/_Project/Scenes/StageTest.unity"
+    ],
+    "all_commented": false,
+    "before": "Client/1_backup/Assets/_Project/Scripts/Stage/spawn_point.cs",
+    "classification": "Active-Core / Retained maintenance area",
+    "note": "Reference presence is not proof of current runtime reachability; Editor attributes and Unity callbacks are manual-review evidence."
+  },
+  {
+    "file": "Client/1_backup/Assets/_Project/Scripts/Legacy/Unused/UI/DebugButton.cs",
+    "classes": [
+      "DebugButton"
+    ],
+    "guid": "a8b46d85da0a43a4f89c0727b6322803",
+    "code_refs": {},
+    "serialized_refs": [],
+    "all_commented": false,
+    "before": "Client/1_backup/Assets/_Project/Scripts/UI/DebugButton.cs",
+    "classification": "Legacy-Unused",
+    "note": "Reference presence is not proof of current runtime reachability; Editor attributes and Unity callbacks are manual-review evidence."
+  },
+  {
+    "file": "Client/1_backup/Assets/_Project/Scripts/UI/DoubleButtonHandlerUI.cs",
+    "classes": [
+      "DoubleButtonHandlerUI"
+    ],
+    "guid": "f6e73119a143cb544b6700e670cb2921",
+    "code_refs": {
+      "Client/1_backup/Assets/_Project/Scripts/UI/DoubleButtonSliderHandler.cs": [
+        "DoubleButtonHandlerUI"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Character/ExpItemPanel.cs": [
+        "DoubleButtonHandlerUI"
+      ]
+    },
+    "serialized_refs": [],
+    "all_commented": false,
+    "before": "Client/1_backup/Assets/_Project/Scripts/UI/DoubleButtonHandlerUI.cs",
+    "classification": "Active-Core / Retained maintenance area",
+    "note": "Reference presence is not proof of current runtime reachability; Editor attributes and Unity callbacks are manual-review evidence."
+  },
+  {
+    "file": "Client/1_backup/Assets/_Project/Scripts/UI/DoubleButtonSliderHandler.cs",
+    "classes": [
+      "DoubleButtonSliderHandler"
+    ],
+    "guid": "5828e50c83a395c40a5696d70b4e3c77",
+    "code_refs": {
+      "Client/1_backup/Assets/_Project/Scripts/UI/Setting/SettingUI.cs": [
+        "DoubleButtonSliderHandler"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Shop/ShopItemPurchaseUI.cs": [
+        "DoubleButtonSliderHandler"
+      ]
+    },
+    "serialized_refs": [
+      "Client/1_backup/Assets/_Project/Scenes/MainMenu.unity"
+    ],
+    "all_commented": false,
+    "before": "Client/1_backup/Assets/_Project/Scripts/UI/DoubleButtonSliderHandler.cs",
+    "classification": "Active-Core / Retained maintenance area",
+    "note": "Reference presence is not proof of current runtime reachability; Editor attributes and Unity callbacks are manual-review evidence."
+  },
+  {
+    "file": "Client/1_backup/Assets/_Project/Scripts/UI/ErrorMessage.cs",
+    "classes": [
+      "ErrorMessage"
+    ],
+    "guid": "b44780ccf9e9dbb47abb14897d9a8bbf",
+    "code_refs": {
+      "Client/1_backup/Assets/_Project/Scripts/Manager/GameManager.cs": [
+        "ErrorMessage"
+      ]
+    },
+    "serialized_refs": [
+      "Client/1_backup/Assets/_Project/Scenes/Title.unity",
+      "Client/1_backup/Assets/_Project/Scenes/Legacy/Recovery/0.unity"
+    ],
+    "all_commented": false,
+    "before": "Client/1_backup/Assets/_Project/Scripts/UI/ErrorMessage.cs",
+    "classification": "Active-Core / Retained maintenance area",
+    "note": "Reference presence is not proof of current runtime reachability; Editor attributes and Unity callbacks are manual-review evidence."
+  },
+  {
+    "file": "Client/1_backup/Assets/_Project/Scripts/UI/LVUpUI.cs",
+    "classes": [
+      "LVUpUI"
+    ],
+    "guid": "62779b5c436e3624c8d05c18ec54aefa",
+    "code_refs": {
+      "Client/1_backup/Assets/_Project/Scripts/Manager/GameManager.cs": [
+        "LVUpUI"
+      ]
+    },
+    "serialized_refs": [
+      "Client/1_backup/Assets/_Project/Scenes/Title.unity",
+      "Client/1_backup/Assets/_Project/Scenes/Legacy/Recovery/0.unity"
+    ],
+    "all_commented": false,
+    "before": "Client/1_backup/Assets/_Project/Scripts/UI/LVUpUI.cs",
+    "classification": "Active-Core / Retained maintenance area",
+    "note": "Reference presence is not proof of current runtime reachability; Editor attributes and Unity callbacks are manual-review evidence."
+  },
+  {
+    "file": "Client/1_backup/Assets/_Project/Scripts/UI/MenuUIHeader.cs",
+    "classes": [
+      "MenuUIHeader"
+    ],
+    "guid": "abc09ed4fc1c0b2489dde57842b2edd9",
+    "code_refs": {
+      "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Main/Menu.cs": [
+        "MenuUIHeader"
+      ]
+    },
+    "serialized_refs": [
+      "Client/1_backup/Assets/_Project/Scenes/MainMenu.unity"
+    ],
+    "all_commented": false,
+    "before": "Client/1_backup/Assets/_Project/Scripts/UI/MenuUIHeader.cs",
+    "classification": "Active-Core / Retained maintenance area",
+    "note": "Reference presence is not proof of current runtime reachability; Editor attributes and Unity callbacks are manual-review evidence."
+  },
+  {
+    "file": "Client/1_backup/Assets/_Project/Scripts/UI/ScriptMessageBox.cs",
+    "classes": [
+      "ScriptMessageBox"
+    ],
+    "guid": "30887c9e8a41aa84684fab3a748202f8",
+    "code_refs": {
+      "Client/1_backup/Assets/_Project/Scripts/UI/Tutorial/Tutorial.cs": [
+        "ScriptMessageBox"
+      ]
+    },
+    "serialized_refs": [],
+    "all_commented": false,
+    "before": "Client/1_backup/Assets/_Project/Scripts/UI/ScriptMessageBox.cs",
+    "classification": "Active-Core / Retained maintenance area",
+    "note": "Reference presence is not proof of current runtime reachability; Editor attributes and Unity callbacks are manual-review evidence."
+  },
+  {
+    "file": "Client/1_backup/Assets/_Project/Scripts/UI/ScrollListHandlerUI.cs",
+    "classes": [
+      "ScrollListHandlerUI"
+    ],
+    "guid": "8d286169de625ef41993baa107f1bf4a",
+    "code_refs": {
+      "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Character/CharacterListCreater.cs": [
+        "ScrollListHandlerUI"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Character/CharacterUI.cs": [
+        "ScrollListHandlerUI"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Item/itemUI.cs": [
+        "ScrollListHandlerUI"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Shop/ShopUI.cs": [
+        "ScrollListHandlerUI"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Stage/CharactersSelectUI.cs": [
+        "ScrollListHandlerUI"
+      ]
+    },
+    "serialized_refs": [],
+    "all_commented": false,
+    "before": "Client/1_backup/Assets/_Project/Scripts/UI/ScrollListHandlerUI.cs",
+    "classification": "Active-Core / Retained maintenance area",
+    "note": "Reference presence is not proof of current runtime reachability; Editor attributes and Unity callbacks are manual-review evidence."
+  },
+  {
+    "file": "Client/1_backup/Assets/_Project/Scripts/UI/spawncharactericonUI.cs",
+    "classes": [
+      "spawncharactericonUI"
+    ],
+    "guid": "41a9f1999410fd64780cac6bf2a049ea",
+    "code_refs": {
+      "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Stage/stageinfoUI.cs": [
+        "spawncharactericonUI"
+      ]
+    },
+    "serialized_refs": [
+      "Client/1_backup/Assets/_Project/Prefabs/UI/Character/spawncharactericon.prefab"
+    ],
+    "all_commented": false,
+    "before": "Client/1_backup/Assets/_Project/Scripts/UI/spawncharactericonUI.cs",
+    "classification": "Active-Core / Retained maintenance area",
+    "note": "Reference presence is not proof of current runtime reachability; Editor attributes and Unity callbacks are manual-review evidence."
+  },
+  {
+    "file": "Client/1_backup/Assets/_Project/Scripts/UI/TextAutoDisableByTransparent.cs",
+    "classes": [
+      "TextAutoDisableByTransparent"
+    ],
+    "guid": "7d6c2d5bd585cd24db3193ea2ef7a416",
+    "code_refs": {},
+    "serialized_refs": [
+      "Client/1_backup/Assets/_Project/Scenes/Stage.unity",
+      "Client/1_backup/Assets/_Project/Scenes/StageTest.unity"
+    ],
+    "all_commented": false,
+    "before": "Client/1_backup/Assets/_Project/Scripts/UI/TextAutoDisableByTransparent.cs",
+    "classification": "Active-Core / Retained maintenance area",
+    "note": "Reference presence is not proof of current runtime reachability; Editor attributes and Unity callbacks are manual-review evidence."
+  },
+  {
+    "file": "Client/1_backup/Assets/_Project/Scripts/UI/TextScriptReader.cs",
+    "classes": [
+      "TextScriptReader"
+    ],
+    "guid": "138342234d4cb0f4283f9b2401616524",
+    "code_refs": {
+      "Client/1_backup/Assets/_Project/Scripts/UI/ScriptMessageBox.cs": [
+        "TextScriptReader"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/UI/Tutorial/Tutorial.cs": [
+        "TextScriptReader"
+      ]
+    },
+    "serialized_refs": [],
+    "all_commented": false,
+    "before": "Client/1_backup/Assets/_Project/Scripts/UI/TextScriptReader.cs",
+    "classification": "Active-Core / Retained maintenance area",
+    "note": "Reference presence is not proof of current runtime reachability; Editor attributes and Unity callbacks are manual-review evidence."
+  },
+  {
+    "file": "Client/1_backup/Assets/_Project/Scripts/UI/WarningMessage.cs",
+    "classes": [
+      "WarningMessage"
+    ],
+    "guid": "2fa7949fb7988fb4884521f1ad1473c7",
+    "code_refs": {
+      "Client/1_backup/Assets/_Project/Scripts/Manager/GameManager.cs": [
+        "WarningMessage"
+      ]
+    },
+    "serialized_refs": [
+      "Client/1_backup/Assets/_Project/Scenes/Title.unity",
+      "Client/1_backup/Assets/_Project/Scenes/Legacy/Recovery/0.unity"
+    ],
+    "all_commented": false,
+    "before": "Client/1_backup/Assets/_Project/Scripts/UI/WarningMessage.cs",
+    "classification": "Active-Core / Retained maintenance area",
+    "note": "Reference presence is not proof of current runtime reachability; Editor attributes and Unity callbacks are manual-review evidence."
+  },
+  {
+    "file": "Client/1_backup/Assets/_Project/Scripts/Editor/Legacy/Referenced/AssetBundle/AssetBundleMaker.cs",
+    "classes": [
+      "AssetBundleMaker"
+    ],
+    "guid": "0daabfd1f2c5f4743a448533d1e89999",
+    "code_refs": {},
+    "serialized_refs": [],
+    "all_commented": false,
+    "before": "Client/1_backup/Assets/_Project/Scripts/Editor/Legacy/AssetBundle/AssetBundleMaker.cs",
+    "classification": "Legacy-Referenced",
+    "note": "Reference presence is not proof of current runtime reachability; Editor attributes and Unity callbacks are manual-review evidence."
+  },
+  {
+    "file": "Client/1_backup/Assets/_Project/Scripts/Editor/Legacy/Referenced/AssetBundle/VersionEditor.cs",
+    "classes": [
+      "VersionEditor"
+    ],
+    "guid": "a9814286de026454fb30bc8b93b4fa55",
+    "code_refs": {},
+    "serialized_refs": [],
+    "all_commented": false,
+    "before": "Client/1_backup/Assets/_Project/Scripts/Editor/Legacy/AssetBundle/VersionEditor.cs",
+    "classification": "Legacy-Referenced",
+    "note": "Reference presence is not proof of current runtime reachability; Editor attributes and Unity callbacks are manual-review evidence."
+  },
+  {
+    "file": "Client/1_backup/Assets/_Project/Scripts/Legacy/Unused/AssetBundle/AssetBundleManager.cs",
+    "classes": [
+      "AssetBundleManager"
+    ],
+    "guid": "84d3c97dc714b1c4893837e3ee0b4849",
+    "code_refs": {},
+    "serialized_refs": [],
+    "all_commented": false,
+    "before": "Client/1_backup/Assets/_Project/Scripts/Legacy/AssetBundle/AssetBundleManager.cs",
+    "classification": "Legacy-Unused",
+    "note": "Reference presence is not proof of current runtime reachability; Editor attributes and Unity callbacks are manual-review evidence."
+  },
+  {
+    "file": "Client/1_backup/Assets/_Project/Scripts/Legacy/Referenced/Versioning/Developer_VersionCheck.cs",
+    "classes": [
+      "Developer_VersionCheck"
+    ],
+    "guid": "c09f7b8889edc544ab7d3f1e54945d10",
+    "code_refs": {
+      "Client/1_backup/Assets/_Project/Scripts/Legacy/Referenced/Versioning/Developer_VersionManager.cs": [
+        "Developer_VersionCheck"
+      ]
+    },
+    "serialized_refs": [
+      "Client/1_backup/Assets/_Project/Scenes/Developer-VersopnManagement.unity"
+    ],
+    "all_commented": false,
+    "before": "Client/1_backup/Assets/_Project/Scripts/Legacy/AssetBundle/Developer_VersionCheck.cs",
+    "classification": "Legacy-Referenced",
+    "note": "Reference presence is not proof of current runtime reachability; Editor attributes and Unity callbacks are manual-review evidence."
+  },
+  {
+    "file": "Client/1_backup/Assets/_Project/Scripts/Legacy/Referenced/Versioning/Developer_VersionManager.cs",
+    "classes": [
+      "Developer_VersionManager"
+    ],
+    "guid": "60976ec5fe9c5c5409b4f2d1875497b3",
+    "code_refs": {},
+    "serialized_refs": [
+      "Client/1_backup/Assets/_Project/Scenes/Developer-VersopnManagement.unity"
+    ],
+    "all_commented": false,
+    "before": "Client/1_backup/Assets/_Project/Scripts/Legacy/AssetBundle/Developer_VersionManager.cs",
+    "classification": "Legacy-Referenced",
+    "note": "Reference presence is not proof of current runtime reachability; Editor attributes and Unity callbacks are manual-review evidence."
+  },
+  {
+    "file": "Client/1_backup/Assets/_Project/Scripts/Legacy/Referenced/AssetBundle/DownLoadManager.cs",
+    "classes": [
+      "DownLoadManager"
+    ],
+    "guid": "c6d7b1c32cf459b43847f0da31628a50",
+    "code_refs": {
+      "Client/1_backup/Assets/_Project/Scripts/NetWorkManager/PacketHandler.cs": [
+        "DownLoadManager"
+      ]
+    },
+    "serialized_refs": [
+      "Client/1_backup/Assets/_Project/Scenes/Title.unity",
+      "Client/1_backup/Assets/_Project/Scenes/Legacy/Recovery/0.unity"
+    ],
+    "all_commented": false,
+    "before": "Client/1_backup/Assets/_Project/Scripts/Legacy/AssetBundle/DownLoadManager.cs",
+    "classification": "Legacy-Referenced",
+    "note": "Reference presence is not proof of current runtime reachability; Editor attributes and Unity callbacks are manual-review evidence."
+  },
+  {
+    "file": "Client/1_backup/Assets/_Project/Scripts/NetWorkManager/Core/Connector.cs",
+    "classes": [
+      "Connector"
+    ],
+    "guid": "c3a8da9cca22c9c48a130f28b8b27281",
+    "code_refs": {
+      "Client/1_backup/Assets/_Project/Scripts/NetWorkManager/NetworkManager.cs": [
+        "Connector"
+      ]
+    },
+    "serialized_refs": [],
+    "all_commented": false,
+    "before": "Client/1_backup/Assets/_Project/Scripts/NetWorkManager/Core/Connector.cs",
+    "classification": "Active-Core / Retained maintenance area",
+    "note": "Reference presence is not proof of current runtime reachability; Editor attributes and Unity callbacks are manual-review evidence."
+  },
+  {
+    "file": "Client/1_backup/Assets/_Project/Scripts/NetWorkManager/Core/PacketQueue.cs",
+    "classes": [
+      "PacketQueue"
+    ],
+    "guid": "5ae9faf3e380f5a469d044b3785cd74e",
+    "code_refs": {
+      "Client/1_backup/Assets/_Project/Scripts/NetWorkManager/NetworkManager.cs": [
+        "PacketQueue"
+      ]
+    },
+    "serialized_refs": [],
+    "all_commented": false,
+    "before": "Client/1_backup/Assets/_Project/Scripts/NetWorkManager/Core/PacketQueue.cs",
+    "classification": "Active-Core / Retained maintenance area",
+    "note": "Reference presence is not proof of current runtime reachability; Editor attributes and Unity callbacks are manual-review evidence."
+  },
+  {
+    "file": "Client/1_backup/Assets/_Project/Scripts/NetWorkManager/Core/RecvBuffer.cs",
+    "classes": [
+      "RecvBuffer"
+    ],
+    "guid": "e2d08934100915f4d8c35837e1e2be8c",
+    "code_refs": {
+      "Client/1_backup/Assets/_Project/Scripts/NetWorkManager/Core/Session.cs": [
+        "RecvBuffer"
+      ]
+    },
+    "serialized_refs": [],
+    "all_commented": false,
+    "before": "Client/1_backup/Assets/_Project/Scripts/NetWorkManager/Core/RecvBuffer.cs",
+    "classification": "Active-Core / Retained maintenance area",
+    "note": "Reference presence is not proof of current runtime reachability; Editor attributes and Unity callbacks are manual-review evidence."
+  },
+  {
+    "file": "Client/1_backup/Assets/_Project/Scripts/NetWorkManager/Core/SendBuffer.cs",
+    "classes": [
+      "SendBufferHelper",
+      "SendBuffer"
+    ],
+    "guid": "9c0788d1be49999468b242de5f7d1dee",
+    "code_refs": {
+      "Client/1_backup/Assets/_Project/Scripts/NetWorkManager/Packet/01Packet.cs": [
+        "SendBufferHelper"
+      ]
+    },
+    "serialized_refs": [],
+    "all_commented": false,
+    "before": "Client/1_backup/Assets/_Project/Scripts/NetWorkManager/Core/SendBuffer.cs",
+    "classification": "Active-Core / Retained maintenance area",
+    "note": "Reference presence is not proof of current runtime reachability; Editor attributes and Unity callbacks are manual-review evidence."
+  },
+  {
+    "file": "Client/1_backup/Assets/_Project/Scripts/NetWorkManager/Core/ServerSession.cs",
+    "classes": [
+      "ServerSession"
+    ],
+    "guid": "12ed84ca488c7584c9b96abcdb643aed",
+    "code_refs": {
+      "Client/1_backup/Assets/_Project/Scripts/NetWorkManager/NetworkManager.cs": [
+        "ServerSession"
+      ]
+    },
+    "serialized_refs": [],
+    "all_commented": false,
+    "before": "Client/1_backup/Assets/_Project/Scripts/NetWorkManager/Core/ServerSession.cs",
+    "classification": "Active-Core / Retained maintenance area",
+    "note": "Reference presence is not proof of current runtime reachability; Editor attributes and Unity callbacks are manual-review evidence."
+  },
+  {
+    "file": "Client/1_backup/Assets/_Project/Scripts/NetWorkManager/Core/Session.cs",
+    "classes": [
+      "PacketSession",
+      "Session"
+    ],
+    "guid": "0427f74ce94958e42b2003167461673a",
+    "code_refs": {
+      "Client/1_backup/Assets/_Project/Scripts/NetWorkManager/PacketHandler.cs": [
+        "PacketSession"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/NetWorkManager/Core/Connector.cs": [
+        "Session"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/NetWorkManager/Core/ServerSession.cs": [
+        "PacketSession"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/NetWorkManager/Packet/ClientPacketManager.cs": [
+        "PacketSession"
+      ]
+    },
+    "serialized_refs": [],
+    "all_commented": false,
+    "before": "Client/1_backup/Assets/_Project/Scripts/NetWorkManager/Core/Session.cs",
+    "classification": "Active-Core / Retained maintenance area",
+    "note": "Reference presence is not proof of current runtime reachability; Editor attributes and Unity callbacks are manual-review evidence."
+  },
+  {
+    "file": "Client/1_backup/Assets/_Project/Scripts/NetWorkManager/Packet/01Packet.cs",
+    "classes": [
+      "PacketID",
+      "S_ApplicationDownLoadPacket",
+      "S_DownLoadPacket",
+      "IPacket",
+      "S_Message",
+      "S_LoadShopList",
+      "C_SaveShopPacket",
+      "C_RequestShopList",
+      "S_ErrorPacket",
+      "C_ConnectRequest",
+      "S_LoadAccount",
+      "C_SaveAccountData",
+      "C_CreateAccountData",
+      "C_ApplicationVersionCheck"
+    ],
+    "guid": "dd06a3ec81f476741afb180164df10e8",
+    "code_refs": {
+      "Client/1_backup/Assets/_Project/Scripts/NetWorkManager/NetworkManager.cs": [
+        "C_ApplicationVersionCheck",
+        "C_ConnectRequest",
+        "C_CreateAccountData",
+        "C_RequestShopList",
+        "C_SaveAccountData",
+        "C_SaveShopPacket",
+        "IPacket"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/NetWorkManager/PacketHandler.cs": [
+        "IPacket",
+        "S_DownLoadPacket",
+        "S_ErrorPacket",
+        "S_LoadAccount",
+        "S_LoadShopList",
+        "S_Message"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/NetWorkManager/Core/PacketQueue.cs": [
+        "IPacket"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/NetWorkManager/Packet/ClientPacketManager.cs": [
+        "IPacket",
+        "PacketID",
+        "S_ErrorPacket",
+        "S_LoadAccount",
+        "S_LoadShopList",
+        "S_Message"
+      ]
+    },
+    "serialized_refs": [],
+    "all_commented": false,
+    "before": "Client/1_backup/Assets/_Project/Scripts/NetWorkManager/Packet/01Packet.cs",
+    "classification": "Active-Core / Retained maintenance area",
+    "note": "Reference presence is not proof of current runtime reachability; Editor attributes and Unity callbacks are manual-review evidence."
+  },
+  {
+    "file": "Client/1_backup/Assets/_Project/Scripts/NetWorkManager/Packet/ClientPacketManager.cs",
+    "classes": [
+      "PacketManager"
+    ],
+    "guid": "78f4333f32d06a749898feea8529dc19",
+    "code_refs": {
+      "Client/1_backup/Assets/_Project/Scripts/NetWorkManager/NetworkManager.cs": [
+        "PacketManager"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/NetWorkManager/Core/ServerSession.cs": [
+        "PacketManager"
+      ]
+    },
+    "serialized_refs": [],
+    "all_commented": false,
+    "before": "Client/1_backup/Assets/_Project/Scripts/NetWorkManager/Packet/ClientPacketManager.cs",
+    "classification": "Active-Core / Retained maintenance area",
+    "note": "Reference presence is not proof of current runtime reachability; Editor attributes and Unity callbacks are manual-review evidence."
+  },
+  {
+    "file": "Client/1_backup/Assets/_Project/Scripts/Object/Character/_GameOBj.cs",
+    "classes": [
+      "_GameOBj"
+    ],
+    "guid": "6129c458a961c45479ea1b1d9e4192c7",
+    "code_refs": {
+      "Client/1_backup/Assets/_Project/Scripts/Object/Character/basic/GameCharacter.cs": [
+        "_GameOBj"
+      ]
+    },
+    "serialized_refs": [],
+    "all_commented": false,
+    "before": "Client/1_backup/Assets/_Project/Scripts/Object/Character/_GameOBj.cs",
+    "classification": "Active-Core / Retained maintenance area",
+    "note": "Reference presence is not proof of current runtime reachability; Editor attributes and Unity callbacks are manual-review evidence."
+  },
+  {
+    "file": "Client/1_backup/Assets/_Project/Scripts/Object/Character/basic/attack_basic.cs",
+    "classes": [
+      "attack_basic"
+    ],
+    "guid": "4d6425623812c9642be7b4893a4a3081",
+    "code_refs": {
+      "Client/1_backup/Assets/_Project/Scripts/Editor/PlayerCharacterEditor.cs": [
+        "attack_basic"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/Object/Character/basic/Character_action.cs": [
+        "attack_basic"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/Object/Character/basic/LimitBurst.cs": [
+        "attack_basic"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/Object/Character/basic/MeleeAttack_normal.cs": [
+        "attack_basic"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/Object/Character/basic/RangeAttack_normal.cs": [
+        "attack_basic"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/Object/Character/Player1/Player1_Skill1.cs": [
+        "attack_basic"
+      ]
+    },
+    "serialized_refs": [],
+    "all_commented": false,
+    "before": "Client/1_backup/Assets/_Project/Scripts/Object/Character/basic/attack_basic.cs",
+    "classification": "Active-Core / Retained maintenance area",
+    "note": "Reference presence is not proof of current runtime reachability; Editor attributes and Unity callbacks are manual-review evidence."
+  },
+  {
+    "file": "Client/1_backup/Assets/_Project/Scripts/Object/Character/basic/CharacterInformation.cs",
+    "classes": [
+      "CharacterInformation"
+    ],
+    "guid": "1c3801629eb7c5944bd4f6db073165b9",
+    "code_refs": {
+      "Client/1_backup/Assets/_Project/Scripts/PlannedLegacy/ContentLoading/LoadManager.AssetBundle.cs": [
+        "CharacterInformation"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/Editor/AccountTempletEditor.cs": [
+        "CharacterInformation"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/Editor/PlayerCharacterEditor.cs": [
+        "CharacterInformation"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/Editor/StageCreaterEditor.cs": [
+        "CharacterInformation"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/Manager/LoadManager.cs": [
+        "CharacterInformation"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/Manager/UserDataManager.cs": [
+        "CharacterInformation"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/Object/dataclass.cs": [
+        "CharacterInformation"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/Object/Character/basic/GameCharacter.cs": [
+        "CharacterInformation"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Character/CharacterGradeUpgradeUI.cs": [
+        "CharacterInformation"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Character/CharacterListIconUI.cs": [
+        "CharacterInformation"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Character/CharacterUI.cs": [
+        "CharacterInformation"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Character/CharacterUpgradeUI.cs": [
+        "CharacterInformation"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Character/LVUpgradePanel.cs": [
+        "CharacterInformation"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Stage/CharactersSelectUI.cs": [
+        "CharacterInformation"
+      ]
+    },
+    "serialized_refs": [],
+    "all_commented": false,
+    "before": "Client/1_backup/Assets/_Project/Scripts/Object/Character/basic/CharacterInformation.cs",
+    "classification": "Active-Core / Retained maintenance area",
+    "note": "Reference presence is not proof of current runtime reachability; Editor attributes and Unity callbacks are manual-review evidence."
+  },
+  {
+    "file": "Client/1_backup/Assets/_Project/Scripts/Object/Character/basic/Character_action.cs",
+    "classes": [
+      "Character_action",
+      "ActionClass"
+    ],
+    "guid": "f3ba6b2b3620cc044807d7424129c375",
+    "code_refs": {
+      "Client/1_backup/Assets/_Project/Scripts/Editor/PlayerCharacterEditor.cs": [
+        "ActionClass",
+        "Character_action"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/interface/iAct.cs": [
+        "ActionClass"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/Object/Character/basic/attack_basic.cs": [
+        "ActionClass"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/Object/Character/basic/CharacterInformation.cs": [
+        "Character_action"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/Object/Character/basic/Character_Animation.cs": [
+        "Character_action"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/Object/Character/basic/GameCharacter.cs": [
+        "Character_action"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/Presentation/Audio/Character_Audio_Player.cs": [
+        "Character_action"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Character/CharacterSkillicon.cs": [
+        "Character_action"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Character/CharacterSkillUpgradeIconUI.cs": [
+        "Character_action"
+      ]
+    },
+    "serialized_refs": [],
+    "all_commented": false,
+    "before": "Client/1_backup/Assets/_Project/Scripts/Object/Character/basic/Character_action.cs",
+    "classification": "Active-Core / Retained maintenance area",
+    "note": "Reference presence is not proof of current runtime reachability; Editor attributes and Unity callbacks are manual-review evidence."
+  },
+  {
+    "file": "Client/1_backup/Assets/_Project/Scripts/Object/Character/basic/Character_Animation.cs",
+    "classes": [
+      "Character_Animation",
+      "animation_buffer"
+    ],
+    "guid": "d6ace01404824c04aa14d90c6519c6d3",
+    "code_refs": {
+      "Client/1_backup/Assets/_Project/Scripts/Object/Character/basic/GameCharacter.cs": [
+        "Character_Animation"
+      ]
+    },
+    "serialized_refs": [],
+    "all_commented": false,
+    "before": "Client/1_backup/Assets/_Project/Scripts/Object/Character/basic/Character_Animation.cs",
+    "classification": "Active-Core / Planned-Legacy Candidate (partial responsibility)",
+    "note": "Reference presence is not proof of current runtime reachability; Editor attributes and Unity callbacks are manual-review evidence."
+  },
+  {
+    "file": "Client/1_backup/Assets/_Project/Scripts/Object/Character/basic/Enums.cs",
+    "classes": [
+      "Team",
+      "Position",
+      "ActionType",
+      "ActionDescription",
+      "BuffType",
+      "DebuffType",
+      "AttackType",
+      "Priority",
+      "PrioritySort",
+      "Shopid",
+      "charactersortoption1",
+      "charactersortoption2"
+    ],
+    "guid": "d04b1edb03fddf94082fe5a88a7b106f",
+    "code_refs": {
+      "Client/1_backup/Assets/ThirdParty/Modern UI Pack/Scripts/Context Menu/ContextMenuManagerEditor.cs": [
+        "Position"
+      ],
+      "Client/1_backup/Assets/ThirdParty/Modern UI Pack/Scripts/Dropdown/CustomDropdownEditor.cs": [
+        "Priority"
+      ],
+      "Client/1_backup/Assets/ThirdParty/Modern UI Pack/Scripts/Dropdown/DropdownMultiSelectEditor.cs": [
+        "Priority"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/Camera/cameraMove.cs": [
+        "Team"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/Development/Test_Stage.cs": [
+        "Team"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/Editor/PlayerCharacterEditor.cs": [
+        "ActionDescription",
+        "ActionType",
+        "AttackType",
+        "Position",
+        "PrioritySort",
+        "Team"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/interface/Buff.cs": [
+        "BuffType"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/interface/Debuff.cs": [
+        "DebuffType"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/Manager/Stage.cs": [
+        "Team"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/Priority/Character_Priority.cs": [
+        "AttackType",
+        "Priority",
+        "PrioritySort",
+        "Team"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/shader/CharacterShader.cs": [
+        "Team"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/UI/MenuUIHeader.cs": [
+        "Shopid"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/Object/Character/basic/attack_basic.cs": [
+        "ActionDescription",
+        "BuffType",
+        "DebuffType"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/Object/Character/basic/CharacterInformation.cs": [
+        "Position"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/Object/Character/basic/Character_action.cs": [
+        "ActionDescription",
+        "ActionType",
+        "AttackType",
+        "BuffType",
+        "DebuffType",
+        "Priority",
+        "PrioritySort",
+        "Team"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/Object/Character/basic/GameCharacter.cs": [
+        "Position",
+        "Team"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/Presentation/Battle/Character_Particle_System.cs": [
+        "Position"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Character/CharacterListCreater.cs": [
+        "charactersortoption1",
+        "charactersortoption2"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Character/CharacterListIconUI.cs": [
+        "Position",
+        "charactersortoption1"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Character/CharacterListSortUI.cs": [
+        "charactersortoption1",
+        "charactersortoption2"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Character/CharacterSkillicon.cs": [
+        "ActionType"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Character/CharacterSkillUpgradeIconUI.cs": [
+        "ActionType"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Character/CharacterUI.cs": [
+        "charactersortoption1",
+        "charactersortoption2"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Shop/ShopUI.cs": [
+        "Shopid"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Stage/CharactersSelectUI.cs": [
+        "charactersortoption1"
+      ]
+    },
+    "serialized_refs": [],
+    "all_commented": false,
+    "before": "Client/1_backup/Assets/_Project/Scripts/Object/Character/basic/Enums.cs",
+    "classification": "Active-Core / Retained maintenance area",
+    "note": "Reference presence is not proof of current runtime reachability; Editor attributes and Unity callbacks are manual-review evidence."
+  },
+  {
+    "file": "Client/1_backup/Assets/_Project/Scripts/Object/Character/basic/GameCharacter.cs",
+    "classes": [
+      "GameCharacter"
+    ],
+    "guid": "db580c960b9f3874ebafaaecd38c1d7a",
+    "code_refs": {
+      "Client/1_backup/Assets/_Project/Scripts/Camera/cameraMove.cs": [
+        "GameCharacter"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/Development/Test_Stage.cs": [
+        "GameCharacter"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/Editor/PlayerCharacterEditor.cs": [
+        "GameCharacter"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/interface/Buff.cs": [
+        "GameCharacter"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/interface/Character_observer.cs": [
+        "GameCharacter"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/interface/Debuff.cs": [
+        "GameCharacter"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/interface/iAct.cs": [
+        "GameCharacter"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/Manager/LoadManager.cs": [
+        "GameCharacter"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/Manager/Stage.cs": [
+        "GameCharacter"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/Priority/Character_Priority.cs": [
+        "GameCharacter"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/Legacy/Unused/Character/Distance_priority.cs": [
+        "GameCharacter"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/Legacy/Unused/Character/Character_Children_obj_effect.cs": [
+        "GameCharacter"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/Stage/spawn_point.cs": [
+        "GameCharacter"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/Object/Character/basic/attack_basic.cs": [
+        "GameCharacter"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/Object/Character/basic/Character_action.cs": [
+        "GameCharacter"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/Object/Character/basic/Character_Animation.cs": [
+        "GameCharacter"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/Object/Character/basic/LimitBurst.cs": [
+        "GameCharacter"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/Object/Character/basic/MeleeAttack_normal.cs": [
+        "GameCharacter"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/Object/Character/basic/RangeAttack_normal.cs": [
+        "GameCharacter"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/Object/Character/basic/range_bullet.cs": [
+        "GameCharacter"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/Legacy/Unused/Character/Player1.cs": [
+        "GameCharacter"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/Object/Character/Player1/Player1_LB.cs": [
+        "GameCharacter"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/Object/Character/Player1/Player1_Skill1.cs": [
+        "GameCharacter"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/Presentation/Battle/Spawn_point_Player.cs": [
+        "GameCharacter"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/Priority/Priority_Member/Distance_Member.cs": [
+        "GameCharacter"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/Priority/Priority_Member/Priority_Member.cs": [
+        "GameCharacter"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/UI/Game/CharacterGameStatusUI.cs": [
+        "GameCharacter"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/UI/Game/character_slider.cs": [
+        "GameCharacter"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/UI/Game/character_status_ui.cs": [
+        "GameCharacter"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/UI/Game/ChracterGameIconUI.cs": [
+        "GameCharacter"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Character/CharacterUpgradeModeling.cs": [
+        "GameCharacter"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Main/StarCharacterStanding.cs": [
+        "GameCharacter"
+      ]
+    },
+    "serialized_refs": [
+      "Client/1_backup/Assets/_Project/Scenes/DeveloperTest.unity",
+      "Client/1_backup/Assets/_Project/Prefabs/Player1/(Past)P01.prefab",
+      "Client/1_backup/Assets/_Project/Prefabs/Player1/P01.prefab",
+      "Client/1_backup/Assets/_Project/Prefabs/Player2/P02.prefab",
+      "Client/1_backup/Assets/_Project/Prefabs/Player3/P03.prefab",
+      "Client/1_backup/Assets/_Project/Prefabs/Player4/P04.prefab",
+      "Client/1_backup/Assets/_Project/Prefabs/Test_enemy/E00.prefab"
+    ],
+    "all_commented": false,
+    "before": "Client/1_backup/Assets/_Project/Scripts/Object/Character/basic/GameCharacter.cs",
+    "classification": "Active-Core / Retained maintenance area",
+    "note": "Reference presence is not proof of current runtime reachability; Editor attributes and Unity callbacks are manual-review evidence."
+  },
+  {
+    "file": "Client/1_backup/Assets/_Project/Scripts/Object/Character/basic/LimitBurst.cs",
+    "classes": [
+      "LimitBurst"
+    ],
+    "guid": "7842f4f5025cba446be3713b7731dbbe",
+    "code_refs": {
+      "Client/1_backup/Assets/_Project/Scripts/Object/Character/basic/GameCharacter.cs": [
+        "LimitBurst"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/Object/Character/Player1/Player1_LB.cs": [
+        "LimitBurst"
+      ]
+    },
+    "serialized_refs": [],
+    "all_commented": false,
+    "before": "Client/1_backup/Assets/_Project/Scripts/Object/Character/basic/LimitBurst.cs",
+    "classification": "Active-Core / Retained maintenance area",
+    "note": "Reference presence is not proof of current runtime reachability; Editor attributes and Unity callbacks are manual-review evidence."
+  },
+  {
+    "file": "Client/1_backup/Assets/_Project/Scripts/Object/Character/basic/MeleeAttack_normal.cs",
+    "classes": [
+      "MeleeAttack_normal"
+    ],
+    "guid": "9ec638af6a71cf8459be2d18727817d4",
+    "code_refs": {
+      "Client/1_backup/Assets/_Project/Scripts/Legacy/Unused/Character/Player1.cs": [
+        "MeleeAttack_normal"
+      ]
+    },
+    "serialized_refs": [],
+    "all_commented": false,
+    "before": "Client/1_backup/Assets/_Project/Scripts/Object/Character/basic/MeleeAttack_normal.cs",
+    "classification": "Active-Core / Retained maintenance area",
+    "note": "Reference presence is not proof of current runtime reachability; Editor attributes and Unity callbacks are manual-review evidence."
+  },
+  {
+    "file": "Client/1_backup/Assets/_Project/Scripts/Object/Character/basic/RangeAttack_normal.cs",
+    "classes": [
+      "RangeAttack_normal"
+    ],
+    "guid": "be81adc8aaa53c14eb7be180c2c13e15",
+    "code_refs": {},
+    "serialized_refs": [],
+    "all_commented": false,
+    "before": "Client/1_backup/Assets/_Project/Scripts/Object/Character/basic/RangeAttack_normal.cs",
+    "classification": "Untouched Ambiguous: dynamic action",
+    "note": "Reference presence is not proof of current runtime reachability; Editor attributes and Unity callbacks are manual-review evidence."
+  },
+  {
+    "file": "Client/1_backup/Assets/_Project/Scripts/Object/Character/basic/range_bullet.cs",
+    "classes": [
+      "range_bullet"
+    ],
+    "guid": "b7a96c7f768935c4f8ec47197f4d0c37",
+    "code_refs": {
+      "Client/1_backup/Assets/_Project/Scripts/Object/Character/basic/RangeAttack_normal.cs": [
+        "range_bullet"
+      ]
+    },
+    "serialized_refs": [],
+    "all_commented": false,
+    "before": "Client/1_backup/Assets/_Project/Scripts/Object/Character/basic/range_bullet.cs",
+    "classification": "Active-Core / Retained maintenance area",
+    "note": "Reference presence is not proof of current runtime reachability; Editor attributes and Unity callbacks are manual-review evidence."
+  },
+  {
+    "file": "Client/1_backup/Assets/_Project/Scripts/Legacy/Unused/Character/Player1.cs",
+    "classes": [
+      "Player1"
+    ],
+    "guid": "d6786cc53ef31e74980b67d4f68fe287",
+    "code_refs": {},
+    "serialized_refs": [],
+    "all_commented": false,
+    "before": "Client/1_backup/Assets/_Project/Scripts/Object/Character/Player1/Player1.cs",
+    "classification": "Legacy-Unused",
+    "note": "Reference presence is not proof of current runtime reachability; Editor attributes and Unity callbacks are manual-review evidence."
+  },
+  {
+    "file": "Client/1_backup/Assets/_Project/Scripts/Object/Character/Player1/Player1_LB.cs",
+    "classes": [
+      "Player1_LB"
+    ],
+    "guid": "a2ad82a601dba6549a3bc3c02dc30aec",
+    "code_refs": {},
+    "serialized_refs": [],
+    "all_commented": false,
+    "before": "Client/1_backup/Assets/_Project/Scripts/Object/Character/Player1/Player1_LB.cs",
+    "classification": "Untouched Ambiguous: dynamic action",
+    "note": "Reference presence is not proof of current runtime reachability; Editor attributes and Unity callbacks are manual-review evidence."
+  },
+  {
+    "file": "Client/1_backup/Assets/_Project/Scripts/Object/Character/Player1/Player1_Skill1.cs",
+    "classes": [
+      "Player1_Skill1"
+    ],
+    "guid": "21930741ea68c4f4ab7dcd97d5482c9b",
+    "code_refs": {
+      "Client/1_backup/Assets/_Project/Scripts/Legacy/Unused/Character/Player1.cs": [
+        "Player1_Skill1"
+      ]
+    },
+    "serialized_refs": [],
+    "all_commented": false,
+    "before": "Client/1_backup/Assets/_Project/Scripts/Object/Character/Player1/Player1_Skill1.cs",
+    "classification": "Untouched Ambiguous: dynamic action",
+    "note": "Reference presence is not proof of current runtime reachability; Editor attributes and Unity callbacks are manual-review evidence."
+  },
+  {
+    "file": "Client/1_backup/Assets/_Project/Scripts/Presentation/Audio/AudioClipUser.cs",
+    "classes": [
+      "AudioClipUser"
+    ],
+    "guid": "ef4e9c47c001487409279d0192ae53fc",
+    "code_refs": {
+      "Client/1_backup/Assets/_Project/Scripts/Presentation/Audio/ClickAudioClipUser.cs": [
+        "AudioClipUser"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/Presentation/Audio/SwitchClickAudioClipUser.cs": [
+        "AudioClipUser"
+      ]
+    },
+    "serialized_refs": [],
+    "all_commented": false,
+    "before": "Client/1_backup/Assets/_Project/Scripts/Presentation/Audio/AudioClipUser.cs",
+    "classification": "Active-Core / Retained maintenance area",
+    "note": "Reference presence is not proof of current runtime reachability; Editor attributes and Unity callbacks are manual-review evidence."
+  },
+  {
+    "file": "Client/1_backup/Assets/_Project/Scripts/Presentation/Audio/Audio_Player.cs",
+    "classes": [
+      "Audio_Player"
+    ],
+    "guid": "21c0fa0ae6339e44faf58004539c2e76",
+    "code_refs": {
+      "Client/1_backup/Assets/_Project/Scripts/Presentation/Audio/BackGroundAudioPlayer.cs": [
+        "Audio_Player"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/Presentation/Audio/Character_Audio_Player.cs": [
+        "Audio_Player"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/Presentation/Audio/UIAudioPlayer.cs": [
+        "Audio_Player"
+      ]
+    },
+    "serialized_refs": [],
+    "all_commented": false,
+    "before": "Client/1_backup/Assets/_Project/Scripts/Presentation/Audio/Audio_Player.cs",
+    "classification": "Active-Core / Retained maintenance area",
+    "note": "Reference presence is not proof of current runtime reachability; Editor attributes and Unity callbacks are manual-review evidence."
+  },
+  {
+    "file": "Client/1_backup/Assets/_Project/Scripts/Presentation/Audio/BackGroundAudioPlayer.cs",
+    "classes": [
+      "BackGroundAudioPlayer"
+    ],
+    "guid": "501d5d2ad46b9c246852e5aff81ce0fe",
+    "code_refs": {
+      "Client/1_backup/Assets/_Project/Scripts/Manager/Stage.cs": [
+        "BackGroundAudioPlayer"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/UI/Loading/LoadingProgressBar.cs": [
+        "BackGroundAudioPlayer"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/UI/Title/TitleScreen.cs": [
+        "BackGroundAudioPlayer"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Main/Menu.cs": [
+        "BackGroundAudioPlayer"
+      ]
+    },
+    "serialized_refs": [
+      "Client/1_backup/Assets/_Project/Scenes/DeveloperTest.unity",
+      "Client/1_backup/Assets/_Project/Scenes/Title.unity",
+      "Client/1_backup/Assets/_Project/Scenes/Legacy/Recovery/0.unity"
+    ],
+    "all_commented": false,
+    "before": "Client/1_backup/Assets/_Project/Scripts/Presentation/Audio/BackGroundAudioPlayer.cs",
+    "classification": "Active-Core / Retained maintenance area",
+    "note": "Reference presence is not proof of current runtime reachability; Editor attributes and Unity callbacks are manual-review evidence."
+  },
+  {
+    "file": "Client/1_backup/Assets/_Project/Scripts/Presentation/Audio/Character_Audio_Player.cs",
+    "classes": [
+      "Character_Audio_Player"
+    ],
+    "guid": "656e40b8c63df9f43989c95007039cdf",
+    "code_refs": {
+      "Client/1_backup/Assets/_Project/Scripts/Manager/LoadManager.cs": [
+        "Character_Audio_Player"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/Object/Character/basic/GameCharacter.cs": [
+        "Character_Audio_Player"
+      ]
+    },
+    "serialized_refs": [
+      "Client/1_backup/Assets/_Project/Prefabs/Player1/P01.prefab",
+      "Client/1_backup/Assets/_Project/Prefabs/Player2/P02.prefab",
+      "Client/1_backup/Assets/_Project/Prefabs/Player3/P03.prefab",
+      "Client/1_backup/Assets/_Project/Prefabs/Test_enemy/E00.prefab"
+    ],
+    "all_commented": false,
+    "before": "Client/1_backup/Assets/_Project/Scripts/Presentation/Audio/Character_Audio_Player.cs",
+    "classification": "Active-Core / Retained maintenance area",
+    "note": "Reference presence is not proof of current runtime reachability; Editor attributes and Unity callbacks are manual-review evidence."
+  },
+  {
+    "file": "Client/1_backup/Assets/_Project/Scripts/Presentation/Audio/ClickAudioClipUser.cs",
+    "classes": [
+      "ClickAudioClipUser"
+    ],
+    "guid": "c998eb7fe18a7e54a8cb3cc244d47d36",
+    "code_refs": {
+      "Client/1_backup/Assets/_Project/Scripts/UI/Title/TitleScreen.cs": [
+        "ClickAudioClipUser"
+      ]
+    },
+    "serialized_refs": [
+      "Client/1_backup/Assets/_Project/Scenes/MainMenu.unity",
+      "Client/1_backup/Assets/_Project/Scenes/Stage.unity",
+      "Client/1_backup/Assets/_Project/Scenes/Title.unity",
+      "Client/1_backup/Assets/_Project/Prefabs/UI/Button/BackButton.prefab",
+      "Client/1_backup/Assets/_Project/Prefabs/UI/Button/Button1.prefab",
+      "Client/1_backup/Assets/_Project/Prefabs/UI/Button/ButtonUnderText.prefab",
+      "Client/1_backup/Assets/_Project/Prefabs/UI/Button/CancelButton.prefab",
+      "Client/1_backup/Assets/_Project/Prefabs/UI/Button/CharacterListIconUI.prefab",
+      "Client/1_backup/Assets/_Project/Prefabs/UI/Button/Main_HeaderButton.prefab",
+      "Client/1_backup/Assets/_Project/Prefabs/UI/Button/Main_SettingButton.prefab",
+      "Client/1_backup/Assets/_Project/Prefabs/UI/Button/OKButton.prefab",
+      "Client/1_backup/Assets/_Project/Prefabs/UI/Button/SortButton.prefab",
+      "Client/1_backup/Assets/_Project/Prefabs/UI/Button/UpgradeButton.prefab",
+      "Client/1_backup/Assets/_Project/Prefabs/UI/Item/ShopItemIconUI.prefab",
+      "Client/1_backup/Assets/_Project/Scenes/Legacy/Recovery/0.unity"
+    ],
+    "all_commented": false,
+    "before": "Client/1_backup/Assets/_Project/Scripts/Presentation/Audio/ClickAudioClipUser.cs",
+    "classification": "Active-Core / Retained maintenance area",
+    "note": "Reference presence is not proof of current runtime reachability; Editor attributes and Unity callbacks are manual-review evidence."
+  },
+  {
+    "file": "Client/1_backup/Assets/_Project/Scripts/Legacy/Unused/Audio/SoundManager.cs",
+    "classes": [
+      "SoundManager"
+    ],
+    "guid": "4628633a8d82e3c4296bf0730009883e",
+    "code_refs": {},
+    "serialized_refs": [],
+    "all_commented": false,
+    "before": "Client/1_backup/Assets/_Project/Scripts/Presentation/Audio/SoundManager.cs",
+    "classification": "Legacy-Unused",
+    "note": "Reference presence is not proof of current runtime reachability; Editor attributes and Unity callbacks are manual-review evidence."
+  },
+  {
+    "file": "Client/1_backup/Assets/_Project/Scripts/Presentation/Audio/SwitchClickAudioClipUser.cs",
+    "classes": [
+      "SwitchClickAudioClipUser"
+    ],
+    "guid": "1dcccd6b78dbb434bba17d43efba7fd5",
+    "code_refs": {},
+    "serialized_refs": [
+      "Client/1_backup/Assets/_Project/Scenes/MainMenu.unity",
+      "Client/1_backup/Assets/_Project/Prefabs/UI/Button/Minus.prefab",
+      "Client/1_backup/Assets/_Project/Prefabs/UI/Button/Plus.prefab",
+      "Client/1_backup/Assets/_Project/Prefabs/UI/Character/ExpItemPanel.prefab",
+      "Client/1_backup/Assets/_Project/Prefabs/UI/Game/chr_icon_ui.prefab",
+      "Client/1_backup/Assets/_Project/Prefabs/UI/setting/Pause_Button.prefab",
+      "Client/1_backup/Assets/_Project/Prefabs/UI/Stage/CharacterSelectIcon.prefab",
+      "Client/1_backup/Assets/_Project/Prefabs/UI/Stage/SelectedCharacterIcon.prefab",
+      "Client/1_backup/Assets/_Project/Prefabs/UI/Stage/StageSelectButtonUI.prefab"
+    ],
+    "all_commented": false,
+    "before": "Client/1_backup/Assets/_Project/Scripts/Presentation/Audio/SwitchClickAudioClipUser.cs",
+    "classification": "Active-Core / Retained maintenance area",
+    "note": "Reference presence is not proof of current runtime reachability; Editor attributes and Unity callbacks are manual-review evidence."
+  },
+  {
+    "file": "Client/1_backup/Assets/_Project/Scripts/Presentation/Audio/UIAudioPlayer.cs",
+    "classes": [
+      "UIAudioPlayer"
+    ],
+    "guid": "a53e2cb4beeb1b64e829610124013dfb",
+    "code_refs": {
+      "Client/1_backup/Assets/_Project/Scripts/Presentation/Audio/AudioClipUser.cs": [
+        "UIAudioPlayer"
+      ]
+    },
+    "serialized_refs": [
+      "Client/1_backup/Assets/_Project/Scenes/Title.unity",
+      "Client/1_backup/Assets/_Project/Scenes/Legacy/Recovery/0.unity"
+    ],
+    "all_commented": false,
+    "before": "Client/1_backup/Assets/_Project/Scripts/Presentation/Audio/UIAudioPlayer.cs",
+    "classification": "Active-Core / Retained maintenance area",
+    "note": "Reference presence is not proof of current runtime reachability; Editor attributes and Unity callbacks are manual-review evidence."
+  },
+  {
+    "file": "Client/1_backup/Assets/_Project/Scripts/Presentation/Battle/Character_Particle_System.cs",
+    "classes": [
+      "Character_Particle_System"
+    ],
+    "guid": "ea22c6daddd0b3f49a3525f596b86524",
+    "code_refs": {
+      "Client/1_backup/Assets/_Project/Scripts/Object/Character/basic/GameCharacter.cs": [
+        "Character_Particle_System"
+      ]
+    },
+    "serialized_refs": [
+      "Client/1_backup/Assets/_Project/Prefabs/Player1/P01.prefab",
+      "Client/1_backup/Assets/_Project/Prefabs/Player2/P02.prefab",
+      "Client/1_backup/Assets/_Project/Prefabs/Player3/P03.prefab",
+      "Client/1_backup/Assets/_Project/Prefabs/Test_enemy/E00.prefab"
+    ],
+    "all_commented": false,
+    "before": "Client/1_backup/Assets/_Project/Scripts/Presentation/Battle/Character_Particle_System.cs",
+    "classification": "Active-Core / Retained maintenance area",
+    "note": "Reference presence is not proof of current runtime reachability; Editor attributes and Unity callbacks are manual-review evidence."
+  },
+  {
+    "file": "Client/1_backup/Assets/_Project/Scripts/Presentation/Battle/Spawn_point_Player.cs",
+    "classes": [
+      "Spawn_point_Player"
+    ],
+    "guid": "cbd283db0b53c4445aa981aed16f598f",
+    "code_refs": {},
+    "serialized_refs": [
+      "Client/1_backup/Assets/_Project/Scenes/Stage.unity"
+    ],
+    "all_commented": false,
+    "before": "Client/1_backup/Assets/_Project/Scripts/Presentation/Battle/Spawn_point_Player.cs",
+    "classification": "Active-Core / Retained maintenance area",
+    "note": "Reference presence is not proof of current runtime reachability; Editor attributes and Unity callbacks are manual-review evidence."
+  },
+  {
+    "file": "Client/1_backup/Assets/_Project/Scripts/Presentation/UI/LoadingBackGroundMove.cs",
+    "classes": [
+      "LoadingBackGroundMove"
+    ],
+    "guid": "786428e0212e3e84ba26be4035dc8ecc",
+    "code_refs": {},
+    "serialized_refs": [
+      "Client/1_backup/Assets/_Project/Scenes/Loading.unity"
+    ],
+    "all_commented": false,
+    "before": "Client/1_backup/Assets/_Project/Scripts/Presentation/UI/LoadingBackGroundMove.cs",
+    "classification": "Active-Core / Retained maintenance area",
+    "note": "Reference presence is not proof of current runtime reachability; Editor attributes and Unity callbacks are manual-review evidence."
+  },
+  {
+    "file": "Client/1_backup/Assets/_Project/Scripts/Presentation/UI/ModelingPin.cs",
+    "classes": [
+      "ModelingPin"
+    ],
+    "guid": "b5e73a50282769e47861b055ec991611",
+    "code_refs": {},
+    "serialized_refs": [
+      "Client/1_backup/Assets/_Project/Prefabs/Test_enemy/E00.prefab"
+    ],
+    "all_commented": false,
+    "before": "Client/1_backup/Assets/_Project/Scripts/Presentation/UI/ModelingPin.cs",
+    "classification": "Active-Core / Retained maintenance area",
+    "note": "Reference presence is not proof of current runtime reachability; Editor attributes and Unity callbacks are manual-review evidence."
+  },
+  {
+    "file": "Client/1_backup/Assets/_Project/Scripts/Presentation/UI/TitleText.cs",
+    "classes": [
+      "TitleText"
+    ],
+    "guid": "46856b83f7dd83d4d9d435910ab8017c",
+    "code_refs": {
+      "Client/1_backup/Assets/ThirdParty/ModularGameUIKit/Common/Scripts/SelectionSliderTitle.cs": [
+        "TitleText"
+      ]
+    },
+    "serialized_refs": [
+      "Client/1_backup/Assets/_Project/Scenes/Title.unity",
+      "Client/1_backup/Assets/_Project/Scenes/Legacy/Recovery/0.unity"
+    ],
+    "all_commented": false,
+    "before": "Client/1_backup/Assets/_Project/Scripts/Presentation/UI/TitleText.cs",
+    "classification": "Active-Core / Retained maintenance area",
+    "note": "Reference presence is not proof of current runtime reachability; Editor attributes and Unity callbacks are manual-review evidence."
+  },
+  {
+    "file": "Client/1_backup/Assets/_Project/Scripts/Legacy/Unused/Misc/CListSortMember.cs",
+    "classes": [],
+    "guid": "e76761a8701085448aed8cc5992e892b",
+    "code_refs": {},
+    "serialized_refs": [],
+    "all_commented": true,
+    "before": "Client/1_backup/Assets/_Project/Scripts/Priority/LIstSort/CListSortMember.cs",
+    "classification": "Legacy-Unused",
+    "note": "Reference presence is not proof of current runtime reachability; Editor attributes and Unity callbacks are manual-review evidence."
+  },
+  {
+    "file": "Client/1_backup/Assets/_Project/Scripts/Priority/Priority_Member/Distance_Member.cs",
+    "classes": [
+      "Distance_Member",
+      "HP_Member"
+    ],
+    "guid": "ed6cd593b27b71b4a85dfef85f1d2dbc",
+    "code_refs": {
+      "Client/1_backup/Assets/_Project/Scripts/Priority/Character_Priority.cs": [
+        "Distance_Member",
+        "HP_Member"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/Legacy/Unused/Character/Distance_priority.cs": [
+        "Distance_Member"
+      ]
+    },
+    "serialized_refs": [],
+    "all_commented": false,
+    "before": "Client/1_backup/Assets/_Project/Scripts/Priority/Priority_Member/Distance_Member.cs",
+    "classification": "Active-Core / Retained maintenance area",
+    "note": "Reference presence is not proof of current runtime reachability; Editor attributes and Unity callbacks are manual-review evidence."
+  },
+  {
+    "file": "Client/1_backup/Assets/_Project/Scripts/Priority/Priority_Member/Priority_Member.cs",
+    "classes": [
+      "Priority_Member"
+    ],
+    "guid": "2fde133c4db5aa44e825bcc96ffddfa8",
+    "code_refs": {
+      "Client/1_backup/Assets/_Project/Scripts/Priority/Character_Priority.cs": [
+        "Priority_Member"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/Priority/Priority_Member/Distance_Member.cs": [
+        "Priority_Member"
+      ]
+    },
+    "serialized_refs": [],
+    "all_commented": false,
+    "before": "Client/1_backup/Assets/_Project/Scripts/Priority/Priority_Member/Priority_Member.cs",
+    "classification": "Active-Core / Retained maintenance area",
+    "note": "Reference presence is not proof of current runtime reachability; Editor attributes and Unity callbacks are manual-review evidence."
+  },
+  {
+    "file": "Client/1_backup/Assets/_Project/Scripts/UI/Game/CharacterGameStatusUI.cs",
+    "classes": [
+      "CharacterGameStatusUI"
+    ],
+    "guid": "eee0a3566a8ef134b8ce5cce42d2132d",
+    "code_refs": {
+      "Client/1_backup/Assets/_Project/Scripts/Manager/Stage.cs": [
+        "CharacterGameStatusUI"
+      ]
+    },
+    "serialized_refs": [
+      "Client/1_backup/Assets/_Project/Scenes/StageTest.unity",
+      "Client/1_backup/Assets/_Project/Prefabs/UI/Game/chr_icon_ui.prefab"
+    ],
+    "all_commented": false,
+    "before": "Client/1_backup/Assets/_Project/Scripts/UI/Game/CharacterGameStatusUI.cs",
+    "classification": "Active-Core / Retained maintenance area",
+    "note": "Reference presence is not proof of current runtime reachability; Editor attributes and Unity callbacks are manual-review evidence."
+  },
+  {
+    "file": "Client/1_backup/Assets/_Project/Scripts/UI/Game/character_slider.cs",
+    "classes": [
+      "character_slider"
+    ],
+    "guid": "64f2f531c482cd04d8b0b13f9c0bb003",
+    "code_refs": {
+      "Client/1_backup/Assets/_Project/Scripts/Manager/Stage.cs": [
+        "character_slider"
+      ]
+    },
+    "serialized_refs": [
+      "Client/1_backup/Assets/_Project/Prefabs/UI/Game/character_status_slider.prefab",
+      "Client/1_backup/Assets/_Project/Prefabs/UI/Game/HP.prefab"
+    ],
+    "all_commented": false,
+    "before": "Client/1_backup/Assets/_Project/Scripts/UI/Game/character_slider.cs",
+    "classification": "Active-Core / Retained maintenance area",
+    "note": "Reference presence is not proof of current runtime reachability; Editor attributes and Unity callbacks are manual-review evidence."
+  },
+  {
+    "file": "Client/1_backup/Assets/_Project/Scripts/UI/Game/character_status_ui.cs",
+    "classes": [
+      "character_status_ui"
+    ],
+    "guid": "4a22ecb0ae05d3b4abc5e42aedf48f98",
+    "code_refs": {
+      "Client/1_backup/Assets/_Project/Scripts/UI/Game/CharacterGameStatusUI.cs": [
+        "character_status_ui"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/UI/Game/character_slider.cs": [
+        "character_status_ui"
+      ]
+    },
+    "serialized_refs": [],
+    "all_commented": false,
+    "before": "Client/1_backup/Assets/_Project/Scripts/UI/Game/character_status_ui.cs",
+    "classification": "Active-Core / Retained maintenance area",
+    "note": "Reference presence is not proof of current runtime reachability; Editor attributes and Unity callbacks are manual-review evidence."
+  },
+  {
+    "file": "Client/1_backup/Assets/_Project/Scripts/Legacy/Unused/UI/character_UI.cs",
+    "classes": [
+      "character_UI"
+    ],
+    "guid": "7eefe814a1ffda242af794377feef081",
+    "code_refs": {},
+    "serialized_refs": [],
+    "all_commented": false,
+    "before": "Client/1_backup/Assets/_Project/Scripts/UI/Game/character_UI.cs",
+    "classification": "Legacy-Unused",
+    "note": "Reference presence is not proof of current runtime reachability; Editor attributes and Unity callbacks are manual-review evidence."
+  },
+  {
+    "file": "Client/1_backup/Assets/_Project/Scripts/UI/Game/ChracterGameIconUI.cs",
+    "classes": [
+      "ChracterGameIconUI"
+    ],
+    "guid": "df190d7d507555a4ca5513a1041895d7",
+    "code_refs": {
+      "Client/1_backup/Assets/_Project/Scripts/UI/Game/CharacterGameStatusUI.cs": [
+        "ChracterGameIconUI"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/UI/Tutorial/Tutorial.cs": [
+        "ChracterGameIconUI"
+      ]
+    },
+    "serialized_refs": [
+      "Client/1_backup/Assets/_Project/Prefabs/UI/Game/chr_icon_ui.prefab"
+    ],
+    "all_commented": false,
+    "before": "Client/1_backup/Assets/_Project/Scripts/UI/Game/ChracterGameIconUI.cs",
+    "classification": "Active-Core / Retained maintenance area",
+    "note": "Reference presence is not proof of current runtime reachability; Editor attributes and Unity callbacks are manual-review evidence."
+  },
+  {
+    "file": "Client/1_backup/Assets/_Project/Scripts/UI/Game/Damage_font.cs",
+    "classes": [
+      "Damage_font"
+    ],
+    "guid": "667aebccf6df02145ac20bb3612b49e2",
+    "code_refs": {
+      "Client/1_backup/Assets/_Project/Scripts/Manager/Stage.cs": [
+        "Damage_font"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/Object/Character/basic/GameCharacter.cs": [
+        "Damage_font"
+      ]
+    },
+    "serialized_refs": [
+      "Client/1_backup/Assets/_Project/Prefabs/UI/Game/Damage_font_Enemy.prefab",
+      "Client/1_backup/Assets/_Project/Prefabs/UI/Game/Damage_font_Player.prefab"
+    ],
+    "all_commented": false,
+    "before": "Client/1_backup/Assets/_Project/Scripts/UI/Game/Damage_font.cs",
+    "classification": "Active-Core / Retained maintenance area",
+    "note": "Reference presence is not proof of current runtime reachability; Editor attributes and Unity callbacks are manual-review evidence."
+  },
+  {
+    "file": "Client/1_backup/Assets/_Project/Scripts/UI/Game/GameClearCharacterIcon.cs",
+    "classes": [
+      "GameClearCharacterIcon"
+    ],
+    "guid": "6db45b69e27dbaf43a3d189ed2522e01",
+    "code_refs": {
+      "Client/1_backup/Assets/_Project/Scripts/UI/Game/GameClearUI.cs": [
+        "GameClearCharacterIcon"
+      ]
+    },
+    "serialized_refs": [
+      "Client/1_backup/Assets/_Project/Scenes/Stage.unity",
+      "Client/1_backup/Assets/_Project/Scenes/StageTest.unity",
+      "Client/1_backup/Assets/_Project/Prefabs/UI/Character/CharacterClearconUI.prefab"
+    ],
+    "all_commented": false,
+    "before": "Client/1_backup/Assets/_Project/Scripts/UI/Game/GameClearCharacterIcon.cs",
+    "classification": "Active-Core / Retained maintenance area",
+    "note": "Reference presence is not proof of current runtime reachability; Editor attributes and Unity callbacks are manual-review evidence."
+  },
+  {
+    "file": "Client/1_backup/Assets/_Project/Scripts/UI/Game/GameClearUI.cs",
+    "classes": [
+      "GameClearUI"
+    ],
+    "guid": "252e8afd26b51244f9d545c069adae0f",
+    "code_refs": {
+      "Client/1_backup/Assets/_Project/Scripts/Manager/Stage.cs": [
+        "GameClearUI"
+      ]
+    },
+    "serialized_refs": [
+      "Client/1_backup/Assets/_Project/Scenes/Stage.unity",
+      "Client/1_backup/Assets/_Project/Scenes/StageTest.unity"
+    ],
+    "all_commented": false,
+    "before": "Client/1_backup/Assets/_Project/Scripts/UI/Game/GameClearUI.cs",
+    "classification": "Active-Core / Retained maintenance area",
+    "note": "Reference presence is not proof of current runtime reachability; Editor attributes and Unity callbacks are manual-review evidence."
+  },
+  {
+    "file": "Client/1_backup/Assets/_Project/Scripts/Legacy/Unused/UI/icon_uii_creater.cs",
+    "classes": [
+      "icon_uii_creater"
+    ],
+    "guid": "7f523a138e7ad0444845e12062720fdc",
+    "code_refs": {},
+    "serialized_refs": [],
+    "all_commented": false,
+    "before": "Client/1_backup/Assets/_Project/Scripts/UI/Game/icon_uii_creater.cs",
+    "classification": "Legacy-Unused",
+    "note": "Reference presence is not proof of current runtime reachability; Editor attributes and Unity callbacks are manual-review evidence."
+  },
+  {
+    "file": "Client/1_backup/Assets/_Project/Scripts/UI/Game/LeftRoundText.cs",
+    "classes": [
+      "LeftRoundText"
+    ],
+    "guid": "a6d101437fb362344b43e30859326ed0",
+    "code_refs": {},
+    "serialized_refs": [
+      "Client/1_backup/Assets/_Project/Scenes/DeveloperTest.unity",
+      "Client/1_backup/Assets/_Project/Scenes/Stage.unity",
+      "Client/1_backup/Assets/_Project/Scenes/StageTest.unity"
+    ],
+    "all_commented": false,
+    "before": "Client/1_backup/Assets/_Project/Scripts/UI/Game/LeftRoundText.cs",
+    "classification": "Active-Core / Retained maintenance area",
+    "note": "Reference presence is not proof of current runtime reachability; Editor attributes and Unity callbacks are manual-review evidence."
+  },
+  {
+    "file": "Client/1_backup/Assets/_Project/Scripts/UI/Game/LeftTimeText.cs",
+    "classes": [
+      "LeftTimeText"
+    ],
+    "guid": "98980add8a41ca64388755db0f69c285",
+    "code_refs": {},
+    "serialized_refs": [
+      "Client/1_backup/Assets/_Project/Scenes/DeveloperTest.unity",
+      "Client/1_backup/Assets/_Project/Scenes/Stage.unity",
+      "Client/1_backup/Assets/_Project/Scenes/StageTest.unity"
+    ],
+    "all_commented": false,
+    "before": "Client/1_backup/Assets/_Project/Scripts/UI/Game/LeftTimeText.cs",
+    "classification": "Active-Core / Retained maintenance area",
+    "note": "Reference presence is not proof of current runtime reachability; Editor attributes and Unity callbacks are manual-review evidence."
+  },
+  {
+    "file": "Client/1_backup/Assets/_Project/Scripts/UI/Game/Pause_UI.cs",
+    "classes": [
+      "Pause_UI"
+    ],
+    "guid": "4fc671c4318a99d4d90751cbe4e9d7cf",
+    "code_refs": {},
+    "serialized_refs": [
+      "Client/1_backup/Assets/_Project/Scenes/DeveloperTest.unity",
+      "Client/1_backup/Assets/_Project/Scenes/Stage.unity",
+      "Client/1_backup/Assets/_Project/Scenes/StageTest.unity"
+    ],
+    "all_commented": false,
+    "before": "Client/1_backup/Assets/_Project/Scripts/UI/Game/Pause_UI.cs",
+    "classification": "Active-Core / Retained maintenance area",
+    "note": "Reference presence is not proof of current runtime reachability; Editor attributes and Unity callbacks are manual-review evidence."
+  },
+  {
+    "file": "Client/1_backup/Assets/_Project/Scripts/Legacy/Unused/UI/StageRoundPanel.cs",
+    "classes": [
+      "StageRoundPanel"
+    ],
+    "guid": "88784bd4dc6e2ae4ebb1ce9d44183a0b",
+    "code_refs": {},
+    "serialized_refs": [],
+    "all_commented": false,
+    "before": "Client/1_backup/Assets/_Project/Scripts/UI/Game/StageRoundPanel.cs",
+    "classification": "Legacy-Unused",
+    "note": "Reference presence is not proof of current runtime reachability; Editor attributes and Unity callbacks are manual-review evidence."
+  },
+  {
+    "file": "Client/1_backup/Assets/_Project/Scripts/UI/Game/status_slider.cs",
+    "classes": [
+      "status_slider"
+    ],
+    "guid": "10c729c6137b32d43abb5fc21d9c21ec",
+    "code_refs": {
+      "Client/1_backup/Assets/_Project/Scripts/UI/Game/character_status_ui.cs": [
+        "status_slider"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/UI/Game/status_slider_reverse.cs": [
+        "status_slider"
+      ]
+    },
+    "serialized_refs": [
+      "Client/1_backup/Assets/_Project/Prefabs/UI/Game/Boss_Ui.prefab",
+      "Client/1_backup/Assets/_Project/Prefabs/UI/Game/character_status_slider.prefab",
+      "Client/1_backup/Assets/_Project/Prefabs/UI/Game/chr_icon_ui.prefab",
+      "Client/1_backup/Assets/_Project/Prefabs/UI/Game/HP.prefab",
+      "Client/1_backup/Assets/_Project/Prefabs/UI/Game/LB_gauge.prefab"
+    ],
+    "all_commented": false,
+    "before": "Client/1_backup/Assets/_Project/Scripts/UI/Game/status_slider.cs",
+    "classification": "Active-Core / Retained maintenance area",
+    "note": "Reference presence is not proof of current runtime reachability; Editor attributes and Unity callbacks are manual-review evidence."
+  },
+  {
+    "file": "Client/1_backup/Assets/_Project/Scripts/UI/Game/status_slider_reverse.cs",
+    "classes": [
+      "status_slider_reverse"
+    ],
+    "guid": "07c1cdc17beb05047922aedefbb67ec6",
+    "code_refs": {},
+    "serialized_refs": [
+      "Client/1_backup/Assets/_Project/Prefabs/UI/Game/chr_icon_ui.prefab"
+    ],
+    "all_commented": false,
+    "before": "Client/1_backup/Assets/_Project/Scripts/UI/Game/status_slider_reverse.cs",
+    "classification": "Active-Core / Retained maintenance area",
+    "note": "Reference presence is not proof of current runtime reachability; Editor attributes and Unity callbacks are manual-review evidence."
+  },
+  {
+    "file": "Client/1_backup/Assets/_Project/Scripts/UI/Loading/LoadingProgressBar.cs",
+    "classes": [
+      "LoadingProgressBar"
+    ],
+    "guid": "f4811371cb0a5b0459e8a2d8c32752b0",
+    "code_refs": {},
+    "serialized_refs": [
+      "Client/1_backup/Assets/_Project/Scenes/Loading.unity"
+    ],
+    "all_commented": false,
+    "before": "Client/1_backup/Assets/_Project/Scripts/UI/Loading/LoadingProgressBar.cs",
+    "classification": "Active-Core / Retained maintenance area",
+    "note": "Reference presence is not proof of current runtime reachability; Editor attributes and Unity callbacks are manual-review evidence."
+  },
+  {
+    "file": "Client/1_backup/Assets/_Project/Scripts/UI/Loading/LoadingText.cs",
+    "classes": [
+      "LoadingText"
+    ],
+    "guid": "24515ba571c8e5540919e01dc7d8e3ec",
+    "code_refs": {
+      "Client/1_backup/Assets/_Project/Scripts/UI/Loading/LoadingProgressBar.cs": [
+        "LoadingText"
+      ]
+    },
+    "serialized_refs": [
+      "Client/1_backup/Assets/_Project/Scenes/Loading.unity"
+    ],
+    "all_commented": false,
+    "before": "Client/1_backup/Assets/_Project/Scripts/UI/Loading/LoadingText.cs",
+    "classification": "Active-Core / Retained maintenance area",
+    "note": "Reference presence is not proof of current runtime reachability; Editor attributes and Unity callbacks are manual-review evidence."
+  },
+  {
+    "file": "Client/1_backup/Assets/_Project/Scripts/UI/Setting/SettingUI.cs",
+    "classes": [
+      "SettingData",
+      "SettingUI"
+    ],
+    "guid": "5053e98537c89b541ac8f5513ce6e93b",
+    "code_refs": {
+      "Client/1_backup/Assets/_Project/Scripts/Manager/FIleIOManager.cs": [
+        "SettingData"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/Manager/GameManager.cs": [
+        "SettingData"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/Manager/UserDataManager.cs": [
+        "SettingData"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/UI/Title/DataInitUI.cs": [
+        "SettingUI"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Main/Menu.cs": [
+        "SettingUI"
+      ]
+    },
+    "serialized_refs": [
+      "Client/1_backup/Assets/_Project/Scenes/MainMenu.unity"
+    ],
+    "all_commented": false,
+    "before": "Client/1_backup/Assets/_Project/Scripts/UI/Setting/SettingUI.cs",
+    "classification": "Active-Core / Retained maintenance area",
+    "note": "Reference presence is not proof of current runtime reachability; Editor attributes and Unity callbacks are manual-review evidence."
+  },
+  {
+    "file": "Client/1_backup/Assets/_Project/Scripts/UI/Title/DataInitUI.cs",
+    "classes": [
+      "DataInitUI"
+    ],
+    "guid": "33ba4bce023342240b571ff1851ca03b",
+    "code_refs": {
+      "Client/1_backup/Assets/_Project/Scripts/UI/Setting/SettingUI.cs": [
+        "DataInitUI"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/UI/Title/TitleScreen.cs": [
+        "DataInitUI"
+      ]
+    },
+    "serialized_refs": [
+      "Client/1_backup/Assets/_Project/Scenes/MainMenu.unity",
+      "Client/1_backup/Assets/_Project/Scenes/Title.unity",
+      "Client/1_backup/Assets/_Project/Prefabs/UI/setting/initializeUI.prefab",
+      "Client/1_backup/Assets/_Project/Scenes/Legacy/Recovery/0.unity"
+    ],
+    "all_commented": false,
+    "before": "Client/1_backup/Assets/_Project/Scripts/UI/Title/DataInitUI.cs",
+    "classification": "Active-Core / Retained maintenance area",
+    "note": "Reference presence is not proof of current runtime reachability; Editor attributes and Unity callbacks are manual-review evidence."
+  },
+  {
+    "file": "Client/1_backup/Assets/_Project/Scripts/UI/Title/nameinputfield.cs",
+    "classes": [
+      "nameinputfield"
+    ],
+    "guid": "c9146a8ff9de6de4b86b25ab3df483f3",
+    "code_refs": {
+      "Client/1_backup/Assets/_Project/Scripts/UI/Title/TitleScreen.cs": [
+        "nameinputfield"
+      ]
+    },
+    "serialized_refs": [
+      "Client/1_backup/Assets/_Project/Scenes/Title.unity",
+      "Client/1_backup/Assets/_Project/Prefabs/UI/namechange/nameinputfiled.prefab",
+      "Client/1_backup/Assets/_Project/Scenes/Legacy/Recovery/0.unity"
+    ],
+    "all_commented": false,
+    "before": "Client/1_backup/Assets/_Project/Scripts/UI/Title/nameinputfield.cs",
+    "classification": "Active-Core / Retained maintenance area",
+    "note": "Reference presence is not proof of current runtime reachability; Editor attributes and Unity callbacks are manual-review evidence."
+  },
+  {
+    "file": "Client/1_backup/Assets/_Project/Scripts/UI/Title/TitleScreen.cs",
+    "classes": [
+      "TitleScreen"
+    ],
+    "guid": "37bf70db92bc72d4d884fef54560ca9b",
+    "code_refs": {
+      "Client/1_backup/Assets/_Project/Scripts/UI/Title/DataInitUI.cs": [
+        "TitleScreen"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/UI/Title/UIDInputUI.cs": [
+        "TitleScreen"
+      ]
+    },
+    "serialized_refs": [
+      "Client/1_backup/Assets/_Project/Scenes/Title.unity",
+      "Client/1_backup/Assets/_Project/Scenes/Legacy/Recovery/0.unity"
+    ],
+    "all_commented": false,
+    "before": "Client/1_backup/Assets/_Project/Scripts/UI/Title/TitleScreen.cs",
+    "classification": "Active-Core / Planned-Legacy Candidate (partial responsibility)",
+    "note": "Reference presence is not proof of current runtime reachability; Editor attributes and Unity callbacks are manual-review evidence."
+  },
+  {
+    "file": "Client/1_backup/Assets/_Project/Scripts/UI/Title/UIDInputUI.cs",
+    "classes": [
+      "UIDInputUI"
+    ],
+    "guid": "1d80ab386798f2f45857bf87891add87",
+    "code_refs": {
+      "Client/1_backup/Assets/_Project/Scripts/UI/Title/TitleScreen.cs": [
+        "UIDInputUI"
+      ]
+    },
+    "serialized_refs": [
+      "Client/1_backup/Assets/_Project/Scenes/Title.unity",
+      "Client/1_backup/Assets/_Project/Scenes/Legacy/Recovery/0.unity"
+    ],
+    "all_commented": false,
+    "before": "Client/1_backup/Assets/_Project/Scripts/UI/Title/UIDInputUI.cs",
+    "classification": "Active-Core / Retained maintenance area",
+    "note": "Reference presence is not proof of current runtime reachability; Editor attributes and Unity callbacks are manual-review evidence."
+  },
+  {
+    "file": "Client/1_backup/Assets/_Project/Scripts/UI/Tutorial/Tutorial.cs",
+    "classes": [
+      "Tutorial"
+    ],
+    "guid": "c0e0b483545becb448f85ffe9a4249f5",
+    "code_refs": {
+      "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Main/Menu.cs": [
+        "Tutorial"
+      ]
+    },
+    "serialized_refs": [
+      "Client/1_backup/Assets/_Project/Prefabs/Tutorial.prefab"
+    ],
+    "all_commented": false,
+    "before": "Client/1_backup/Assets/_Project/Scripts/UI/Tutorial/Tutorial.cs",
+    "classification": "Active-Core / Retained maintenance area",
+    "note": "Reference presence is not proof of current runtime reachability; Editor attributes and Unity callbacks are manual-review evidence."
+  },
+  {
+    "file": "Client/1_backup/Assets/_Project/Scripts/UI/Tutorial/TutorialCreater.cs",
+    "classes": [
+      "TutorialCreater"
+    ],
+    "guid": "7ed86102dbaab164b88ce5dfa8ee5e93",
+    "code_refs": {},
+    "serialized_refs": [
+      "Client/1_backup/Assets/_Project/Scenes/MainMenu.unity"
+    ],
+    "all_commented": false,
+    "before": "Client/1_backup/Assets/_Project/Scripts/UI/Tutorial/TutorialCreater.cs",
+    "classification": "Active-Core / Retained maintenance area",
+    "note": "Reference presence is not proof of current runtime reachability; Editor attributes and Unity callbacks are manual-review evidence."
+  },
+  {
+    "file": "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Character/ChangeNameButton.cs",
+    "classes": [
+      "ChangeNameButton"
+    ],
+    "guid": "8fc4ecad959cfe9468b86d39949463a8",
+    "code_refs": {},
+    "serialized_refs": [
+      "Client/1_backup/Assets/_Project/Scenes/MainMenu.unity"
+    ],
+    "all_commented": false,
+    "before": "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Character/ChangeNameButton.cs",
+    "classification": "Active-Core / Retained maintenance area",
+    "note": "Reference presence is not proof of current runtime reachability; Editor attributes and Unity callbacks are manual-review evidence."
+  },
+  {
+    "file": "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Character/CharacterGradeUpgradeUI.cs",
+    "classes": [
+      "PieceNeedToUpgradeGrade",
+      "CharacterGradeUpgradeUI"
+    ],
+    "guid": "bf5a9c49d0274fe4b934452979955fa2",
+    "code_refs": {
+      "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Character/CharacterUpgradeUI.cs": [
+        "CharacterGradeUpgradeUI"
+      ]
+    },
+    "serialized_refs": [
+      "Client/1_backup/Assets/_Project/Scenes/MainMenu.unity"
+    ],
+    "all_commented": false,
+    "before": "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Character/CharacterGradeUpgradeUI.cs",
+    "classification": "Active-Core / Retained maintenance area",
+    "note": "Reference presence is not proof of current runtime reachability; Editor attributes and Unity callbacks are manual-review evidence."
+  },
+  {
+    "file": "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Character/CharacterListCreater.cs",
+    "classes": [
+      "CharacterListSort"
+    ],
+    "guid": "b097553b3345e504a993398233b981a4",
+    "code_refs": {
+      "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Character/CharacterUI.cs": [
+        "CharacterListSort"
+      ]
+    },
+    "serialized_refs": [
+      "Client/1_backup/Assets/_Project/Scenes/MainMenu.unity"
+    ],
+    "all_commented": false,
+    "before": "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Character/CharacterListCreater.cs",
+    "classification": "Active-Core / Retained maintenance area",
+    "note": "Reference presence is not proof of current runtime reachability; Editor attributes and Unity callbacks are manual-review evidence."
+  },
+  {
+    "file": "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Character/CharacterListIconUI.cs",
+    "classes": [
+      "CharacterListIconUI"
+    ],
+    "guid": "bafc525259987eb4f86d04029401db6b",
+    "code_refs": {
+      "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Character/CharacterUI.cs": [
+        "CharacterListIconUI"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Stage/CharacterSelectIconUI.cs": [
+        "CharacterListIconUI"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Stage/SelectedCharacterIconUI.cs": [
+        "CharacterListIconUI"
+      ]
+    },
+    "serialized_refs": [
+      "Client/1_backup/Assets/_Project/Prefabs/UI/Button/CharacterListIconUI.prefab"
+    ],
+    "all_commented": false,
+    "before": "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Character/CharacterListIconUI.cs",
+    "classification": "Active-Core / Retained maintenance area",
+    "note": "Reference presence is not proof of current runtime reachability; Editor attributes and Unity callbacks are manual-review evidence."
+  },
+  {
+    "file": "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Character/CharacterListSortUI.cs",
+    "classes": [
+      "CharacterListSortUI"
+    ],
+    "guid": "e546b7d946bf7e648b12798114ac0c42",
+    "code_refs": {
+      "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Character/CharacterListCreater.cs": [
+        "CharacterListSortUI"
+      ]
+    },
+    "serialized_refs": [
+      "Client/1_backup/Assets/_Project/Scenes/MainMenu.unity"
+    ],
+    "all_commented": false,
+    "before": "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Character/CharacterListSortUI.cs",
+    "classification": "Active-Core / Retained maintenance area",
+    "note": "Reference presence is not proof of current runtime reachability; Editor attributes and Unity callbacks are manual-review evidence."
+  },
+  {
+    "file": "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Character/CharacterSkillicon.cs",
+    "classes": [
+      "CharacterSkillicon"
+    ],
+    "guid": "19d491410d4e12d489a5f11e78f59435",
+    "code_refs": {
+      "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Character/CharacterSkillUpgradeIconUI.cs": [
+        "CharacterSkillicon"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Character/CharacterUpgradeUI.cs": [
+        "CharacterSkillicon"
+      ]
+    },
+    "serialized_refs": [
+      "Client/1_backup/Assets/_Project/Scenes/MainMenu.unity",
+      "Client/1_backup/Assets/_Project/Prefabs/UI/Character/ChracterSkillIcon.prefab"
+    ],
+    "all_commented": false,
+    "before": "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Character/CharacterSkillicon.cs",
+    "classification": "Active-Core / Retained maintenance area",
+    "note": "Reference presence is not proof of current runtime reachability; Editor attributes and Unity callbacks are manual-review evidence."
+  },
+  {
+    "file": "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Character/CharacterSkillUpgradeIconUI.cs",
+    "classes": [
+      "CharacterSkillUpgradeIconUI"
+    ],
+    "guid": "76fd33ef8eacdab4d849c1804b447282",
+    "code_refs": {
+      "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Character/CharacterUpgradeUI.cs": [
+        "CharacterSkillUpgradeIconUI"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Character/SkillUpgradeUI.cs": [
+        "CharacterSkillUpgradeIconUI"
+      ]
+    },
+    "serialized_refs": [
+      "Client/1_backup/Assets/_Project/Scenes/MainMenu.unity",
+      "Client/1_backup/Assets/_Project/Prefabs/UI/Character/CharacterSkillUpgradeIcon .prefab"
+    ],
+    "all_commented": false,
+    "before": "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Character/CharacterSkillUpgradeIconUI.cs",
+    "classification": "Active-Core / Retained maintenance area",
+    "note": "Reference presence is not proof of current runtime reachability; Editor attributes and Unity callbacks are manual-review evidence."
+  },
+  {
+    "file": "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Character/CharacterUI.cs",
+    "classes": [
+      "CharacterSortListUIHandler",
+      "CharacterUI"
+    ],
+    "guid": "44bc588aa17795d40bff221197648ff5",
+    "code_refs": {
+      "Client/1_backup/Assets/_Project/Scripts/UI/MenuUIHeader.cs": [
+        "CharacterUI"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/UI/Tutorial/Tutorial.cs": [
+        "CharacterUI"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Character/CharacterListCreater.cs": [
+        "CharacterSortListUIHandler"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Character/CharacterListIconUI.cs": [
+        "CharacterUI"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Character/CharacterListSortUI.cs": [
+        "CharacterSortListUIHandler"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Main/Menu.cs": [
+        "CharacterUI"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Stage/CharactersSelectUI.cs": [
+        "CharacterSortListUIHandler"
+      ]
+    },
+    "serialized_refs": [
+      "Client/1_backup/Assets/_Project/Scenes/MainMenu.unity"
+    ],
+    "all_commented": false,
+    "before": "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Character/CharacterUI.cs",
+    "classification": "Active-Core / Retained maintenance area",
+    "note": "Reference presence is not proof of current runtime reachability; Editor attributes and Unity callbacks are manual-review evidence."
+  },
+  {
+    "file": "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Character/CharacterUpgradeModeling.cs",
+    "classes": [
+      "CharacterUpgradeModeling"
+    ],
+    "guid": "30b9fd55c2f6fbc4f93a717ab2b69d45",
+    "code_refs": {
+      "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Character/CharacterUpgradeUI.cs": [
+        "CharacterUpgradeModeling"
+      ]
+    },
+    "serialized_refs": [
+      "Client/1_backup/Assets/_Project/Scenes/MainMenu.unity"
+    ],
+    "all_commented": false,
+    "before": "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Character/CharacterUpgradeModeling.cs",
+    "classification": "Active-Core / Planned-Legacy Candidate (partial responsibility)",
+    "note": "Reference presence is not proof of current runtime reachability; Editor attributes and Unity callbacks are manual-review evidence."
+  },
+  {
+    "file": "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Character/CharacterUpgradeUI.cs",
+    "classes": [
+      "CharacterUpgradeUI"
+    ],
+    "guid": "5864708d708cf01448e2733ef41b103d",
+    "code_refs": {
+      "Client/1_backup/Assets/_Project/Scripts/UI/Tutorial/Tutorial.cs": [
+        "CharacterUpgradeUI"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Character/CharacterGradeUpgradeUI.cs": [
+        "CharacterUpgradeUI"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Character/CharacterSkillicon.cs": [
+        "CharacterUpgradeUI"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Character/CharacterSkillUpgradeIconUI.cs": [
+        "CharacterUpgradeUI"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Character/CharacterUI.cs": [
+        "CharacterUpgradeUI"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Character/LVUpgradePanel.cs": [
+        "CharacterUpgradeUI"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Character/SkillUpgradeUI.cs": [
+        "CharacterUpgradeUI"
+      ]
+    },
+    "serialized_refs": [
+      "Client/1_backup/Assets/_Project/Scenes/MainMenu.unity"
+    ],
+    "all_commented": false,
+    "before": "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Character/CharacterUpgradeUI.cs",
+    "classification": "Active-Core / Retained maintenance area",
+    "note": "Reference presence is not proof of current runtime reachability; Editor attributes and Unity callbacks are manual-review evidence."
+  },
+  {
+    "file": "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Character/ExpItemPanel.cs",
+    "classes": [
+      "ExpItemPanel"
+    ],
+    "guid": "570efc4bd375f704ebdaf6b0293596ea",
+    "code_refs": {
+      "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Character/LVUpgradePanel.cs": [
+        "ExpItemPanel"
+      ]
+    },
+    "serialized_refs": [
+      "Client/1_backup/Assets/_Project/Scenes/MainMenu.unity",
+      "Client/1_backup/Assets/_Project/Prefabs/UI/Character/ExpItemPanel.prefab"
+    ],
+    "all_commented": false,
+    "before": "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Character/ExpItemPanel.cs",
+    "classification": "Active-Core / Retained maintenance area",
+    "note": "Reference presence is not proof of current runtime reachability; Editor attributes and Unity callbacks are manual-review evidence."
+  },
+  {
+    "file": "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Character/LVUpgradePanel.cs",
+    "classes": [
+      "LVUpgradePanel"
+    ],
+    "guid": "f3189f7d04211df4198c966ad81915ac",
+    "code_refs": {
+      "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Character/CharacterUpgradeUI.cs": [
+        "LVUpgradePanel"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Character/ExpItemPanel.cs": [
+        "LVUpgradePanel"
+      ]
+    },
+    "serialized_refs": [
+      "Client/1_backup/Assets/_Project/Scenes/MainMenu.unity"
+    ],
+    "all_commented": false,
+    "before": "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Character/LVUpgradePanel.cs",
+    "classification": "Active-Core / Retained maintenance area",
+    "note": "Reference presence is not proof of current runtime reachability; Editor attributes and Unity callbacks are manual-review evidence."
+  },
+  {
+    "file": "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Character/PieceItemIconUI.cs",
+    "classes": [
+      "PieceItemIconUI"
+    ],
+    "guid": "8cf4f66c511e7be4a986aecb0306914e",
+    "code_refs": {
+      "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Character/CharacterGradeUpgradeUI.cs": [
+        "PieceItemIconUI"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Character/CharacterUpgradeUI.cs": [
+        "PieceItemIconUI"
+      ]
+    },
+    "serialized_refs": [
+      "Client/1_backup/Assets/_Project/Scenes/MainMenu.unity"
+    ],
+    "all_commented": false,
+    "before": "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Character/PieceItemIconUI.cs",
+    "classification": "Active-Core / Retained maintenance area",
+    "note": "Reference presence is not proof of current runtime reachability; Editor attributes and Unity callbacks are manual-review evidence."
+  },
+  {
+    "file": "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Character/SkillUpgradeUI.cs",
+    "classes": [
+      "SkillUpgradeUI"
+    ],
+    "guid": "3fe3b4d99fd3e494eb4a1cb1114562f8",
+    "code_refs": {
+      "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Character/CharacterSkillUpgradeIconUI.cs": [
+        "SkillUpgradeUI"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Character/CharacterUpgradeUI.cs": [
+        "SkillUpgradeUI"
+      ]
+    },
+    "serialized_refs": [
+      "Client/1_backup/Assets/_Project/Scenes/MainMenu.unity"
+    ],
+    "all_commented": false,
+    "before": "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Character/SkillUpgradeUI.cs",
+    "classification": "Active-Core / Retained maintenance area",
+    "note": "Reference presence is not proof of current runtime reachability; Editor attributes and Unity callbacks are manual-review evidence."
+  },
+  {
+    "file": "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Item/ItemDescriptionPopUp.cs",
+    "classes": [
+      "DescriptionPopUp"
+    ],
+    "guid": "c32796464e6a3ca4a9a28747bd8bb32e",
+    "code_refs": {
+      "Client/1_backup/Assets/_Project/Scripts/Manager/GameManager.cs": [
+        "DescriptionPopUp"
+      ]
+    },
+    "serialized_refs": [
+      "Client/1_backup/Assets/_Project/Scenes/Title.unity",
+      "Client/1_backup/Assets/_Project/Prefabs/UI/Item/ItemText.prefab",
+      "Client/1_backup/Assets/_Project/Scenes/Legacy/Recovery/0.unity"
+    ],
+    "all_commented": false,
+    "before": "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Item/ItemDescriptionPopUp.cs",
+    "classification": "Active-Core / Retained maintenance area",
+    "note": "Reference presence is not proof of current runtime reachability; Editor attributes and Unity callbacks are manual-review evidence."
+  },
+  {
+    "file": "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Item/ItemDescriptionUI.cs",
+    "classes": [
+      "ItemDescriptionUI"
+    ],
+    "guid": "ef2180d7fc009a84881b3b64aa085c1d",
+    "code_refs": {
+      "Client/1_backup/Assets/_Project/Scripts/Manager/GameManager.cs": [
+        "ItemDescriptionUI"
+      ]
+    },
+    "serialized_refs": [
+      "Client/1_backup/Assets/_Project/Scenes/Title.unity",
+      "Client/1_backup/Assets/_Project/Prefabs/UI/Item/(temDescription.prefab",
+      "Client/1_backup/Assets/_Project/Scenes/Legacy/Recovery/0.unity"
+    ],
+    "all_commented": false,
+    "before": "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Item/ItemDescriptionUI.cs",
+    "classification": "Active-Core / Retained maintenance area",
+    "note": "Reference presence is not proof of current runtime reachability; Editor attributes and Unity callbacks are manual-review evidence."
+  },
+  {
+    "file": "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Item/ItemIconUI.cs",
+    "classes": [
+      "ItemIconUI"
+    ],
+    "guid": "b061a51966d04874f98de9c28c1bd124",
+    "code_refs": {
+      "Client/1_backup/Assets/_Project/Scripts/UI/Game/GameClearUI.cs": [
+        "ItemIconUI"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Character/PieceItemIconUI.cs": [
+        "ItemIconUI"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Item/itemListIconUI.cs": [
+        "ItemIconUI"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Stage/stageinfoUI.cs": [
+        "ItemIconUI"
+      ]
+    },
+    "serialized_refs": [
+      "Client/1_backup/Assets/_Project/Prefabs/UI/Game/itemGetIconUI.prefab",
+      "Client/1_backup/Assets/_Project/Prefabs/UI/Item/itemGetIconUINoAmountVer.prefab"
+    ],
+    "all_commented": false,
+    "before": "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Item/ItemIconUI.cs",
+    "classification": "Active-Core / Retained maintenance area",
+    "note": "Reference presence is not proof of current runtime reachability; Editor attributes and Unity callbacks are manual-review evidence."
+  },
+  {
+    "file": "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Item/itemListIconUI.cs",
+    "classes": [
+      "itemListIconUI"
+    ],
+    "guid": "edc11879695c0ac4d821764368acbc20",
+    "code_refs": {
+      "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Item/itemUI.cs": [
+        "itemListIconUI"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Shop/ShopItemIconUI.cs": [
+        "itemListIconUI"
+      ]
+    },
+    "serialized_refs": [
+      "Client/1_backup/Assets/_Project/Prefabs/UI/Item/ItemListIconUI.prefab"
+    ],
+    "all_commented": false,
+    "before": "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Item/itemListIconUI.cs",
+    "classification": "Active-Core / Retained maintenance area",
+    "note": "Reference presence is not proof of current runtime reachability; Editor attributes and Unity callbacks are manual-review evidence."
+  },
+  {
+    "file": "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Item/itemUI.cs",
+    "classes": [
+      "itemUI"
+    ],
+    "guid": "a3d4541b8bd6eea4786799d655f021d7",
+    "code_refs": {
+      "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Item/itemListIconUI.cs": [
+        "itemUI"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Main/Menu.cs": [
+        "itemUI"
+      ]
+    },
+    "serialized_refs": [
+      "Client/1_backup/Assets/_Project/Scenes/MainMenu.unity"
+    ],
+    "all_commented": false,
+    "before": "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Item/itemUI.cs",
+    "classification": "Active-Core / Retained maintenance area",
+    "note": "Reference presence is not proof of current runtime reachability; Editor attributes and Unity callbacks are manual-review evidence."
+  },
+  {
+    "file": "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Item/LeftItemUI.cs",
+    "classes": [
+      "LeftItemUI"
+    ],
+    "guid": "da9458f5082bcf34087a093a8d37ed58",
+    "code_refs": {
+      "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Shop/ShopUI.cs": [
+        "LeftItemUI"
+      ]
+    },
+    "serialized_refs": [
+      "Client/1_backup/Assets/_Project/Scenes/MainMenu.unity",
+      "Client/1_backup/Assets/_Project/Prefabs/UI/Item/LeftItemText.prefab"
+    ],
+    "all_commented": false,
+    "before": "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Item/LeftItemUI.cs",
+    "classification": "Active-Core / Retained maintenance area",
+    "note": "Reference presence is not proof of current runtime reachability; Editor attributes and Unity callbacks are manual-review evidence."
+  },
+  {
+    "file": "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Main/MainMenuUI.cs",
+    "classes": [
+      "MainMenuUI"
+    ],
+    "guid": "129f8b650ccf66349bbdeda33d944e48",
+    "code_refs": {
+      "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Main/Menu.cs": [
+        "MainMenuUI"
+      ]
+    },
+    "serialized_refs": [
+      "Client/1_backup/Assets/_Project/Scenes/MainMenu.unity"
+    ],
+    "all_commented": false,
+    "before": "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Main/MainMenuUI.cs",
+    "classification": "Active-Core / Retained maintenance area",
+    "note": "Reference presence is not proof of current runtime reachability; Editor attributes and Unity callbacks are manual-review evidence."
+  },
+  {
+    "file": "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Main/Menu.cs",
+    "classes": [
+      "Menu"
+    ],
+    "guid": "7fd194c0ac64f6b4998dea0224b447bb",
+    "code_refs": {
+      "Client/1_backup/Assets/ThirdParty/Modern UI Pack/Editor/Scripts/ContextMenu.cs": [
+        "Menu"
+      ],
+      "Client/1_backup/Assets/ThirdParty/Modern UI Pack/Scripts/Context Menu/ContextMenuContent.cs": [
+        "Menu"
+      ],
+      "Client/1_backup/Assets/ThirdParty/Modern UI Pack/Scripts/Context Menu/ContextMenuContentEditor.cs": [
+        "Menu"
+      ],
+      "Client/1_backup/Assets/ThirdParty/Modern UI Pack/Scripts/Context Menu/ContextMenuContentMobile.cs": [
+        "Menu"
+      ],
+      "Client/1_backup/Assets/ThirdParty/Modern UI Pack/Scripts/Context Menu/ContextMenuManager.cs": [
+        "Menu"
+      ],
+      "Client/1_backup/Assets/ThirdParty/Modern UI Pack/Scripts/Context Menu/ContextMenuManagerEditor.cs": [
+        "Menu"
+      ],
+      "Client/1_backup/Assets/ThirdParty/Modern UI Pack/Scripts/Context Menu/ContextMenuSubMenu.cs": [
+        "Menu"
+      ],
+      "Client/1_backup/Assets/ThirdParty/Modern UI Pack/Scripts/UI Manager/UIManagerEditor.cs": [
+        "Menu"
+      ],
+      "Client/1_backup/Assets/ThirdParty/SlimUI/Modern Menu 1/Scripts/Managers/UIMenuManager.cs": [
+        "Menu"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/Manager/LoadManager.cs": [
+        "Menu"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/UI/MenuUIHeader.cs": [
+        "Menu"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/UI/Tutorial/Tutorial.cs": [
+        "Menu"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Character/CharacterUpgradeUI.cs": [
+        "Menu"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Stage/stageinfoUI.cs": [
+        "Menu"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Stage/StageUI.cs": [
+        "Menu"
+      ]
+    },
+    "serialized_refs": [
+      "Client/1_backup/Assets/_Project/Scenes/MainMenu.unity"
+    ],
+    "all_commented": false,
+    "before": "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Main/Menu.cs",
+    "classification": "Active-Core / Retained maintenance area",
+    "note": "Reference presence is not proof of current runtime reachability; Editor attributes and Unity callbacks are manual-review evidence."
+  },
+  {
+    "file": "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Main/StarCharacterStanding.cs",
+    "classes": [
+      "StarCharacterStanding"
+    ],
+    "guid": "663cfe14616f16d4a91bb3fa3fce6336",
+    "code_refs": {
+      "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Main/MainMenuUI.cs": [
+        "StarCharacterStanding"
+      ]
+    },
+    "serialized_refs": [
+      "Client/1_backup/Assets/_Project/Scenes/MainMenu.unity"
+    ],
+    "all_commented": false,
+    "before": "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Main/StarCharacterStanding.cs",
+    "classification": "Active-Core / Retained maintenance area",
+    "note": "Reference presence is not proof of current runtime reachability; Editor attributes and Unity callbacks are manual-review evidence."
+  },
+  {
+    "file": "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Shop/ShopItemIconUI.cs",
+    "classes": [
+      "ShopItemIconUI"
+    ],
+    "guid": "48dff45f6d5e0ff459834901267726fe",
+    "code_refs": {
+      "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Shop/ShopItemPurchaseUI.cs": [
+        "ShopItemIconUI"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Shop/ShopUI.cs": [
+        "ShopItemIconUI"
+      ]
+    },
+    "serialized_refs": [
+      "Client/1_backup/Assets/_Project/Prefabs/UI/Item/ShopItemIconUI.prefab"
+    ],
+    "all_commented": false,
+    "before": "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Shop/ShopItemIconUI.cs",
+    "classification": "Active-Core / Retained maintenance area",
+    "note": "Reference presence is not proof of current runtime reachability; Editor attributes and Unity callbacks are manual-review evidence."
+  },
+  {
+    "file": "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Shop/ShopItemPurchaseUI.cs",
+    "classes": [
+      "ShopItemPurchaseUI"
+    ],
+    "guid": "831355de1e56eb04d85a9b5ecd6083c8",
+    "code_refs": {
+      "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Shop/ShopUI.cs": [
+        "ShopItemPurchaseUI"
+      ]
+    },
+    "serialized_refs": [
+      "Client/1_backup/Assets/_Project/Scenes/MainMenu.unity"
+    ],
+    "all_commented": false,
+    "before": "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Shop/ShopItemPurchaseUI.cs",
+    "classification": "Active-Core / Retained maintenance area",
+    "note": "Reference presence is not proof of current runtime reachability; Editor attributes and Unity callbacks are manual-review evidence."
+  },
+  {
+    "file": "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Shop/ShopUI.cs",
+    "classes": [
+      "ShopUI"
+    ],
+    "guid": "019229e22264fd34fbc8653d9529e84b",
+    "code_refs": {
+      "Client/1_backup/Assets/_Project/Scripts/UI/MenuUIHeader.cs": [
+        "ShopUI"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Main/Menu.cs": [
+        "ShopUI"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Shop/ShopItemIconUI.cs": [
+        "ShopUI"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Shop/ShopItemPurchaseUI.cs": [
+        "ShopUI"
+      ]
+    },
+    "serialized_refs": [
+      "Client/1_backup/Assets/_Project/Scenes/MainMenu.unity"
+    ],
+    "all_commented": false,
+    "before": "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Shop/ShopUI.cs",
+    "classification": "Active-Core / Retained maintenance area",
+    "note": "Reference presence is not proof of current runtime reachability; Editor attributes and Unity callbacks are manual-review evidence."
+  },
+  {
+    "file": "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Stage/CharacterIconUI.cs",
+    "classes": [
+      "CharacterIconUI"
+    ],
+    "guid": "abbe54549d5fe224596d12f695320a7e",
+    "code_refs": {
+      "Client/1_backup/Assets/_Project/Scripts/UI/Game/ChracterGameIconUI.cs": [
+        "CharacterIconUI"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/UI/Game/GameClearCharacterIcon.cs": [
+        "CharacterIconUI"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Character/CharacterListIconUI.cs": [
+        "CharacterIconUI"
+      ]
+    },
+    "serialized_refs": [],
+    "all_commented": false,
+    "before": "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Stage/CharacterIconUI.cs",
+    "classification": "Active-Core / Retained maintenance area",
+    "note": "Reference presence is not proof of current runtime reachability; Editor attributes and Unity callbacks are manual-review evidence."
+  },
+  {
+    "file": "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Stage/CharacterSelectIconUI.cs",
+    "classes": [
+      "CharacterSelectIconUI"
+    ],
+    "guid": "09320be854353614a99b14cc852c35bd",
+    "code_refs": {
+      "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Stage/CharactersSelectUI.cs": [
+        "CharacterSelectIconUI"
+      ]
+    },
+    "serialized_refs": [
+      "Client/1_backup/Assets/_Project/Prefabs/UI/Stage/CharacterSelectIcon.prefab"
+    ],
+    "all_commented": false,
+    "before": "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Stage/CharacterSelectIconUI.cs",
+    "classification": "Active-Core / Retained maintenance area",
+    "note": "Reference presence is not proof of current runtime reachability; Editor attributes and Unity callbacks are manual-review evidence."
+  },
+  {
+    "file": "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Stage/CharactersSelectUI.cs",
+    "classes": [
+      "CharactersSelectUI"
+    ],
+    "guid": "e79c3990b9f3708419649eeb143a319c",
+    "code_refs": {
+      "Client/1_backup/Assets/_Project/Scripts/UI/Tutorial/Tutorial.cs": [
+        "CharactersSelectUI"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Stage/CharacterSelectIconUI.cs": [
+        "CharactersSelectUI"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Stage/SelectedCharacterIconUI.cs": [
+        "CharactersSelectUI"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Stage/stageinfoUI.cs": [
+        "CharactersSelectUI"
+      ]
+    },
+    "serialized_refs": [
+      "Client/1_backup/Assets/_Project/Scenes/MainMenu.unity"
+    ],
+    "all_commented": false,
+    "before": "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Stage/CharactersSelectUI.cs",
+    "classification": "Active-Core / Retained maintenance area",
+    "note": "Reference presence is not proof of current runtime reachability; Editor attributes and Unity callbacks are manual-review evidence."
+  },
+  {
+    "file": "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Stage/ChriconUIPlace.cs",
+    "classes": [
+      "ChriconUIPlace"
+    ],
+    "guid": "d6a69c2749aed4f499be3fc0f08fb562",
+    "code_refs": {},
+    "serialized_refs": [
+      "Client/1_backup/Assets/_Project/Scenes/Stage.unity",
+      "Client/1_backup/Assets/_Project/Scenes/StageTest.unity"
+    ],
+    "all_commented": false,
+    "before": "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Stage/ChriconUIPlace.cs",
+    "classification": "Active-Core / Retained maintenance area",
+    "note": "Reference presence is not proof of current runtime reachability; Editor attributes and Unity callbacks are manual-review evidence."
+  },
+  {
+    "file": "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Stage/MainStageSelectedUI.cs",
+    "classes": [
+      "MainStageSelectedUI"
+    ],
+    "guid": "bee7ba7c1d6090348bfde43d39d2a145",
+    "code_refs": {
+      "Client/1_backup/Assets/_Project/Scripts/Manager/LoadManager.cs": [
+        "MainStageSelectedUI"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/UI/Tutorial/Tutorial.cs": [
+        "MainStageSelectedUI"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Stage/StageUI.cs": [
+        "MainStageSelectedUI"
+      ]
+    },
+    "serialized_refs": [
+      "Client/1_backup/Assets/_Project/Scenes/MainMenu.unity"
+    ],
+    "all_commented": false,
+    "before": "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Stage/MainStageSelectedUI.cs",
+    "classification": "Active-Core / Retained maintenance area",
+    "note": "Reference presence is not proof of current runtime reachability; Editor attributes and Unity callbacks are manual-review evidence."
+  },
+  {
+    "file": "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Stage/SelectedCharacterIconUI.cs",
+    "classes": [
+      "SelectedCharacterIconUI"
+    ],
+    "guid": "031b5654f5e544046bbe858c01646232",
+    "code_refs": {
+      "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Stage/CharactersSelectUI.cs": [
+        "SelectedCharacterIconUI"
+      ]
+    },
+    "serialized_refs": [
+      "Client/1_backup/Assets/_Project/Scenes/MainMenu.unity",
+      "Client/1_backup/Assets/_Project/Prefabs/UI/Stage/SelectedCharacterIcon.prefab"
+    ],
+    "all_commented": false,
+    "before": "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Stage/SelectedCharacterIconUI.cs",
+    "classification": "Active-Core / Retained maintenance area",
+    "note": "Reference presence is not proof of current runtime reachability; Editor attributes and Unity callbacks are manual-review evidence."
+  },
+  {
+    "file": "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Stage/StageBannerUI.cs",
+    "classes": [
+      "StageBannerUI"
+    ],
+    "guid": "ccbd3fe3609222a41bd74f123ab1a6f9",
+    "code_refs": {
+      "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Stage/StageUI.cs": [
+        "StageBannerUI"
+      ]
+    },
+    "serialized_refs": [
+      "Client/1_backup/Assets/_Project/Scenes/MainMenu.unity"
+    ],
+    "all_commented": false,
+    "before": "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Stage/StageBannerUI.cs",
+    "classification": "Active-Core / Retained maintenance area",
+    "note": "Reference presence is not proof of current runtime reachability; Editor attributes and Unity callbacks are manual-review evidence."
+  },
+  {
+    "file": "Client/1_backup/Assets/_Project/Scripts/Legacy/Unused/UI/StageeSelectUI.cs",
+    "classes": [
+      "StageeSelectUI"
+    ],
+    "guid": "485fed7d711c16a42bfe25ec4f2052da",
+    "code_refs": {},
+    "serialized_refs": [],
+    "all_commented": false,
+    "before": "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Stage/StageeSelectUI.cs",
+    "classification": "Legacy-Unused",
+    "note": "Reference presence is not proof of current runtime reachability; Editor attributes and Unity callbacks are manual-review evidence."
+  },
+  {
+    "file": "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Stage/StageInformation.cs",
+    "classes": [
+      "StageInformation",
+      "spawnInformation",
+      "StageReward"
+    ],
+    "guid": "24f737964669c99469f8f4c2c399170b",
+    "code_refs": {
+      "Client/1_backup/Assets/_Project/Scripts/DeveolopEditor/StageCreater.cs": [
+        "StageInformation"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/Editor/AccountTempletEditor.cs": [
+        "StageInformation"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/Editor/StageCreaterEditor.cs": [
+        "StageInformation",
+        "StageReward",
+        "spawnInformation"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/Manager/LoadManager.cs": [
+        "StageInformation"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/Manager/Stage.cs": [
+        "StageInformation",
+        "StageReward"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/Manager/UserDataManager.cs": [
+        "StageInformation"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Stage/CharactersSelectUI.cs": [
+        "StageInformation"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Stage/stageinfoUI.cs": [
+        "StageInformation",
+        "StageReward"
+      ]
+    },
+    "serialized_refs": [],
+    "all_commented": false,
+    "before": "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Stage/StageInformation.cs",
+    "classification": "Active-Core / Retained maintenance area",
+    "note": "Reference presence is not proof of current runtime reachability; Editor attributes and Unity callbacks are manual-review evidence."
+  },
+  {
+    "file": "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Stage/stageinfoUI.cs",
+    "classes": [
+      "stageinfoUI"
+    ],
+    "guid": "37b37189932460d47a1b4bb2ca301b04",
+    "code_refs": {
+      "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Stage/StageUI.cs": [
+        "stageinfoUI"
+      ]
+    },
+    "serialized_refs": [
+      "Client/1_backup/Assets/_Project/Scenes/MainMenu.unity"
+    ],
+    "all_commented": false,
+    "before": "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Stage/stageinfoUI.cs",
+    "classification": "Active-Core / Retained maintenance area",
+    "note": "Reference presence is not proof of current runtime reachability; Editor attributes and Unity callbacks are manual-review evidence."
+  },
+  {
+    "file": "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Stage/StageSelectButton.cs",
+    "classes": [
+      "StageSelectButton"
+    ],
+    "guid": "a80d50df031384243b722b2955299886",
+    "code_refs": {
+      "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Stage/StageSelectedUI.cs": [
+        "StageSelectButton"
+      ]
+    },
+    "serialized_refs": [
+      "Client/1_backup/Assets/_Project/Prefabs/UI/Stage/StageSelectButtonUI.prefab"
+    ],
+    "all_commented": false,
+    "before": "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Stage/StageSelectButton.cs",
+    "classification": "Active-Core / Retained maintenance area",
+    "note": "Reference presence is not proof of current runtime reachability; Editor attributes and Unity callbacks are manual-review evidence."
+  },
+  {
+    "file": "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Stage/StageSelectedUI.cs",
+    "classes": [
+      "StageSelectedUI"
+    ],
+    "guid": "ad0cfbad36afcef44bbc867b70c47f75",
+    "code_refs": {
+      "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Stage/MainStageSelectedUI.cs": [
+        "StageSelectedUI"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Stage/StageUI.cs": [
+        "StageSelectedUI"
+      ]
+    },
+    "serialized_refs": [],
+    "all_commented": false,
+    "before": "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Stage/StageSelectedUI.cs",
+    "classification": "Active-Core / Retained maintenance area",
+    "note": "Reference presence is not proof of current runtime reachability; Editor attributes and Unity callbacks are manual-review evidence."
+  },
+  {
+    "file": "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Stage/StageUI.cs",
+    "classes": [
+      "StageUI"
+    ],
+    "guid": "e1fc36846a6756c448b604f899de5189",
+    "code_refs": {
+      "Client/1_backup/Assets/_Project/Scripts/Manager/LoadManager.cs": [
+        "StageUI"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/UI/MenuUIHeader.cs": [
+        "StageUI"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/UI/Tutorial/Tutorial.cs": [
+        "StageUI"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Main/Menu.cs": [
+        "StageUI"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Stage/stageinfoUI.cs": [
+        "StageUI"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Stage/StageSelectButton.cs": [
+        "StageUI"
+      ],
+      "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Stage/StageSelectedUI.cs": [
+        "StageUI"
+      ]
+    },
+    "serialized_refs": [
+      "Client/1_backup/Assets/_Project/Scenes/MainMenu.unity"
+    ],
+    "all_commented": false,
+    "before": "Client/1_backup/Assets/_Project/Scripts/UI/Menu/Stage/StageUI.cs",
+    "classification": "Active-Core / Retained maintenance area",
+    "note": "Reference presence is not proof of current runtime reachability; Editor attributes and Unity callbacks are manual-review evidence."
+  }
+]
