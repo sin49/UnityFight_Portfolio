@@ -1,0 +1,2 @@
+PASS mysql without secret fails before listen with named configuration error
+PASS file without secret listens; data root discovered from executable in unrelated CWD

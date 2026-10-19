@@ -1,0 +1,23 @@
+TCP CONNECTED 17878
+SEND packet 4 bytes 46
+RECV packet 2 bytes 102
+SERVER LOG:
+Storage: mysql
+Data root: D:\GIthub\UnityFight_Portfolio\.online-recovery\mysql-data
+LISTEN 127.0.0.1:17878
+Connected : 1
+OnConnected : 127.0.0.1:7305
+���� id4
+Request failed: MySqlException: Access denied for user 'root'@'localhost' (using password: YES)
+Traceback (most recent call last):
+  File "D:\GIthub\UnityFight_Portfolio\docs\online-recovery\test_file_roundtrip.py", line 143, in <module>
+    main()
+  File "D:\GIthub\UnityFight_Portfolio\docs\online-recovery\test_file_roundtrip.py", line 104, in main
+    account, uid, name, fields_offset = account_reply(sock, "account create Complete")
+                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\GIthub\UnityFight_Portfolio\docs\online-recovery\test_file_roundtrip.py", line 47, in account_reply
+    packet_id, payload = receive(sock)
+                         ^^^^^^^^^^^^^
+  File "D:\GIthub\UnityFight_Portfolio\docs\online-recovery\test_file_roundtrip.py", line 39, in receive
+    raise AssertionError("Server error: " + take_text(data, 2)[0])
+AssertionError: Server error: Server account request failed; check server log.

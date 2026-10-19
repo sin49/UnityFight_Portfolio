@@ -1,0 +1,8 @@
+PASS default data root discovery from unrelated working directory and immediate peer close
+Storage: file
+Data root: D:\GIthub\UnityFight_Portfolio\Server\01Server
+LISTEN 127.0.0.1:17880
+Connected : 1
+Connected : 0
+[Disconnected] 127.0.0.1:2705
+OnConnected : 127.0.0.1:2705

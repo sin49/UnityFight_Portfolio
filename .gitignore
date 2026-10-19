@@ -17,3 +17,6 @@
 /[Ss]erver/bin/
 /[Ss]erver/obj/
 .vs/
+
+# Local online-recovery test accounts and generated harness/build artifacts
+/.online-recovery/

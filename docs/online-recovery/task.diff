@@ -1,0 +1,1362 @@
+diff --git a/Client/1_backup/Assets/_Project/Scripts/Manager/GameManager.cs b/Client/1_backup/Assets/_Project/Scripts/Manager/GameManager.cs
+index c1ea3211..d67232d3 100644
+--- a/Client/1_backup/Assets/_Project/Scripts/Manager/GameManager.cs
++++ b/Client/1_backup/Assets/_Project/Scripts/Manager/GameManager.cs
+@@ -8,6 +8,8 @@ using System;
+ using network;
+ using TMPro;
+ 
++public enum ClientRunMode { Standalone, Online }
++
+ public class GameManager : MonoBehaviour
+ {
+   
+@@ -265,38 +267,36 @@ public class GameManager : MonoBehaviour
+         //    yield return StartCoroutine(DownLoadManager.instance.DownLoadBundle());
+         //}
+     }
+-    public bool singlemode;
+-    public IEnumerator TryConnectServer()
++    [SerializeField] ClientRunMode runMode = ClientRunMode.Standalone;
++    public ClientRunMode RunMode { get { return runMode; } }
++    // Compatibility property for existing Title/UI callers; no second mode bool.
++    public bool singlemode
+     {
+-        GameManager.instance.OnServerConnect = false;
+-        singlemode = true;
+-        yield break;
+-        //GameManager.instance.OnServerConnect = false;
+-        //float time = 0;
+-        //while (true)
+-        //{
+-        //    if (time < 5 && !GameManager.instance.OnServerConnect)
+-        //    {
+-
+-        //        time += Time.deltaTime;
+-        //        network.ConnectServer();
+-
+-        //        yield return null;
+-        //    }
+-
+-        //    else if(time>=6)
+-        //    {
+-        //        Debug.Log("ø¨∞· Ω√∞£ √ ∞˙ ΩÃ±€∏µÂ ¿¸»Ø");
+-        //        singlemode = true;
+-
+-        //        yield break;
+-        //    }
+-        //    else
+-        //    {
++        get { return runMode == ClientRunMode.Standalone; }
++        set { SetRunMode(value ? ClientRunMode.Standalone : ClientRunMode.Online); }
++    }
+ 
+-        //        yield break;
+-        //    }
+-        //}
++    // Choose a mode on Title, before starting an account operation.
++    public void SetRunMode(ClientRunMode mode)
++    {
++        if (runMode == mode) return;
++        if (network != null) network.DisConnectServer();
++        runMode = mode;
++        OnServerConnect = false;
++        ServerMessage = null;
++        Account = null;
++    }
++    public void UseStandaloneMode() { SetRunMode(ClientRunMode.Standalone); }
++    public void UseOnlineMode() { SetRunMode(ClientRunMode.Online); }
++    public IEnumerator TryConnectServer()
++    {
++        if (singlemode)
++        {
++            OnServerConnect = false;
++            yield break;
++        }
++        OnError = false;
++        yield return network.WaitForConnection();
+     }
+   
+     public void Deleteaccountcorutine()
+@@ -313,20 +313,27 @@ public class GameManager : MonoBehaviour
+     
+     public IEnumerator createaccountcorutine(string username)//ƒ⁄∑Á∆æ¿∏∑Œ ∏∏µÈæÓæﬂ«œ≥™?
+     {
+-
++        if (singlemode)
++        {
++            yield return StartCoroutine(createaccountcorutineSingle(username));
++            yield break;
++        }
++        OnError = false;
+         ActiveLoadingImg();
+-    yield return StartCoroutine(network.TryCreateAccount(username));
++        yield return StartCoroutine(network.TryCreateAccount(username));
+         DeactiveLoadingImg();
+-
+-
+-        if (!OnError)
+-            FIleIOManager.MakeConnectionCache(Account);
+-
+-
++        if (!OnError && Account != null) FIleIOManager.MakeConnectionCache(Account);
+     }
+     public IEnumerator createaccountcorutineSingle(string username)
+     {
++        if (!singlemode)
++        {
++            yield return StartCoroutine(createaccountcorutine(username));
++            yield break;
++        }
++
+ 
++        OnError = false;
+         ActiveLoadingImg();
+         yield return new WaitForSeconds(0.2f);
+         Account= LoadManager.instance.loaddummyAccount();
+@@ -348,60 +355,26 @@ public class GameManager : MonoBehaviour
+     }
+     public IEnumerator ConnectAccountCorutine(string uid)//∞Ë¡§ ø¨∞· Ω√µµ
+     {
+-        ActiveLoadingImg();
+-        yield return new WaitForSeconds(0.2f); // æ‡∞£¿« ∑Œµ˘ ø¨√‚ (»≠∏È ¿¸»ØøÎ)
+-
+-        // 3. ¥ıπÃ ∞Ë¡§ ∑ŒµÂ Ω√µµ
+-        if (LoadManager.instance.DummyAccount != null)
++        if (singlemode)
+         {
+-            Account = LoadManager.instance.loaddummyAccount();
++            yield return StartCoroutine(FakeConnectAccountCorutine(uid));
++            yield break;
+         }
+-
+-        // 4. ¥ıπÃ ∆ƒ¿œ¿Ã æ¯∞≈≥™ µÒº≈≥ ∏Æ∞° ∫ÒæÓ¿÷æÓ UI∞° ∞Ì¿Â≥™¥¬ ∞Õ¿ª πÊ¡ˆ («œµÂƒ⁄µ˘ ¡÷¿‘)
+-        if (Account == null)
+-        {
+-            Account = new UserAccountData();
+-            Account.initializelist();
+-            Account.username = "∆˜∆Æ∆˙∏Æø¿";
+-            Account.MaxStamina = 999;
+-            Account.Stamina = 999;
+-        }
+-
+-        if (Account.get_CharacterList() == null || Account.get_CharacterList().Count == 0)
+-        {
+-            Account.initializelist(); // µÒº≈≥ ∏Æ ≥Œ πÊ¡ˆ √ ±‚»≠
+-
+-            // °⁄ ¡ﬂø‰: c01, c02 ∫Œ∫–¿∫ Ω«¡¶ ¡∏¿Á«œ¥¬ ƒ≥∏Ø≈Õ ID(«¡∏Æ∆’/DB ¿Ã∏ß)∑Œ πŸ≤Ÿº≈æﬂ UIø° ∂Â¥œ¥Ÿ!
+-            Account.set_Character(new PlayerData() { id = "c01", });
+-            Account.set_Character(new PlayerData() { id = "c02", });
+-        }
+-
+-        Account.uid = uid;
+-        FIleIOManager.MakeConnectionCache(Account); // ∑Œƒ√ ¿˙¿Â ƒ≥Ω√ ∞ªΩ≈
+-
++        OnError = false;
++        ActiveLoadingImg();
++        yield return StartCoroutine(network.TryConnectAccount(uid));
+         DeactiveLoadingImg();
+-        yield break; // ø¯∑° ¿÷¥¯ network.TryConnectAccount ∆–≈∂ ¿¸º€ ∑Œ¡˜ øœ¿¸ π´Ω√
+-        //ActiveLoadingImg();
+-        //yield return StartCoroutine(network.TryConnectAccount(uid));
+-        //DeactiveLoadingImg();
+-        //if (!OnError&&Account.uid!="")
+-        //{
+-        //    FIleIOManager.MakeConnectionCache(Account);//ƒ≥Ω√ ∞ªΩ≈
+-        //    Debug.Log("»∏∫π¿¸ Ω∫≈◊πÃ≥™" + Account.Stamina + "≈∏¿Ã∏”" + Account.StaminaTimer);
+-        //    yield return StartCoroutine(saveAccountcorutine(() =>
+-        //    {
+-        //        string currentDate = DateTime.Now.ToString("yyyyMMddhhmmss");
+-        //        Debug.Log(currentDate + " " + Account.LastestConnect);
+-        //        var a = calculatebydate(currentDate, Account.LastestConnect, Account.StaminaTimer, Account.Stamina, Account.MaxStamina);
+-        //        Account.LastestConnect = currentDate;
+-        //        Account.StaminaTimer = a.Item1;
+-        //        Account.Stamina = a.Item2;
+-        //        Debug.Log("∞ËªÍ »ƒ Ω∫≈◊πÃ≥™" + Account.Stamina + "≈∏¿Ã∏”" + Account.StaminaTimer);
+-        //    }));
+-        //}
++        if (!OnError && Account != null) FIleIOManager.MakeConnectionCache(Account);
+     }
+     public IEnumerator FakeConnectAccountCorutine(string uid)//º≠πˆ ∞Ì¿Â πÆ¡¶∑Œ ΩÃ±€ ¿¸»Ø ∞°¬• ∞Ë¡§ ª˝º∫
+     {
++        if (!singlemode)
++        {
++            yield return StartCoroutine(ConnectAccountCorutine(uid));
++            yield break;
++        }
++
++        OnError = false;
+         ActiveLoadingImg();
+         yield return new WaitForSeconds(0.2f); // ø¨√‚øÎ ¥Î±‚
+ 
+@@ -433,18 +406,21 @@ public class GameManager : MonoBehaviour
+     }
+     public IEnumerator saveAccountcorutine(Action act)//∞Ë¡§ ¿˙¿Â
+     {
++        if (singlemode)
++        {
++            ActiveLoadingImg();
++            yield return new WaitForSeconds(0.1f);
++            DeactiveLoadingImg();
++            if (act != null) act();
++            yield break;
++        }
++        OnError = false;
+         ActiveLoadingImg();
+-        yield return new WaitForSeconds(0.1f);
+-        // º≠πˆ ¿˙¿Â ¥ÎΩ≈ ∑Œƒ√ ƒ≥Ω√∏∏ ª˝º∫ »ƒ ¡ÔΩ√ ƒ›πÈ Ω««‡
+-        //FIleIOManager.MakeConnectionCache(Account);
++        if (Account == null)
++            ActiveError("No online account is loaded.");
++        else
++            yield return StartCoroutine(network.TrySaveAccount(Account, act));
+         DeactiveLoadingImg();
+-        if (act != null) act.Invoke();
+-        //if (act != null) act.Invoke();
+-        //ActiveLoadingImg();
+-        //yield return StartCoroutine(network.TrySaveAccount(Account,act));
+-        //DeactiveLoadingImg();
+-
+-
+     }
+    
+     #region calculate stamina
+diff --git a/Client/1_backup/Assets/_Project/Scripts/NetWorkManager/Core/Connector.cs b/Client/1_backup/Assets/_Project/Scripts/NetWorkManager/Core/Connector.cs
+index 569856ff..8f357e83 100644
+--- a/Client/1_backup/Assets/_Project/Scripts/NetWorkManager/Core/Connector.cs
++++ b/Client/1_backup/Assets/_Project/Scripts/NetWorkManager/Core/Connector.cs
+@@ -1,75 +1,74 @@
+-Ôªøusing System;
+-using System.Collections.Generic;
++using System;
+ using System.Net;
+ using System.Net.Sockets;
+-using System.Text;
+-using System.Threading.Tasks;
+-using UnityEngine;
+-using UnityEngine.SceneManagement;
++
+ namespace ServerCore
+ {
+-	public class Connector
+-	{
+-		Func<Session> _sessionFactory;
+-		float timer;
+-		bool Tryconnect;
+-		public void Connect(IPEndPoint endPoint, Func<Session> sessionFactory, int count = 1)
+-		{
+-			if (Tryconnect)
+-				return;
+-			for (int i = 0; i < count; i++)
+-			{
+-				// Ìú¥ÎåÄÌè∞ ÏÑ§Ï†ï
+-				Socket socket = new Socket(endPoint.AddressFamily, SocketType.Stream, ProtocolType.Tcp);
+-				_sessionFactory = sessionFactory;
+-
+-				SocketAsyncEventArgs args = new SocketAsyncEventArgs();
+-				args.Completed += OnConnectCompleted;
+-				args.RemoteEndPoint = endPoint;
+-				args.UserToken = socket;
+-				timer = 0;
+-				Tryconnect = true;
+-				RegisterConnect(args);
+-			}
+-		}
++    // One connect attempt. No Unity API is called by socket callbacks.
++    public class Connector
++    {
++        Func<Session> sessionFactory;
++        Action<string> onError;
++        Socket socket;
++        volatile bool cancelled;
++        readonly object gate = new object();
++        bool ownedBySession;
+ 
+-		void RegisterConnect(SocketAsyncEventArgs args)
+-		{
+-			
+-			Socket socket = args.UserToken as Socket;
+-			if (socket == null)
+-				return;
++        public void Connect(IPEndPoint endpoint, Func<Session> factory, int count = 1, Action<string> failure = null)
++        {
++            if (count != 1) throw new ArgumentOutOfRangeException("count", "Only one account connection is supported.");
++            sessionFactory = factory;
++            onError = failure;
++            socket = new Socket(endpoint.AddressFamily, SocketType.Stream, ProtocolType.Tcp);
++            var args = new SocketAsyncEventArgs { RemoteEndPoint = endpoint };
++            args.Completed += OnConnectCompleted;
++            try
++            {
++                if (!socket.ConnectAsync(args)) OnConnectCompleted(null, args);
++            }
++            catch (Exception exception)
++            {
++                args.Dispose();
++                socket.Close();
++                if (!cancelled && onError != null) onError(exception.Message);
++            }
++        }
+ 
+-			bool pending = socket.ConnectAsync(args);
+-  
+-            Task.Delay(1000);
+-            timer += 1;
+-            if (pending == false)
+-				OnConnectCompleted(null, args);
+-		}
++        public void Cancel()
++        {
++            lock (gate)
++            {
++                cancelled = true;
++                if (socket != null && !ownedBySession) socket.Close();
++            }
++        }
+ 
+-		void OnConnectCompleted(object sender, SocketAsyncEventArgs args)
+-		{
+-			if (args.SocketError == SocketError.Success)
+-			{
+-				Tryconnect = false;
+-				Session session = _sessionFactory.Invoke();
+-				session.Start(args.ConnectSocket);
+-				session.OnConnected(args.RemoteEndPoint);
+-			
+-			
+-			}
+-			else
+-			{
+-                if (timer >= 10)
+-                    RegisterConnect(args);
+-                else
++        void OnConnectCompleted(object sender, SocketAsyncEventArgs args)
++        {
++            try
++            {
++                lock (gate)
+                 {
+-                    Tryconnect = false;
+-					GameManager.instance.ActiveError("ÏÑúÎ≤ÑÏôÄÏùò ÎåÄÍ∏∞ÏãúÍ∞ÑÏù¥ Ï¥àÍ≥ºÌñàÏäµÎãàÎã§.");
++                if (cancelled) return;
++                if (args.SocketError != SocketError.Success)
++                {
++                    socket.Close();
++                    if (onError != null) onError(args.SocketError.ToString());
++                    return;
+                 }
+-
++                Session session = sessionFactory();
++                // Initialize socket ownership before publishing the connected state.
++                session.Start(args.ConnectSocket);
++                ownedBySession = true;
++                if (session._disconnected == 0) session.OnConnected(args.RemoteEndPoint);
++                }
++            }
++            catch (Exception exception)
++            {
++                socket.Close();
++                if (!cancelled && onError != null) onError(exception.Message);
+             }
+-		}
+-	}
++            finally { args.Dispose(); }
++        }
++    }
+ }
+diff --git a/Client/1_backup/Assets/_Project/Scripts/NetWorkManager/Core/PacketQueue.cs b/Client/1_backup/Assets/_Project/Scripts/NetWorkManager/Core/PacketQueue.cs
+index fe1a4747..53f19ce8 100644
+--- a/Client/1_backup/Assets/_Project/Scripts/NetWorkManager/Core/PacketQueue.cs
++++ b/Client/1_backup/Assets/_Project/Scripts/NetWorkManager/Core/PacketQueue.cs
+@@ -1,40 +1,30 @@
+-using System.Collections;
+ using System.Collections.Generic;
+-using UnityEngine;
++using ServerCore;
+ 
+ public class PacketQueue
+ {
++    public sealed class ReceivedPacket
++    {
++        public readonly PacketSession Session;
++        public readonly IPacket Packet;
++        public ReceivedPacket(PacketSession session, IPacket packet) { Session = session; Packet = packet; }
++    }
+     public static PacketQueue instance { get; } = new PacketQueue();
++    readonly Queue<ReceivedPacket> packets = new Queue<ReceivedPacket>();
++    readonly object gate = new object();
+ 
+-    Queue<IPacket> packetqueue = new Queue<IPacket>();
+-    object _lock = new object();
+-    public void Push(IPacket packet)
++    public void Push(PacketSession session, IPacket packet)
+     {
+-        packetqueue.Enqueue(packet);
++        lock (gate) packets.Enqueue(new ReceivedPacket(session, packet));
+     }
+-    public IPacket Pop()
+-    {
+-        lock (_lock)
+-        {
+-            if (packetqueue.Count == 0)
+-                return null;
+ 
+-            return packetqueue.Dequeue();
+-        }
+-    }
+-    public List<IPacket> PopAll()
++    public List<ReceivedPacket> PopAll()
+     {
+-        List<IPacket> list = new List<IPacket>();
+-
+-        lock (_lock)
++        lock (gate)
+         {
+-
+-            while (packetqueue.Count > 0)
+-            {
+-                list.Add(packetqueue.Dequeue());
+-            }
+-
++            var result = new List<ReceivedPacket>(packets);
++            packets.Clear();
++            return result;
+         }
+-        return list;
+     }
+ }
+diff --git a/Client/1_backup/Assets/_Project/Scripts/NetWorkManager/Core/ServerSession.cs b/Client/1_backup/Assets/_Project/Scripts/NetWorkManager/Core/ServerSession.cs
+index b7319b11..b6e18f6f 100644
+--- a/Client/1_backup/Assets/_Project/Scripts/NetWorkManager/Core/ServerSession.cs
++++ b/Client/1_backup/Assets/_Project/Scripts/NetWorkManager/Core/ServerSession.cs
+@@ -1,43 +1,22 @@
+-Ôªøusing System;
+-using System.Collections.Generic;
+-using System.Linq;
++using System;
+ using System.Net;
+-using System.Text;
+-using System.Threading.Tasks;
+ using ServerCore;
+-using UnityEngine;
+-using UnityEngine.SceneManagement;
++
+ namespace network
+ {
+     class ServerSession : PacketSession
+     {
++        public volatile bool IsConnected;
+ 
+-        public override void OnConnected(EndPoint endPoint)
+-        {
+-          
+-            GameManager.instance.OnServerConnect = true;
+-        }
+-
+-        public override void OnDisconnected(EndPoint endPoint)
+-        {
+-          
+-            GameManager.instance.OnServerConnect = false;
+-            //GameManager.instance.Account = null;
+-            //GameManager.instance.ActiveError("ÏÑúÎ≤ÑÏôÄÏùò Ïó∞Í≤∞Ïù¥ ÎÅäÏñ¥Ï°åÏäµÎãàÎã§.");
+-        }
++        public override void OnConnected(EndPoint endpoint) { IsConnected = true; }
++        public override void OnDisconnected(EndPoint endpoint) { IsConnected = false; }
+ 
+         public override void OnRecvPacket(ArraySegment<byte> buffer)
+         {
+-            PacketManager.Instance.OnRecvPacket(this, buffer);
++            PacketManager.Instance.OnRecvPacket(this, buffer,
++                (session, packet) => PacketQueue.instance.Push(session, packet));
+         }
+ 
+-        public override void OnSend(int numOfBytes)
+-        {
+-            //Console.WriteLine($"Transferred bytes: {numOfBytes}");
+-        }
++        public override void OnSend(int numOfBytes) { }
+     }
+-
+-
+-
+-
+-}
+\ No newline at end of file
++}
+diff --git a/Client/1_backup/Assets/_Project/Scripts/NetWorkManager/Core/Session.cs b/Client/1_backup/Assets/_Project/Scripts/NetWorkManager/Core/Session.cs
+index a1fd9fb7..dcbf6739 100644
+--- a/Client/1_backup/Assets/_Project/Scripts/NetWorkManager/Core/Session.cs
++++ b/Client/1_backup/Assets/_Project/Scripts/NetWorkManager/Core/Session.cs
+@@ -118,16 +118,24 @@ namespace ServerCore
+ 
+ 		public void Disconnect()
+ 		{
+-			if (Interlocked.Exchange(ref _disconnected, 1) == 1)
+-				return;
+-			if (_socket != null)
+-			{
+-				OnDisconnected(_socket.RemoteEndPoint);
+-				_socket.Shutdown(SocketShutdown.Both);
+-				_socket.Close();
+-				Clear();
+-			}
+-		}
++            if (Interlocked.Exchange(ref _disconnected, 1) == 1) return;
++            Socket socket = _socket;
++            EndPoint endpoint = null;
++            try { if (socket != null) endpoint = socket.RemoteEndPoint; }
++            catch (ObjectDisposedException) { }
++            try { OnDisconnected(endpoint); }
++            finally
++            {
++                if (socket != null)
++                {
++                    try { socket.Shutdown(SocketShutdown.Both); }
++                    catch (SocketException) { }
++                    catch (ObjectDisposedException) { }
++                    socket.Close();
++                }
++                Clear();
++            }
++        }
+ 
+ 		#region ÎÑ§Ìä∏ÏõåÌÅ¨ ÌÜµÏã†
+ 
+diff --git a/Client/1_backup/Assets/_Project/Scripts/NetWorkManager/NetworkManager.cs b/Client/1_backup/Assets/_Project/Scripts/NetWorkManager/NetworkManager.cs
+index ef917fd2..249f2443 100644
+--- a/Client/1_backup/Assets/_Project/Scripts/NetWorkManager/NetworkManager.cs
++++ b/Client/1_backup/Assets/_Project/Scripts/NetWorkManager/NetworkManager.cs
+@@ -14,47 +14,74 @@ namespace network
+         public List<IPacket> PacketList = new List<IPacket>();
+         public IEnumerator corutine;
+       
++        public string ServerHost = "127.0.0.1";
++        public int ServerPort = 7777;
+         ServerSession _session = new ServerSession();
++        Connector connector;
++        volatile bool connecting;
++        volatile string connectionError;
++        public bool IsConnected { get { return _session.IsConnected; } }
++        public string ConnectionError { get { return connectionError; } }
++
+         public void Connect()
+         {
+-            if (_session._disconnected == 1)
+-                _session = new ServerSession();
+-            string host = Dns.GetHostName();
+-            IPHostEntry iphost = Dns.GetHostEntry(host);
+-
+-            IPAddress ipaddr = iphost.AddressList[0];
+-
+-            IPEndPoint endPoint = new IPEndPoint(ipaddr, 7777);
+-            Connector _connector = new Connector();
+-            _connector.Connect(endPoint, () => { return _session; }, 1);
++            if (GameManager.instance.singlemode || IsConnected || connecting) return;
++            IPAddress address;
++            if (ServerHost == "localhost") address = IPAddress.Loopback;
++            else if (!IPAddress.TryParse(ServerHost, out address))
++                throw new ArgumentException("ServerHost must be localhost or an explicit IP address.");
++            connectionError = null;
++            connecting = true;
++            var attempt = new ServerSession();
++            _session = attempt;
++            connector = new Connector();
++            connector.Connect(new IPEndPoint(address, ServerPort), () => attempt, 1,
++                error => { if (ReferenceEquals(_session, attempt)) { connectionError = error; connecting = false; } });
+         }
++
+         public void Send(ArraySegment<byte> segment)
+         {
++            if (GameManager.instance.singlemode || !IsConnected)
++                throw new InvalidOperationException("Online session is not connected.");
+             _session.Send(segment);
+         }
++
+         public void DisconnectSession()
+         {
++            if (connector != null) connector.Cancel();
++            _session.IsConnected = false;
+             _session.Disconnect();
++            connecting = false;
++            connectionError = null;
++            PacketQueue.instance.PopAll();
++            if (GameManager.instance != null) GameManager.instance.OnServerConnect = false;
+         }
+-        public bool CheckNetwork()
+-        {
+-            return _session.socket();
+-        }
+ 
+-        // Update is called once per frame
++        public bool CheckNetwork() { return IsConnected; }
++
+         void Update()
+         {
+-            List<IPacket> packetlist = PacketQueue.instance.PopAll();
+-            foreach (IPacket packet in packetlist)
++            if (GameManager.instance == null) return;
++            GameManager.instance.OnServerConnect = IsConnected;
++            if (IsConnected) connecting = false;
++            foreach (var received in PacketQueue.instance.PopAll())
+             {
+-                PacketManager.Instance.HandlePacket(_session, packet);
++                // Late packets from a closed/replaced session cannot update a new account.
++                if (GameManager.instance.singlemode || !ReferenceEquals(received.Session, _session)) continue;
++                try
++                {
++                    Debug.Log("[Online] RECV " + received.Packet.Protocol);
++                    PacketManager.Instance.HandlePacket(received.Session, received.Packet);
++                }
++                catch (Exception exception)
++                {
++                    GameManager.instance.ActiveError("Account response failed: " + exception.Message);
++                }
+             }
+-
+-        }
+-        private void OnApplicationQuit()
+-        {
+-            DisconnectSession();
+         }
++
++        private void OnApplicationQuit() { DisconnectSession(); }
++
+     }
+ 
+ 
+@@ -123,90 +150,70 @@ namespace network
+ 
+         }
+         float ServerRespondWaitingTime = 20;
+-        public IEnumerator TryConnectAccount(string UID)
++        public IEnumerator WaitForConnection()
+         {
+-
+-            C_ConnectRequest connectrequest = new C_ConnectRequest() { UID = UID };//ø¨∞·ø‰√ª ∆–≈∂¿ª ∫∏≥Ω¥Ÿ
+-            float timer = 0;
+-            network.Send(connectrequest.Write());
+-
+-            while (true)
++            if (GameManager.instance.singlemode) yield break;
++            if (network.IsConnected) yield break;
++            string failure = null;
++            try { network.Connect(); }
++            catch (Exception exception) { failure = exception.Message; }
++            if (failure != null)
+             {
+-                if (GameManager.instance.ServerMessage == "account Load Complete" && GameManager.instance.Account != null)
+-                {
+-                    Debug.Log("∞Ë¡§ ∫“∑¡ø¿±‚ º∫∞¯");
+-                    GameManager.instance.ServerMessage = null;
+-                    yield break;
+-                }
+-                else
+-                {
+-                    timer += Time.fixedDeltaTime;
+-                    if (timer > ServerRespondWaitingTime)
+-                    {
+-                        Debug.Log("¥Î±‚ Ω√∞£ √ ∞˙");
+-                        GameManager.instance.ActiveError("º≠πˆøÕ¿« ø¨∞·¿Ã " +
+-                               "ø¯»∞«œ¡ˆ æ Ω¿¥œ¥Ÿ.");
+-                        yield break;
+-                    }
+-                    yield return null;
+-                }
++                GameManager.instance.ActiveError("Connect failed: " + failure);
++                yield break;
+             }
+-        }
+-        public IEnumerator TryConnectAccount(string UID,UserAccountData account)
+-        {
+-            float timer = 0;
+-            if (!GameManager.instance.OnServerConnect)
++            float deadline = Time.realtimeSinceStartup + ServerRespondWaitingTime;
++            while (!network.IsConnected && network.ConnectionError == null && Time.realtimeSinceStartup < deadline)
++                yield return null;
++            if (!network.IsConnected)
+             {
+-                network.Connect();
+-
+-                while (true)
+-                {
+-                    if (GameManager.instance.OnServerConnect)
+-                    {
+-                        break;
+-                    }
+-                    else
+-                    {
+-                        timer += Time.fixedDeltaTime;
+-                        if (timer > ServerRespondWaitingTime)
+-                        {
+-                            Debug.Log("¥Î±‚ Ω√∞£ √ ∞˙ ≈ÎΩ≈ ø¿∑˘");
+-                            //GameManager.instance.ActiveError("º≠πˆøÕ¿« ø¨∞·¿Ã " +
+-                            //    "ø¯»∞«œ¡ˆ æ Ω¿¥œ¥Ÿ.");
+-
+-                            yield break;
+-                        }
+-                    }
+-
+-                }
+-
++                string reason = network.ConnectionError ?? "Connection timeout";
++                network.DisconnectSession();
++                GameManager.instance.ActiveError("Connect failed: " + reason);
+             }
+-            C_ConnectRequest connectrequest = new C_ConnectRequest() { UID = UID };
+-          timer = 0;
+-            network.Send(connectrequest.Write());
++            else
++            {
++                GameManager.instance.OnServerConnect = true;
++                Debug.Log("[Online] TCP connected");
++            }
++        }
+ 
+-            while (true)
++        IEnumerator WaitForAccountResponse(string expected, bool needsAccount)
++        {
++            float deadline = Time.realtimeSinceStartup + ServerRespondWaitingTime;
++            while (!GameManager.instance.OnError)
+             {
+-                if (GameManager.instance.ServerMessage == "account Load Complete" && GameManager.instance.Account != null)
++                if (GameManager.instance.ServerMessage == expected &&
++                    (!needsAccount || GameManager.instance.Account != null))
+                 {
+-                    Debug.Log("∞Ë¡§ ∫“∑¡ø¿±‚ º∫∞¯");
++                    Debug.Log("[Online] " + expected);
+                     GameManager.instance.ServerMessage = null;
+                     yield break;
+                 }
+-                else
++                if (!network.IsConnected || Time.realtimeSinceStartup >= deadline)
+                 {
+-                    timer += Time.fixedDeltaTime;
+-                    if (timer > ServerRespondWaitingTime)
+-                    {
+-                        Debug.Log("¥Î±‚ Ω√∞£ √ ∞˙");
+-                        GameManager.instance.ActiveError("º≠πˆøÕ¿« ø¨∞·¿Ã " +
+-                               "ø¯»∞«œ¡ˆ æ Ω¿¥œ¥Ÿ.");
+-                        yield break;
+-                    }
+-                    yield return null;
++                    GameManager.instance.ActiveError("Account response timeout or connection closed.");
++                    yield break;
+                 }
++                yield return null;
+             }
+         }
++
++        public IEnumerator TryConnectAccount(string UID)
++        {
++            if (GameManager.instance.singlemode) yield break;
++            yield return WaitForConnection();
++            if (!network.IsConnected) yield break;
++            GameManager.instance.ServerMessage = null;
++            GameManager.instance.Account = null;
++            Debug.Log("[Online] SEND C_ConnectRequest");
++            network.Send(new C_ConnectRequest { UID = UID }.Write());
++            yield return WaitForAccountResponse("account Load Complete", true);
++        }
++        public IEnumerator TryConnectAccount(string UID,UserAccountData account)
++        {
++            yield return TryConnectAccount(UID);
++        }
+         C_SaveAccountData accountpacket = new C_SaveAccountData();
+         public IEnumerator TrySaveShopList(int shopid, List<ShopItem> list, string uid)
+         {
+@@ -326,118 +333,27 @@ namespace network
+         }
+         public IEnumerator TrySaveAccount(UserAccountData data,Action act)
+         {
+-            float timer = 0;
+-            if (!GameManager.instance.OnServerConnect)
+-            {
+-                network.Connect();
+-
+-                while (true)
+-                {
+-                    if (GameManager.instance.OnServerConnect)
+-                    {
+-                        break;
+-                    }
+-                    else
+-                    {
+-                        timer += Time.fixedDeltaTime;
+-                        if (timer > ServerRespondWaitingTime)
+-                        {
+-                            Debug.Log("¥Î±‚ Ω√∞£ √ ∞˙ ≈ÎΩ≈ ø¿∑˘");
+-                            GameManager.instance.ActiveError("º≠πˆøÕ¿« ø¨∞·¿Ã " +
+-                                "ø¯»∞«œ¡ˆ æ Ω¿¥œ¥Ÿ.");
+-
+-                            yield break;
+-                        }
+-                    }
+-
+-                }
+-
+-            }
+-            //≈ÎΩ≈ »Æ¿Œ
+-            if (act!=null)
+-                act.Invoke();
+-            accountpacket.d=data.ReturnNetworkMember();
++            if (GameManager.instance.singlemode) yield break;
++            yield return WaitForConnection();
++            if (!network.IsConnected) yield break;
++            if (act != null) act();
++            GameManager.instance.ServerMessage = null;
++            accountpacket.d = data.ReturnNetworkMember();
++            Debug.Log("[Online] SEND C_SaveAccountData");
+             network.Send(accountpacket.Write());
+-           timer = 0;
+-            while (true)
+-            {
+-                if (GameManager.instance.ServerMessage == "account Save Complete" && GameManager.instance.Account != null)
+-                {
+-                    Debug.Log("∞Ë¡§ ¿˙¿Â º∫∞¯");
+-                    GameManager.instance.ServerMessage = null;
+-                    yield break;
+-                }
+-                else
+-                {
+-                    timer += Time.fixedDeltaTime;
+-                    if (timer > ServerRespondWaitingTime)
+-                    {
+-                        Debug.Log("¥Î±‚ Ω√∞£ √ ∞˙ ≈ÎΩ≈ ø¿∑˘");
+-                        GameManager.instance.ActiveError("º≠πˆøÕ¿« ø¨∞·¿Ã " +
+-                            "ø¯»∞«œ¡ˆ æ Ω¿¥œ¥Ÿ.");
+-                        yield break;
+-                    }
+-                    yield return null;
+-                }
+-            }
++            yield return WaitForAccountResponse("account Save Complete", true);
+         }
+ 
+         public IEnumerator TryCreateAccount(string name)
+         {
+-            float timer = 0;
+-            if (!GameManager.instance.OnServerConnect)
+-            {
+-                network.Connect();
+-
+-                while (true)
+-                {
+-                    if (GameManager.instance.OnServerConnect)
+-                    {
+-                        break;
+-                    }
+-                    else
+-                    {
+-                        timer += Time.fixedDeltaTime;
+-                        if (timer > ServerRespondWaitingTime)
+-                        {
+-                            Debug.Log("¥Î±‚ Ω√∞£ √ ∞˙ ≈ÎΩ≈ ø¿∑˘");
+-                            GameManager.instance.ActiveError("º≠πˆøÕ¿« ø¨∞·¿Ã " +
+-                                "ø¯»∞«œ¡ˆ æ Ω¿¥œ¥Ÿ.");
+-
+-                            yield break;
+-                        }
+-                    }
+-
+-                }
+-
+-            }
+-            C_CreateAccountData pkt = new C_CreateAccountData();
+-            pkt.name=name;
+-
+-            network.Send(pkt.Write());
+-           timer = 0;
+-            while (true)
+-            {
+-                if (GameManager.instance.ServerMessage == "account create Complete" && GameManager.instance.Account != null)
+-                {
+-                    Debug.Log("∞Ë¡§ ª˝º∫ º∫∞¯");
+-                    GameManager.instance.ServerMessage = null;
+-                    yield break;
+-                }
+-                else
+-                {
+-                    timer += Time.fixedDeltaTime;
+-         
+-                    if (timer > ServerRespondWaitingTime)
+-                    {
+-                        Debug.Log("¥Î±‚ Ω√∞£ √ ∞˙");
+-                        GameManager.instance.ActiveError("º≠πˆøÕ¿« ø¨∞·¿Ã " +
+-                          "ø¯»∞«œ¡ˆ æ Ω¿¥œ¥Ÿ.");
+-                        yield break;
+-                    }
+-                    yield return null;
+-                }
+-            }
++            if (GameManager.instance.singlemode) yield break;
++            yield return WaitForConnection();
++            if (!network.IsConnected) yield break;
++            GameManager.instance.ServerMessage = null;
++            GameManager.instance.Account = null;
++            Debug.Log("[Online] SEND C_CreateAccountData");
++            network.Send(new C_CreateAccountData { name = name }.Write());
++            yield return WaitForAccountResponse("account create Complete", true);
+         }
+         public void updateAccount(UserAccountData data)//µø±‚»≠ øµæÓ ™Oæ∆º≠ ºˆ¡§
+         {
+diff --git a/Client/1_backup/Assets/_Project/Scripts/UI/Title/TitleScreen.cs b/Client/1_backup/Assets/_Project/Scripts/UI/Title/TitleScreen.cs
+index ee97a582..48e036b8 100644
+--- a/Client/1_backup/Assets/_Project/Scripts/UI/Title/TitleScreen.cs
++++ b/Client/1_backup/Assets/_Project/Scripts/UI/Title/TitleScreen.cs
+@@ -86,10 +86,10 @@ public class TitleScreen : MonoBehaviour
+ 
+         accountChecker.gameObject.SetActive(true);
+         accountChecker.text = "ø¨∞· ¡ﬂ";
+-        yield return StartCoroutine(GameManager.instance.FakeConnectAccountCorutine(cache.UID));//gmaemanageerø° ∞Ë¡§¿ª ø¨∞·«œ¥¬ ƒ⁄∑Á∆æ¿ª Ω««‡ »ƒ ¥Î±‚
++        yield return StartCoroutine(GameManager.instance.ConnectAccountCorutine(UID));//gmaemanageerø° ∞Ë¡§¿ª ø¨∞·«œ¥¬ ƒ⁄∑Á∆æ¿ª Ω««‡ »ƒ ¥Î±‚
+         //yield return StartCoroutine(GameManager.instance.ConnectAccountCorutine(cache.UID));//gmaemanageerø° ∞Ë¡§¿ª ø¨∞·«œ¥¬ ƒ⁄∑Á∆æ¿ª Ω««‡ »ƒ ¥Î±‚
+  
+-            if (GameManager.instance.Account != null)//ø¨∞·µ 
++            if (!GameManager.instance.OnError && GameManager.instance.Account != null)//ø¨∞·µ 
+             {
+                 StartCoroutine(LoadGame());
+             }
+@@ -119,7 +119,8 @@ public class TitleScreen : MonoBehaviour
+             else
+                 yield return StartCoroutine(GameManager.instance.createaccountcorutineSingle(username));
+             //uid ¿‘∑¬ »ƒ ∞Ë¡§ ª˝º∫
+-            if (GameManager.instance.Account.uid!=null&&
++            if (!GameManager.instance.OnError && GameManager.instance.Account != null &&
++                GameManager.instance.Account.uid!=null&&
+                 GameManager.instance.Account.uid.Length!=0)
+             {
+                
+@@ -166,6 +167,12 @@ public class TitleScreen : MonoBehaviour
+  
+         accountChecker.gameObject.SetActive(true);
+         accountChecker.text = "º≠πˆ ø¨∞· Ω√µµ ¡ﬂ";
++        if (GameManager.instance.singlemode)
++        {
++            accountChecker.gameObject.SetActive(false);
++            StartCoroutine(CreateAccount());
++            yield break;
++        }
+         yield return StartCoroutine(GameManager.instance.TryConnectServer());
+         accountChecker.gameObject.SetActive(false);
+         if (GameManager.instance.OnServerConnect)
+diff --git a/Client/1_backup/Assets/_Project/Scripts/UI/Title/UIDInputUI.cs b/Client/1_backup/Assets/_Project/Scripts/UI/Title/UIDInputUI.cs
+index 9d18d1e1..ec3726b6 100644
+--- a/Client/1_backup/Assets/_Project/Scripts/UI/Title/UIDInputUI.cs
++++ b/Client/1_backup/Assets/_Project/Scripts/UI/Title/UIDInputUI.cs
+@@ -71,16 +71,17 @@ public class UIDInputUI : MonoBehaviour
+         OkButton.transform.parent.gameObject.SetActive(false);
+         LoadingUI.SetActive(true);
+        yield return StartCoroutine(GameManager.instance.TryConnectServer());
+-        if (!GameManager.instance.OnServerConnect)
++        if (!GameManager.instance.singlemode && !GameManager.instance.OnServerConnect)
+         {
++            LoadingUI.SetActive(false);
+             checktext.text = "º≠πˆøÕ¿« ≈ÎΩ≈¿Ã ø¯»∞«œ¡ˆ æ Ω¿¥œ¥Ÿ.";
+             checktext.transform.parent.gameObject.SetActive(true);
+             yield break;
+         }
+-        yield return StartCoroutine(GameManager.instance.FakeConnectAccountCorutine(uid));
++        yield return StartCoroutine(GameManager.instance.ConnectAccountCorutine(uid));
+         //yield return StartCoroutine(GameManager.instance.ConnectAccountCorutine(uid));
+         LoadingUI.SetActive(false);
+-        bool checker= GameManager.instance.Account==null?false:true;
++        bool checker = !GameManager.instance.OnError && GameManager.instance.Account != null;
+ 
+         if (checker)
+         {
+diff --git a/Server/01Server/Server/script/ClientSession.cs b/Server/01Server/Server/script/ClientSession.cs
+index b3af166b..51546a1d 100644
+--- a/Server/01Server/Server/script/ClientSession.cs
++++ b/Server/01Server/Server/script/ClientSession.cs
+@@ -21,7 +21,17 @@ using ServerCore;
+ 
+         public override void OnRecvPacket(ArraySegment<byte> buffer)
+         {
+-        PacketManager.Instance.OnRecvPacket(this, buffer);
++        try
++        {
++            PacketManager.Instance.OnRecvPacket(this, buffer);
++        }
++        catch (Exception exception)
++        {
++            // A failed account/DB request must produce a response, not stop receiving.
++            Console.WriteLine("Request failed: " + exception.GetType().Name + ": " + exception.Message);
++            var error = new S_ErrorPacket { Error = "Server account request failed; check server log." };
++            Send(error.Write());
++        }
+     }
+ 
+         public override void OnSend(int numofByte)
+diff --git a/Server/01Server/Server/script/Packet/PacketHandler.cs b/Server/01Server/Server/script/Packet/PacketHandler.cs
+index b0acd308..3ef3fce8 100644
+--- a/Server/01Server/Server/script/Packet/PacketHandler.cs
++++ b/Server/01Server/Server/script/Packet/PacketHandler.cs
+@@ -380,25 +380,16 @@ public class LocalTask
+     }
+     public static string createuid()
+     {
+-        while (true)
+-        {
+-            string uid = setuid();
+-
+-            if (!File.Exists($"D:\\project\\portpolio\\01Server\\DBprototype\\{uid}.json"))
+-            {
+-                return uid;
+-            }
+-        }
++        // Existing UID input expects 12 characters. Preserve old accounts as-is.
++        string uid;
++        do { uid = Guid.NewGuid().ToString("N").Substring(0, 12); }
++        while (File.Exists(Path.Combine(getDBDirectory, uid + ".json")));
++        return uid;
+     }
+     #region account
+     static string getDBDirectory
+     {
+-        get
+-        {
+-            string s = Directory.GetCurrentDirectory();
+-            int n = s.IndexOf("\\Server\\");
+-            return s.Substring(0, n) + "\\DBprototype";
+-        }
++        get { return ServerPaths.AccountDirectory; }
+     }
+     public static void saveaccount(UserAccountData account)
+     {
+diff --git a/Server/01Server/Server/script/Program.cs b/Server/01Server/Server/script/Program.cs
+index 8159ee81..4cfb0866 100644
+--- a/Server/01Server/Server/script/Program.cs
++++ b/Server/01Server/Server/script/Program.cs
+@@ -1,103 +1,40 @@
+-Ôªøusing System;
+-using System.IO;
++using System;
+ using System.Net;
+ using System.Threading;
+-using Newtonsoft.Json;
+ using Server.script;
+ using ServerCore;
+ 
+-
+ class Program
+-	{
+-
+-
+-
+-		static Listener _listener = new Listener();
+-	static string getDBDirectory
+-	{
+-		get
+-		{
+-			string s = Directory.GetCurrentDirectory();
+-			int n = s.IndexOf("\\Server\\");
+-			return s.Substring(0, n) + "\\DBprototype";
+-		}
+-	}
+-	static UserAccountData LoadAccountTemplet()
+-	{
+-		string FilePath = getDBDirectory + "\\DataTemplet\\AccountTemplet.json";
+-		UserAccountData data;
+-		using (StreamReader r = new StreamReader(FilePath))
+-		{
+-			string json = r.ReadToEnd();
+-			data = JsonConvert.DeserializeObject<UserAccountData>(json);
+-		}
+-		return data;
+-	}
+-
+-	static void Main(string[] args)
+-		{
+-			// DNS (Domain Name System)
+-			
+-		Console.WriteLine("ÏÑúÎ≤Ñ Ïã§Ìñâ Ï§ë...");
+-		Console.WriteLine("Îç∞Ïù¥ÌÑ∞ Ï†ÄÏû• Î∞©ÏãùÏùÑ ÏÑ†ÌÉùÌï¥Ï£ºÏÑ∏Ïöî(0:ÌååÏùº ÎîîÎ†âÌÜ†Î¶¨ 1:mysql)");
+-		int n= short.Parse(Console.ReadLine());
+-		if(n >2|| n < 0)
+-		{
+-			ServerSetting.Instance.DBSaveSetting = DBsavesetting.Directory;
+-
+-            Console.WriteLine("Î≤îÏúÑ Ï¥àÍ≥º! 0Î≤à ÏÑ§Ï†ïÏúºÎ°ú Ïã§Ìñâ");
+-		}
+-		else
+-		{
+-            ServerSetting.Instance.DBSaveSetting = (DBsavesetting)n;
+-            Console.WriteLine($"{n}Î≤à ÏÑ§Ï†ïÏúºÎ°ú Ïã§Ìñâ");
+-        }
+-		Console.WriteLine("ÏÑúÎ≤Ñ Ïã§Ìñâ ÏúÑÏπò:" + Directory.GetCurrentDirectory());
+-		
+-		string s = Directory.GetCurrentDirectory();
+-        n = s.IndexOf("\\Server\\");
+-        if (ServerSetting.Instance.DBSaveSetting == DBsavesetting.Directory)
+-		{
+-			
+-			string DB = s.Substring(0, n) + "\\DBprototype";
+-			Console.WriteLine("DB Ï†ÄÏû• ÏúÑÏπò:" + DB);
+-		}
+-		else
+-		{
+-			var tmp = ServerSetting.Instance.sqlSetting;
+-			Console.WriteLine(string.Format("SQL ÏÑúÎ≤Ñ Ï†ïÎ≥¥\n" +
+-				"ÏÑúÎ≤ÑIP:{0}\n" +
+-				"ÏÇ¨Ïö©ÏûêID:{1}\n" +
+-				"ÎπÑÎ∞ÄÎ≤àÌò∏:{2}\n" +
+-				"Îç∞Ïù¥ÌÑ∞Î≤†Ïù¥Ïä§:{3}\n" +
+-				"Ìè¨Ìä∏:{4}",tmp.Serverip,tmp.UserID,tmp.password,tmp.Database,tmp.port));
+-		}
+-
+-
+-        string ApplicationVersiontxt = s.Substring(0, n) + "\\ApplicationVersion.txt";
+-		string FileText = File.ReadAllText(ApplicationVersiontxt);
+-
+-        string version = FileText.Substring(FileText.IndexOf(":"), FileText.IndexOf("-", 1) - FileText.IndexOf(":"));
+-		Console.WriteLine("Î≤ÑÏ†º" + version);
+-
+-		Console.WriteLine("Î°úÍ∑∏)");
+-        string host = Dns.GetHostName();
+-        IPHostEntry ipHost = Dns.GetHostEntry(host);
+-        IPAddress ipAddr = ipHost.AddressList[0];
+-        IPEndPoint endPoint = new IPEndPoint(ipAddr, 7777);
+-
+-        _listener.Init(endPoint, () =>
+-        {
+-            return SessionManager.Instance
+-.Generate();
+-        });
+-        while (true)
+-			{
+-			Thread.Sleep(1000);
+-	
+-			ShopDBManager.UpdateShopDBFile();
+-			}
+-		
+-		}
+-	}
+-
++{
++    static readonly Listener Listener = new Listener();
++
++    static string Option(string[] args, string name, string fallback)
++    {
++        int index = Array.IndexOf(args, name);
++        if (index < 0) return fallback;
++        if (index + 1 >= args.Length) throw new ArgumentException("Missing value for " + name);
++        return args[index + 1];
++    }
++
++    static void Main(string[] args)
++    {
++        Console.OutputEncoding = System.Text.Encoding.UTF8;
++        string storage = Option(args, "--storage", "file");
++        if (storage != "file" && storage != "mysql")
++            throw new ArgumentException("--storage must be file or mysql");
++        ServerSetting.Instance.DBSaveSetting = storage == "mysql" ? DBsavesetting.Mysql : DBsavesetting.Directory;
++        ServerPaths.Initialize(Option(args, "--data-root", null));
++
++        string host = Option(args, "--host", "127.0.0.1");
++        IPAddress address = host == "localhost" ? IPAddress.Loopback : IPAddress.Parse(host);
++        int port = int.Parse(Option(args, "--port", "7777"));
++        var endpoint = new IPEndPoint(address, port);
++        Console.WriteLine("Storage: " + storage);
++        Console.WriteLine("Data root: " + ServerPaths.Root);
++        // Legacy application/bundle version download is outside the online account path.
++        // No version file or database connection is required before listening.
++        Listener.Init(endpoint, () => SessionManager.Instance.Generate());
++        Console.WriteLine("LISTEN " + endpoint);
++        while (true) Thread.Sleep(1000);
++    }
++}
+diff --git a/Server/01Server/Server/script/sqltask.cs b/Server/01Server/Server/script/sqltask.cs
+index 8e71e9a7..5322f78c 100644
+--- a/Server/01Server/Server/script/sqltask.cs
++++ b/Server/01Server/Server/script/sqltask.cs
+@@ -15,25 +15,19 @@ namespace Server.script
+         #region sql
+        public static UserAccountData LoadDBsql(string _UId, MySqlConnection conn)
+         {
+-            if (conn.State != ConnectionState.Open)
+-                conn.Open();
+-            string s = string.Format("SELECT accountjson AS accountdata FROM accountinfojson where uid=\"{0}\";", _UId);
+-            MySqlDataAdapter adapter = new MySqlDataAdapter(s, conn);
+-            DataSet ds = new DataSet();
+-
+             lock (_lock)
+             {
+-                adapter.Fill(ds);
+-            }
+-            conn.Close();
+-            string accountjson = "";
+-            foreach (DataRow r in ds.Tables[0].Rows)
+-            {
+-
+-                accountjson = (string)r["accountdata"];
++                if (conn.State != ConnectionState.Open) conn.Open();
++                try
++                {
++                    using var command = new MySqlCommand("SELECT accountjson FROM accountinfojson WHERE uid=@uid;", conn);
++                    command.Parameters.AddWithValue("@uid", _UId);
++                    var value = command.ExecuteScalar();
++                    return value == null || value == DBNull.Value ? null :
++                        JsonConvert.DeserializeObject<UserAccountData>((string)value);
++                }
++                finally { conn.Close(); }
+             }
+-
+-            return JsonConvert.DeserializeObject<UserAccountData>(accountjson);
+         }
+         public static void DeleteDBsql(string _UId, MySqlConnection conn)
+         {
+@@ -152,67 +146,42 @@ namespace Server.script
+         }
+         public static void UpdateDBUID2(UserAccountData data, MySqlConnection conn)//updateÎ¨∏
+         {
+-            if (conn.State != ConnectionState.Open)
+-                conn.Open();
+-            string json = JsonConvert.SerializeObject(data);
+-            string s = string.Format("UPDATE accountinfojson SET accountjson ='{1}' WHERE uid=\"{0}\";", data._uid, json);
+-            MySqlCommand mySqlCommand = new MySqlCommand(s, conn);
+             lock (_lock)
+             {
+-                mySqlCommand.ExecuteNonQuery();
++                if (conn.State != ConnectionState.Open) conn.Open();
++                try
++                {
++                    using var command = new MySqlCommand("UPDATE accountinfojson SET accountjson=@json WHERE uid=@uid;", conn);
++                    command.Parameters.AddWithValue("@uid", data._uid);
++                    command.Parameters.AddWithValue("@json", JsonConvert.SerializeObject(data));
++                    if (command.ExecuteNonQuery() != 1)
++                        throw new InvalidOperationException("Account save did not update an existing account.");
++                }
++                finally { conn.Close(); }
+             }
+-            conn.Close();
+         }
+         static object _lock = new object();
+         public static UserAccountData insertDBsql(MySqlConnection conn, UserAccountData jsondata)
+         {
+             lock (_lock)
+             {
+-                string uid = "";
+-            if (conn.State != ConnectionState.Open)
+-                conn.Open();
+-
+-            string s = string.Format("DROP PROCEDURE if EXISTS testwhileloop;" +
+-
+-                "\r\nCREATE PROCEDURE testwhileloop()" +
+-                "\r\nBEGIN\r\n" +
+-                "DECLARE i INT DEFAULT 1;\r\n" +
+-                "DECLARE randomstring VARCHAR(12); " +
+-                "\r\nwhile i >0 DO" +
+-                "\r\nSET randomstring= (SELECT SUBSTR(MD5(RAND()),1,12));" +
+-                "\r\nSET i =(SELECT COUNT(*) AS count FROM accountinfojson WHERE uid=randomstring);" +
+-                "\r\nEND while;" +
+-
+-                "SELECT randomstring AS uid;\r\nEND;" +
+-                "\r\nCALL testwhileloop();"
+-                + "DROP PROCEDURE if EXISTS testwhileloop;"
+-                );
+-            MySqlDataAdapter adapter = new MySqlDataAdapter(s, conn);
+-            DataSet dataSet = new DataSet();
+-
+-            lock (_lock)
+-            {
+-                adapter.Fill(dataSet);
+-            }
+-
+-
+-
+-            foreach (DataRow r in dataSet.Tables[0].Rows)
+-            {
+-                uid = (string)r["uid"];
+-            }
+-            jsondata._uid = uid;
+-            string json = JsonConvert.SerializeObject(jsondata);
+-            s = string.Format("INSERT into Accountinfojson(uid,accountjson) VALUES(\"{0}\",'{1}');", jsondata._uid, json);
+-
+-
+-            MySqlCommand cmd = new MySqlCommand(s, conn);
+-        
+-                cmd.ExecuteNonQuery();
+-          
+-            conn.Close();
++                if (conn.State != ConnectionState.Open) conn.Open();
++                try
++                {
++                    // Generate a UID in C#; do not DROP/CREATE a DB procedure.
++                    for (int attempt = 0; attempt < 5; attempt++)
++                    {
++                        jsondata._uid = Guid.NewGuid().ToString("N").Substring(0, 12);
++                        using var command = new MySqlCommand("INSERT INTO accountinfojson(uid,accountjson) VALUES(@uid,@json);", conn);
++                        command.Parameters.AddWithValue("@uid", jsondata._uid);
++                        command.Parameters.AddWithValue("@json", JsonConvert.SerializeObject(jsondata));
++                        try { command.ExecuteNonQuery(); return jsondata; }
++                        catch (MySqlException exception) when (exception.Number == 1062) { }
++                    }
++                    throw new InvalidOperationException("Could not allocate a unique account UID.");
++                }
++                finally { conn.Close(); }
+             }
+-            return jsondata;
+         }
+ 
+         #endregion
+diff --git a/Server/01Server/ServerCore/Listener.cs b/Server/01Server/ServerCore/Listener.cs
+index 7f6146fa..45ae665e 100644
+--- a/Server/01Server/ServerCore/Listener.cs
++++ b/Server/01Server/ServerCore/Listener.cs
+@@ -55,9 +55,12 @@ namespace ServerCore
+ 
+ 			if (args.SocketError == SocketError.Success)
+ 			{
+-				Session session = _sessionFactory.Invoke();
+-				session.Start(args.AcceptSocket);
+-				session.OnConnected(args.AcceptSocket.RemoteEndPoint);
++                Session session = _sessionFactory.Invoke();
++                // RegisterRecv can complete synchronously and dispose the socket.
++                // Capture the endpoint before Start, not after a peer has closed.
++                EndPoint endpoint = args.AcceptSocket.RemoteEndPoint;
++                session.Start(args.AcceptSocket);
++                session.OnConnected(endpoint);
+ 			}
+ 			else
+ 				Console.WriteLine(args.SocketError.ToString());
+--- /dev/null
++++ b/Server/01Server/Server/script/ServerPaths.cs
+@@ -0,0 +1,38 @@
++using System;
++using System.IO;
++
++namespace Server.script
++{
++    // Shared file root for account/template and preserved shop helpers.
++    // Default discovery starts from the executable, never the process working directory.
++    internal static class ServerPaths
++    {
++        public static string Root { get; private set; }
++        public static string AccountDirectory { get { return Path.Combine(Root, "DBprototype"); } }
++        public static string AccountTemplate { get { return Path.Combine(AccountDirectory, "DataTemplet", "AccountTemplet.json"); } }
++
++        public static void Initialize(string configuredRoot)
++        {
++            if (!string.IsNullOrWhiteSpace(configuredRoot))
++            {
++                if (!Path.IsPathRooted(configuredRoot))
++                    throw new ArgumentException("--data-root must be an absolute path");
++                Root = Path.GetFullPath(configuredRoot);
++            }
++            else
++            {
++                for (var directory = new DirectoryInfo(AppContext.BaseDirectory); directory != null; directory = directory.Parent)
++                {
++                    if (File.Exists(Path.Combine(directory.FullName, "DBprototype", "DataTemplet", "AccountTemplet.json")))
++                    {
++                        Root = directory.FullName;
++                        break;
++                    }
++                }
++            }
++            if (Root == null || !File.Exists(AccountTemplate))
++                throw new FileNotFoundException("Account template not found. Supply --data-root with DBprototype/DataTemplet/AccountTemplet.json.");
++            Directory.CreateDirectory(AccountDirectory);
++        }
++    }
++}

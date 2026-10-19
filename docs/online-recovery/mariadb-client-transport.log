@@ -1,0 +1,79 @@
+
+.NET 10.0을(를) 시작합니다.
+---------------------
+SDK 버전: 10.0.401
+
+원격 분석
+---------
+.NET 도구는 사용자 환경 개선을 위해 사용량 현황 데이터를 수집합니다. Microsoft에서 데이터를 수집하여 커뮤니티와 공유합니다. 원하는 셸을 사용하여 DOTNET_CLI_TELEMETRY_OPTOUT 환경 변수를 '1' 또는 'true'로 설정하여 원격 분석을 옵트아웃할 수 있습니다.
+
+.NET CLI 도구 원격 분석에 대한 자세한 내용은 https://aka.ms/dotnet-cli-telemetry를 참조하세요.
+
+----------------
+첫 번째 앱 작성: https://aka.ms/dotnet-hello-world
+새로운 기능 확인: https://aka.ms/dotnet-whats-new
+설명서 살펴보기: https://aka.ms/dotnet-docs
+GitHub에서 문제 보고 및 소스 찾기: https://github.com/dotnet/core
+사용 가능한 명령을 보려면 'dotnet --help'를 사용하거나 https://aka.ms/dotnet-cli를 방문하세요.
+--------------------------------------------------------------------------------------
+C:\Program Files\dotnet\sdk\10.0.401\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.EolTargetFrameworks.targets(32,5): warning NETSDK1138: 대상 프레임워크 'net7.0'은(는) 지원되지 않으며 향후 보안 업데이트를 받을 수 없습니다. 지원 정책에 대한 자세한 내용은 https://aka.ms/dotnet-core-support을(를) 참조하세요. [D:\GIthub\UnityFight_Portfolio\Server\01Server\Server\Server.csproj]
+  ServerCore -> D:\GIthub\UnityFight_Portfolio\Server\01Server\ServerCore\bin\Debug\net7.0\ServerCore.dll
+  Server -> D:\GIthub\UnityFight_Portfolio\Server\01Server\Server\bin\Debug\net7.0\Server.dll
+
+빌드했습니다.
+
+C:\Program Files\dotnet\sdk\10.0.401\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.EolTargetFrameworks.targets(32,5): warning NETSDK1138: 대상 프레임워크 'net7.0'은(는) 지원되지 않으며 향후 보안 업데이트를 받을 수 없습니다. 지원 정책에 대한 자세한 내용은 https://aka.ms/dotnet-core-support을(를) 참조하세요. [D:\GIthub\UnityFight_Portfolio\Server\01Server\Server\Server.csproj]
+    경고 1개
+    오류 0개
+
+경과 시간: 00:00:05.58
+Microsoft (R) Visual C# 컴파일러 버전 5.9.0-1.26423.113 (e34a38d2ae1fc26406a317517196e55c68ff83ab)
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+[Online] TCP connected
+[Online] SEND C_CreateAccountData
+종료인덱스:314
+[Online] RECV 3
+[Online] account create Complete
+[Online] SEND C_SaveAccountData
+전송 준비
+작성 패킷 id1 바이트266 
+[Online] RECV 5
+[Online] account Save Complete
+[Online] SEND C_ConnectRequest
+UIDLEN24UID35c3894579d2
+종료인덱스:310
+[Online] RECV 3
+[Online] account Load Complete
+[Online] TCP connected
+[Online] SEND C_ConnectRequest
+UIDLEN24UID35c3894579d2
+종료인덱스:310
+[Online] RECV 3
+[Online] account Load Complete
+PASS PRODUCTION CLIENT TRANSPORT create/save/reload/reconnect/cleanup + Standalone no-connect
+SERVER LOG:
+Storage: mysql
+Data root: D:\GIthub\UnityFight_Portfolio\.online-recovery\mysql-data
+LISTEN 127.0.0.1:17879
+Connected : 1
+Connected : 0
+[Disconnected] 127.0.0.1:14449
+OnConnected : 127.0.0.1:14449
+Connected : 1
+OnConnected : 127.0.0.1:14450
+���� id4
+Name:client_transport_probe UID:35c3894579d2�� ������ �����Ǿ����ϴ� ���� ������ ���� ��:1
+���� id1
+���� id0
+UID35c3894579d2�� ���� ��û...
+UID35c3894579d2�ҷ����� ����...
+Connected : 0
+[Disconnected] 127.0.0.1:14450
+Connected : 1
+OnConnected : 127.0.0.1:14452
+���� id0
+UID35c3894579d2�� ���� ��û...
+UID35c3894579d2�ҷ����� ����...
+Connected : 0
+[Disconnected] 127.0.0.1:14452

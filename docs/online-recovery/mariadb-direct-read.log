@@ -1,0 +1,7 @@
+Authenticated user: root@localhost
+Database: 01database
+Port: 3306
+Verified UID: 35c3894579d2
+Stored username: client_transport_saved
+Stored EXP: 41
+PASS independent read-only MariaDB SELECT confirms TCP save

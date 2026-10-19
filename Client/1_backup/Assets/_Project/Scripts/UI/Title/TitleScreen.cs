@@ -86,10 +86,10 @@ public class TitleScreen : MonoBehaviour
 
         accountChecker.gameObject.SetActive(true);
         accountChecker.text = "연결 중";
-        yield return StartCoroutine(GameManager.instance.FakeConnectAccountCorutine(cache.UID));//gmaemanageer에 계정을 연결하는 코루틴을 실행 후 대기
+        yield return StartCoroutine(GameManager.instance.ConnectAccountCorutine(UID));//gmaemanageer에 계정을 연결하는 코루틴을 실행 후 대기
         //yield return StartCoroutine(GameManager.instance.ConnectAccountCorutine(cache.UID));//gmaemanageer에 계정을 연결하는 코루틴을 실행 후 대기
  
-            if (GameManager.instance.Account != null)//연결됨
+            if (!GameManager.instance.OnError && GameManager.instance.Account != null)//연결됨
             {
                 StartCoroutine(LoadGame());
             }
@@ -119,7 +119,8 @@ public class TitleScreen : MonoBehaviour
             else
                 yield return StartCoroutine(GameManager.instance.createaccountcorutineSingle(username));
             //uid 입력 후 계정 생성
-            if (GameManager.instance.Account.uid!=null&&
+            if (!GameManager.instance.OnError && GameManager.instance.Account != null &&
+                GameManager.instance.Account.uid!=null&&
                 GameManager.instance.Account.uid.Length!=0)
             {
                
@@ -166,6 +167,12 @@ public class TitleScreen : MonoBehaviour
  
         accountChecker.gameObject.SetActive(true);
         accountChecker.text = "서버 연결 시도 중";
+        if (GameManager.instance.singlemode)
+        {
+            accountChecker.gameObject.SetActive(false);
+            StartCoroutine(CreateAccount());
+            yield break;
+        }
         yield return StartCoroutine(GameManager.instance.TryConnectServer());
         accountChecker.gameObject.SetActive(false);
         if (GameManager.instance.OnServerConnect)

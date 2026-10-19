@@ -71,16 +71,17 @@ public class UIDInputUI : MonoBehaviour
         OkButton.transform.parent.gameObject.SetActive(false);
         LoadingUI.SetActive(true);
        yield return StartCoroutine(GameManager.instance.TryConnectServer());
-        if (!GameManager.instance.OnServerConnect)
+        if (!GameManager.instance.singlemode && !GameManager.instance.OnServerConnect)
         {
+            LoadingUI.SetActive(false);
             checktext.text = "서버와의 통신이 원활하지 않습니다.";
             checktext.transform.parent.gameObject.SetActive(true);
             yield break;
         }
-        yield return StartCoroutine(GameManager.instance.FakeConnectAccountCorutine(uid));
+        yield return StartCoroutine(GameManager.instance.ConnectAccountCorutine(uid));
         //yield return StartCoroutine(GameManager.instance.ConnectAccountCorutine(uid));
         LoadingUI.SetActive(false);
-        bool checker= GameManager.instance.Account==null?false:true;
+        bool checker = !GameManager.instance.OnError && GameManager.instance.Account != null;
 
         if (checker)
         {

@@ -1,0 +1,267 @@
+diff --git a/Client/1_backup/Assets/_Project/Scripts/Manager/LoadManager.cs b/Client/1_backup/Assets/_Project/Scripts/Manager/LoadManager.cs
+index 83301bba..be166445 100644
+--- a/Client/1_backup/Assets/_Project/Scripts/Manager/LoadManager.cs
++++ b/Client/1_backup/Assets/_Project/Scripts/Manager/LoadManager.cs
+@@ -242,20 +242,20 @@ public partial class LoadManager : MonoBehaviour
+     public void PushitemdbLoadRequest(string ID, Action<ItemData> action)
+     {
+-        LoadingQueue.Enqueue(LoadTextAssetAsync("itemdb", ID, action));
++        LoadingQueue.Enqueue(LoadItemJsonAddressableAsync(ID, action));
+         MaxLoadingprogress += 2;
+     }
+     public void PushitemdbsLoadRequest(List<string> ID, Action<List< ItemData>> action)
+     {
+-        LoadingQueue.Enqueue(LoadTextAssetsAsync("itemdb", ID, action));
++        LoadingQueue.Enqueue(LoadItemJsonsAddressableAsync(ID, action));
+         MaxLoadingprogress += 2;
+     }
+     public void PushitemLoadRequest(string ID, Action<ItemData> action)
+     {
+-        LoadingQueue.Enqueue(LoaditemAsync( ID, action));
++        LoadingQueue.Enqueue(LoadItemJsonWithLegacySpriteAsync(ID, action));
+         MaxLoadingprogress += 2;
+     }
+     public void PushitemsLoadRequest(List<string> ID, Action<List<ItemData>> action)
+     {
+-        LoadingQueue.Enqueue(LoaditemsAsync( ID, action));
++        LoadingQueue.Enqueue(LoadItemsJsonWithLegacySpritesAsync(ID, action));
+         MaxLoadingprogress += 2;
+     }
+@@ -328,5 +328,5 @@ public partial class LoadManager : MonoBehaviour
+         PushCharacterdbsLoadRequest(characterIds, list => characterJsonReady = list.TrueForAll(info => info != null));
+        
+-        yield return StartCoroutine(LoadAllitemAsync());
++        yield return StartCoroutine(LoadAllItemJsonWithLegacySpritesAsync());
+         Debug.Log("아이템 호출");
+         yield return StartCoroutine (LoadAllCharacterPortraitsAddressableAsync());
+diff --git a/Client/1_backup/Assets/_Project/Scripts/Manager/LoadManager.ItemJsonAddressables.cs b/Client/1_backup/Assets/_Project/Scripts/Manager/LoadManager.ItemJsonAddressables.cs
+new file mode 100644
+index 00000000..4cbc7554
+--- /dev/null
++++ b/Client/1_backup/Assets/_Project/Scripts/Manager/LoadManager.ItemJsonAddressables.cs
+@@ -0,0 +1,145 @@
++using System;
++using System.Collections;
++using System.Collections.Generic;
++using UnityEngine;
++using UnityEngine.AddressableAssets;
++using UnityEngine.ResourceManagement.AsyncOperations;
++
++public partial class LoadManager
++{
++    // Share source TextAssets only. ItemData is mutable, notably its itemSprite.
++    private static readonly Dictionary<string, AsyncOperationHandle<TextAsset>>
++        ItemJsonHandles = new Dictionary<string, AsyncOperationHandle<TextAsset>>(StringComparer.Ordinal);
++    private static bool itemJsonQuitSubscribed;
++
++    private IEnumerator LoadItemJsonAddressableAsync(string itemId, Action<ItemData> action, float progressWeight = 2f)
++    {
++        string address = ItemContentMapping.Get(itemId).JsonAddress;
++        if (!itemJsonQuitSubscribed)
++        {
++            Application.quitting += ReleaseItemJsonSessionHandles;
++            itemJsonQuitSubscribed = true;
++        }
++
++        AsyncOperationHandle<TextAsset> handle;
++        if (!ItemJsonHandles.TryGetValue(address, out handle) || !handle.IsValid())
++        {
++            handle = Addressables.LoadAssetAsync<TextAsset>(address);
++            ItemJsonHandles[address] = handle;
++        }
++        float startProgress = processingcount;
++        while (handle.IsValid() && !handle.IsDone)
++        {
++            Loadingprogress = startProgress + handle.PercentComplete * progressWeight;
++            yield return null;
++        }
++        processingcount += progressWeight;
++        Loadingprogress = processingcount;
++
++        ItemData information = null;
++        string error = "Invalid operation or missing Item JSON result";
++        if (handle.IsValid() && handle.Status == AsyncOperationStatus.Succeeded && handle.Result != null)
++        {
++            try
++            {
++                // A fresh graph for each request/cache hit, never the dictionary object.
++                information = convertTextasset<ItemData>(handle.Result);
++            }
++            catch (Exception exception)
++            {
++                error = exception.Message;
++            }
++        }
++        else if (handle.IsValid() && handle.OperationException != null)
++        {
++            error = handle.OperationException.Message;
++        }
++
++        if (information == null)
++        {
++            AsyncOperationHandle<TextAsset> owned;
++            if (ItemJsonHandles.TryGetValue(address, out owned) && owned.Equals(handle))
++            {
++                ItemJsonHandles.Remove(address);
++                if (handle.IsValid()) Addressables.Release(handle);
++            }
++            Debug.LogError("Item JSON Addressables load failed: " + address + ". " + error);
++            action.Invoke(null);
++            yield break;
++        }
++        action.Invoke(information);
++    }
++
++    private IEnumerator LoadItemJsonsAddressableAsync(List<string> itemIds, Action<List<ItemData>> action,
++        float progressBudget = 2f)
++    {
++        var data = new List<ItemData>(itemIds.Count);
++        if (itemIds.Count == 0)
++        {
++            processingcount += progressBudget;
++            Loadingprogress = processingcount;
++        }
++        else
++        {
++            float weight = progressBudget / itemIds.Count;
++            foreach (string id in itemIds)
++                yield return LoadItemJsonAddressableAsync(id, item => data.Add(item), weight);
++        }
++        // Retain input order, duplicate slots and null failures for JSON consumers.
++        action.Invoke(data);
++    }
++
++    private IEnumerator LoadItemJsonWithLegacySpriteAsync(string itemId, Action<ItemData> action)
++    {
++        ItemData data = null;
++        // Existing combined API budget is used by its unchanged Sprite helper.
++        yield return LoadItemJsonAddressableAsync(itemId, item => data = item, 0f);
++        yield return StartCoroutine(LoadSpriteAsync("itemsprite", itemId,
++            sprite => { if (data != null) data.itemSprite = sprite; }));
++        action.Invoke(data);
++    }
++
++    private IEnumerator LoadItemsJsonWithLegacySpritesAsync(List<string> itemIds, Action<List<ItemData>> action)
++    {
++        List<ItemData> data = null;
++        yield return LoadItemJsonsAddressableAsync(itemIds, items => data = items, 0f);
++        yield return StartCoroutine(LoadSpritesAsync("itemsprite", itemIds, sprites =>
++        {
++            // JSON failures retain slots. Do not dereference a failed JSON result.
++            // Keep the existing Sprite batch's success-only list contract unchanged.
++            for (int n = 0; n < sprites.Count; n++)
++                if (data[n] != null) data[n].itemSprite = sprites[n];
++        }));
++        action.Invoke(data);
++    }
++
++    private IEnumerator LoadAllItemJsonWithLegacySpritesAsync()
++    {
++        itemDictionary = new Dictionary<string, ItemData>();
++        var contents = new List<ItemContentMapping.Content>(ItemContentMapping.AllContents);
++        // One JSON unit plus the existing two-unit Sprite load per catalog entry.
++        MaxLoadingprogress += contents.Count * 3f;
++        foreach (var content in contents)
++        {
++            ItemData item = null;
++            yield return LoadItemJsonAddressableAsync(content.ItemId, data => item = data, 1f);
++            if (item == null)
++            {
++                Debug.LogError("Item JSON preload failed. Item dictionary preparation stopped.");
++                yield break;
++            }
++            yield return StartCoroutine(LoadSpriteAsync("itemsprite", item.id, sprite => item.itemSprite = sprite));
++            itemDictionary.Add(item.id, item);
++            Loadingprogress = processingcount;
++        }
++    }
++
++    private static void ReleaseItemJsonSessionHandles()
++    {
++        Application.quitting -= ReleaseItemJsonSessionHandles;
++        itemJsonQuitSubscribed = false;
++        foreach (var handle in ItemJsonHandles.Values)
++            if (handle.IsValid()) Addressables.Release(handle);
++        ItemJsonHandles.Clear();
++    }
++}
+diff --git a/Client/1_backup/Assets/_Project/Scripts/Manager/LoadManager.ItemJsonAddressables.cs.meta b/Client/1_backup/Assets/_Project/Scripts/Manager/LoadManager.ItemJsonAddressables.cs.meta
+new file mode 100644
+index 00000000..23cce176
+--- /dev/null
++++ b/Client/1_backup/Assets/_Project/Scripts/Manager/LoadManager.ItemJsonAddressables.cs.meta
+@@ -0,0 +1,11 @@
++fileFormatVersion: 2
++guid: fe6a09200f2d4f379ea958e6543f250d
++MonoImporter:
++  externalObjects: {}
++  serializedVersion: 2
++  defaultReferences: []
++  executionOrder: 0
++  icon: {instanceID: 0}
++  userData:
++  assetBundleName:
++  assetBundleVariant:
+diff --git a/Client/1_backup/Assets/_Project/Scripts/Manager/ItemContentMapping.cs b/Client/1_backup/Assets/_Project/Scripts/Manager/ItemContentMapping.cs
+new file mode 100644
+index 00000000..2d8cf76d
+--- /dev/null
++++ b/Client/1_backup/Assets/_Project/Scripts/Manager/ItemContentMapping.cs
+@@ -0,0 +1,40 @@
++using System;
++using System.Collections.Generic;
++
++// Item identities, physical JSON names and Addressables keys are independent.
++public static class ItemContentMapping
++{
++    public sealed class Content
++    {
++        public readonly string ItemId;
++        public readonly string JsonName;
++        public readonly string JsonAddress;
++
++        internal Content(string itemId, string jsonName, string jsonAddress)
++        {
++            ItemId = itemId;
++            JsonName = jsonName;
++            JsonAddress = jsonAddress;
++        }
++    }
++
++    private static readonly Dictionary<string, Content> Entries =
++        new Dictionary<string, Content>(StringComparer.OrdinalIgnoreCase)
++        {
++            { "I01", new Content("I01", "I01", "item/json/I01") },
++            { "I02", new Content("I02", "I02", "item/json/I02") },
++            { "I03", new Content("I03", "I03", "item/json/I03") },
++            { "I04", new Content("I04", "I04", "item/json/I04") },
++            { "I05", new Content("I05", "I05", "item/json/I05") }
++        };
++
++    internal static IEnumerable<Content> AllContents { get { return Entries.Values; } }
++
++    public static Content Get(string itemId)
++    {
++        Content content;
++        if (itemId == null || !Entries.TryGetValue(itemId, out content))
++            throw new ArgumentException("No item JSON content mapping for ID: " + itemId, "itemId");
++        return content;
++    }
++}
+diff --git a/Client/1_backup/Assets/_Project/Scripts/Manager/ItemContentMapping.cs.meta b/Client/1_backup/Assets/_Project/Scripts/Manager/ItemContentMapping.cs.meta
+new file mode 100644
+index 00000000..5a1487d8
+--- /dev/null
++++ b/Client/1_backup/Assets/_Project/Scripts/Manager/ItemContentMapping.cs.meta
+@@ -0,0 +1,11 @@
++fileFormatVersion: 2
++guid: c6b5453dc6ea4653b70184e6b470bf06
++MonoImporter:
++  externalObjects: {}
++  serializedVersion: 2
++  defaultReferences: []
++  executionOrder: 0
++  icon: {instanceID: 0}
++  userData:
++  assetBundleName:
++  assetBundleVariant:

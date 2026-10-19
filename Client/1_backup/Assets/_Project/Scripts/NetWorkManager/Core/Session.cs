@@ -118,16 +118,24 @@ namespace ServerCore
 
 		public void Disconnect()
 		{
-			if (Interlocked.Exchange(ref _disconnected, 1) == 1)
-				return;
-			if (_socket != null)
-			{
-				OnDisconnected(_socket.RemoteEndPoint);
-				_socket.Shutdown(SocketShutdown.Both);
-				_socket.Close();
-				Clear();
-			}
-		}
+            if (Interlocked.Exchange(ref _disconnected, 1) == 1) return;
+            Socket socket = _socket;
+            EndPoint endpoint = null;
+            try { if (socket != null) endpoint = socket.RemoteEndPoint; }
+            catch (ObjectDisposedException) { }
+            try { OnDisconnected(endpoint); }
+            finally
+            {
+                if (socket != null)
+                {
+                    try { socket.Shutdown(SocketShutdown.Both); }
+                    catch (SocketException) { }
+                    catch (ObjectDisposedException) { }
+                    socket.Close();
+                }
+                Clear();
+            }
+        }
 
 		#region 네트워크 통신
 

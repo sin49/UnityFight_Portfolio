@@ -12,7 +12,17 @@ namespace Server.script
     {
         public string Serverip = "127.0.0.1";
         public string UserID = "root";
-        public string password = "password";
+        // Process environment only; never store DB credentials in source or logs.
+        public string password
+        {
+            get
+            {
+                string value = Environment.GetEnvironmentVariable("UNITYFIGHT_DB_PASSWORD");
+                if (string.IsNullOrEmpty(value))
+                    throw new InvalidOperationException("MariaDB mode requires UNITYFIGHT_DB_PASSWORD. Set it in the server process environment before starting with --storage mysql.");
+                return value;
+            }
+        }
         public string Database = "01database";
         public int port = 3306;
         MySqlConnection _conn;

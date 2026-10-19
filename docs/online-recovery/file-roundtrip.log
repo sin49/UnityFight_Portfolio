@@ -1,0 +1,34 @@
+TCP CONNECTED 17877
+SEND packet 4 bytes 46
+RECV packet 3 bytes 310
+SEND packet 1 bytes 274
+RECV packet 5 bytes 48
+SEND packet 0 bytes 30
+RECV packet 3 bytes 318
+SEND packet 0 bytes 30
+RECV packet 3 bytes 318
+FILE PERSISTENCE VERIFIED
+PASS create -> receive -> save -> reload -> reconnect/reload
+SERVER LOG:
+Storage: file
+Data root: D:\GIthub\UnityFight_Portfolio\.online-recovery\file-data
+LISTEN 127.0.0.1:17877
+Connected : 1
+���� id4
+D:\GIthub\UnityFight_Portfolio\.online-recovery\file-data\DBprototype\94b96fa2b5c4.json�� ��η� 94b96fa2b5c4.json ����
+Name:roundtrip_1792219936 UID:94b96fa2b5c4�� ������ �����Ǿ����ϴ�
+���� id1
+D:\GIthub\UnityFight_Portfolio\.online-recovery\file-data\DBprototype\94b96fa2b5c4.json�� ��η� 94b96fa2b5c4.json ����
+���� id0
+OnConnected : 127.0.0.1:5889
+UID94b96fa2b5c4�� ���� ��û...
+UID94b96fa2b5c4�ҷ����� ����...
+Connected : 2
+Connected : 1
+���� id0
+[Disconnected] 127.0.0.1:5889
+UID94b96fa2b5c4�� ���� ��û...
+UID94b96fa2b5c4�ҷ����� ����...
+OnConnected : 127.0.0.1:5891
+Connected : 0
+[Disconnected] 127.0.0.1:5891

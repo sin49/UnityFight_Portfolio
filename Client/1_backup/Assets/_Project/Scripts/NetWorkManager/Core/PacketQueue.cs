@@ -1,40 +1,30 @@
-using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
+using ServerCore;
 
 public class PacketQueue
 {
+    public sealed class ReceivedPacket
+    {
+        public readonly PacketSession Session;
+        public readonly IPacket Packet;
+        public ReceivedPacket(PacketSession session, IPacket packet) { Session = session; Packet = packet; }
+    }
     public static PacketQueue instance { get; } = new PacketQueue();
+    readonly Queue<ReceivedPacket> packets = new Queue<ReceivedPacket>();
+    readonly object gate = new object();
 
-    Queue<IPacket> packetqueue = new Queue<IPacket>();
-    object _lock = new object();
-    public void Push(IPacket packet)
+    public void Push(PacketSession session, IPacket packet)
     {
-        packetqueue.Enqueue(packet);
+        lock (gate) packets.Enqueue(new ReceivedPacket(session, packet));
     }
-    public IPacket Pop()
+
+    public List<ReceivedPacket> PopAll()
     {
-        lock (_lock)
+        lock (gate)
         {
-            if (packetqueue.Count == 0)
-                return null;
-
-            return packetqueue.Dequeue();
+            var result = new List<ReceivedPacket>(packets);
+            packets.Clear();
+            return result;
         }
-    }
-    public List<IPacket> PopAll()
-    {
-        List<IPacket> list = new List<IPacket>();
-
-        lock (_lock)
-        {
-
-            while (packetqueue.Count > 0)
-            {
-                list.Add(packetqueue.Dequeue());
-            }
-
-        }
-        return list;
     }
 }

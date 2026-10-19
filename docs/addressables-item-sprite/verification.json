@@ -1,0 +1,98 @@
+{
+  "modified_product_files": [
+    "Client/1_backup/Assets/_Project/Scripts/Manager/ItemContentMapping.cs",
+    "Client/1_backup/Assets/_Project/Scripts/Manager/LoadManager.cs",
+    "Client/1_backup/Assets/_Project/Scripts/Manager/LoadManager.ItemJsonAddressables.cs"
+  ],
+  "added_product_files": [
+    "Client/1_backup/Assets/_Project/Scripts/Manager/LoadManager.ItemSpriteAddressables.cs",
+    "Client/1_backup/Assets/_Project/Scripts/Manager/LoadManager.ItemSpriteAddressables.cs.meta"
+  ],
+  "removed_product_files": [],
+  "baseline_files": 9142,
+  "existing_meta_preserved": 4785,
+  "importers_and_editor_registration": [
+    {
+      "item_id": "I01",
+      "asset": "Client/1_backup/Assets/_Project/Art/Sprite/item/I01.png",
+      "address": "item/sprite/I01",
+      "textureType": "8",
+      "spriteMode": "1",
+      "pivot": "{x: 0.5, y: 0.5}",
+      "pixelsPerUnit": "100",
+      "border": "{x: 0, y: 0, z: 0, w: 0}",
+      "spriteMeshType": "1",
+      "slice_list": "empty"
+    },
+    {
+      "item_id": "I02",
+      "asset": "Client/1_backup/Assets/_Project/Art/Sprite/item/I02.png",
+      "address": "item/sprite/I02",
+      "textureType": "8",
+      "spriteMode": "1",
+      "pivot": "{x: 0.5, y: 0.5}",
+      "pixelsPerUnit": "100",
+      "border": "{x: 0, y: 0, z: 0, w: 0}",
+      "spriteMeshType": "1",
+      "slice_list": "empty"
+    },
+    {
+      "item_id": "I03",
+      "asset": "Client/1_backup/Assets/_Project/Art/Sprite/item/I03.png",
+      "address": "item/sprite/I03",
+      "textureType": "8",
+      "spriteMode": "2",
+      "pivot": "{x: 0.5, y: 0.5}",
+      "pixelsPerUnit": "100",
+      "border": "{x: 0, y: 0, z: 0, w: 0}",
+      "spriteMeshType": "1",
+      "slice_list": "empty"
+    },
+    {
+      "item_id": "I04",
+      "asset": "Client/1_backup/Assets/_Project/Art/Sprite/item/I04.png",
+      "address": "item/sprite/I04",
+      "textureType": "8",
+      "spriteMode": "2",
+      "pivot": "{x: 0.5, y: 0.5}",
+      "pixelsPerUnit": "100",
+      "border": "{x: 0, y: 0, z: 0, w: 0}",
+      "spriteMeshType": "1",
+      "slice_list": "empty"
+    },
+    {
+      "item_id": "I05",
+      "asset": "Client/1_backup/Assets/_Project/Art/Sprite/item/I05.png",
+      "address": "item/sprite/I05",
+      "textureType": "8",
+      "spriteMode": "1",
+      "pivot": "{x: 0.5, y: 0.5}",
+      "pixelsPerUnit": "100",
+      "border": "{x: 0, y: 0, z: 0, w: 0}",
+      "spriteMeshType": "1",
+      "slice_list": "empty"
+    }
+  ],
+  "remaining_Active_itemsprite_calls": [],
+  "static_checks": [
+    "full_product_hash_comparison",
+    "only_three_existing_files_and_one_new_script_meta",
+    "public_APIs_unchanged_exact_three_routes",
+    "JSON_partial_only_three_Sprite_calls_and_two_comments",
+    "all_existing_meta_GUIDs_and_importers_preserved",
+    "Legacy_Character_Stage_Terrain_SFX_UI_Account_JSON_settings_packages_unchanged",
+    "five_mapping_entries_match_real_bundle_labelled_images_I06_excluded",
+    "Texture2D_only_full_rect_same_Sprite_Create_overload",
+    "inflight_handle_owned_before_yield_reused_by_address",
+    "successful_Texture_and_generated_Sprite_cache_until_quit",
+    "runtime_Sprites_Destroyed_before_texture_handle_Release",
+    "failed_owned_handle_removed_released_no_single_success_callback",
+    "batch_success_order_duplicates_kept_missing_omitted_no_slot_fix",
+    "no_blocking_no_fallback_no_import_or_Settings_changes",
+    "zero_Active_itemsprite_or_generic_Legacy_Sprite_calls",
+    "unique_helper_declarations_balanced_delimiters",
+    "scoped_diff_added_line_whitespace_clean"
+  ],
+  "compile_build_package_restore_Unity_execution": "NOT RUN",
+  "read_only_review": "No actionable introduced issues; cache ownership, six routes, exact Sprite.Create, success-only batch and quit cleanup reviewed. No writes/runtime execution."
+}

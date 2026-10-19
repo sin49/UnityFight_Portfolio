@@ -55,9 +55,12 @@ namespace ServerCore
 
 			if (args.SocketError == SocketError.Success)
 			{
-				Session session = _sessionFactory.Invoke();
-				session.Start(args.AcceptSocket);
-				session.OnConnected(args.AcceptSocket.RemoteEndPoint);
+                Session session = _sessionFactory.Invoke();
+                // RegisterRecv can complete synchronously and dispose the socket.
+                // Capture the endpoint before Start, not after a peer has closed.
+                EndPoint endpoint = args.AcceptSocket.RemoteEndPoint;
+                session.Start(args.AcceptSocket);
+                session.OnConnected(endpoint);
 			}
 			else
 				Console.WriteLine(args.SocketError.ToString());

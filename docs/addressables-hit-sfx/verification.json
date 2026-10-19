@@ -1,0 +1,45 @@
+{
+  "modified_product_files": [
+    "Client/1_backup/Assets/_Project/Scripts/Manager/LoadManager.cs"
+  ],
+  "added_product_files": [
+    "Client/1_backup/Assets/_Project/Scripts/Manager/LoadManager.CharacterSfxAddressables.cs",
+    "Client/1_backup/Assets/_Project/Scripts/Manager/LoadManager.CharacterSfxAddressables.cs.meta"
+  ],
+  "removed_product_files": [],
+  "baseline_files": 9136,
+  "current_product_files": 9138,
+  "existing_meta_preserved": 4782,
+  "editor_registration": {
+    "sfx_name": "Hit",
+    "asset": "Client/1_backup/Assets/_Project/Audio/Hit.wav",
+    "address": "character/sfx/Hit",
+    "guid": "9a3a7582b349ff74dbbd7db211958ea5"
+  },
+  "remaining_active_charactersfx_calls": [],
+  "static_checks": [
+    "full_9136_product_before_after_hash_comparison",
+    "only_one_PushCharacterSFX_enqueue_substitution",
+    "public_API_AudioClip_callback_and_two_battle_consumers_preserved",
+    "only_new_SFX_partial_and_meta_added",
+    "explicit_Hit_to_character_sfx_Hit_no_inferred_address",
+    "one_LoadAssetAsync_AudioClip_call",
+    "inflight_and_completed_cache_reuse_ownership_before_yield",
+    "invalid_shared_handle_safely_polled",
+    "failed_owned_handle_removed_and_valid_Release_then_null_callback",
+    "success_handle_retained_until_Application_quitting",
+    "unknown_or_null_name_no_operation_log_and_null_callback",
+    "no_AssetBundle_fallback_blocking_Instantiate_or_audio_initialization",
+    "existing_Character_Stage_Terrain_Item_loaders_and_battle_byte_preserved",
+    "all_Legacy_Settings_Groups_packages_audio_assets_and_server_byte_preserved",
+    "all_existing_meta_GUIDs_byte_preserved_and_new_GUID_unique",
+    "Hit_asset_GUID_and_existing_bundle_label_verified",
+    "no_remaining_Active_charactersfx_or_old_SFX_helper_call",
+    "helper_declaration_unique_no_obvious_delimiter_or_import_issue",
+    "scoped_git_diff_whitespace_check_clean"
+  ],
+  "audio_initialization_issue": "GameCharacter.AudioPlayer initialization remains commented out; Act null-check remains. Conversion does not assert actual sound playback.",
+  "compile_build_package_restore_Unity_execution": "NOT RUN",
+  "read_only_review": "No actionable findings; all 9136 baseline files, single enqueue replacement and both consumers reviewed. Actual playback unverified; existing commented audio initialization unchanged.",
+  "editor_address_registered": false
+}

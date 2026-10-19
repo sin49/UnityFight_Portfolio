@@ -1,0 +1,11 @@
+Microsoft (R) Visual C# 컴파일러 버전 5.9.0-1.26423.113 (e34a38d2ae1fc26406a317517196e55c68ff83ab)
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+warning CS1701: 'Newtonsoft.Json'이(가) 사용하는 'System.Runtime, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a' 어셈블리 참조가 'System.Runtime'의 'System.Runtime, Version=7.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a'과(와) 일치하는 것으로 간주합니다. 런타임 정책을 지정해야 합니다.
+Authenticated user: root@localhost
+Database: 01database
+Port: 3306
+Verified UID: 981b7eaed63f
+Stored username: client_transport_saved
+Stored EXP: 41
+PASS independent read-only MariaDB SELECT confirms TCP save

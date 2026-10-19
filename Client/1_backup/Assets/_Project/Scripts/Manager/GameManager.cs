@@ -8,6 +8,8 @@ using System;
 using network;
 using TMPro;
 
+public enum ClientRunMode { Standalone, Online }
+
 public class GameManager : MonoBehaviour
 {
   
@@ -265,38 +267,36 @@ public class GameManager : MonoBehaviour
         //    yield return StartCoroutine(DownLoadManager.instance.DownLoadBundle());
         //}
     }
-    public bool singlemode;
+    [SerializeField] ClientRunMode runMode = ClientRunMode.Standalone;
+    public ClientRunMode RunMode { get { return runMode; } }
+    // Compatibility property for existing Title/UI callers; no second mode bool.
+    public bool singlemode
+    {
+        get { return runMode == ClientRunMode.Standalone; }
+        set { SetRunMode(value ? ClientRunMode.Standalone : ClientRunMode.Online); }
+    }
+
+    // Choose a mode on Title, before starting an account operation.
+    public void SetRunMode(ClientRunMode mode)
+    {
+        if (runMode == mode) return;
+        if (network != null) network.DisConnectServer();
+        runMode = mode;
+        OnServerConnect = false;
+        ServerMessage = null;
+        Account = null;
+    }
+    public void UseStandaloneMode() { SetRunMode(ClientRunMode.Standalone); }
+    public void UseOnlineMode() { SetRunMode(ClientRunMode.Online); }
     public IEnumerator TryConnectServer()
     {
-        GameManager.instance.OnServerConnect = false;
-        singlemode = true;
-        yield break;
-        //GameManager.instance.OnServerConnect = false;
-        //float time = 0;
-        //while (true)
-        //{
-        //    if (time < 5 && !GameManager.instance.OnServerConnect)
-        //    {
-
-        //        time += Time.deltaTime;
-        //        network.ConnectServer();
-
-        //        yield return null;
-        //    }
-
-        //    else if(time>=6)
-        //    {
-        //        Debug.Log("연결 시간 초과 싱글모드 전환");
-        //        singlemode = true;
-
-        //        yield break;
-        //    }
-        //    else
-        //    {
-
-        //        yield break;
-        //    }
-        //}
+        if (singlemode)
+        {
+            OnServerConnect = false;
+            yield break;
+        }
+        OnError = false;
+        yield return network.WaitForConnection();
     }
   
     public void Deleteaccountcorutine()
@@ -313,20 +313,27 @@ public class GameManager : MonoBehaviour
     
     public IEnumerator createaccountcorutine(string username)//코루틴으로 만들어야하나?
     {
-
+        if (singlemode)
+        {
+            yield return StartCoroutine(createaccountcorutineSingle(username));
+            yield break;
+        }
+        OnError = false;
         ActiveLoadingImg();
-    yield return StartCoroutine(network.TryCreateAccount(username));
+        yield return StartCoroutine(network.TryCreateAccount(username));
         DeactiveLoadingImg();
-
-
-        if (!OnError)
-            FIleIOManager.MakeConnectionCache(Account);
-
-
+        if (!OnError && Account != null) FIleIOManager.MakeConnectionCache(Account);
     }
     public IEnumerator createaccountcorutineSingle(string username)
     {
+        if (!singlemode)
+        {
+            yield return StartCoroutine(createaccountcorutine(username));
+            yield break;
+        }
 
+
+        OnError = false;
         ActiveLoadingImg();
         yield return new WaitForSeconds(0.2f);
         Account= LoadManager.instance.loaddummyAccount();
@@ -348,60 +355,26 @@ public class GameManager : MonoBehaviour
     }
     public IEnumerator ConnectAccountCorutine(string uid)//계정 연결 시도
     {
+        if (singlemode)
+        {
+            yield return StartCoroutine(FakeConnectAccountCorutine(uid));
+            yield break;
+        }
+        OnError = false;
         ActiveLoadingImg();
-        yield return new WaitForSeconds(0.2f); // 약간의 로딩 연출 (화면 전환용)
-
-        // 3. 더미 계정 로드 시도
-        if (LoadManager.instance.DummyAccount != null)
-        {
-            Account = LoadManager.instance.loaddummyAccount();
-        }
-
-        // 4. 더미 파일이 없거나 딕셔너리가 비어있어 UI가 고장나는 것을 방지 (하드코딩 주입)
-        if (Account == null)
-        {
-            Account = new UserAccountData();
-            Account.initializelist();
-            Account.username = "포트폴리오";
-            Account.MaxStamina = 999;
-            Account.Stamina = 999;
-        }
-
-        if (Account.get_CharacterList() == null || Account.get_CharacterList().Count == 0)
-        {
-            Account.initializelist(); // 딕셔너리 널 방지 초기화
-
-            // ★ 중요: c01, c02 부분은 실제 존재하는 캐릭터 ID(프리팹/DB 이름)로 바꾸셔야 UI에 뜹니다!
-            Account.set_Character(new PlayerData() { id = "c01", });
-            Account.set_Character(new PlayerData() { id = "c02", });
-        }
-
-        Account.uid = uid;
-        FIleIOManager.MakeConnectionCache(Account); // 로컬 저장 캐시 갱신
-
+        yield return StartCoroutine(network.TryConnectAccount(uid));
         DeactiveLoadingImg();
-        yield break; // 원래 있던 network.TryConnectAccount 패킷 전송 로직 완전 무시
-        //ActiveLoadingImg();
-        //yield return StartCoroutine(network.TryConnectAccount(uid));
-        //DeactiveLoadingImg();
-        //if (!OnError&&Account.uid!="")
-        //{
-        //    FIleIOManager.MakeConnectionCache(Account);//캐시 갱신
-        //    Debug.Log("회복전 스테미나" + Account.Stamina + "타이머" + Account.StaminaTimer);
-        //    yield return StartCoroutine(saveAccountcorutine(() =>
-        //    {
-        //        string currentDate = DateTime.Now.ToString("yyyyMMddhhmmss");
-        //        Debug.Log(currentDate + " " + Account.LastestConnect);
-        //        var a = calculatebydate(currentDate, Account.LastestConnect, Account.StaminaTimer, Account.Stamina, Account.MaxStamina);
-        //        Account.LastestConnect = currentDate;
-        //        Account.StaminaTimer = a.Item1;
-        //        Account.Stamina = a.Item2;
-        //        Debug.Log("계산 후 스테미나" + Account.Stamina + "타이머" + Account.StaminaTimer);
-        //    }));
-        //}
+        if (!OnError && Account != null) FIleIOManager.MakeConnectionCache(Account);
     }
     public IEnumerator FakeConnectAccountCorutine(string uid)//서버 고장 문제로 싱글 전환 가짜 계정 생성
     {
+        if (!singlemode)
+        {
+            yield return StartCoroutine(ConnectAccountCorutine(uid));
+            yield break;
+        }
+
+        OnError = false;
         ActiveLoadingImg();
         yield return new WaitForSeconds(0.2f); // 연출용 대기
 
@@ -433,18 +406,21 @@ public class GameManager : MonoBehaviour
     }
     public IEnumerator saveAccountcorutine(Action act)//계정 저장
     {
+        if (singlemode)
+        {
+            ActiveLoadingImg();
+            yield return new WaitForSeconds(0.1f);
+            DeactiveLoadingImg();
+            if (act != null) act();
+            yield break;
+        }
+        OnError = false;
         ActiveLoadingImg();
-        yield return new WaitForSeconds(0.1f);
-        // 서버 저장 대신 로컬 캐시만 생성 후 즉시 콜백 실행
-        //FIleIOManager.MakeConnectionCache(Account);
+        if (Account == null)
+            ActiveError("No online account is loaded.");
+        else
+            yield return StartCoroutine(network.TrySaveAccount(Account, act));
         DeactiveLoadingImg();
-        if (act != null) act.Invoke();
-        //if (act != null) act.Invoke();
-        //ActiveLoadingImg();
-        //yield return StartCoroutine(network.TrySaveAccount(Account,act));
-        //DeactiveLoadingImg();
-
-
     }
    
     #region calculate stamina

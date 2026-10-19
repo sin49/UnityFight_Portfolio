@@ -1,0 +1,65 @@
+{
+  "date": "2026-10-17",
+  "baseline_files": 6290,
+  "modified_product_files": [
+    "Client/1_backup/Assets/_Project/Scripts/Manager/GameManager.cs",
+    "Client/1_backup/Assets/_Project/Scripts/NetWorkManager/Core/Connector.cs",
+    "Client/1_backup/Assets/_Project/Scripts/NetWorkManager/Core/PacketQueue.cs",
+    "Client/1_backup/Assets/_Project/Scripts/NetWorkManager/Core/ServerSession.cs",
+    "Client/1_backup/Assets/_Project/Scripts/NetWorkManager/Core/Session.cs",
+    "Client/1_backup/Assets/_Project/Scripts/NetWorkManager/NetworkManager.cs",
+    "Client/1_backup/Assets/_Project/Scripts/UI/Title/TitleScreen.cs",
+    "Client/1_backup/Assets/_Project/Scripts/UI/Title/UIDInputUI.cs",
+    "Server/01Server/Server/script/ClientSession.cs",
+    "Server/01Server/Server/script/Packet/PacketHandler.cs",
+    "Server/01Server/Server/script/Program.cs",
+    "Server/01Server/Server/script/sqltask.cs",
+    "Server/01Server/ServerCore/Listener.cs"
+  ],
+  "added_product_files": [
+    "Server/01Server/Server/script/ServerPaths.cs"
+  ],
+  "removed_product_files": [],
+  "existing_meta_preserved": 4798,
+  "static_checks": [
+    "single_run_mode_source_Standalone_default",
+    "public_mode_setter_and_UI_friendly_methods",
+    "standalone_network_guard",
+    "explicit_client_endpoint",
+    "real_account_create_load_save_routes",
+    "Title_success_guards",
+    "received_packet_parse_queue_no_Unity_calls",
+    "queue_synchronized_and_session_tagged",
+    "main_thread_dispatch_filters_stale_session",
+    "connect_cancellation_ownership",
+    "account_waits_yield_and_use_realtime",
+    "server_explicit_loopback_file_default",
+    "listen_no_working_directory_or_legacy_version_dependency",
+    "server_app_base_root_discovery",
+    "account_SQL_no_procedure_DDL",
+    "account_SQL_parameterized",
+    "accept_endpoint_captured_before_receive",
+    "content_loaders_settings_packages_meta_preserved",
+    "packet_ID_and_wire_sources_byte_preserved",
+    "scoped_diff_whitespace_clean"
+  ],
+  "server_build": "dotnet build --no-restore: PASS, 0 errors; existing net7.0 EOL warning",
+  "file_roundtrip": "PASS real TCP create -> receive -> save username/EXP37 -> reload -> fresh connection reload -> actual JSON verification",
+  "client_transport_roundtrip": "PASS linked production Client socket/packet/queue code; Unity API/account container doubles; EXP41 persisted; cleanup twice and Standalone no-connect",
+  "unity_editor_play": "NOT RUN",
+  "mariadb_roundtrip": "PASS after correcting ServerSetting password: linked Client TCP account create/save/reload/reconnect, plus independent SQL SELECT username/EXP41",
+  "review": "Final scoped read-only review: Title null/error guards and Standalone error resets confirmed; no outstanding findings.",
+  "default_root_startup": "PASS: executable-based root discovery from unrelated working directory; listen 17880; server survived immediate peer close",
+  "evidence_logs": [
+    "file-roundtrip.log",
+    "client-transport-roundtrip.log",
+    "default-root-listen.log",
+    "mariadb-roundtrip.log"
+  ],
+  "generated_tracked_build_outputs_restored": 31,
+  "generated_untracked_sourcelink_removed": [
+    "Server/01Server/Server/obj/Debug/net7.0/Server.sourcelink.json",
+    "Server/01Server/ServerCore/obj/Debug/net7.0/ServerCore.sourcelink.json"
+  ],
+  "mariadb_followup": "mariadb-password-verification.json"
+}

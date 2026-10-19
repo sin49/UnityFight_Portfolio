@@ -1,0 +1,30 @@
+{
+  "production_changes": [
+    "Server/01Server/Server/script/ServerSetting.cs",
+    "Server/01Server/Server/script/Program.cs"
+  ],
+  "secret": "UNITYFIGHT_DB_PASSWORD process environment only; required in mysql mode before listen",
+  "build": "PASS --no-restore, 0 errors; existing NETSDK1138 warning",
+  "mariadb_roundtrip": "PASS linked production Client transport create/save/load/new-connection-load and Standalone no-connect",
+  "mariadb_uid": "981b7eaed63f",
+  "file_roundtrip": "PASS linked Client transport, no DB secret",
+  "file_uid": "3b6d9619e68c",
+  "direct_SQL_SELECT": "PASS root@localhost / 01database / port3306; username client_transport_saved, EXP41",
+  "startup_missing_secret": "PASS nonzero exit, named error before listen",
+  "startup_file_unrelated_CWD": "PASS executable-based default root, no secret",
+  "protected_client_files_checked": 6214,
+  "successful_account_wire_layouts": "MATCH; no packet source changes",
+  "unrelated_existing_packet_issue": "Server S_ErrorPacket.Read adds extra ushort offset; not used by successful account roundtrip; unchanged",
+  "Unity_Play": "NOT RUN; Unity/GameManager/account-container doubles in transport harness",
+  "DB_schema_privileges_changes": "NONE; existing test accounts retained",
+  "test_accounts_deleted": false,
+  "logs": [
+    "final-mariadb-roundtrip.log",
+    "final-file-roundtrip.log",
+    "final-startup.log",
+    "final-mariadb-direct-read.log"
+  ],
+  "file_direct_read": "PASS file UID 3b6d9619e68c username client_transport_saved EXP41",
+  "generated_tracked_outputs_restored": 31,
+  "test_file_accounts_retained": ".online-recovery/file-data/DBprototype (gitignored)"
+}

@@ -380,25 +380,16 @@ public class LocalTask
     }
     public static string createuid()
     {
-        while (true)
-        {
-            string uid = setuid();
-
-            if (!File.Exists($"D:\\project\\portpolio\\01Server\\DBprototype\\{uid}.json"))
-            {
-                return uid;
-            }
-        }
+        // Existing UID input expects 12 characters. Preserve old accounts as-is.
+        string uid;
+        do { uid = Guid.NewGuid().ToString("N").Substring(0, 12); }
+        while (File.Exists(Path.Combine(getDBDirectory, uid + ".json")));
+        return uid;
     }
     #region account
     static string getDBDirectory
     {
-        get
-        {
-            string s = Directory.GetCurrentDirectory();
-            int n = s.IndexOf("\\Server\\");
-            return s.Substring(0, n) + "\\DBprototype";
-        }
+        get { return ServerPaths.AccountDirectory; }
     }
     public static void saveaccount(UserAccountData account)
     {

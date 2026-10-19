@@ -1,0 +1,81 @@
+{
+  "modified_product_files": [
+    "Client/1_backup/Assets/_Project/Scripts/Manager/LoadManager.cs"
+  ],
+  "added_product_files": [
+    "Client/1_backup/Assets/_Project/Scripts/Manager/ItemContentMapping.cs",
+    "Client/1_backup/Assets/_Project/Scripts/Manager/ItemContentMapping.cs.meta",
+    "Client/1_backup/Assets/_Project/Scripts/Manager/LoadManager.ItemJsonAddressables.cs",
+    "Client/1_backup/Assets/_Project/Scripts/Manager/LoadManager.ItemJsonAddressables.cs.meta"
+  ],
+  "removed_product_files": [],
+  "baseline_files": 9138,
+  "current_files": 9142,
+  "existing_meta_preserved": 4783,
+  "editor_item_JSON_registration": [
+    {
+      "item_id": "I01",
+      "json_name": "I01",
+      "address": "item/json/I01",
+      "asset": "Client/1_backup/Assets/_Project/Data/Json/Item/I01.json",
+      "guid": "985a6556efb90cf44be03c9d7f32e5f6"
+    },
+    {
+      "item_id": "I02",
+      "json_name": "I02",
+      "address": "item/json/I02",
+      "asset": "Client/1_backup/Assets/_Project/Data/Json/Item/I02.json",
+      "guid": "f9d38a32f13a1d94e8b49c5f855d4376"
+    },
+    {
+      "item_id": "I03",
+      "json_name": "I03",
+      "address": "item/json/I03",
+      "asset": "Client/1_backup/Assets/_Project/Data/Json/Item/I03.json",
+      "guid": "2ec22fd116762d84b8dffae039888728"
+    },
+    {
+      "item_id": "I04",
+      "json_name": "I04",
+      "address": "item/json/I04",
+      "asset": "Client/1_backup/Assets/_Project/Data/Json/Item/I04.json",
+      "guid": "e1fda6951242b2c42a41d3d493d30de0"
+    },
+    {
+      "item_id": "I05",
+      "json_name": "I05",
+      "address": "item/json/I05",
+      "asset": "Client/1_backup/Assets/_Project/Data/Json/Item/I05.json",
+      "guid": "5f520130b00732442b92269bf6af3985"
+    }
+  ],
+  "remaining_Active_itemdb_calls": [],
+  "static_checks": [
+    "full_9138_product_before_after_hash_comparison",
+    "five_exact_LoadManager_routes_only",
+    "public_API_signatures_getitem_Account_binding_and_Menu_order_preserved",
+    "only_two_new_scripts_and_meta_added",
+    "five_explicit_ItemId_JsonName_Address_entries_match_data_and_bundle_labels",
+    "I06_existing_asset_preserved_but_excluded",
+    "one_TextAsset_Addressables_call_and_address_from_Mapping",
+    "inflight_and_completed_handle_reuse_ownership_before_yield",
+    "fresh_ItemData_parse_for_every_request_and_duplicate_slot",
+    "ordered_JSON_batch_dense_null_slots_and_empty_batch",
+    "combined_APIs_only_JSON_backend_replaced_same_legacy_Sprite_helpers",
+    "failed_JSON_slot_guard_while_Sprite_batch_contract_unchanged",
+    "menu_preload_catalog_before_owned_item_binding_same_dictionary",
+    "failed_owned_handle_removed_released_and_null_callback",
+    "success_handle_release_only_Application_quitting",
+    "all_4783_existing_meta_and_GUIDs_byte_preserved_new_GUIDs_unique",
+    "Legacy_Item_Sprite_implementation_and_imports_byte_preserved",
+    "all_Character_SFX_Stage_Terrain_battle_UI_settings_packages_server_byte_preserved",
+    "no_Active_itemdb_or_old_combined_Item_helper_call",
+    "no_blocking_or_AssetBundle_fallback",
+    "helper_type_declarations_unique_no_obvious_delimiter_or_import_issue",
+    "scoped_git_diff_whitespace_check_clean"
+  ],
+  "object_ownership": "TextAsset session cache; fresh ItemData for each JSON request; existing per-ID prepared dictionary metadata shared intentionally by Account/UI. Amount remains in separate owned item.",
+  "failure_policy": "Single null callback; JSON batch keeps null slots. Menu preparation stops at JSON failure; existing parent Menu-entry/error policy unchanged. Combined Sprite batch success-only list/possible index shifting on missing sprites unchanged; failed JSON dereference guarded.",
+  "compile_build_package_restore_Unity_execution": "NOT RUN",
+  "read_only_review": "No new code-level findings; manual Editor registration required; existing Sprite batch and preload failure limitations documented."
+}

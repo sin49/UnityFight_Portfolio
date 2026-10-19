@@ -21,7 +21,17 @@ using ServerCore;
 
         public override void OnRecvPacket(ArraySegment<byte> buffer)
         {
-        PacketManager.Instance.OnRecvPacket(this, buffer);
+        try
+        {
+            PacketManager.Instance.OnRecvPacket(this, buffer);
+        }
+        catch (Exception exception)
+        {
+            // A failed account/DB request must produce a response, not stop receiving.
+            Console.WriteLine("Request failed: " + exception.GetType().Name + ": " + exception.Message);
+            var error = new S_ErrorPacket { Error = "Server account request failed; check server log." };
+            Send(error.Write());
+        }
     }
 
         public override void OnSend(int numofByte)

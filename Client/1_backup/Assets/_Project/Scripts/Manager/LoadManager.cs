@@ -130,7 +130,7 @@ public partial class LoadManager : MonoBehaviour
     }
     public void PushCharacterSFX(string sfxname,Action<AudioClip> action)
     {
-        LoadingQueue.Enqueue(LoadCharacterSfxasync("charactersfx",sfxname,action));
+        LoadingQueue.Enqueue(LoadCharacterSfxAddressableAsync(sfxname, action));
         MaxLoadingprogress += 2;
     }
     public void PushCharacterloadrequest(string s, Action<GameObject> action)
@@ -167,22 +167,22 @@ public partial class LoadManager : MonoBehaviour
     }
    public void PushItemspriteLoadRequest(string s,Action<Sprite> action)
     {
-        LoadingQueue.Enqueue(LoadSpriteAsync("itemsprite", s, action));
+        LoadingQueue.Enqueue(LoadItemSpriteAddressableAsync(s, action));
         MaxLoadingprogress += 2;
     }
     public void PushLoadTerrainRequest(string s,Action<GameObject> action)
     {
-        LoadingQueue.Enqueue(LoadPrefabAsync("StageTerrain", s, action));
+        LoadingQueue.Enqueue(LoadTerrainPrefabAddressableAsync(s, action));
         MaxLoadingprogress += 2;
     }
     public void PushItemspriteLoadRequest(string bundlename,string s, Action<Sprite> action)
     {
-        LoadingQueue.Enqueue(LoadSpriteAsync(bundlename, s, action));
+        LoadingQueue.Enqueue(LoadItemSpriteAddressableAsync(s, action));
         MaxLoadingprogress += 2;
     }
     public void PushItemsSpriteLoadRequest(List<String> s, Action<List<Sprite>> action)
     {
-        LoadingQueue.Enqueue(LoadSpritesAsync("itemsprite", s, action));
+        LoadingQueue.Enqueue(LoadItemSpritesAddressableAsync(s, action));
         MaxLoadingprogress += s.Count + 1;
     }
     public void PushCharacteranimatorloadrequest(string s, Action<RuntimeAnimatorController> action)
@@ -241,22 +241,22 @@ public partial class LoadManager : MonoBehaviour
     }
     public void PushitemdbLoadRequest(string ID, Action<ItemData> action)
     {
-        LoadingQueue.Enqueue(LoadTextAssetAsync("itemdb", ID, action));
+        LoadingQueue.Enqueue(LoadItemJsonAddressableAsync(ID, action));
         MaxLoadingprogress += 2;
     }
     public void PushitemdbsLoadRequest(List<string> ID, Action<List< ItemData>> action)
     {
-        LoadingQueue.Enqueue(LoadTextAssetsAsync("itemdb", ID, action));
+        LoadingQueue.Enqueue(LoadItemJsonsAddressableAsync(ID, action));
         MaxLoadingprogress += 2;
     }
     public void PushitemLoadRequest(string ID, Action<ItemData> action)
     {
-        LoadingQueue.Enqueue(LoaditemAsync( ID, action));
+        LoadingQueue.Enqueue(LoadItemJsonWithLegacySpriteAsync(ID, action));
         MaxLoadingprogress += 2;
     }
     public void PushitemsLoadRequest(List<string> ID, Action<List<ItemData>> action)
     {
-        LoadingQueue.Enqueue(LoaditemsAsync( ID, action));
+        LoadingQueue.Enqueue(LoadItemsJsonWithLegacySpritesAsync(ID, action));
         MaxLoadingprogress += 2;
     }
     #endregion
@@ -327,7 +327,7 @@ public partial class LoadManager : MonoBehaviour
             characterIds.Add(content.CharacterId);
         PushCharacterdbsLoadRequest(characterIds, list => characterJsonReady = list.TrueForAll(info => info != null));
        
-        yield return StartCoroutine(LoadAllitemAsync());
+        yield return StartCoroutine(LoadAllItemJsonWithLegacySpritesAsync());
         Debug.Log("아이템 호출");
         yield return StartCoroutine (LoadAllCharacterPortraitsAddressableAsync());
         Debug.Log("캐릭터 호출");

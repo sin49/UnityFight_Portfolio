@@ -15,25 +15,19 @@ namespace Server.script
         #region sql
        public static UserAccountData LoadDBsql(string _UId, MySqlConnection conn)
         {
-            if (conn.State != ConnectionState.Open)
-                conn.Open();
-            string s = string.Format("SELECT accountjson AS accountdata FROM accountinfojson where uid=\"{0}\";", _UId);
-            MySqlDataAdapter adapter = new MySqlDataAdapter(s, conn);
-            DataSet ds = new DataSet();
-
             lock (_lock)
             {
-                adapter.Fill(ds);
+                if (conn.State != ConnectionState.Open) conn.Open();
+                try
+                {
+                    using var command = new MySqlCommand("SELECT accountjson FROM accountinfojson WHERE uid=@uid;", conn);
+                    command.Parameters.AddWithValue("@uid", _UId);
+                    var value = command.ExecuteScalar();
+                    return value == null || value == DBNull.Value ? null :
+                        JsonConvert.DeserializeObject<UserAccountData>((string)value);
+                }
+                finally { conn.Close(); }
             }
-            conn.Close();
-            string accountjson = "";
-            foreach (DataRow r in ds.Tables[0].Rows)
-            {
-
-                accountjson = (string)r["accountdata"];
-            }
-
-            return JsonConvert.DeserializeObject<UserAccountData>(accountjson);
         }
         public static void DeleteDBsql(string _UId, MySqlConnection conn)
         {
@@ -152,67 +146,42 @@ namespace Server.script
         }
         public static void UpdateDBUID2(UserAccountData data, MySqlConnection conn)//update문
         {
-            if (conn.State != ConnectionState.Open)
-                conn.Open();
-            string json = JsonConvert.SerializeObject(data);
-            string s = string.Format("UPDATE accountinfojson SET accountjson ='{1}' WHERE uid=\"{0}\";", data._uid, json);
-            MySqlCommand mySqlCommand = new MySqlCommand(s, conn);
             lock (_lock)
             {
-                mySqlCommand.ExecuteNonQuery();
+                if (conn.State != ConnectionState.Open) conn.Open();
+                try
+                {
+                    using var command = new MySqlCommand("UPDATE accountinfojson SET accountjson=@json WHERE uid=@uid;", conn);
+                    command.Parameters.AddWithValue("@uid", data._uid);
+                    command.Parameters.AddWithValue("@json", JsonConvert.SerializeObject(data));
+                    if (command.ExecuteNonQuery() != 1)
+                        throw new InvalidOperationException("Account save did not update an existing account.");
+                }
+                finally { conn.Close(); }
             }
-            conn.Close();
         }
         static object _lock = new object();
         public static UserAccountData insertDBsql(MySqlConnection conn, UserAccountData jsondata)
         {
             lock (_lock)
             {
-                string uid = "";
-            if (conn.State != ConnectionState.Open)
-                conn.Open();
-
-            string s = string.Format("DROP PROCEDURE if EXISTS testwhileloop;" +
-
-                "\r\nCREATE PROCEDURE testwhileloop()" +
-                "\r\nBEGIN\r\n" +
-                "DECLARE i INT DEFAULT 1;\r\n" +
-                "DECLARE randomstring VARCHAR(12); " +
-                "\r\nwhile i >0 DO" +
-                "\r\nSET randomstring= (SELECT SUBSTR(MD5(RAND()),1,12));" +
-                "\r\nSET i =(SELECT COUNT(*) AS count FROM accountinfojson WHERE uid=randomstring);" +
-                "\r\nEND while;" +
-
-                "SELECT randomstring AS uid;\r\nEND;" +
-                "\r\nCALL testwhileloop();"
-                + "DROP PROCEDURE if EXISTS testwhileloop;"
-                );
-            MySqlDataAdapter adapter = new MySqlDataAdapter(s, conn);
-            DataSet dataSet = new DataSet();
-
-            lock (_lock)
-            {
-                adapter.Fill(dataSet);
+                if (conn.State != ConnectionState.Open) conn.Open();
+                try
+                {
+                    // Generate a UID in C#; do not DROP/CREATE a DB procedure.
+                    for (int attempt = 0; attempt < 5; attempt++)
+                    {
+                        jsondata._uid = Guid.NewGuid().ToString("N").Substring(0, 12);
+                        using var command = new MySqlCommand("INSERT INTO accountinfojson(uid,accountjson) VALUES(@uid,@json);", conn);
+                        command.Parameters.AddWithValue("@uid", jsondata._uid);
+                        command.Parameters.AddWithValue("@json", JsonConvert.SerializeObject(jsondata));
+                        try { command.ExecuteNonQuery(); return jsondata; }
+                        catch (MySqlException exception) when (exception.Number == 1062) { }
+                    }
+                    throw new InvalidOperationException("Could not allocate a unique account UID.");
+                }
+                finally { conn.Close(); }
             }
-
-
-
-            foreach (DataRow r in dataSet.Tables[0].Rows)
-            {
-                uid = (string)r["uid"];
-            }
-            jsondata._uid = uid;
-            string json = JsonConvert.SerializeObject(jsondata);
-            s = string.Format("INSERT into Accountinfojson(uid,accountjson) VALUES(\"{0}\",'{1}');", jsondata._uid, json);
-
-
-            MySqlCommand cmd = new MySqlCommand(s, conn);
-        
-                cmd.ExecuteNonQuery();
-          
-            conn.Close();
-            }
-            return jsondata;
         }
 
         #endregion

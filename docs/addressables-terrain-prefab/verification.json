@@ -1,0 +1,50 @@
+{
+  "modified_product_files": [
+    "Client/1_backup/Assets/_Project/Scripts/Manager/LoadManager.cs"
+  ],
+  "added_product_files": [
+    "Client/1_backup/Assets/_Project/Scripts/Manager/LoadManager.TerrainAddressables.cs",
+    "Client/1_backup/Assets/_Project/Scripts/Manager/LoadManager.TerrainAddressables.cs.meta",
+    "Client/1_backup/Assets/_Project/Scripts/Manager/TerrainContentMapping.cs",
+    "Client/1_backup/Assets/_Project/Scripts/Manager/TerrainContentMapping.cs.meta"
+  ],
+  "removed_product_files": [],
+  "baseline_files": 9132,
+  "current_product_files": 9136,
+  "existing_meta_preserved": 4780,
+  "mapping": {
+    "terrain_name": "Main0",
+    "prefab_name": "Main0",
+    "address": "terrain/prefab/Main0",
+    "asset": "Client/1_backup/Assets/_Project/Prefabs/Terrain/Main0.prefab",
+    "guid": "c0b43649f3fdd304b8ced95f620031e9"
+  },
+  "remaining_active_StageTerrain_bundle_calls": [],
+  "null_policy": "Preserve queued invalid-name failure (NullReferenceException, no callback, no mapping/handle/Addressables operation, no fallback). Old bundle-open step omitted; failure now occurs earlier in queue execution. Main0-1 and retry-field issues not fixed.",
+  "source_for_legacy_null_validation": "https://github.com/Unity-Technologies/UnityCsReference/blob/master/Modules/AssetBundle/Managed/AssetBundle.bindings.cs",
+  "named_load_failure": "Error log and null callback; failed owned handle removed/released, later requests can retry.",
+  "static_checks": [
+    "full_product_before_after_hash_comparison",
+    "only_one_LoadManager_enqueue_substitution",
+    "four_added_files_only_two_scripts_and_meta",
+    "public_API_signature_and_Prefab_callback_contract_preserved",
+    "explicit_TerrainName_PrefabName_PrefabAddress_entry_Main0",
+    "load_key_from_mapping_not_direct_name",
+    "null_queued_failure_before_mapping_handle_load_or_callback_no_fallback",
+    "inflight_and_completed_handles_reused_before_first_yield",
+    "failure_owned_equals_and_validity_release_guards",
+    "success_handles_retained_until_Application_quitting",
+    "no_InstantiateAsync_ReleaseInstance_or_WaitForCompletion",
+    "Stage_Instantiate_pooling_and_battle_code_byte_preserved",
+    "Stage_JSON_and_all_Character_Addressables_and_mapping_byte_preserved",
+    "Item_SFX_Legacy_settings_packages_assets_and_server_byte_preserved",
+    "all_existing_meta_and_GUIDs_byte_preserved",
+    "new_script_GUIDs_unique",
+    "no_remaining_active_StageTerrain_bundle_load",
+    "single_helper_and_mapping_declarations_no_obvious_delimiter_issues",
+    "scoped_git_diff_whitespace_check_clean"
+  ],
+  "compile_build_package_restore_Unity_execution": "NOT RUN",
+  "read_only_review": "No actionable findings; reviewed all 9132 baseline files and queued null policy, Prefab callback, cache/handle ownership. No compilation or Unity execution.",
+  "editor_address_registered": false
+}

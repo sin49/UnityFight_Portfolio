@@ -1,0 +1,214 @@
+--- a/Client/1_backup/Assets/_Project/Scripts/Manager/LoadManager.cs
++++ b/Client/1_backup/Assets/_Project/Scripts/Manager/LoadManager.cs
+@@ -167,7 +167,7 @@
+     }
+    public void PushItemspriteLoadRequest(string s,Action<Sprite> action)
+     {
+-        LoadingQueue.Enqueue(LoadSpriteAsync("itemsprite", s, action));
++        LoadingQueue.Enqueue(LoadItemSpriteAddressableAsync(s, action));
+         MaxLoadingprogress += 2;
+     }
+     public void PushLoadTerrainRequest(string s,Action<GameObject> action)
+@@ -177,12 +177,12 @@
+     }
+     public void PushItemspriteLoadRequest(string bundlename,string s, Action<Sprite> action)
+     {
+-        LoadingQueue.Enqueue(LoadSpriteAsync(bundlename, s, action));
++        LoadingQueue.Enqueue(LoadItemSpriteAddressableAsync(s, action));
+         MaxLoadingprogress += 2;
+     }
+     public void PushItemsSpriteLoadRequest(List<String> s, Action<List<Sprite>> action)
+     {
+-        LoadingQueue.Enqueue(LoadSpritesAsync("itemsprite", s, action));
++        LoadingQueue.Enqueue(LoadItemSpritesAddressableAsync(s, action));
+         MaxLoadingprogress += s.Count + 1;
+     }
+     public void PushCharacteranimatorloadrequest(string s, Action<RuntimeAnimatorController> action)
+--- a/Client/1_backup/Assets/_Project/Scripts/Manager/ItemContentMapping.cs
++++ b/Client/1_backup/Assets/_Project/Scripts/Manager/ItemContentMapping.cs
+@@ -9,23 +9,27 @@
+         public readonly string ItemId;
+         public readonly string JsonName;
+         public readonly string JsonAddress;
++        public readonly string SpriteName;
++        public readonly string SpriteAddress;
+ 
+-        internal Content(string itemId, string jsonName, string jsonAddress)
++        internal Content(string itemId, string jsonName, string jsonAddress, string spriteName, string spriteAddress)
+         {
+             ItemId = itemId;
+             JsonName = jsonName;
+             JsonAddress = jsonAddress;
++            SpriteName = spriteName;
++            SpriteAddress = spriteAddress;
+         }
+     }
+ 
+     private static readonly Dictionary<string, Content> Entries =
+         new Dictionary<string, Content>(StringComparer.OrdinalIgnoreCase)
+         {
+-            { "I01", new Content("I01", "I01", "item/json/I01") },
+-            { "I02", new Content("I02", "I02", "item/json/I02") },
+-            { "I03", new Content("I03", "I03", "item/json/I03") },
+-            { "I04", new Content("I04", "I04", "item/json/I04") },
+-            { "I05", new Content("I05", "I05", "item/json/I05") }
++            { "I01", new Content("I01", "I01", "item/json/I01", "I01", "item/sprite/I01") },
++            { "I02", new Content("I02", "I02", "item/json/I02", "I02", "item/sprite/I02") },
++            { "I03", new Content("I03", "I03", "item/json/I03", "I03", "item/sprite/I03") },
++            { "I04", new Content("I04", "I04", "item/json/I04", "I04", "item/sprite/I04") },
++            { "I05", new Content("I05", "I05", "item/json/I05", "I05", "item/sprite/I05") }
+         };
+ 
+     internal static IEnumerable<Content> AllContents { get { return Entries.Values; } }
+--- a/Client/1_backup/Assets/_Project/Scripts/Manager/LoadManager.ItemJsonAddressables.cs
++++ b/Client/1_backup/Assets/_Project/Scripts/Manager/LoadManager.ItemJsonAddressables.cs
+@@ -92,9 +92,9 @@
+     private IEnumerator LoadItemJsonWithLegacySpriteAsync(string itemId, Action<ItemData> action)
+     {
+         ItemData data = null;
+-        // Existing combined API budget is used by its unchanged Sprite helper.
++        // Existing combined API budget is used by the Sprite helper.
+         yield return LoadItemJsonAddressableAsync(itemId, item => data = item, 0f);
+-        yield return StartCoroutine(LoadSpriteAsync("itemsprite", itemId,
++        yield return StartCoroutine(LoadItemSpriteAddressableAsync(itemId,
+             sprite => { if (data != null) data.itemSprite = sprite; }));
+         action.Invoke(data);
+     }
+@@ -103,7 +103,7 @@
+     {
+         List<ItemData> data = null;
+         yield return LoadItemJsonsAddressableAsync(itemIds, items => data = items, 0f);
+-        yield return StartCoroutine(LoadSpritesAsync("itemsprite", itemIds, sprites =>
++        yield return StartCoroutine(LoadItemSpritesAddressableAsync(itemIds, sprites =>
+         {
+             // JSON failures retain slots. Do not dereference a failed JSON result.
+             // Keep the existing Sprite batch's success-only list contract unchanged.
+@@ -117,7 +117,7 @@
+     {
+         itemDictionary = new Dictionary<string, ItemData>();
+         var contents = new List<ItemContentMapping.Content>(ItemContentMapping.AllContents);
+-        // One JSON unit plus the existing two-unit Sprite load per catalog entry.
++        // One JSON unit plus a two-unit Sprite load per catalog entry.
+         MaxLoadingprogress += contents.Count * 3f;
+         foreach (var content in contents)
+         {
+@@ -128,7 +128,7 @@
+                 Debug.LogError("Item JSON preload failed. Item dictionary preparation stopped.");
+                 yield break;
+             }
+-            yield return StartCoroutine(LoadSpriteAsync("itemsprite", item.id, sprite => item.itemSprite = sprite));
++            yield return StartCoroutine(LoadItemSpriteAddressableAsync(item.id, sprite => item.itemSprite = sprite));
+             itemDictionary.Add(item.id, item);
+             Loadingprogress = processingcount;
+         }
+--- /dev/null
++++ b/Client/1_backup/Assets/_Project/Scripts/Manager/LoadManager.ItemSpriteAddressables.cs
+@@ -0,0 +1,94 @@
++using System;
++using System.Collections;
++using System.Collections.Generic;
++using UnityEngine;
++using UnityEngine.AddressableAssets;
++using UnityEngine.ResourceManagement.AsyncOperations;
++
++public partial class LoadManager
++{
++    private static readonly Dictionary<string, AsyncOperationHandle<Texture2D>>
++        ItemSpriteTextureHandles = new Dictionary<string, AsyncOperationHandle<Texture2D>>(StringComparer.Ordinal);
++    // These are runtime Sprites, not imported Addressables Sprite assets.
++    private static readonly Dictionary<string, Sprite>
++        ItemSessionSprites = new Dictionary<string, Sprite>(StringComparer.Ordinal);
++    private static bool itemSpriteQuitSubscribed;
++
++    private IEnumerator LoadItemSpriteAddressableAsync(string itemId, Action<Sprite> action, float progressWeight = 2f)
++    {
++        string address = ItemContentMapping.Get(itemId).SpriteAddress;
++        if (!itemSpriteQuitSubscribed)
++        {
++            Application.quitting += ReleaseItemSpriteSessionHandles;
++            itemSpriteQuitSubscribed = true;
++        }
++
++        AsyncOperationHandle<Texture2D> handle;
++        if (!ItemSpriteTextureHandles.TryGetValue(address, out handle) || !handle.IsValid())
++        {
++            handle = Addressables.LoadAssetAsync<Texture2D>(address);
++            ItemSpriteTextureHandles[address] = handle;
++        }
++
++        float startProgress = processingcount;
++        while (handle.IsValid() && !handle.IsDone)
++        {
++            Loadingprogress = startProgress + handle.PercentComplete * progressWeight;
++            yield return null;
++        }
++        processingcount += progressWeight;
++        Loadingprogress = processingcount;
++
++        if (!handle.IsValid() || handle.Status != AsyncOperationStatus.Succeeded || handle.Result == null)
++        {
++            string reason = handle.IsValid() && handle.OperationException != null
++                ? handle.OperationException.Message : "Invalid operation or missing Item texture";
++            AsyncOperationHandle<Texture2D> owned;
++            if (ItemSpriteTextureHandles.TryGetValue(address, out owned) && owned.Equals(handle))
++            {
++                ItemSpriteTextureHandles.Remove(address);
++                if (handle.IsValid()) Addressables.Release(handle);
++            }
++            Debug.LogError("Item Sprite Addressables load failed: " + address + ". " + reason);
++            // Legacy single did not invoke its callback when the texture was missing.
++            yield break;
++        }
++
++        Sprite sprite;
++        if (!ItemSessionSprites.TryGetValue(address, out sprite) || sprite == null)
++        {
++            Texture2D texture = handle.Result;
++            // Keep the exact Legacy Sprite.Create overload and arguments.
++            sprite = Sprite.Create(texture, new Rect(0, 0, texture.width, texture.height), new Vector2(0.5f, 0.5f));
++            ItemSessionSprites[address] = sprite;
++        }
++        action.Invoke(sprite);
++    }
++
++    private IEnumerator LoadItemSpritesAddressableAsync(List<string> itemIds, Action<List<Sprite>> action)
++    {
++        processingcount++;
++        Loadingprogress = processingcount;
++        var sprites = new List<Sprite>(itemIds.Count);
++        foreach (string itemId in itemIds)
++        {
++            // Preserve successful input order/duplicates; missing textures are omitted,
++            // as in Legacy LoadSpritesAsync. Do not repair the combined batch contract here.
++            yield return LoadItemSpriteAddressableAsync(itemId, sprite => sprites.Add(sprite), 1f);
++        }
++        action.Invoke(sprites);
++    }
++
++    private static void ReleaseItemSpriteSessionHandles()
++    {
++        Application.quitting -= ReleaseItemSpriteSessionHandles;
++        itemSpriteQuitSubscribed = false;
++        // Runtime Sprite ownership is separate from the Texture Addressables handle.
++        foreach (var sprite in ItemSessionSprites.Values)
++            if (sprite != null) UnityEngine.Object.Destroy(sprite);
++        ItemSessionSprites.Clear();
++        foreach (var handle in ItemSpriteTextureHandles.Values)
++            if (handle.IsValid()) Addressables.Release(handle);
++        ItemSpriteTextureHandles.Clear();
++    }
++}
+--- /dev/null
++++ b/Client/1_backup/Assets/_Project/Scripts/Manager/LoadManager.ItemSpriteAddressables.cs.meta
+@@ -0,0 +1,11 @@
++fileFormatVersion: 2
++guid: eb1e12c38d9243878312b73f1db01fc9
++MonoImporter:
++  externalObjects: {}
++  serializedVersion: 2
++  defaultReferences: []
++  executionOrder: 0
++  icon: {instanceID: 0}
++  userData:
++  assetBundleName:
++  assetBundleVariant:

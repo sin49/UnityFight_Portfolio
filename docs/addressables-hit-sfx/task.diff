@@ -1,0 +1,112 @@
+diff --git a/Client/1_backup/Assets/_Project/Scripts/Manager/LoadManager.cs b/Client/1_backup/Assets/_Project/Scripts/Manager/LoadManager.cs
+index 27a9908b..83301bba 100644
+--- a/Client/1_backup/Assets/_Project/Scripts/Manager/LoadManager.cs
++++ b/Client/1_backup/Assets/_Project/Scripts/Manager/LoadManager.cs
+@@ -131,5 +131,5 @@ public partial class LoadManager : MonoBehaviour
+     public void PushCharacterSFX(string sfxname,Action<AudioClip> action)
+     {
+-        LoadingQueue.Enqueue(LoadCharacterSfxasync("charactersfx",sfxname,action));
++        LoadingQueue.Enqueue(LoadCharacterSfxAddressableAsync(sfxname, action));
+         MaxLoadingprogress += 2;
+     }
+diff --git a/Client/1_backup/Assets/_Project/Scripts/Manager/LoadManager.CharacterSfxAddressables.cs b/Client/1_backup/Assets/_Project/Scripts/Manager/LoadManager.CharacterSfxAddressables.cs
+new file mode 100644
+index 00000000..ede6b8d3
+--- /dev/null
++++ b/Client/1_backup/Assets/_Project/Scripts/Manager/LoadManager.CharacterSfxAddressables.cs
+@@ -0,0 +1,78 @@
++using System;
++using System.Collections;
++using System.Collections.Generic;
++using UnityEngine;
++using UnityEngine.AddressableAssets;
++using UnityEngine.ResourceManagement.AsyncOperations;
++
++public partial class LoadManager
++{
++    // Explicitly resolve the one existing SFX; never infer an address from a name.
++    private const string CharacterHitSfxAddress = "character/sfx/Hit";
++    private static readonly Dictionary<string, AsyncOperationHandle<AudioClip>>
++        CharacterSfxHandles = new Dictionary<string, AsyncOperationHandle<AudioClip>>(StringComparer.Ordinal);
++    private static bool characterSfxQuitSubscribed;
++
++    private IEnumerator LoadCharacterSfxAddressableAsync(string sfxName, Action<AudioClip> action)
++    {
++        if (!string.Equals(sfxName, "Hit", StringComparison.OrdinalIgnoreCase))
++        {
++            processingcount += 2f;
++            Loadingprogress = processingcount;
++            Debug.LogError("No Character SFX address is registered for name: " + sfxName);
++            action.Invoke(null);
++            yield break;
++        }
++
++        string address = CharacterHitSfxAddress;
++        if (!characterSfxQuitSubscribed)
++        {
++            Application.quitting += ReleaseCharacterSfxSessionHandles;
++            characterSfxQuitSubscribed = true;
++        }
++
++        AsyncOperationHandle<AudioClip> handle;
++        if (!CharacterSfxHandles.TryGetValue(address, out handle) || !handle.IsValid())
++        {
++            handle = Addressables.LoadAssetAsync<AudioClip>(address);
++            // Store before yielding so interrupted/concurrent requests keep an owner.
++            CharacterSfxHandles[address] = handle;
++        }
++
++        float startProgress = processingcount;
++        while (handle.IsValid() && !handle.IsDone)
++        {
++            Loadingprogress = startProgress + handle.PercentComplete * 2f;
++            yield return null;
++        }
++        processingcount += 2f;
++        Loadingprogress = processingcount;
++
++        if (!handle.IsValid() || handle.Status != AsyncOperationStatus.Succeeded || handle.Result == null)
++        {
++            string reason = handle.IsValid() && handle.OperationException != null
++                ? handle.OperationException.Message : "Invalid operation or missing Character SFX result";
++            AsyncOperationHandle<AudioClip> owned;
++            if (CharacterSfxHandles.TryGetValue(address, out owned) && owned.Equals(handle))
++            {
++                CharacterSfxHandles.Remove(address);
++                if (handle.IsValid()) Addressables.Release(handle);
++            }
++            Debug.LogError("Character SFX Addressables load failed: " + address + ". " + reason);
++            action.Invoke(null);
++            yield break;
++        }
++
++        // Consumers retain the AudioClip; the session cache retains its handle.
++        action.Invoke(handle.Result);
++    }
++
++    private static void ReleaseCharacterSfxSessionHandles()
++    {
++        Application.quitting -= ReleaseCharacterSfxSessionHandles;
++        characterSfxQuitSubscribed = false;
++        foreach (var handle in CharacterSfxHandles.Values)
++            if (handle.IsValid()) Addressables.Release(handle);
++        CharacterSfxHandles.Clear();
++    }
++}
+diff --git a/Client/1_backup/Assets/_Project/Scripts/Manager/LoadManager.CharacterSfxAddressables.cs.meta b/Client/1_backup/Assets/_Project/Scripts/Manager/LoadManager.CharacterSfxAddressables.cs.meta
+new file mode 100644
+index 00000000..7024acbe
+--- /dev/null
++++ b/Client/1_backup/Assets/_Project/Scripts/Manager/LoadManager.CharacterSfxAddressables.cs.meta
+@@ -0,0 +1,11 @@
++fileFormatVersion: 2
++guid: ec755273014f436daedd40871a12706b
++MonoImporter:
++  externalObjects: {}
++  serializedVersion: 2
++  defaultReferences: []
++  executionOrder: 0
++  icon: {instanceID: 0}
++  userData:
++  assetBundleName:
++  assetBundleVariant:
